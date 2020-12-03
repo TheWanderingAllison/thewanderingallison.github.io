@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/posts/my-first-post/</loc>
+    <lastmod>2020-12-03T00:54:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/posts/</loc>
+    <lastmod>2020-12-03T00:54:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/</loc>
+    <lastmod>2020-12-03T00:54:30+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/bento-hugo-theme/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/true/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/ua-xxxxxx-yy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://thewanderingallison.github.io/vs/</loc>
+  </url>
+  
+</urlset>
