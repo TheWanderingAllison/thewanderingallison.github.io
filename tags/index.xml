@@ -6,9 +6,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>MIT</copyright>
+    <lastBuildDate>Wed, 23 Dec 2020 23:23:04 +0800</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>book</title>
+      <link>https://thewanderingallison.github.io/tags/book/</link>
+      <pubDate>Wed, 23 Dec 2020 23:23:04 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Japan</title>
+      <link>https://thewanderingallison.github.io/tags/japan/</link>
+      <pubDate>Wed, 23 Dec 2020 23:23:04 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/tags/japan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sci-fi</title>
+      <link>https://thewanderingallison.github.io/tags/sci-fi/</link>
+      <pubDate>Mon, 07 Dec 2020 12:55:39 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/tags/sci-fi/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
