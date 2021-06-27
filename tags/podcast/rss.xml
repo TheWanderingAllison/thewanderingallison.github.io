@@ -13,6 +13,37 @@
     
     
     <item>
+<title>我的Windows常用工具</title>
+<link>https://thewanderingallison.github.io/posts/toolbox1/</link>
+<pubDate>Sat, 26 Jun 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox1/</guid>
+<description>&lt;p&gt;快速记录一下我的Windows装机必备工具，方便日后查找。&lt;br&gt;
+详细使用心得可能会补充，看我的拖延情况······&lt;/p&gt;
+&lt;h2 id=&#34;dism&#34;&gt;Dism++&lt;/h2&gt;
+&lt;p&gt;轻量、好用的系统空间清理软件。&lt;/p&gt;
+&lt;h2 id=&#34;spacesniffer&#34;&gt;SpaceSniffer&lt;/h2&gt;
+&lt;p&gt;以树状图形式直观展示硬盘使用情况。&lt;br&gt;
+可以层层打开，也可以快速跳转至相关路径，需要管理删除硬盘空间时非常方便。&lt;/p&gt;
+&lt;h2 id=&#34;everything&#34;&gt;Everything&lt;/h2&gt;
+&lt;p&gt;强大的文件搜索工具。&lt;/p&gt;
+&lt;p&gt;我的主要用处是搜cache、temp这类临时文件，以及某些国产软件的残余。之前卸完微信再搜Tencent、wechat依然能搜出一堆东西，果断删除。&lt;/p&gt;
+&lt;h2 id=&#34;geek&#34;&gt;Geek&lt;/h2&gt;
+&lt;p&gt;帮助彻底卸载软件。&lt;/p&gt;
+&lt;h2 id=&#34;aria2&#34;&gt;Aria2&lt;/h2&gt;
+&lt;p&gt;网络下载。&lt;/p&gt;
+&lt;p&gt;再也不需要百度网盘这种流氓了！&lt;/p&gt;
+&lt;h2 id=&#34;wgestures&#34;&gt;WGestures&lt;/h2&gt;
+&lt;p&gt;手势软件。真实解放双手~&lt;/p&gt;
+&lt;h2 id=&#34;process-lasso&#34;&gt;Process Lasso&lt;/h2&gt;
+&lt;p&gt;系统性能优化工具。&lt;/p&gt;
+&lt;p&gt;可以设置各个进程的优先级，智能调配，帮助电脑加速。&lt;/p&gt;
+&lt;h2 id=&#34;shadowsocksr&#34;&gt;ShadowsocksR&lt;/h2&gt;
+&lt;p&gt;科学上网。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>2021三四月读书记录</title>
 <link>https://thewanderingallison.github.io/posts/20210430/</link>
 <pubDate>Thu, 24 Jun 2021 17:48:44 -0100</pubDate>
