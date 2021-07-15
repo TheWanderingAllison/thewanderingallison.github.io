@@ -7,10 +7,50 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Mon, 12 Jul 2021 17:48:44 -0100</lastBuildDate>
+        <lastBuildDate>Wed, 14 Jul 2021 19:48:44 -0100</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>常用网络资源</title>
+<link>https://thewanderingallison.github.io/posts/toolbox2/</link>
+<pubDate>Wed, 14 Jul 2021 19:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox2/</guid>
+<description>&lt;h2 id=&#34;电子书&#34;&gt;电子书&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://libgen.rs/&#34;&gt;Library Genesis&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.gutenberg.org/&#34;&gt;Gutenberg&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.jiumodiary.com/&#34;&gt;鸠摩搜书&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;电子书通常我只下英文的，因为挣人民币的我确实买不起原版·····&lt;/p&gt;
+&lt;p&gt;中文书会买电子或实体，或者去图书馆借。以上几个渠道要是都没有，大概率是绝版了。这时就只能去网上碰运气，然而中文的盗版电子书资源一点原则都没有！一本很难找（且买不到）的书，如果能搜出相关链接，一半是骗你点击淘宝/京东/当当，一半是骗你关注公众号（通常关注了也没书）。&lt;/p&gt;
+&lt;p&gt;最后一个可能的途径是去&lt;a href=&#34;http://www.ucdrs.superlib.net/&#34;&gt;图书馆参考联盟&lt;/a&gt; ，注册之后选择文献传递功能，每次可以传49页，由工作人员发送至登记的邮箱，缺点是每次传递需要间隔时间，网上有说10天，也有说20天的，一本书可能需要花费一个月甚至更多的时间。&lt;/p&gt;
+&lt;h2 id=&#34;影视资源&#34;&gt;影视资源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://1337x.to/home/&#34;&gt;https://1337x.to/home/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://thepiratebay.org/&#34;&gt;https://thepiratebay.org/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://rarbgunblocked.org/torrents.php&#34;&gt;https://rarbgunblocked.org/torrents.php&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.demonoid.is/&#34;&gt;https://www.demonoid.is/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;字幕下载：&lt;br&gt;
+&lt;a href=&#34;http://www.tvsubtitles.net/&#34;&gt;http://www.tvsubtitles.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;搭配下载工具 &lt;a href=&#34;https://aria2.github.io/&#34;&gt;Aria2&lt;/a&gt; 一起使用，彻底告别流氓的迅雷和百度云。
+(另一个很出名的多线程下载软件&lt;a href=&#34;https://www.internetdownloadmanager.com/&#34;&gt;IDM&lt;/a&gt;也非常好用，可是要收费。)&lt;/p&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;YouTube&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://yt1s.com/en9&#34;&gt;视频下载&lt;/a&gt; ，同时还支持将视频转成音频下载。&lt;br&gt;
+&lt;a href=&#34;https://downsub.com/&#34;&gt;字幕下载&lt;/a&gt; ，支持视频自带字幕和YouTube自动翻译字幕的下载。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;Fanfiction文章下载、推送到Kindle：&lt;br&gt;
+&lt;a href=&#34;http://fanfictiondownloader.net/#/download&#34;&gt;http://fanfictiondownloader.net/#/download&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://ficsave.xyz/&#34;&gt;http://ficsave.xyz/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查询电影和剧集里的音乐：&lt;br&gt;
+&lt;a href=&#34;https://www.tunefind.com/&#34;&gt;https://www.tunefind.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Podcast节目搜索：&lt;br&gt;
+&lt;a href=&#34;https://www.listennotes.com/&#34;&gt;https://www.listennotes.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在线课程搜索：&lt;br&gt;
+&lt;a href=&#34;https://classpert.com/&#34;&gt;https://classpert.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于歌词的一切：&lt;br&gt;
+&lt;a href=&#34;https://genius.com/&#34;&gt;https://genius.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>2021五六月读书记录</title>
