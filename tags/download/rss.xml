@@ -1,0 +1,894 @@
+<rss version="2.0"
+    xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Download on The Wandering Allison</title>
+        <link>https://thewanderingallison.github.io/tags/download/</link>
+        <description>Recent content in Download on The Wandering Allison</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-zh</language>
+        <copyright>MIT</copyright>
+        <lastBuildDate>Fri, 20 Aug 2021 17:48:44 -0100</lastBuildDate>
+    
+        <atom:link href="https://thewanderingallison.github.io/tags/download/rss.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+<title>Aria2 配置过程</title>
+<link>https://thewanderingallison.github.io/posts/toolbox3/</link>
+<pubDate>Fri, 20 Aug 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox3/</guid>
+<description>&lt;p&gt;用Geek清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。&lt;/p&gt;
+&lt;h2 id=&#34;下载-aria2&#34;&gt;下载 Aria2&lt;/h2&gt;
+&lt;p&gt;从&lt;a href=&#34;http://aria2.github.io/&#34;&gt;官网&lt;/a&gt; 下载Aria2。&lt;br&gt;
+解压之后得到一个Aria2文件夹，在该文件夹内新建aria2.conf、aria2.session、aria2.log  三个空文件。&lt;br&gt;
+将aria2.session 文件移动到下载文件夹中（举例 D:\download）。&lt;/p&gt;
+&lt;h2 id=&#34;配置-aria2conf-文件&#34;&gt;配置 aria2.conf 文件&lt;/h2&gt;
+&lt;p&gt;打开aria2.conf文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。&lt;/p&gt;
+&lt;p&gt;重点注意：“dir=D:\download” 、“input-file=D:\aria2\aria2.session”、“save-session=D:\aria2\aria2.session”、“log=D:\aria2\aria2.log” 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是aria2.log文件所在的位置。&lt;/p&gt;
+&lt;p&gt;最末尾的“bt-tracker=”，在&lt;a href=&#34;https://github.com/ngosang/trackerslist&#34;&gt;GitHub - ngosang/trackerslist&lt;/a&gt; 获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=D:\download
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &amp;lt; falloc ? trunc &amp;lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+file-allocation=falloc
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=1
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+#max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+#max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+#max-overall-upload-limit=0
+# 单个任务上传速度限制, 默认:0
+#max-upload-limit=0
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=D:\aria2\aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=D:\aria2\aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+log=D:\SOFTWARE\aria2\Aria2.log
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+#event-poll=select
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+#rpc-listen-port=6800
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+#follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+#bt-max-peers=55
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=false
+# 打开IPv6 DHT功能, PT需要禁用
+#enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+#dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+#bt-enable-lpd=false
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=false
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+#bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0
+# 强制保存会话, 话即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+#force-save=false
+# BT校验相关, 默认:true
+#bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+bt-save-metadata=true
+
+bt-tracker=udp://tracker.opentrackr.org:1337/announce,udp://9.rarbg.com:2810/announce,udp://tracker.openbittorrent.com:6969/announce,http://openbittorrent.com:80/announce,udp://exodus.desync.com:6969/announce,udp://tracker1.bt.moack.co.kr:80/announce,udp://tracker.zerobytes.xyz:1337/announce,udp://tracker.torrent.eu.org:451/announce,udp://tracker.tiny-vps.com:6969/announce,udp://tracker.moeking.me:6969/announce,udp://retracker.sevstar.net:2710/announce,udp://retracker.netbynet.ru:2710/announce,udp://retracker.lanta-net.ru:2710/announce,udp://opentracker.i2p.rocks:6969/announce,udp://opentor.org:2710/announce,udp://open.stealth.si:80/announce,udp://bt2.archive.org:6969/announce
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;新建startexit脚本&#34;&gt;新建Start、Exit脚本&lt;/h2&gt;
+&lt;p&gt;每次要用命令启动和退出Aria2未免太折磨人，用记事本新建一个Start.vbs文件，复制以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CreateObject(&amp;quot;WScript.Shell&amp;quot;).Run &amp;quot;aria2c.exe --conf-path=aria2.conf&amp;quot;,0
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再建一个Exit.bat文件，复制以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@echo off &amp;amp; title Aria2 Stop
+Taskkill /F /IM aria2c.exe
+pause &amp;gt; nul   
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样就可以通过双击这两个文件启动或退出Aria2了。把Start.vbs文件放到系统启动文件夹（开始-所有程序-启动文件夹-打开），就可以实现开机启动。（我还没试过，不确定能不能行）。&lt;/p&gt;
+&lt;h2 id=&#34;可视化网页aria2-ng&#34;&gt;可视化网页Aria2 Ng&lt;/h2&gt;
+&lt;p&gt;Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34;&gt;Aria2 NG&lt;/a&gt;下载最新版本，解压之后把index.html文件复制粘贴到第一步里的aria2文件夹。&lt;/p&gt;
+&lt;p&gt;运行上一步创建的Start.vbs文件，再打开index文件，就能够在浏览器里看到Aria2 Ng操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>现有数码产品</title>
+<link>https://thewanderingallison.github.io/posts/diary5/</link>
+<pubDate>Fri, 20 Aug 2021 00:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary5/</guid>
+<description>&lt;p&gt;&lt;strong&gt;手机&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Google pixel 1&lt;/p&gt;
+&lt;p&gt;Nokia 5&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;平板&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Google Nexus 7 Ⅱ&lt;/del&gt;  2021.08报废&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;电脑&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dell inspiron 7380 13.3&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;显示器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AOC Q27PIU&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;电子阅读器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Kindle 4 grey&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Kinde 7 white&lt;/del&gt;  2020.08转卖&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;移动硬盘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sandisk E60 500G&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;蓝牙耳机&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Smartisan&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>NoBuy 计划 2.0</title>
+<link>https://thewanderingallison.github.io/posts/diary4/</link>
+<pubDate>Fri, 16 Jul 2021 20:11:24 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary4/</guid>
+<description>&lt;p&gt;之前列出了十类不再购买的商品，现在2021已经过半，来回顾一下计划执行情况，以及总结新的 NoBuy 类别。&lt;/p&gt;
+&lt;p&gt;1.0 版本请戳 &lt;a href=&#34;https://thewanderingallison.github.io/posts/dairy2/&#34;&gt;这里&lt;/a&gt; 。唯一的滑铁卢是买了个轻便防水的双肩包，可以收纳折叠。其余完美执行。&lt;/p&gt;
+&lt;p&gt;最近生活中发现的一些不再需要购买的物品如下。&lt;/p&gt;
+&lt;h2 id=&#34;以午餐肉为代表的加工肉类&#34;&gt;以午餐肉为代表的加工肉类&lt;/h2&gt;
+&lt;p&gt;在最近这次失败的购买记录前，我从没吃过午餐肉。看到网上好多人 po 午餐肉配手抓饼，配泡面，总之就是懒人伴侣，我也从来没动心过。直到去年年底关注的一个博主（经常发菜谱且很靠谱）说她常买一个牌子，我就冲动下单买了六罐。&lt;/p&gt;
+&lt;p&gt;可惜，午餐肉真的太油了！煎的时候通常体积可以缩小一半，另一半全是过程中渗出的油。也太咸，和其他菜一起炒不放盐我都嫌咸的那种咸。开罐之后因为实在吃得太慢，它在冰箱里甚至长毛了。大失败！&lt;/p&gt;
+&lt;p&gt;我也不爱吃培根，不爱吃火腿，过去偶尔会买尊乐的香肠，等冰箱里的存货吃完也不再购买了。加工的红肉通常油盐都超标，还是致癌物，没什么值得留恋的。&lt;/p&gt;
+&lt;h2 id=&#34;护手霜&#34;&gt;护手霜&lt;/h2&gt;
+&lt;p&gt;在连续用了几年过期护手霜之后，我确定了，我确实与“精致”无缘。冬天是会有几天手部非常干燥的日子，但用身体乳或面霜都可以救急，而只要度过这很短的时间，其余时刻完全想不起使用。&lt;/p&gt;
+&lt;h2 id=&#34;染发剂&#34;&gt;染发剂&lt;/h2&gt;
+&lt;p&gt;今年扔了一罐过期的染发剂（当初买一送一）。十年来我只染过两次还是三次，都是买的市售产品回家 DIY 。染很明显的颜色，后期发根长出的黑色会略尴尬，染低调的颜色，好像也没什么大的改变。不想再花时间去选颜色和染头发了。&lt;/p&gt;
+&lt;h2 id=&#34;尺寸较小的收纳产品&#34;&gt;尺寸较小的收纳产品&lt;/h2&gt;
+&lt;p&gt;每个曾经搜索过整理教程的人，都肯定多多少少被日本主妇那套收纳法则迷惑过。那一排排颜色尺寸统一的收纳盒、食品罐，简直就是“整齐”两个字的化身。现在再看她们的收纳，足以让我患上塑料恐惧症。套娃式的层层收纳，最终难道不是给家里增加了更多的负担？&lt;/p&gt;
+&lt;p&gt;目前拥有几个大号的收纳箱，用来存放衣物被褥，也是因为我现在居住的房子几乎没有家具，毫无存储能力。&lt;/p&gt;
+&lt;p&gt;用完的食品罐子清洗后保留，放米面杂粮调料都很方便，本身也都是食品可用的，比去网站上挑选收纳容器方便多了。&lt;/p&gt;
+&lt;h2 id=&#34;刷子清洁剂--粉扑清洁剂&#34;&gt;刷子清洁剂 &amp;amp; 粉扑清洁剂&lt;/h2&gt;
+&lt;p&gt;明明用洗衣液或者肥皂就可以洗干净粉扑，何必再多购买一瓶洗涤产品？小小100ml的粉扑清洁剂，可以卖到洗衣液好几倍的价格。化妆刷清洁剂溢价更严重，尤其是针对动物毛刷子的。可洗羊毛羊绒的产品，完全可以完美解决动物毛刷子的清洁问题。&lt;/p&gt;
+&lt;p&gt;我化妆的次数也越来越少，等我的化妆品们用完或过期的时候，或许连刷子和粉扑都不需要了。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>常用网络资源</title>
+<link>https://thewanderingallison.github.io/posts/toolbox2/</link>
+<pubDate>Wed, 14 Jul 2021 19:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox2/</guid>
+<description>&lt;h2 id=&#34;电子书&#34;&gt;电子书&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;http://libgen.rs/&#34;&gt;Library Genesis&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://www.gutenberg.org/&#34;&gt;Gutenberg&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.jiumodiary.com/&#34;&gt;鸠摩搜书&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;电子书通常我只下英文的，因为挣人民币的我确实买不起原版·····&lt;/p&gt;
+&lt;p&gt;中文书会买电子或实体，或者去图书馆借。以上几个渠道要是都没有，大概率是绝版了。这时就只能去网上碰运气，然而中文的盗版电子书资源一点原则都没有！一本很难找（且买不到）的书，如果能搜出相关链接，一半是骗你点击淘宝/京东/当当，一半是骗你关注公众号（通常关注了也没书）。&lt;/p&gt;
+&lt;p&gt;最后一个可能的途径是去&lt;a href=&#34;http://www.ucdrs.superlib.net/&#34;&gt;图书馆参考联盟&lt;/a&gt; ，注册之后选择文献传递功能，每次可以传49页，由工作人员发送至登记的邮箱，缺点是每次传递需要间隔时间，网上有说10天，也有说20天的，一本书可能需要花费一个月甚至更多的时间。&lt;/p&gt;
+&lt;h2 id=&#34;影视资源&#34;&gt;影视资源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://1337x.to/home/&#34;&gt;https://1337x.to/home/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://thepiratebay.org/&#34;&gt;https://thepiratebay.org/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://rarbgunblocked.org/torrents.php&#34;&gt;https://rarbgunblocked.org/torrents.php&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.demonoid.is/&#34;&gt;https://www.demonoid.is/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;字幕下载：&lt;br&gt;
+&lt;a href=&#34;http://www.tvsubtitles.net/&#34;&gt;http://www.tvsubtitles.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;搭配下载工具 &lt;a href=&#34;https://aria2.github.io/&#34;&gt;Aria2&lt;/a&gt; 一起使用，彻底告别流氓的迅雷和百度云。
+(另一个很出名的多线程下载软件&lt;a href=&#34;https://www.internetdownloadmanager.com/&#34;&gt;IDM&lt;/a&gt;也非常好用，可是要收费。)&lt;/p&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;YouTube&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://yt1s.com/en9&#34;&gt;视频下载&lt;/a&gt; ，同时还支持将视频转成音频下载。&lt;br&gt;
+&lt;a href=&#34;https://downsub.com/&#34;&gt;字幕下载&lt;/a&gt; ，支持视频自带字幕和YouTube自动翻译字幕的下载。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;Fanfiction文章下载、推送到Kindle：&lt;br&gt;
+&lt;a href=&#34;http://fanfictiondownloader.net/#/download&#34;&gt;http://fanfictiondownloader.net/#/download&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;http://ficsave.xyz/&#34;&gt;http://ficsave.xyz/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查询电影和剧集里的音乐：&lt;br&gt;
+&lt;a href=&#34;https://www.tunefind.com/&#34;&gt;https://www.tunefind.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Podcast节目搜索：&lt;br&gt;
+&lt;a href=&#34;https://www.listennotes.com/&#34;&gt;https://www.listennotes.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在线课程搜索：&lt;br&gt;
+&lt;a href=&#34;https://classpert.com/&#34;&gt;https://classpert.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于歌词的一切：&lt;br&gt;
+&lt;a href=&#34;https://genius.com/&#34;&gt;https://genius.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2021五六月读书记录</title>
+<link>https://thewanderingallison.github.io/posts/20210630/</link>
+<pubDate>Mon, 12 Jul 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/20210630/</guid>
+<description>&lt;style type=&#34;text/css&#34;&gt;
+img{text-align: center; margin: 0 auto;}
+&lt;/style&gt;
+&lt;h2 id=&#34;零浪费生活httpswwwgoodreadscombookshow53178503-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/53178503&#34;&gt;零浪费生活&lt;/a&gt; ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210714215819.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;市面上的“零浪费”、“断舍离”书籍大多食之无味，且并不弃之可惜。对我来说，这类书的唯一作用在于看不下其他书时拿起翻翻，很快就可以看完一本。不用动脑，没有阅读负担，间或可以记下一两个生活 tips 。这本也毫不意外，半小时不到就看完了整本，还是那常见的套路：过去沉迷囤积，开始极简 or 零浪费之后生活得到了改变，人生得到了净化。不是要怀疑作者，只是此类书同质化太过严重，不看也没什么损失。&lt;/p&gt;
+&lt;h2 id=&#34;喀耳刻httpswwwgoodreadscombookshow56848508-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/56848508&#34;&gt;喀耳刻&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210714220127.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;非常精彩！我几乎是一口气读完，舍不得停下。&lt;/p&gt;
+&lt;p&gt;喀耳刻是希腊神话里的女巫，在各个版本里都是相当边缘的人物。作者用第一人称视角，重述了喀耳刻的故事。&lt;/p&gt;
+&lt;p&gt;在这个版本里，即使被无视、被流放、被侮辱，她始终拥有属于自己的力量，有属于自己的意志，她不是那些传统神们的附庸，不是英雄们的点缀，她拥有自己精彩的一生。&lt;/p&gt;
+&lt;p&gt;我认为，这是只有女作者才能写出来的故事。这个版本的喀耳刻，恰似这些年在全球陆续兴起的女性主义一样：由女性自己讲述女性的感受，女性的过去。历史绝不应该只是history，也要有herstory。&lt;/p&gt;
+&lt;p&gt;HBO已经买了版权，要拍成八集电视剧，期待！&lt;/p&gt;
+&lt;p&gt;同作者还有一本&lt;a href=&#34;https://www.goodreads.com/book/show/30121201&#34;&gt;《阿基里斯之歌》&lt;/a&gt; ，是阿基里斯和他的恋人帕特洛克罗斯的故事。这类对希腊神话的再创作还有托宾的&lt;a href=&#34;https://www.goodreads.com/book/show/30753709&#34;&gt;《名门》&lt;/a&gt; ，是迈锡尼国王阿伽门农的妻子克吕泰涅斯特拉的故事（据说她是冰火里瑟曦的原型）。&lt;/p&gt;
+&lt;p&gt;有意思的发现：喀耳刻的英文是Circe [kírkɛː] ，希腊神话里的名字 c 都发 k 的音，而托尔金创造的精灵语也是这样，不知是不是有一些语言学上的关联。&lt;/p&gt;
+&lt;p&gt;一些笔记：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;大多数神和人的生活是飘忽不定的：他们今天在这里纠缠，明天又磨磨蹭蹭往那个方向而去，没有既定的规划。但还有一些人，命运之于他们就像套索一样：他们的生活像木板条一样笔挺，任凭他们怎么弯折都无济于事。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但在孤寂一生中，难得有几个瞬间，另一个灵魂在你的灵魂周围轻挑涟漪，像繁星一年一度与地球擦肩而过。他之于我，就是这样的星宿。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;它们从来不听。事实是，男人当起猪来很差劲的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我曾以为神是死亡的反面，但如今我明白了，他们比任何事物都更死气沉沉，因为他们不会改变，无法将任何事物捧在手中。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;深沉的玫瑰httpswwwgoodreadscombookshow42390411-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/42390411&#34;&gt;深沉的玫瑰&lt;/a&gt; ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210714220337.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;翻译无法传达原文的意蕴，在诗歌上尤为明显，译本实在无法让人满意。&lt;/p&gt;
+&lt;h2 id=&#34;魔戒httpswwwgoodreadscombookshow26105150-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/26105150&#34;&gt;魔戒&lt;/a&gt; ★★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715002846.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;精灵宝钻httpswwwgoodreadscombookshow26113409-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/26113409&#34;&gt;精灵宝钻&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715003037.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;霍比特人httpswwwgoodreadscombookshow18768432-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/18768432&#34;&gt;霍比特人&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715003755.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;刚多林的陷落httpswwwgoodreadscombookshow52709064-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/52709064&#34;&gt;刚多林的陷落&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715003647.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;努门诺尔与中洲之未完的传说httpswwwgoodreadscombookshow31452463-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/31452463&#34;&gt;努门诺尔与中洲之未完的传说&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715003148.jpeg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+四五六三个月我都在读托尔金，他的作品里直接与中土世界有关的，除了《贝伦与露西恩》和《胡林的子女》这两部主题我不太喜欢，其他有中文译本的已经全部读完了。最推荐文景的版本，译笔流畅，校对负责，美中不足的是诗歌的翻译，虽然译者已经尽力了，但和原文的意境还是差了一大截。&lt;/p&gt;
+&lt;p&gt;《霍比特人》最初是作为童书出版的，措辞和风格都更轻松，到《魔戒》就深沉了许多。而《精灵宝钻》，简直就是诺多精灵血泪史。其他几本，非死忠粉其实没有必读的理由，因为它们甚至都称不上是完整的故事——多是小托从托尔金的手稿里再次整理出的，更像是史料的梳理、注解。同一个故事有若干个演变，在不同时期名字设定可能大相径庭。或者你也可以说，这很像历史——从确凿开始逐渐变得模糊，可能丢失了一些重要的细节，可能在漫长的岁月里经过许多版本的加工，也可能最初那些惊心动魄的影响了整个世界的人物和事件，最终只在某处留下了一个小小的涟漪。&lt;/p&gt;
+&lt;p&gt;太多感想和触动了，今年电影三部曲的重映，让我整个春天都很快乐。&lt;/p&gt;
+&lt;h2 id=&#34;神话众神和造物戏弄和惩罚httpswwwgoodreadscombookshow57960363-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/57960363&#34;&gt;神话：众神和造物，戏弄和惩罚&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210714220822.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;读了喀耳刻后对希腊神话兴趣大增，当初推荐喀耳刻的博主一并推荐了这本，是Stepfen Fry写的关于希腊神话的入门读本，风趣幽默，相当易读，适合初级选手。&lt;/p&gt;
+&lt;h2 id=&#34;英雄凡人和怪物探索和冒险httpswwwgoodreadscombookshow58379498-&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/58379498&#34;&gt;英雄：凡人和怪物，探索和冒险&lt;/a&gt; ★★★☆&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20210715121141.jpeg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+这本和上面的《神话》、尚无中文译本的&lt;strong&gt;Troy&lt;/strong&gt; ，以及明年出版的&lt;strong&gt;The Odyssey&lt;/strong&gt; , 共同组成了Stephen Fry’s Greek Myths Book Series。还是有趣的，但是因为风格太一致，反而让我开始有些厌倦了。很典型的英国人的幽默，个人风格太过突出导致希腊神话本身的气质被稀释了。&lt;/p&gt;
+&lt;p&gt;PS，作者在后记中明确批判了过于娱乐化的趋势：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如今，互联网上有很多网站能帮助年轻人了解希腊神话，但读完那些把卡德摩斯称呼为“老乡”，把赫耳墨斯形容为“很酷”，说哈迪斯是个“有点烦的哥们”这样的文章之后，我真的很想躺会儿。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;出版方却依旧用“好基友”、“小三”、“复仇者联盟”这些词来进行宣发，可真是个绝妙的讽刺。&lt;/p&gt;
+&lt;p&gt;PPS，这两本书的信息量还是很大的，我有超——长的读后感打算写，过两天单开一篇~&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>我的Windows常用工具</title>
+<link>https://thewanderingallison.github.io/posts/toolbox1/</link>
+<pubDate>Sat, 26 Jun 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox1/</guid>
+<description>&lt;p&gt;快速记录一下我的Windows装机必备工具，方便日后查找。&lt;br&gt;
+详细使用心得可能会补充，看我的拖延情况······&lt;/p&gt;
+&lt;h2 id=&#34;dism&#34;&gt;Dism++&lt;/h2&gt;
+&lt;p&gt;轻量、好用的系统空间清理软件。&lt;/p&gt;
+&lt;h2 id=&#34;spacesniffer&#34;&gt;SpaceSniffer&lt;/h2&gt;
+&lt;p&gt;以树状图形式直观展示硬盘使用情况。&lt;br&gt;
+可以层层打开，也可以快速跳转至相关路径，需要管理删除硬盘空间时非常方便。&lt;/p&gt;
+&lt;h2 id=&#34;everything&#34;&gt;Everything&lt;/h2&gt;
+&lt;p&gt;强大的文件搜索工具。&lt;/p&gt;
+&lt;p&gt;我的主要用处是搜cache、temp这类临时文件，以及某些国产软件的残余。之前卸完微信再搜Tencent、wechat依然能搜出一堆东西，果断删除。&lt;/p&gt;
+&lt;h2 id=&#34;geek&#34;&gt;Geek&lt;/h2&gt;
+&lt;p&gt;帮助彻底卸载软件。&lt;/p&gt;
+&lt;h2 id=&#34;aria2&#34;&gt;Aria2&lt;/h2&gt;
+&lt;p&gt;网络下载。&lt;/p&gt;
+&lt;p&gt;再也不需要百度网盘这种流氓了！&lt;/p&gt;
+&lt;h2 id=&#34;wgestures&#34;&gt;WGestures&lt;/h2&gt;
+&lt;p&gt;手势软件。真实解放双手~&lt;/p&gt;
+&lt;h2 id=&#34;process-lasso&#34;&gt;Process Lasso&lt;/h2&gt;
+&lt;p&gt;系统性能优化工具。&lt;/p&gt;
+&lt;p&gt;可以设置各个进程的优先级，智能调配，帮助电脑加速。&lt;/p&gt;
+&lt;h2 id=&#34;shadowsocksr&#34;&gt;ShadowsocksR&lt;/h2&gt;
+&lt;p&gt;科学上网。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2021三四月读书记录</title>
+<link>https://thewanderingallison.github.io/posts/20210430/</link>
+<pubDate>Thu, 24 Jun 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/20210430/</guid>
+<description>&lt;style type=&#34;text/css&#34;&gt;
+img{text-align: center; margin: 0 auto;}
+&lt;/style&gt;
+&lt;p&gt;每月读书记录才到第三个月就开了天窗，从 2 月中旬我就沉迷于网络小说不可自拔，昏天暗地看了估计有几千万字，一直到 4 月初随着魔戒三部曲重映，我的热情迷恋转移到了魔戒电影和小说里，才从这种不知今夕何夕的状态中抽离出来。&lt;/p&gt;
+&lt;p&gt;而为了避免月度报告变成季度报告，没有把最近三个月的书目一起打包，先来补三四月份的感想。&lt;/p&gt;
+&lt;p&gt;PS，从这期开始，书籍的跳转链接会优先选择 Goodreads ，标记也尽量在 Goodreads 上完成，减少对豆瓣的依赖。&lt;/p&gt;
+&lt;h2 id=&#34;简单丰盛美好httpswwwgoodreadscombookshow55181458--&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/55181458&#34;&gt;简单·丰盛·美好&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April01.jpg&#34; alt=&#34;April01&#34;&gt;&lt;/p&gt;
+&lt;p&gt;对庄祖宜的了解最早来自那道广为流传的“番茄大蒜烤鸡腿”（后来才知道是 Jamie Oliver 的方子），偶然在微信读书看到她的新书就顺便读了。可能是由于她的外交官太太身份，书里的菜谱中西混杂，不少需要异国调料，有些还是非常典型的待客菜，对我来说并不太实用。&lt;/p&gt;
+&lt;p&gt;以及虽然这是一本个人随笔式的菜谱书，也没必要放太多家庭照片吧！作为一个普通读者完全不关心作者的丈夫孩子。&lt;/p&gt;
+&lt;p&gt;有些厨房 tips 可以参考，比如烤大蒜：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;烤过的大蒜和生大蒜味道很不一样，少了那股辛辣呛味，取而代之的是浓得化不开的深沉气息，让人目眩神迷也胃口大开。我觉得唯一能跟烤大蒜香味比拟的食材只有野生松露，然而松露计价如黄金，大蒜却俯拾皆是，怎能不多加利用？每回开着烤箱做菜的时候，我喜欢顺手在角落摆一颗包了铝箔纸的整颗大蒜，既不占空间也不浪费电，一举两得。烤过的大蒜质地绵软，可以从切口轻易地挑出来，直接涂抹面包或拿来炒菜、拌面、搭配烤肉······&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;还有糯米饭：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;发现糯米根本不需要浸泡！可以像普通白米一样，洗净沥干直接放入电饭锅煮，只不过1杯白米通常需要1杯至1.2杯的清水，1杯糯米只需要大约0.7杯水就够了。煮好了焖10分钟，软糯又晶莹剔透，出乎意料简单！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;闲来打发时间是足够，但抱着实用主义至上的态度来看会失望，不是一本万用的菜谱。&lt;/p&gt;
+&lt;h2 id=&#34;一片幽情冷处浓httpsbookdoubancomsubject4163929--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/4163929/&#34;&gt;一片幽情冷处浓&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April02.jpg&#34; alt=&#34;April02&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之前单独写过，戳 &lt;a href=&#34;https://thewanderingallison.github.io/posts/book7/&#34;&gt;这里&lt;/a&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;达洛维夫人httpsbookdoubancomsubject25844135--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/25844135/&#34;&gt;达洛维夫人&lt;/a&gt;  ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April03.jpg&#34; alt=&#34;April03&#34;&gt;&lt;/p&gt;
+&lt;p&gt;花了很久才读完，但我依然拿不准是否读懂了它。&lt;/p&gt;
+&lt;p&gt;因为非常喜欢电影 &lt;a href=&#34;https://www.imdb.com/title/tt0274558/&#34;&gt;The Hours&lt;/a&gt;，因而对伍尔夫的这本小说产生了极大兴趣。&lt;/p&gt;
+&lt;p&gt;一开始无论如何也进入不了情境。找不到小说的主题所在让我相当焦躁。在某个时刻我又似乎朦胧中领悟到了读意识流小说的方法：假设我就站在伦敦街头，跟随书中人物的眼睛不停变换，像风或者流水一样拂过目之所视、心之所想的一切，有些奇妙的“心流”状态，漫无目的地让思绪放飞，而非像读传统小说一样线性地跟随时间推进。&lt;/p&gt;
+&lt;p&gt;但恕我愚钝，我不清楚这种读法是否正确，也不是非常明了意识流小说的阅读趣味和意义。&lt;/p&gt;
+&lt;p&gt;只能说，这确实是很特别的阅读体验，在某个时刻我也确实和达洛维夫人有所共鸣，但是相较而言，还是电影带来的震动要大得多。或许短期之内我都不会读意识流小说了。&lt;/p&gt;
+&lt;p&gt;以及，我不太确定本书的阅读障碍是否有一部分是翻译造成的。有些词语和对话很拗口别扭，还有非常多的呢、呀、嘛之类的语气词。不知是原文就风格如此还是翻译的问题。&lt;/p&gt;
+&lt;h2 id=&#34;银河帝国7基地与地球httpswwwgoodreadscombookshow33550833-7--&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/33550833-7&#34;&gt;银河帝国7：基地与地球&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April04.jpg&#34; alt=&#34;April04&#34;&gt;&lt;/p&gt;
+&lt;p&gt;银河帝国整套一共有十五本：基地七部曲，机器人五部曲以及帝国三部曲。这是基地系列的第七本，我满心期待可以得到一个相对阶段性的结束，但，完全没有！本书不是结束，而是另一个问题的开始，这让一直用“很快就可以看到结局”激励我继续的那口气一下子泄光了。&lt;/p&gt;
+&lt;p&gt;没有了宏大的背景，没有了谜团的揭示，也没有紧张的对决，只有不讨喜的人物。虽然承认阿西莫夫有着无与伦比的想象力，但在人物塑造上他很失败，并且还有直男作家常见问题：对女性的描写乏味且单一。以下是涉嫌剧透的吐槽，真是难以想象，主角之一在途经某个星球时靠和最高执政长官的女性睡了一觉就被放行了？并且这种靠性能力征服女性的情节还发生了不止一次！&lt;/p&gt;
+&lt;p&gt;阿西莫夫的书里，人物都是为情节服务的，当情节渐缓时，角色本身完全不具备张力。这个缺点在科幻作者，尤其是过去几十年的男性科幻作者（包括部分当代作者，没错，刘慈欣，就是你）身上尤其明显。&lt;/p&gt;
+&lt;p&gt;失望的我给本书打了三星，并且不确定是否要继续下去了。&lt;/p&gt;
+&lt;h2 id=&#34;遥远的向日葵地httpswwwgoodreadscombookshow38208028--&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/38208028&#34;&gt;遥远的向日葵地&lt;/a&gt;  ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April05.jpg&#34; alt=&#34;April05&#34;&gt;&lt;/p&gt;
+&lt;p&gt;李娟的新书，这次不再是随着游牧家庭深入荒野，而是她自己家庭的记录。不是观察者，而是亲历者。&lt;/p&gt;
+&lt;p&gt;从她妈妈租下土地播种向日葵种子开始，一直到放弃土地结束。一如过去她的每一本书，同样真诚，同样动人。&lt;/p&gt;
+&lt;p&gt;与她的描述相比，我的文字太过苍白，无法传达阅读时心中那些激荡的情感。&lt;/p&gt;
+&lt;p&gt;只摘一小段文字，是她为外婆写的悼词：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;秦玉珍，流浪儿，仆佣的养女，嗜赌者的妻子，十个孩子的母亲。大半生寡居。先后经历八个孩子的离世。一生没有户籍，辗转于新疆四川两地。七十多岁时被政府召回故乡，照顾百岁高龄的烈属养母。拾垃圾为生，并独自抚养外孙女。养母过世后，政府提供的六平米的廉租房被收回，她于八十五岁高龄独自回到乡间耕种生活。八十八岁跟随最小的女儿再次回到新疆。从此再也没能回到故乡。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;读到这一段时，我忍不住泪流满面。&lt;/p&gt;
+&lt;h2 id=&#34;走街串巷httpsbookdoubancomsubject24882301--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/24882301/&#34;&gt;走街串巷&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April06.jpg&#34; alt=&#34;April06&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2014年订阅读库杂志赠送的小册子之一。是贺友直老先生关于老上海的白描画。有些民俗和我儿时的记忆有所重叠，而如今应该都无处可寻了。&lt;/p&gt;
+&lt;p&gt;这是依照我的读书趣味不会买的书。读库的小册子没有书号，多抓鱼连回收都不肯。或许应该什么时候把家里此类书籍整理一下，让有缘人自付邮费领走好了。&lt;/p&gt;
+&lt;h2 id=&#34;八万四千问httpswwwgoodreadscombookshow32074321--&#34;&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/32074321&#34;&gt;八万四千问&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/April07.jpg&#34; alt=&#34;April07&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在一个订阅的读书博客里看到另一篇书评的推荐，顺着去翻公众号历史记录，提到了这本关于佛教的小书（诅咒该死的腾讯，我打字时手机不在身边，无法登录微信找到原链接，而由于整个微信系统的封闭性也根本无法从网页上搜到文章）。&lt;/p&gt;
+&lt;p&gt;我不打算信仰佛教，但一直对佛学很有兴趣。这本书以问答的形式讨论了一些关于佛教的常见问题。八万四千当然是个虚指，传说阿育王造八万四千塔供养舍利，不知是否因为如此，这个数字成为了佛教里表数目极多的通用形容，比如八万四千之尘劳、八万四千之法门、八万四千由旬等等等等。（还发现了一个叫做&lt;a href=&#34;https://84000.co/&#34;&gt;八万四千&lt;/a&gt;的网站，旨在翻译推广藏文佛典。）&lt;/p&gt;
+&lt;p&gt;书的内容比较浅显，也不是一本系统性认识佛教的书。&lt;/p&gt;
+&lt;p&gt;但作者所认为的关于佛教的本质：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;皈依法意味着接受真理。
+做一个精神性的人意味着能够面对真理，并且屈服于真理，不论处境是好是坏。当好的事情发生时，珍视它；当坏的事情发生时，不要无法自拔或太过慌乱、歇斯底里。这是皈依佛、法和僧本质上的含义。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以及关于宗教应该怎样传播：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我认为佛教的价值观和智慧是非常重要的，但如果有一所佛教幼儿园、佛教中小学或者佛教大学，其目的不该是让更多的人成为佛教徒，而应该是让更多的人成为善良、有远见、有同情心、有教养、有创造性、优雅而勇敢的人。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对比其他宗教比如伊斯兰教，佛教相对来说开放性的精神、包容性的思想，很难不让人产生好感吧！&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>故园无此声</title>
+<link>https://thewanderingallison.github.io/posts/book7/</link>
+<pubDate>Thu, 17 Jun 2021 17:31:12 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book7/</guid>
+<description>&lt;p&gt;终于把好多年前买的&lt;a href=&#34;https://book.douban.com/subject/4163929/&#34;&gt;纳兰性德词集&lt;/a&gt;给翻完了，其实我是在各个古早言情小说里才知道他的名字，还有可称为阅读黑历史的安意如解读古诗词系列，《人生若只如初见》什么的。&lt;/p&gt;
+&lt;p&gt;他的词对我来说普普，基本上唤不起多少共鸣。大量的情诗让他坐实了“情圣”的名头，可是仔细看看写的对象换了好几拨，而且写相思的情诗太多太多，他的已经不太能打动我。&lt;/p&gt;
+&lt;p&gt;印象最深的倒是这首：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;山一程，水一程，身向榆关那畔行，夜深千帐灯。&lt;/p&gt;
+&lt;p&gt;风一更，雪一更，聒碎乡心梦不成，故园无此声。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;会背到这首也是因为小说——十几年前吧，有篇狗血言情就叫《千帐灯》，我很好奇的搜了下发现出处是这首（真不好意思说我一半的诗词储备都是当年读烂俗小说攒下的)。&lt;/p&gt;
+&lt;p&gt;最近一次看到这首词相关，是人物杂志写傅聪的稿子，标题就是《故园无此声》，一下子就击中了我，这五个字和傅聪、和中国，那么贴切。那篇报道还让我流了眼泪，哪怕我其实根本都不太了解傅雷和傅聪。读完之后，后劲还很大，一直在心中感慨，记者太会取题目了。&lt;/p&gt;
+&lt;p&gt;附上报道&lt;a href=&#34;http://www.boyamedia.com/category/detail/14370/&#34;&gt;原文&lt;/a&gt;。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2021二月读书记录</title>
+<link>https://thewanderingallison.github.io/posts/20210228/</link>
+<pubDate>Sat, 13 Mar 2021 17:41:10 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/20210228/</guid>
+<description>&lt;style type=&#34;text/css&#34;&gt;
+img{text-align: center; margin: 0 auto;}
+&lt;/style&gt;
+&lt;p&gt;二月读完了五本书，但其实大部分都是去年甚至前年就在读的存货，拖拉了好久才结束。&lt;/p&gt;
+&lt;h2 id=&#34;扫地出门--美国城市的贫穷与暴利httpsbookdoubancomsubject27156017--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/27156017/&#34;&gt;扫地出门 : 美国城市的贫穷与暴利&lt;/a&gt;  ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210201.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;非常出名的一本纪实文学，我从20年8月开始读，断断续续直到今年二月才看完。&lt;/p&gt;
+&lt;p&gt;引人入胜的小说式写法搭配详尽扎实的田野调查，可读性极高。赞誉之词太多，我也说不出更多更好的夸奖，&lt;/p&gt;
+&lt;p&gt;作者追踪了八个家庭的故事，让我难以忘怀的是，在底层挣扎的人群里，最难的也还是女性。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;做父亲的人没钱，可以像拉里那样一走了之，可以归零之后再设法重新来过。但做母亲的人没钱呢？只能认命地苟且下去吧——至少大部分的穷人妈妈是这样。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;母亲舍弃不下孩子，父亲却很多一走了之。薪资的不平等让女性更为艰难，更别提还要照顾孩子。而因为没钱没房子，许多单身妈妈又不得不依赖新的男性，经常看到女性带着好几个不同父亲的孩子在各处辗转。同时，房东以及政府机构对女性的差别对待又加剧了女性生存的困难程度。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在绝大多数（83%）的案件里，房东收到传单后的反应不是立马驱逐房客，就是威胁再接到警察来电就驱逐他们。有时候这意味着男女双方会一并遭到驱逐，但多数时候房东只会驱逐遭施虐的女性房客，因为男方并没有和女方正式同居。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;说到这点，住户收到驱逐通知单后的反应是一大关键，其中女性较少跟房东谈判，这点男性就明显不同。欠租的女性比较爱躲房东，而这在房东心中绝对是扣分项。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;作者在书的结尾处说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;而居住何尝不是基本的人性需求？拥有价格合宜的住房，应该是每位公民的基本权利。理由很简单：要是连住得安稳都谈不上，其他事情也会随时分崩离析。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​&lt;/p&gt;
+&lt;p&gt;想到我身处的环境，房价一路飙升，我也不知道未来几十年该怎么办。美国或许还在努力，中国呢，有解决之道吗？&lt;/p&gt;
+&lt;p&gt;读的过程中一直感慨作者的调查和资料引用之详实，也佩服译者的负责，全书成千上百的注释想想都是巨大的工程。&lt;/p&gt;
+&lt;p&gt;由项飙写的导读也非常精彩，这才是能够吸引读者的前言，好想@ 某些在序言里剧透或者啰啰嗦嗦上价值观下判断的那些出版社都来看看。&lt;/p&gt;
+&lt;h2 id=&#34;单身女性的时代httpsbookdoubancomsubject30128172--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/30128172/&#34;&gt;单身女性的时代&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210202.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;太啰嗦了。&lt;/p&gt;
+&lt;p&gt;因为&amp;quot;单身女性&amp;quot;这个主题来读，但本书中的样本很局限，几乎都是中产阶级受过高等教育的女性。当涉及到种族、贫困等问题时，只能干巴巴的罗列数据。整本书里充斥着大量引用和数字——不是说给出来源不好，但这些可以作为注解存在，而不是用来给正文充数。 完美的参照则是上面的《扫地出门》，作者要克制许多，正文流畅，大量的数据和资料都在注释里，阅读体验要好上许多。&lt;/p&gt;
+&lt;p&gt;追踪几位女性人生轨迹的过程非常散漫无逻辑，耗尽了我的耐心。 无法提供共情，用一些放诸四海皆准的口号来下结论，无法说服读者。&lt;/p&gt;
+&lt;h2 id=&#34;读库1406httpsbookdoubancomsubject26307072--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/26307072/&#34;&gt;读库1406&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210203.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;《读库》是张立宪主编的综合性人文社科读物类杂志，意为“阅读的仓库”。 以刊发中篇非虚构文章为主，内容包括传记、书评、影评、历史事件等。 每两月出版一期。&lt;/p&gt;
+&lt;p&gt;1406即是14年的第六期。13年时我堪称鬼迷心窍，在从未了解读库的情况下定了14年全年的杂志，买了上千的读库出版物，然而直到2021年为了在多抓鱼卖掉二手书，才真正打开14年的订阅开始读。&lt;/p&gt;
+&lt;p&gt;《读库》里基本都是非虚构中短篇，如果趣味不合就很难读的下去。这期里印象最深的是《先生之风》，是作者李怀宇和王元化、王世襄、陈之藩三位的采访交流。难以避免的会提到文革那段时期，每次看到这段历史，看到被迫害的人们，都觉得悲哀和感慨。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210203.1.jpeg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;此外忍不住吐槽，过于个人向的选题对于读者来说有时确实不友好。比如这期里占了快五十页的《点游成金》，讲的是游戏里金手指的故事，完全没有兴趣，一个字都读不下去。&lt;/p&gt;
+&lt;h2 id=&#34;银河帝国6基地边缘httpsbookdoubancomsubject26389899--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/26389899/&#34;&gt;银河帝国6，基地边缘&lt;/a&gt;  ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210204.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我对银河帝国系列心情复杂：猜不到结局和走向，想了解后续，但是对里面的人物又确实产生不了好感。阿西莫夫笔下的角色都相当工具人，无法让我投射情感，甚至经常感到厌烦。&lt;/p&gt;
+&lt;p&gt;但是大师就是大师，熬过了前半段之后，剧情越来越精彩，读科幻的最大快感也在于此：探索世界上最伟大头脑的想象力极限。&lt;/p&gt;
+&lt;h2 id=&#34;番茄工作法httpsbookdoubancomsubject34820460--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/34820460/&#34;&gt;番茄工作法&lt;/a&gt;  ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210205.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;是一篇很合格的“说明书”，介绍了番茄工作法的原理、实施方法。不过我认为书中的团队番茄时钟非常不实用，可以略过。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>重新打开耳朵——2020Podcast总结</title>
+<link>https://thewanderingallison.github.io/posts/2020podcast/</link>
+<pubDate>Mon, 08 Feb 2021 18:42:08 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/2020podcast/</guid>
+<description>&lt;p&gt;几年前就听说过Podcast这种形式，当时看英语学习经验帖子，里面推荐了大名鼎鼎的&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9hdWRpb2Jvb20uY29tL2NoYW5uZWxzLzE5MTk4MzQucnNz&#34;&gt;&lt;strong&gt;Luke‘s ENGLISH Podcast&lt;/strong&gt; &lt;/a&gt;和&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly93d3cuZXNscG9kLmNvbS9mZWVkLnhtbA?sa=X&amp;amp;ved=0CAMQ27cFahgKEwjY5Yv5utzuAhUAAAAAHQAAAAAQpwY&#34;&gt;&lt;strong&gt;ESL（English as a Second Language Podcast ）&lt;/strong&gt;&lt;/a&gt;，这两档节目对英语学习人群很友好，但主题不免有些无趣，因此我根本没坚持下来。&lt;/p&gt;
+&lt;p&gt;而最近这一两年播客突然又红火了起来，新节目（尤其是中文节目）层出不穷。2020年我也渐渐把听播客纳入了日常routine。和重度爱好者比起来，我听得显然不够多，一般只在骑车/走路/地铁以及上班摸鱼时听。&lt;/p&gt;
+&lt;p&gt;播客对我来说是一种信息的补充，窥见生活多样化的一扇窗口，也是排解无聊的一项消遣。就像多年前没有手机没有电脑只能听广播一样。&lt;/p&gt;
+&lt;p&gt;之前看到一位博主说为什么他不做播客，就是因为播客这种让人一心二用的特别属性，他不希望自己的内容被这样consume。我能理解这种想法，但是有些内容在我这里就是只值得随便一听，比如游戏，比如漫画。&lt;/p&gt;
+&lt;h2 id=&#34;用什么听&#34;&gt;用什么听&lt;/h2&gt;
+&lt;p&gt;一直用的Google podcasts，没有试过其他软件。&lt;/p&gt;
+&lt;p&gt;前几年网页端还不支持，只能通过app分享链接到pc端浏览器，现在终于也收录到Google主页的产品集合里，有正式的页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/podcast-web.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有web端和app，方便不同设备上收听&lt;/li&gt;
+&lt;li&gt;可以在0.5~3 之间以0.1为区间自由调速&lt;/li&gt;
+&lt;li&gt;手机端提供睡眠模式，可以设置定时关闭&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;对我不算缺点但可能有人会在意的：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有评论区&lt;/li&gt;
+&lt;li&gt;没有编辑推荐&lt;/li&gt;
+&lt;li&gt;首页类别分类下都是英文播客，中文播客基本靠手动搜索&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;听什么&#34;&gt;听什么&lt;/h2&gt;
+&lt;p&gt;列出来才发现几乎都是女性主持人或者女性嘉宾为主的节目。我并没有刻意针对性别去做筛选，只能说，中国男性发言能让人容忍下去的实在是太少了（耸肩）。&lt;/p&gt;
+&lt;p&gt;大部分主播语速都不算快，我通常是1.5倍速听，有些特别慢的会开到1.7。&lt;/p&gt;
+&lt;h3 id=&#34;几乎每期都听&#34;&gt;几乎每期都听&lt;/h3&gt;
+&lt;p&gt;这里列出的节目是每期都会打开，但未必会听完。像声东击西有一期《朱一旦的枯燥生活》，我完全没听说过这个人，这期内容也不是很有趣，听了几分钟就放弃了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio1.png&#34; alt=&#34;&#34;&gt;&lt;strong&gt;硅谷早知道&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我既不在美国也不在科技行业，天知道我为什么每期都听······&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio2.png&#34; alt=&#34;&#34;&gt; &lt;strong&gt;声东击西&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;和上面的硅谷早知道一样，也是徐涛主持的节目。我还蛮喜欢她的风格，温柔可亲，不会咄咄逼人。可能也是资深记者出身的缘故，口条利落。有些主播普通话相当不标准，时不时出现嗯、啊之类的语气词，还蛮影响听感的。&lt;/p&gt;
+&lt;p&gt;虽然节目介绍里说“带你看不一样的美国”，但是主题其实远远不限于此，节目里可以听到各种行业，比如在中国农村搞垃圾分类，在中国搞生态农业。也会聊文化现象，比如黑帮电影、魔兽世界。还有去年我全程收听的美国大选系列。总之，包罗万象，更确切的说，是“带你看不一样的世界”。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;惊奇电台&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;科幻爱好者一定不容错过。&lt;/p&gt;
+&lt;p&gt;时常有科幻作者来作嘉宾，聊起科幻作品会有很多想不到的角度。有一期是关于&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9qdXN0cG9kbWVkaWEuY29tL3Jzcy9hbWF6aW5nLXBvZGNhc3QueG1s/episode/aHR0cHM6Ly9kdHMucG9kdHJhYy5jb20vcmVkaXJlY3QubXAzL2p1c3Rwb2RtZWRpYS5jb20vYXVkaW8vYW1hemluZy1wb2RjYXN0L2FtYXppbmctZXAwMy0yMDIwMTAyNC5tcDM?sa=X&amp;amp;ved=0CAUQkfYCahcKEwiwq4ze-tzuAhUAAAAAHQAAAAAQXw&#34;&gt;&lt;strong&gt;道格拉斯·亚当斯&lt;/strong&gt;&lt;/a&gt;，其实我不算太喜欢他的作品，感觉整本书都是段子，黑色幽默和无厘头的大集合。节目里说似乎岛国盛产这种“冷烂欠”的类型，比如英国、日本，而中国、美国的作者和读者就更偏爱“宏大叙事”。欸好像还真是这样！&lt;/p&gt;
+&lt;p&gt;目前听完的每一期都喜欢！还有些作者我正计划去读，因此囤着节目等读完了再听。&lt;/p&gt;
+&lt;p&gt;同类主题的还有&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9yc3MuYXQ0YW0uaW8veGltYWxheWEvMzk0MzgwOTAueG1s&#34;&gt;&lt;strong&gt;铥铥科幻电波&lt;/strong&gt;&lt;/a&gt;，但还是惊奇电台的质量更高。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;讀立日 Readependence Day&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;该节目也可以改称：论如何文采斐然又言之有物的卖安利！&lt;/p&gt;
+&lt;p&gt;主播推荐的每一本书我都想读。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;时差 in-betweenness&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;充满浓浓学术气息的播客节目。每期嘉宾都有一大串高校title，感觉马上可以开学术论坛的那种。节目聊的话题很多也是嘉宾的研究主题，内容相当扎实。&lt;/p&gt;
+&lt;h3 id=&#34;挑主题听&#34;&gt;挑主题听&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio6.1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;发热电台&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;听这个节目是想了解一些医学知识，也想知道怎样快速高效和医生沟通。&lt;/p&gt;
+&lt;p&gt;几个主播有时语气词太多，有几期进入主题超慢，不得不快速拉进度条。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio7.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Daily Show With Trevor Noah&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;为数不多我能倍速收听并且还能听懂的英文播客，趣味足够，不会有做英语听力的感觉。当然要说好笑，肯定是看节目更好，但我对视频的耐心实在有限，听听播客也够啦。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio8.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Steve说&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;之前听了几期节目都还不错，但节目的Logo是主播个人大头照，节目介绍也好浓一股“自信直男”味，搞得我有点犹豫，观望中。&lt;/p&gt;
+&lt;h3 id=&#34;大家都说好我却不喜欢&#34;&gt;大家都说好，我却不喜欢&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;忽左忽右&lt;/strong&gt;  &lt;strong&gt;随机波动&lt;/strong&gt;  &lt;strong&gt;得意忘形&lt;/strong&gt; &lt;strong&gt;不合时宜&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;敷衍到图都懒得配。&lt;/p&gt;
+&lt;p&gt;这几个节目时常在其他推荐里刷到，常听播客的应该都不陌生。&lt;/p&gt;
+&lt;p&gt;主播和嘉宾让我觉得有些居高临下的优越感，或者说是时下的“爹味”吧。也可能恰好是我听到的那几期不对胃口，或许会再试试看。&lt;/p&gt;
+&lt;p&gt;以及要特别吐槽的一期，有点田园的&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9tZWRpYS5yc3MuY29tL3lvdWRpYW50aWFueXVhbi9mZWVkLnhtbA/episode/MmFiOTdhNjctNzYyZi1kM2VmLTdmNjctYzU5YWI3Mzc3NDBm?sa=X&amp;amp;ved=0CAUQkfYCahgKEwiwq4ze-tzuAhUAAAAAHQAAAAAQhQE&#34;&gt;136|追星女孩的“疯狂”和耻感-从《青春有你2》谈起&lt;/a&gt; 。我不讨厌这个节目，但我得说，如果有哪一类人是我不想做朋友的，那就是疯狂的追星女孩。听了这期节目，还是理解不了这些人的疯狂，也搞不懂爱豆差劲成那样还能自我欺骗自我感动是图什么。&lt;/p&gt;
+&lt;h3 id=&#34;听不太懂却非要硬着头皮听完&#34;&gt;听不太懂却非要硬着头皮听完&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio9.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;David Tennant Does a Podcast With&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;主持人是大提提，嘉宾多是英国演艺界明星，聊的话题基本围绕戏剧。&lt;/p&gt;
+&lt;p&gt;英音就够难了，嘉宾和主题都不熟悉，每次听完其实我也不知道我听了个啥，但还是每期都听。嗯，就是这么倔强！&lt;/p&gt;
+&lt;h2 id=&#34;2021-想听什么&#34;&gt;2021 想听什么&lt;/h2&gt;
+&lt;p&gt;希望有一些更轻松有趣的播客，像故事、科普之类，中文播客还是以访谈形式为主，而且话题过于“知识分子”，有些节目光看标题都觉得好严肃，打开收听前还得做下心理建设，也是很累的！&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2021一月读书记录</title>
+<link>https://thewanderingallison.github.io/posts/20210131/</link>
+<pubDate>Sat, 06 Feb 2021 19:41:53 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/20210131/</guid>
+<description>&lt;style type=&#34;text/css&#34;&gt;
+img{text-align: center; margin: 0 auto;}
+&lt;/style&gt;
+&lt;p&gt;纠结了一下到底要不要写月度读书总结——实在是没读几本，而且读完大脑空空，读书报告感觉每个字都挤得艰难。只是不写就更不会进步，还是硬着头皮产出了。&lt;/p&gt;
+&lt;p&gt;一月一共读完了四本。本月读书最大动力：在多抓鱼卖掉之前结束。都说“书非借不能读也”，我这是“书非卖不能读也”。另外还有若干在读，期望在二月总结中可以见到它们。&lt;/p&gt;
+&lt;h2 id=&#34;西域余闻httpsbookdoubancomsubject3585701-&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/3585701/&#34;&gt;西域余闻&lt;/a&gt; ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210101.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;我的期待是历史向的西域解读，结果发现只是一系列关于西域风物的短篇随笔合集。怪我没看清副标题：丝绸之路奇闻轶事。因此也就称不上有什么大的结构或主线，更像是作者随心而至，记下了西行途中所见所闻所读。&lt;/p&gt;
+&lt;p&gt;有许多对于历史的猜想和推断，却又并没有让人信服的证据作为论断，整本中有好多作者的“我猜测”、“我认为”，不能够说服我。猜测太多，实证太少。甚至有些猜测前后矛盾，像“葡萄美酒夜光杯”中夜光杯究竟是玉杯还是玻璃杯，作者一会儿说根据史料该是温润的玉石，一会儿又说流光溢彩该是通透的玻璃，让人迷惑。&lt;/p&gt;
+&lt;p&gt;有些描述前后重复，前几篇出现过的句子，没过几个章节又写了一遍，我想读者还没有健忘到会忽略掉吧。比如这句“河底发光的地方，就是玉石” 就原封不动的出现了两遍。&lt;/p&gt;
+&lt;p&gt;虽然说了这么多它的坏话，但是也有一些章节打动我，像写李白的那一篇，似乎让我离那位名满天下又放浪形骸的大诗人更近了一些，甚至意犹未尽希望作者多写点。还有在这本书里我才真的搞清楚“回鹘”、“契丹”、“吐蕃”分别对应着什么。&lt;/p&gt;
+&lt;p&gt;这本书读来轻松，没有严肃的主题，不是宏大的史书，更多是作者的漫想。作为我的“厕所读物”，每天几篇没有压力的读完了。算是一个了解西域的切面吧。&lt;/p&gt;
+&lt;h2 id=&#34;凯尔特的薄暮httpsbookdoubancomsubject2267630-&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/2267630/&#34;&gt;凯尔特的薄暮&lt;/a&gt; ★★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210102.jpg&#34; width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;当年在学校的书店里看到了这本，因为装帧着实美丽，根本没弄清是什么书就买下了。十来年间随着我搬了许多次家，却一直没打开读过。直到最近下定决心清理旧书，在多抓鱼上预约了收购，终于赶在deadline前读完了。&lt;/p&gt;
+&lt;p&gt;这是叶芝在故乡爱尔兰搜集的民间传说故事合集，也包括了一些他的感悟和诗歌片段，因此既有民间文学随意自然的拙朴风格，也时不时可窥见叶芝本人的神秘浪漫。&lt;/p&gt;
+&lt;p&gt;我很喜欢爱尔兰传说的地方是，他们的仙人并不是高高在上的神仙帝王，而是像存在于乡间邻里的另一种邻居。而且在这些故事里时不时出现的女武神、王后，可比那些被迫嫁给凡人不得善终的仙女妖怪可爱多了。&lt;/p&gt;
+&lt;p&gt;而关于这本书，我想叶芝在书末的论述就是最完美的总结：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;民间艺术实际上是思想中最古老的贵族，它拒绝短暂易逝、微不足道的东西，也不仅仅是小聪明和俗艳之物，更拒绝粗俗和虚伪；它搜集了一代代人最质朴、最深刻的思想，所以，它堪称所有伟大艺术的发源地。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;远野物语日本昔话httpsbookdoubancomsubject19967320--&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/19967320/&#34;&gt;远野物语·日本昔话&lt;/a&gt;  ★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210103.jpg&#34; width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;同是民间故事、乡野传说，与上一本《凯尔特的薄暮》相比，阅读体验要差上许多。&lt;/p&gt;
+&lt;p&gt;忘了多年前在何处看到的推荐，冲着“日本民间故事”这样的宣传购买了，然而让我失望的是这本里并没有多少妖怪仙人。前半部“远野物语”是乡间怪谈，后半部“日本昔话”则是志怪故事，共同点是非常琐碎无聊，没有跌宕起伏的传奇，只有乡间的家长里短。不只是原文如此还是译文问题，行文乏味的要命。还有几页完全不分段，一两页口水话读下来简直觉得气都喘不匀了。&lt;/p&gt;
+&lt;p&gt;开头的故事就让我毛骨悚然：女子被怪人掳去，生下的孩子被吃掉，独自终老于山间。又或者是儿子狂性大发杀死了母亲，濒死的母亲在咽气前却还在求赶到的众人原谅儿子，不要定他的罪。还有妖怪化为女子嫁给乡民，生下孩子后被发现妖怪身份，轻者被赶出家门，重则被杀死。这浓浓的厌女气息实在是无法让我获得阅读快感。这些流传下来的故事多多少少也反应了时代氛围，现实中女性的处境说不定更为不堪。&lt;/p&gt;
+&lt;p&gt;民间传说的文字确实在某种意义上要更平实，但也自有一种古朴自然的趣味，可惜这本完全没有。或许它是日本的民俗学开山之作，帮助他们找回传统记忆，可是对我来说，就是一本无甚可读的小册子罢了。&lt;/p&gt;
+&lt;p&gt;如果你喜欢民间故事，那么叶芝的&lt;a href=&#34;https://book.douban.com/subject/2267630/&#34;&gt;《凯尔特的薄暮》&lt;/a&gt;优美动人、瑰丽浪漫，袁珂整理的&lt;a href=&#34;https://book.douban.com/subject/26351113/&#34;&gt;《中国民间传说》&lt;/a&gt;短小洗练、趣味十足。这本，还是就此别过罢。&lt;/p&gt;
+&lt;h2 id=&#34;梦里不知身是客--南唐词httpsbookdoubancomsubject4261182-&#34;&gt;&lt;a href=&#34;https://book.douban.com/subject/4261182/&#34;&gt;梦里不知身是客 : 南唐词&lt;/a&gt; ★★★&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/20210104.jpg&#34;  width=&#34;360px&#34;  height=&#34;500px&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;南唐两代皇帝李璟、李煜父子以及丞相冯延巳的合集。&lt;/p&gt;
+&lt;p&gt;打三星是因为选编不太负责，很多更被广为认定是欧阳修的作品都被放到了冯延巳名下。而如果撇开这些有争议的词作，光是李煜就太值得读了。这本里选了不少古人的辑释， 看前人怎么点评也很有意思。&lt;/p&gt;
+&lt;p&gt;也是这时候才发现原来“春日宴 绿酒一杯歌一遍”是冯延巳写的（背诗词总是不记题目和作者的我）。&lt;/p&gt;
+&lt;p&gt;重头戏当然还是李煜。很显然，他的词作得区分时段来看，那些宫廷饮宴、闺阁情事的作品，有些过于绮丽奢靡了。而且一想到“刬袜步香阶，手提金缕鞋。······奴为出来难，教君恣意怜”这样的香艳画面发生背景，就心情复杂。倒不是对古代皇帝的道德水平抱有多高期望，可是发妻病重期间去和妻子的妹妹厮混，多少让我无法再坦然欣赏。&lt;/p&gt;
+&lt;p&gt;而降宋之后，人生的巨大落差，一首首泣尽以血的哀歌，让他是亡国之君，也是千古词帝。这是不是也算“史家不幸诗家幸”的佐证？只是这史家和诗家，都在他的身上发生了。&lt;/p&gt;
+&lt;p&gt;王国维说他：“眼界始大，感慨遂深”，“后主之词，真所谓以血书者也”。&lt;/p&gt;
+&lt;p&gt;国恨家仇如此戏剧性的人生，很难再发生在现代的我们身上，但他至情至真的词句，让我们在人生的某些时刻，依然可以和千百年前的古人遥相举杯。&lt;/p&gt;
+&lt;p&gt;随便摘几句很喜欢的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世事漫随流水，算来一梦浮生。醉乡路稳宜频到，此外不堪行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;离恨恰如青草，更远更行还生。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;林花谢了春红，太匆匆，无奈朝来寒雨晚来风。 胭脂泪，相留醉，几时重？自是人生长恨水长东。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>何为自苦，使我心悲</title>
+<link>https://thewanderingallison.github.io/posts/book6/</link>
+<pubDate>Fri, 29 Jan 2021 20:23:37 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book6/</guid>
+<description>&lt;style type=&#34;text/css&#34;&gt;
+img{text-align: center; margin: 0 auto;}
+&lt;/style&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/book6.jpg&#34; alt=&#34;三曹诗选&#34;&gt;&lt;/p&gt;
+&lt;p&gt;曹操、曹丕、曹植父子三人，可谓是一门三文豪的代表了吧，后世能在声名上与之匹敌的，估计也就是苏洵一家子了。父子三人，多数人最熟悉的当是曹丞相，而曹丕曹植兄弟俩流传最广的是七步诗的故事。我曾在很久前读到曹丕的一首燕歌行，非常意外的推翻了对他的既定印象，到现在都能背出来。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;秋风萧瑟天气凉，草木摇落露为霜。&lt;/p&gt;
+&lt;p&gt;······&lt;/p&gt;
+&lt;p&gt;援琴鸣弦发清商，短歌微吟不能长。&lt;/p&gt;
+&lt;p&gt;······&lt;/p&gt;
+&lt;p&gt;牵牛织女遥相望，尔独何辜限河梁？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;买这本&lt;a href=&#34;https://book.douban.com/subject/19975145/&#34;&gt;&lt;strong&gt;《三曹诗选》&lt;/strong&gt;&lt;/a&gt;，我的目的就是为了读曹丕。但其实整本诗集的遴选、题解、注释都做得很好，值得一读。&lt;/p&gt;
+&lt;p&gt;说来有趣，曹丕才是父子三人里唯一当了皇帝的那个，可是不同于曹操的慷慨激昂，也不同于曹植的华美飞扬，他的文笔竟是意外的清丽婉约，尤其可见汉乐府民歌的影子。我很喜欢主题是劝君行乐的句子，可能是因为人生太短，悲观的同时忍不住就要告诉自己“昼短夜长，需秉烛夜游”，也算是一种悲观的乐观主义了。&lt;/p&gt;
+&lt;p&gt;很好奇，当了皇帝的人，为什么总是有种别样的丧气，他写给朋友的信里，居然还直截了当的说，人百年之后，不过粪土耳，也是格外直白。对人生天地的悲观，让他有好多这样的句子，略摘几句。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人生如寄，多忧何为？今我不乐，岁月如驰。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;人亦有言，忧令人老。嗟我白发，生一何蚤。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;今日乐，不可忘。乐未央，为乐苦常迟，岁月逝，忽若飞。何为自苦，使我心悲。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;快乐的人是不需要提醒自己要行乐的，只有常怀忧愁的人才会对欢乐念念不忘。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2021 NoBuy计划</title>
+<link>https://thewanderingallison.github.io/posts/diary2/</link>
+<pubDate>Sun, 24 Jan 2021 20:11:24 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary2/</guid>
+<description>&lt;p&gt;过去常看到“XX件我不买的商品”主题的博文或者视频，每次浏览到也会默默在心中列出一个清单，但没有记录只是想想的后果就是从来当不得真。今年打定主意要立下flag，好好监督自己。为了方便实行，只挑出十类商品。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;洗手液、沐浴露&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不是说就此不再购买清洁用品，而是液体类产品用完总是有空瓶需要处理，并且就有效成分上来说沐浴露、洗手液和肥皂并没有什么不同。我的沐浴露还有存货，我把它灌了一部分到洗手液空瓶里，消耗完之后会改用纸质包装、占地也更小的香皂。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;彩妆&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;是的，我曾经相当沉迷于彩妆，被消费主义冲昏了头脑，买了这辈子也用不完的眼影、高光、修容等等。过去两年几乎没有入新，今年的打算则是一件都不再购买。疫情当下都是口罩出门，化妆更是变得无关紧要。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;防晒霜&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;防晒很重要，但我认清了现实，即使已经第一万次知道了光老化的伤害，我也无法天天涂防晒。不想往脸上抹黏乎乎的防晒霜，也不想每天早上分秒必争的时候还要担心防晒用没用够量，会不会搓泥等等。&lt;/p&gt;
+&lt;p&gt;各个博主和商家都宣称，每月至少应用完一只30g防晒才算足量。而我年年都高估自己，从来没能达到所谓的“标准用量”。每年看着没用完的防晒都不知该不该丢。夏天戴帽子和墨镜，秋冬还会加上厚厚的围巾，从2020年初开始口罩更是变成了半永久，能接受到的阳光实在是有限。更何况，老就老吧，皱纹和斑点伤害不了我。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;餐具&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;作为一个独自居住，日常吃饭都是一锅端的人，我实在是不需要再买餐具了。没有房产，时常需要搬家，易碎又沉重的杯碗们着实是移动的负担。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;锅&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;单独列出是因为我真的太爱买锅了！一个人住的我目前拥有大大小小各式各样的锅具不下十个。即使今年有哪口锅使用寿命到了，也完全还有同类别可以顶替上，所以也不存在送旧迎新的借口。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;文具&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不再买任何本子、笔、墨水。
+从读书时代起就特别喜欢各种漂亮本子，多年来攒下许多，从高中住校，异省读大学，毕业工作，工作后再换了几座城市搬了许多次家，行李里面居然还有初中时的购入。
+我还是很喜欢手写那种踏实的感觉，但消耗的速度明显是跟不上购买的频率。也庆幸我并没有入手账坑，没有乱七八糟的素材印章之类。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;娇贵难打理的衣物&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;真丝类穿起来是很舒服，但是大一些的动作就可能导致损伤。我常常骑自行车出门，于是有好几条真丝的连衣裙不幸被过度拉扯。还有每次穿前都要熨烫的铜氨丝面料，也在我的清单之外了。不过亚麻类除外，清爽透气的亚麻皱一点我也不太在乎，夏天还是购入首选。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;高跟鞋&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;曾经我也是脚踩八公分健步如飞的人，除了运动鞋之外几乎没有平跟鞋子。这几年出门一是经常骑自行车或步行，高跟鞋并不方便；二是也放弃了原来那种一定要靠高度给自己撑气场的执念。高度太高的鞋子们有些时日已久自然淘汰，还有些闲置许久索性也一并处理。从健康角度来说，高跟鞋也会导致筋膜炎、拇外翻、膝超伸等等一系列问题，完全不值得我去牺牲。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;包&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;越来越多只带帆布袋出门。现有的几只皮包也能满足不同场合需要。没有必要去跟着时尚博主们那套“包治百病”的理论去追流行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;首饰&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;七七八八也买了不少耳钉项链胸针，没有特别贵的，但也已经超出了日常的需求。不管今年遇到多么漂亮或是多么便宜的，也不能再入手了。&lt;/p&gt;
+&lt;p&gt;以上，就是今年的NoBuy计划。或许后续还会不断增加新的类别，但目前就先给自己立下这十个品类，等到年底再来验收成果了！&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>2020观影记录</title>
+<link>https://thewanderingallison.github.io/posts/20210101/</link>
+<pubDate>Fri, 01 Jan 2021 22:15:37 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/20210101/</guid>
+<description>&lt;p&gt;我的影视观看记录乏善可陈到都不值得写年度总结。但闲着也是闲着，随手记一下。&lt;/p&gt;
+&lt;h2 id=&#34;电影六部&#34;&gt;电影：六部。&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;银翼杀手&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;非常喜欢！虽然是将近四十年前的电影，但完全不会觉得过时。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;与玛格丽特的午后&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;非常可爱治愈。所有爱书的人都推荐观看。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;魔鬼女大兵&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;只是作为Viggo Mortensen的迷妹来补片。&lt;/p&gt;
+&lt;p&gt;三星，及格的商业电影。&lt;/p&gt;
+&lt;p&gt;看到影评里有人批评这部电影扭曲了女权，让女人必须表现得和男人一样，要以放弃女性特征（比如剃掉头发、疯狂练体脂甚至导致不来月经等等）来获得男性的认可。&lt;/p&gt;
+&lt;p&gt;但是这本来就不是一部女权题材的作品啊。20多年前的主流电影，讲述的还是美国军队的故事，大可不必如此苛求它。
+以及震惊的发现这也是雷德利斯科特拍得。
+再顺便吐槽，原来我多年前看的《冲出亚马逊》，不知抄了这电影多少情节。甚至前几年国内那档《真正男子汉》的综艺节目，都有许多雷同桥段。这可是1997年的作品啊！国内的影视人们，你们不害臊吗？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;东方的承诺&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Viggo在这个片里真是魅力爆棚！迷妹一本满足，全程星星眼。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;妇女参政论者&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;台词比故事好。故事是四平八稳，重点在于主题，在于历史，在于细节。&lt;/p&gt;
+&lt;p&gt;我很难忘记Maud的丈夫可以理所当然的说，孩子在法律上只属于父亲，哪怕是母亲承担了所有抚养孩子的劳动，她也不能在被驱逐出家门之后带走孩子。而Alice即使说着&amp;quot;It&amp;rsquo;s my money&amp;quot;，没有丈夫的签字她也无法保释其他同伴。孩子、财产，一切一切，都不是女人的。&lt;/p&gt;
+&lt;p&gt;前人用血和泪换来的女性权利至今还不到百年时间，却已经有无数男人叫嚣女人拿走了太多。想起那句被广为援引的话：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/2021010101.jpg&#34; alt=&#34;女性权利&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而在平等未实现之前，请让我们一起记住并行动：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/2021010102.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;PS，这部电影主题当然不算轻松，但看到梅姨出场的时候我有点想笑。忘了是哪个美国脱口秀里说，为什么英国人总是在大量美国电影里出镜， 而美国演员能去演英国人的却永远只有梅丽尔·斯特里普一个！&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;斯隆女士&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;我以为它是个政治片，结果就真的只是个爽片。太工整太商业了，看的时候爽，看完什么也不剩。劳模姐非常适合这种大女主角色，气场爆棚。&lt;/p&gt;
+&lt;h2 id=&#34;剧集三部&#34;&gt;剧集：三部。&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;鬼吹灯：龙岭迷窟&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;没看完。&lt;/p&gt;
+&lt;p&gt;这版的幽默感是鬼吹灯系列里面最足的，胡八一和胖子之间的互动也是最自然逗趣的。但是张雨绮的台词真是不敢恭维，像AI读课文——还是普通话不太好的AI，面部表情也是肉眼可见的僵硬。有几集进度也明显过慢，一个小的段落拖上十几分钟，最过分的是一共只有18集，还分出789三集（可能还会更多）断开现有剧情讲几十年前的旧事，严重影响节奏，这几集无聊到全程快进。最后实在受不了弃剧了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;狂欢命案&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;背景设定是我喜欢的类型，然而内容实在是无聊透顶。快进又快进看完了全部。开花和Cara实在是毫无CP感，Cara一脸杀气腾腾，谁能信她的苦守寒窑人设？&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;爱、死亡和机器人&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;嗯，一部只有18集，每集只有15分钟的动画片，我从19年初看到20年末，这速度也是没谁了。&lt;/p&gt;
+&lt;p&gt;Zima Blue 那集我真是震撼到头皮发麻。但是这种震撼感是故事带给我的，不是画面带来的&lt;/p&gt;
+&lt;h2 id=&#34;纪录片四部&#34;&gt;纪录片：四部。&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;但是，还有书籍&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;各集水平参差不齐。&lt;/p&gt;
+&lt;p&gt;不喜欢童书那期，作为课外阅读机构主理人读书平翘舌都分不清。也不喜欢B站UP主出镜的那期，那位UP主我短暂关注过，没什么干货，视频相当拖沓，还是说国内读书UP主就只有这样的水平？她出现的那部分完全看不出价值所在，整个垮掉。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;放飞朱鹮&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;讲述中国如何在成功人工繁殖朱鹮之后让它们接受野化训练回归自然的故事。建议搭配《朱鹮的遗言》这本书一起服用更佳。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;无节制消费的元凶&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;其实看得出摄制组是预设了立场才去做的采访。但不考虑那些，纪录片本身也有很多值得思考的部分，能够给陷入消费陷阱的我们敲响一部分警钟。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;城市腹地的菜市场&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;每一集同质化严重，一共15集，我当做下饭剧来看，内容重复到每次打开新一集时我都不确定是否已看过。另外对于每一个手工摊位都硬要配上一段升华评语，实在是过分拔高。而对于另一些家族历史、传统习俗明明有深挖可能却又浅尝辄止，让人遗憾。&lt;/p&gt;
+&lt;h2 id=&#34;综艺半部&#34;&gt;综艺：半部。&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;乐队的夏天第二季&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;看了几集，后面都只听歌，没看节目，只能算半个。&lt;/p&gt;
+&lt;p&gt;能看得出节目组的重点在“综艺”而不是在“乐队”。采访Rustic的部分让我觉得非常冒犯。旋转保龄表演里的Double Bass 多酷啊，结果一个字不提，净拿歌词里的“老婆不在家”说事儿，谁关心你老婆老公？再到后面后海明显的票数问题，让我完全放弃看节目。&lt;/p&gt;
+&lt;p&gt;没了。&lt;/p&gt;
+&lt;p&gt;真的佩服一年能看几百上千部电影甚至剧集的人。&lt;/p&gt;
+&lt;p&gt;我很难集中注意力到画面上，今年看完的这寥寥几部也是打开了无数次才成功。很少有电影或者剧集能让我着迷到一口气看完。这么多年的挣扎之后，我决定放过自己，影视这个类别就此随缘吧，不再勉强了。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>《男人这东西》：请改名为男人这禽兽，谢谢</title>
+<link>https://thewanderingallison.github.io/posts/book5/</link>
+<pubDate>Wed, 23 Dec 2020 23:23:04 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book5/</guid>
+<description>&lt;p&gt;有史以来第一本想把这玩意儿糊到作者头上希望这个作者原地爆炸的书！&lt;/p&gt;
+&lt;p&gt;我知道这本书被推荐过很多次，经常推荐语会是“带你读懂男人”或是“走进男人世界，了解真实的男人”诸如此类的。但就我的阅读体验，请这本书立即改名为《男人这禽兽》，副标题——欢迎来到直男癌的世界。&lt;/p&gt;
+&lt;p&gt;认真的说，我多少年没看过这么让我生气的书了。看的快爆炸！基本上每一行每一段我都想反驳，已经快被气到失语。全程我内心都充满了WTF或是SHIT之类的弹幕。我不知道这本书成书于何时，但是作者的思想让我怀疑他是否来自于一百年，哦，不对是史前才对。&lt;/p&gt;
+&lt;p&gt;作者详细的介绍了，少年时代为什么男生的成绩大部分不如女生，为什么？因为男生要跟与生俱来的雄性本能发情欲望作斗争呀。青年时期为什么男人喜欢寻欢作乐不愿对婚姻负责任，为什么？因为男人的本能就是尽可能多的标记占有雌性生物呀。结婚的男人为什么还会流连花街柳巷，为什么？因为只和一个女人做爱有违他的天性呀。&lt;/p&gt;
+&lt;p&gt;作者似乎是在解释男女的不同，为男人在性欲、恋爱和婚姻中种种的表现来予以解释，可实际呢？难道不是打着生物的本能、基因的不同这样的幌子来为男人种种控制不住下半身无责任无理性的行为辩解吗？别拿这是千万年来雄性生物的本能这种说辞来忽悠人了，这简直就是对人类大脑的侮辱。如果男人们的头脑不能控制自己的行为，那男人们也就别再称之为人类了，去和动物园里的雄性猩猩们作伴吧，它们无需考虑感情无需考虑责任无需考虑尊重，只需要不定时发情就好。&lt;/p&gt;
+&lt;p&gt;作者还呼吁我们要理解男人，不是他们不懂得尊重女性，而是他们的动物本能让他们如此，无法克制。所以，我们从茹毛饮血的年代进化到如今懂得直立行走，学会文明开化的理性思考，这期间的岁月都是被狗吃了对吗？恕我直言，本能和冲动谁都有，但是否能够学会驾驭和控制它是人和禽兽的区别。按作者说的，全天下的男人都是返祖回蛮荒时代的禽兽吗？&lt;/p&gt;
+&lt;p&gt;没错，渡边淳一声名在外，小说也是赞誉无数，但这一切都掩饰不了该书就是一本给沙文猪洗地的直男癌废话罢了。把一切男人的劣根性视作男人身上的共性并且将此统统归究于雄性天性，真是何其可笑。更好笑的是似乎作者认为他本人身上以及他身边出现的男人的特性视作是全日本乃至全世界男人的统一之处，还自以为是的夸夸其谈，真是让人恶心。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>《行星全书》：徒有其名</title>
+<link>https://thewanderingallison.github.io/posts/book4/</link>
+<pubDate>Sun, 20 Dec 2020 14:43:00 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book4/</guid>
+<description>&lt;p&gt;这本书的中文名字真的取得糟糕，让我抱有了不切实际的期待，最终导致我把本书的评分又降了一星。&lt;/p&gt;
+&lt;p&gt;定位是科普图书，文字却毫无打磨。&lt;/p&gt;
+&lt;p&gt;我不懂天文学，所以无法判断书中列举的科学事实是否有错漏之处（据其他书评说是有）。但很明显的，这本书文字部分完全没过心，行文干瘪且无趣。&lt;/p&gt;
+&lt;p&gt;错字和重复也不少。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;天王星赤道面与公转轨道的倾角为98°，也就是说，天王星是&amp;quot;躺着&amp;quot;围绕太阳公转。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这句话在天王星这一章几乎一模一样的出现了两遍，相隔不过几页图片。&lt;/p&gt;
+&lt;p&gt;另外都叫行星全书了，至少这本书也应该有系统的天体介绍，有科学的章节列表，有基本的逻辑体系和相对完整的讲解思路吧？&lt;/p&gt;
+&lt;p&gt;比如说每颗行星是类地行星还是气态行星，距离地球太阳多远，本身特点如何，有几颗卫星，那些卫星又有什么独特之处。在此基础之上选择恰当的图片，给读者带来视觉上的冲击。&lt;/p&gt;
+&lt;p&gt;而现在的编排是不过脑子的挑了照片，再随便配上些没有深度的讲解，让我简直怀疑是为了骗钱随便攒的书。&lt;/p&gt;
+&lt;p&gt;木星和土星美极了，简直是艺术品。还有彗星，在运行过程中如果没有和其他天体相撞，那么最终会被逐出太阳系。要么毁灭，要么驱逐，简直是悲剧一般的命运史诗。浩大的宇宙真是让人感到目眩神迷。&lt;/p&gt;
+&lt;p&gt;但这些都是行星本身的迷人之处，和这本书无关。如果我只是为了看图，那么我大可以直接去NASA和各大天文机构官网去看美丽的星空宇宙好了，为什么要来看这本书呢？&lt;/p&gt;
+&lt;p&gt;如果定位就是摄影集，那么可以采用更大的开本，以及开除掉不合格的作者。&lt;/p&gt;
+&lt;p&gt;定价258元，不值得购买。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/12/20/S7cUY2F8gbokX3O.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/12/20/rlhokdQxKFmyDC1.png&#34; alt=&#34;木星之光&#34;&gt;&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>《神们自己》：面对愚昧，神们也缄口不言</title>
+<link>https://thewanderingallison.github.io/posts/book3/</link>
+<pubDate>Mon, 07 Dec 2020 12:55:39 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book3/</guid>
+<description>&lt;p&gt;很有趣，这本书的主角我一个也不喜欢，但我就在充满了内心弹幕的吐槽中把三个故事读完了——还读的相当兴致勃勃。和大部分主角充满个人魅力的小说不同，《神们自己》充满了多视角的解读，并没有一个传统意义中的主角，而无论从哪个视角来看，角色们都挺讨人厌。&lt;/p&gt;
+&lt;h2 id=&#34;第一章面对愚昧&#34;&gt;第一章：面对愚昧。&lt;/h2&gt;
+&lt;p&gt;讲述的是电子通道之父哈兰姆由于与同事的一个口角被激怒，结果误打误撞的建起了电子通道，实现了无成本的使用能源，也由此获得了巨大的名声和地位。而另一位小人物拉蒙特（Lamont）本是这位大牛的忠实粉丝，结果在与哈兰姆见面时提出了关于对方电子通道的质疑，换来了这位大师的疯狂打压。于是粉转黑了个彻底，暗自发誓势必要证明自己的理论正确，而电子通道终将毁灭人类。没错，拉蒙特是正确的，但是他的努力可丝毫看不到任何想独自力挽狂澜的悲剧英雄主义色彩，与其是拯救人类，不如说他只是憋着口气想把对方拉下泥潭。在面对免费的无限的能源时，并没有人愿意去思考毁灭世界的事。&lt;/p&gt;
+&lt;p&gt;就像书中所说：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;有人认为，公众希望环境得以保护，人类的存续得以实现，还认为那些为了这类崇高目标而奋斗的理想主义者会得到公众的爱戴，这种想法都是错的。实际上，公众所期望的只有一件事：他们自己过上安逸舒适的生活。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而政治家们呢，他们更期待的是利用公众获得权力，而不是冒着与公民意志作对的风险丢掉仕途。因此，第一章中看到的全是人类的丑恶一面，故事讲述的精彩，但人物可真都是丑陋之极。&lt;/p&gt;
+&lt;h2 id=&#34;第二章神们自己&#34;&gt;第二章：神们自己。&lt;/h2&gt;
+&lt;p&gt;乍看似乎第二章和前文风马牛不相及，但读下去才会发现，原来这个世界就是第一章中与之交换能源的平行宇宙。不过相比对于文科生而言晦涩难懂的硬科幻设定，这一章最精彩的莫过于阿西莫夫凭空创造了一个完全不同于人类社会的外星人种族设定。理者、情者、抚育者，三位一体构建成了这个外星社会的家庭模式。他们形状不定，密度也能变化，而进食是依靠外星太阳产生的光波。最最让人拍案叫绝的是，对这种身体构造完全不同于人类的外星人（身体似缕青烟般波纹涟漪的情者，卵形身体、边缘圆滑的理者，轮廓平直、结实稳固的抚育者）的性爱描述。是的，外星人的交媾与地球人截然不同，三位家庭成员密度不同的身体互相渗透，在高潮中彼此闪烁微光。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;她就在他俩之间，崔特就在那头光芒闪烁，隔着杜阿看去，他的身体呈现出不可思议的色彩。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽说写的是完全不同的生物，但看看作者的描述吧：缓慢进入、一点一点融合、竭力扭曲、相互抗拒却又相互吸引，最终在不可思议的欢乐和爆炸般的波动中放弃抵抗。这种精神和感官扭曲的交织和高潮，和人类却又并无不同，让人难以想象这是一场外星人的性爱。因此这章看时我不免脑洞大开，阿西莫夫真可谓是创造了3P性爱的完美范本，现在的作者们完全可以以此为模板创造出许多类似的小黄文。&lt;/p&gt;
+&lt;h2 id=&#34;第三章也缄口不言&#34;&gt;第三章：也缄口不言。&lt;/h2&gt;
+&lt;p&gt;经历了前一章光怪陆离的外星世界，这一章不免让人觉得太过平淡。尤其是毁灭世界的电子通道问题可谓是波澜不惊的最终解决，让人有虎头蛇尾之感。而解决问题的，恰恰是第一章中和哈兰姆产生口角刺激他构建电子通道的丹尼森，不得不说又有几分讽刺。这章我觉得颇有意味的是对月球生活的描写，让人不由得心驰神往。&lt;/p&gt;
+&lt;p&gt;总而言之，这是一本精彩的小说，即使是幻想的话题，却又让人看到太多对于现实世界的讽刺，阿西莫夫在序章中写道：把这部小说献给人类——愿与愚昧的战争终将有胜利的一天。而想到本书其实是创作于1972年，更不得不佩服作者对现实一针见血的认知，以及对未来天马行空的构想。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>为什么要向手机投降？</title>
+<link>https://thewanderingallison.github.io/posts/diary1/</link>
+<pubDate>Sat, 05 Dec 2020 19:28:57 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary1/</guid>
+<description>&lt;p&gt;2020年6月的豆瓣日记，搬运过来。&lt;/p&gt;
+&lt;p&gt;在这个所有网站都想做app的时代，我还是固执的喜欢看网页，首选是电脑上大屏浏览，其次是手机浏览器查看，再次才会选择app。除非是app确实有不可替代的功能，我才会选择在手机端安装。&lt;/p&gt;
+&lt;p&gt;2008年左右注册晋江，从那会儿的一个小小诺基亚屏幕，艰难靠按键翻页，到现在全面的智能机时代，我也不觉得有什么必要去下载app，还是只喜欢用网页浏览。&lt;/p&gt;
+&lt;p&gt;曾经我也一直在手机浏览器上看豆瓣，可惜豆瓣的移动网页端越做越烂，到现在几乎是完全停滞了。那也没关系，后来我改选“桌面版”模式在手机上看，结果现在每次选择“桌面版”都会卡住，登录页面要反反复复刷新许久，于是我放弃了在手机端用豆瓣。而豆瓣还有让我非常愤怒的一个改变，年度报告和月度报告也不能网页端查看，一定要逼你下载app。那好，我放弃看年度报告。&lt;/p&gt;
+&lt;p&gt;下厨房网站曾经我一度很喜欢逛，但是它可能几年前就开除了网页版的程序员和设计师。现在首页找不到直接上传照片的入口，也不能在话题下上传图片，不能在网页端加tag。更智障的是如果是在网页端上传了竖版图片，手机版看时会自动切割成横版，即使点击大图进入也只能看到一张被砍头或去尾的照片。更不提市集、课程等功能了，似乎对着手机那么一个小小的屏幕看完长长的一篇专栏文字是理所当然的。&lt;/p&gt;
+&lt;p&gt;网站想要促进app下载量我可以理解，但凭什么要以如此阉割PC端用户使用感受的方式去促进？&lt;/p&gt;
+&lt;p&gt;再提现在整个社会都在疯狂开始的扫码、小程序、二维码等等等等，没有手机寸步难行。疫情期间更是变本加厉。&lt;/p&gt;
+&lt;p&gt;前几天我去坐公交，隔壁一个大叔看了我好几遍，犹豫了好几分钟，可能是看我也在看手机，终于过来问我怎么看坐公交扣了多少钱。我帮他打开支付宝，发现果然是开通了花呗，和他解释了半天需要他之后还款，他还是搞不清楚。跟他说让他孩子之后帮他操作还款，并且最好关掉花呗。他说他没有家人在这里，独自一个人过来打工，连公交扫码也是别人帮他设置的。&lt;/p&gt;
+&lt;p&gt;帮大叔还完款关闭花呗之后，我想，肯定有许许多多的人，对这些功能一知半解，为了这些城市里面的各种服务，不得不学着去使用。而这些还只是起码能用手机的人，还有许多根本没有智能机的人呢？他们怎么出门？进超市要扫码，吃饭要扫码，坐车要扫码，去银行要扫码，进医院还要先在小程序或app预约。没有手机，或者说，没有智能机，在这个城市只有四处碰壁。&lt;/p&gt;
+&lt;p&gt;周末我去寄快递，本来在支付宝里选了驿站下单，到了那边他们说支付宝里的他们无法打单，只能用微信扫描二维码再下单。我问是否可以现金支付，被拒绝，告知只能系统出单。&lt;/p&gt;
+&lt;p&gt;我讨厌微信关注一堆乱七八糟的人，讨厌微信授权手机号、个人地址，于是我放弃了这个驿站，另选了快递上门。而在驿站的几分钟里，我看到旁边一个大妈被驿站的人引导着全程懵懂的寄完了快递，她根本不知道自己操作了什么，关注了什么，也不明白怎么付款，驿站的人让做什么就做什么。有智能机的人，其中有多少是这么无知无觉的交付了个人隐私？没有智能机的人，又有多少被这样拒之门外？&lt;/p&gt;
+&lt;p&gt;再到最近卷土重来的疫情，城市防控措施又开始变严。这几天小区外一直有大喇叭循环播放，要求下载一个城市政务app，据说集合了城市健康码、市民卡等等一系列信息。可是既然有健康码小程序，为什么要再开发这么一个app？健康码本就是一个过渡的手段，为了所谓的严防严控，我们让渡个人隐私为代价。结果现在政府不止想要这些，还想要更多。更别提大多数政务app使用感受极差，作为一个常年熟练使用手机的年轻人，都经常找不到政府网站和政府app的各种入口，不知道其他那些不熟悉智能手机，或者没有智能手机的人，又该怎么解决？我也不觉得这类app在数据安全方面会做得多好。无非是用纳税人的钱再去烧一笔无谓的支出，为所谓的数字化城市添上一笔政绩。&lt;/p&gt;
+&lt;p&gt;凭什么我们要向手机投降？&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title> 《火星救援》：一个好故事的完美范本</title>
+<link>https://thewanderingallison.github.io/posts/book2/</link>
+<pubDate>Fri, 04 Dec 2020 23:55:39 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book2/</guid>
+<description>&lt;p&gt;总算有本好书弥补了我被上一本烂书（没错，解忧杂货店，说的就是你）毁掉的心情。实际上我在结束解忧杂货店之前，忍不住就把这本穿插着读的差不多了，读完之后还意犹未尽的去标注的段落回味了好几遍。&lt;/p&gt;
+&lt;p&gt;这本在我看来，才算是既体现了主角的人物魅力，又显示了作者纯熟的文笔，以及，现实的展示出了人性的美。&lt;/p&gt;
+&lt;p&gt;故事内容并不复杂，倒霉的马克和同伴们在火星上进行地表探测时碰上了火星尘暴，不幸的被一根吹倒的天线捅了个对穿，而队友们误以为他已遭遇不幸而先行返航。于是马克开始了独自一人在火星的求生之旅。于此同时，NASA在宣布了他的死讯之后意外发现马克其实还活着，因此地面上也开始了对马克的救援。&lt;/p&gt;
+&lt;p&gt;这本书最大的魅力在于主角乐天的性格和苦中作乐的态度，看马克的火星活动日志，几乎完全看不出他是独自一人被抛在了茫茫宇宙中。&lt;/p&gt;
+&lt;p&gt;纵观整书，只有一处让我和主角一起体会到了孤独。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在我周遭，除了尘土、岩石以及无边无垠的沙漠之外，就什么也没有了。这颗星球上闻名的红色，全都来自遍布各处的铁氧化物。所以，这里严格来说还不是沙漠，而是一片过于古老的沙漠，整个生锈了的沙漠。栖息舱是这个世界中唯一的闻名产物，眼睁睁地看着它从视野里消失，我心里的滋味实在是难以形容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而其他时候，则是更多的看马克一次次的“鸡飞狗跳”。看他记录如何作死的分离联氨，点燃氢气造水；看他把放射性元素RTG放在漫游车里制造热量好节省能源；还有看他乐极生悲，好不容易恢复了与地球通讯之后又烧掉了整个电路再次丢了通讯……在一次次足以让他陷入绝境的意外中，看不到他的绝望，只会感受到他一次次的用智慧去解决问题。无怪乎现在流行“smart is the new sexy”，如果有这样的大脑，请给我来一打好么！&lt;/p&gt;
+&lt;p&gt;除了主角的人格魅力之外，我觉得格外有感触的是NASA发现他们抛下了马克在火星之后的反应。没有试图去掩饰太平，也没有试图去向公众说谎，而是坦诚了信息，接着为营救马克做最快最大的努力。说实在的，看这部分我真的有点怀疑，怀疑在我们国家是否会采取同样的反应。没错，人道主义的光辉我们从来不缺，可是，同样的，我们是一个从来擅于牺牲小我去维护整体的国家，一个小小的“我”，真的会让我们的国家倾数千万人之力去营救吗？我不敢肯定。当然，在这本书里，应当营救被抛下的宇航员是所有人的一致认定。虽然，在这过程中也有官僚主义，也有利益交换，可是最终的目标是一致的。&lt;/p&gt;
+&lt;p&gt;就像最后书里写的：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我在想，那么多人合力来救我这条小贱命，真是件难以理解的事。我的队友们牺牲了一整年时间回来找我。NASA有无数人日夜工作，就是为了拿出漫游车和MAV改造方案。全JPL的人都忙得屁股着火似的造了一个刚发射就爆炸的飞行器。然后，他们还没放弃，而是造了另一个来对赫尔墨斯进行再补给。中国国家航天局放弃了他们从事多年的项目，就为了贡献一台助推器。&lt;/p&gt;
+&lt;p&gt;为了营救我，一定花费了数亿美元。所有这些，就为了救我这个傻不愣登的植物学家，为吗呢？&lt;/p&gt;
+&lt;p&gt;好吧，我想我知道答案。有部分是因为我代表了进步、科学，还有我们梦想了几个世纪的行星际未来。但说真的，他们这么做的真正原因是：每个人都有一种本能，那就是把同伴救出来，有时候看上去不太像，但事实确实如此。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;坦白说，这么一本有趣的书，看到最后的营救时，看到不同国家的参与，看到地面和太空一起的努力时，我居然还忍不住泪目了。我想，这也是这本书这么成功的原因吧，除了插科打诨般的有趣记录，还有闪耀其中的人性主义光辉，它打动了每个读它的人。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>《解忧杂货店》：无聊的一本鸡汤</title>
+<link>https://thewanderingallison.github.io/posts/book1/</link>
+<pubDate>Fri, 04 Dec 2020 13:44:28 +0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/book1/</guid>
+<description>&lt;p&gt;终于结束了！&lt;/p&gt;
+&lt;p&gt;读这本书之前漫天飞的赞誉让我满心以为这会是一本极其出彩的书，结果却大大失望。这根本就是老套的一碗鸡汤，而且还熬馊了！简直是捏着鼻子读完的它。现在，让我再次说明我的看法，完全对不住名声的一本书！&lt;/p&gt;
+&lt;p&gt;首先，对这种所谓的咨询烦恼的杂货店，我就是一种嗤之以鼻的态度。好吧，可能是我已经过了咨询别人寻求认同渴望别人拿主意的年纪，所以在我看来，咨询的人那堆无聊的问题，真是让我暴躁极了。自己的人生自己决定，拿这种无谓的烦恼去向一个根本不了解你的人咨询有什么意义？店主爷爷的初衷倒是挺可爱的，慎重的对待每一个咨询人的烦恼这一点也让人敬佩，但是这种回复大部分时候并没什么价值吧。之所以好像咨询有了好结果，难道不是作者人为强行安装了一个所谓“人性”、“善意”的结局吗？作者透过杂货店老爷爷之口所写出的劝诫一般的口吻着实令人厌烦，而这些所谓的人生道理，我也并不需要从这样一本书中获得。而有的咨询者的烦恼，让人看着也有些生厌。这书里几乎每个故事都冒着一股股浓浓的老套鸡汤味，简直令人如鲠在喉。这些被大批人赞誉的故事的温情，完全没有打动我，只是有些人的人生际遇的确会让人有些唏嘘罢了。本书唯一算是让我有所触动的地方，就是那个准备一家潜逃结果儿子抛弃父母独自走掉的故事，大难面前，保存自身，这才是真正的现实吧。&lt;/p&gt;
+&lt;p&gt;其次，本书的高评价很多也来自那个神奇的，能够连接过去未来的杂货店信箱。我以为会是多么新颖的元素，结果看了简直无语，come on，这个设定在各类小说里已经屡见不鲜，而且部部都比这本强。这个梗也太老了好嘛，那些扯着这设定为本书唱赞歌的是多久没跟过流行了？&lt;/p&gt;
+&lt;p&gt;再次，严重影响阅读体验的还有本书的语言，大白话一般，同时还伴随着日系小说特有的云淡风轻式矫情文笔，不知是原书就如此，还是翻译问题。总而言之，这是一次严重跟风失败的阅读体验，还好我艰难的每天只看一百页，恶心了三天终于结束了。也庆幸这是从市图书馆借的，不是花钱买的，不然我一定会更加郁闷。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
+<title>旧时光</title>
+<link>https://thewanderingallison.github.io/posts/diary3/</link>
+<pubDate>Mon, 08 Jun 2020 18:40:17 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary3/</guid>
+<description>&lt;p&gt;&lt;em&gt;2020年六月的豆瓣日记，发出三个月后，豆瓣告诉我：抱歉，您的日记因为含有激进时政或意识形态方面的内容已转为仅自己可见。既然有了自己的博客，那就索性搬运过来。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;周末在家做家务，电脑随机播放，是李志的热河，live版。&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/cYAC5tlc6Wk&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;听着听着我又开始流泪，不知道为什么这首歌每次都特别触动我，可能是因为歌里都是普通人的生活吧。可惜现在国内也没有地方可以听李志，为此我卸载了一切音乐app，只在YouTube听歌。&lt;/p&gt;
+&lt;p&gt;这些年，查无此人的歌手越来越多。一开始只是部分作品，黄伟文、林夕、罗大佑，等等等等，总有那么一些歌国内平台无法找到。&lt;/p&gt;
+&lt;p&gt;后来发展为彻底抹杀艺人的存在，比如虽然我并不喜欢的何韵诗，比如曾经让我非常愤怒的全面下架陈升，再到让我彻底失望的、放弃一切国内音乐平台的封杀李志。&lt;/p&gt;
+&lt;p&gt;说回热河，歌词里有一句 “偶尔有干净的潘西路过”。我其实只曾经短暂路过南京，没有停留过，但我知道这句南京方言的意思。&lt;/p&gt;
+&lt;p&gt;曾经晋江上有位作者叫泡泡雪儿，作品基本都以南京军区大院为背景，潘西这个词出现过很多次。后来，某一年号称要严打、扫黄、清网，一夜之间，晋江上和军队、政治相关的小说被锁了个干净，现在她的专栏还是一片红通通的锁文，最后一次更新停留在2015年。&lt;/p&gt;
+&lt;p&gt;《甲方乙方》里有句台词，“1997年过去了，我很怀念它。”&lt;/p&gt;
+&lt;p&gt;我也很怀念过去，怀念我可以不搭梯子就用Google的时代，怀念晋江有脖子以下描写的时代，怀念“革命”、“1989”、领导人姓名不是敏感词的时代。&lt;/p&gt;
+&lt;p&gt;可惜，2020年的开局就像一场荒谬大戏，走向越来越让人目瞪口呆。难以想象，究竟是过去那短暂的、并不完全的自由滋味是稀有，还是当今才是常态？&lt;/p&gt;
+</description>
+</item>
+    
+  </channel>
+</rss>
