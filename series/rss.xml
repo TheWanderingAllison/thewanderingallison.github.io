@@ -12,6 +12,37 @@
     
     
     <item>
+<title>Microsoft Launcher使用初体验</title>
+<link>https://thewanderingallison.github.io/posts/toolbox5/</link>
+<pubDate>Thu, 09 Dec 2021 00:00:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox5/</guid>
+<description>&lt;p&gt;使用安卓手机这么多年，这是我第一次使用第三方launcher，值得记录一下。&lt;br&gt;
+手机：Google pixel 1
+系统：Android 10 &lt;br&gt;
+没错，我还在用着上古产品和上古系统，以下内容都只基于个人感受，不保证适用于所有机型。 &lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特色功能&#34;&gt;特色功能&lt;/h2&gt;
+&lt;p&gt;自带Bing壁纸，每天都可以看不同的图片，也可以直接点击图标快速更换。&lt;br&gt;&lt;br&gt;
+负一屏有两栏，一栏是推送的信息流，一栏是可以自定义的各种widget集成。只要是能够添加到桌面的wiget都可以添到这个colume里，非常方便。&lt;br&gt;
+原生的负一屏文章推送和chrome首页总是重叠，换了Microsoft Launcher之后，因为是基于两个不同生态的账号，就不会再有这个问题。&lt;br&gt;&lt;br&gt;
+还有一个特有widget是screen time，加到home page每次一眼就能看到使用时长。点亮屏幕看到用时过长偶尔我也会自觉放下手机。&lt;/p&gt;
+&lt;h2 id=&#34;高度自定义&#34;&gt;高度自定义&lt;/h2&gt;
+&lt;p&gt;Microsoft Launcher在各方面都给用户留下了高度自定义的空间。 &lt;br&gt;
+有比原生launcher更丰富的手势操作，提供launcher、app、shortcuts三种不同维度的快捷跳转。&lt;br&gt;
+Search bar不像Google牛皮癣一样横在首页无法去除，而是下拉才会出现，默认搜索引擎可以自由更换，非常良心了！我改成了duck duck go。  &lt;br&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202112091241620.png&#34; alt=&#34;&#34;&gt;
+&lt;br&gt;
+Dock栏的设定也非常多样，光是图标就可以丧心病狂多到12个， just like 👇。 &lt;br&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202112091238774.png&#34; alt=&#34;&#34;&gt; &lt;br&gt;
+当然实际上这么多并不实用，我会打开它的swipe up to expand dock功能，这样可以把像电话短信这类常用却又会不小心误碰的应用藏在第二排，保证它们始终在每个页面底部，可以快速打开同时又能误打电话的社死瞬间。 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202112091243513.png&#34; alt=&#34;&#34;&gt; &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;之前是听说可以用Microsoft Launcher来实现电脑和手机的剪贴板无缝对接，所以兴致勃勃下载试用。但实际上这项功能通过 &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.touchtype.swiftkey&#34;&gt;Microsoft SwiftKey Keyboard&lt;/a&gt;就能够达成。不过使用下来发现这个输入法不支持图片的复制粘贴，就还是转回Gboard了。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;另一个不足之处是在Microsoft Launcher中使用work profile没有快捷开关，必须进原生系统setting里才能关掉，而pixel launcher里关闭work profile非常方便。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;总结：值得一试，亮点不少，难得不臃肿的Microsoft应用。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>零难度一锅端无油鸡腿焖饭</title>
 <link>https://thewanderingallison.github.io/posts/cooking01/</link>
 <pubDate>Sun, 05 Dec 2021 00:15:37 +0000</pubDate>
