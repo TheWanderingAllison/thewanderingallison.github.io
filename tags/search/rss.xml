@@ -13,6 +13,32 @@
     
     
     <item>
+<title>Google Play Books 使用初体验</title>
+<link>https://thewanderingallison.github.io/posts/toolbox7/</link>
+<pubDate>Mon, 20 Jun 2022 00:04:34 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox7/</guid>
+<description>&lt;p&gt;不想继续用亚马逊的生态了，想换个同样能多设备同步阅读记录的阅读平台，搜了一圈发现 Google Play Books 可以满足这个需求，试用下来觉得蛮不错。&lt;/p&gt;
+&lt;h3 id=&#34;优点&#34;&gt;优点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;多平台同步，手机、平板、电脑都可阅读。&lt;/li&gt;
+&lt;li&gt;笔记自动保存且方便导出。&lt;/li&gt;
+&lt;li&gt;提供朗读功能（仅在 app 中支持），会高亮阅读段落，语音自然。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;不足&#34;&gt;不足&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;仅支持 epub 和 pdf 格式。&lt;/li&gt;
+&lt;li&gt;仅能在浏览器页面上传书籍。&lt;/li&gt;
+&lt;li&gt;个人上传文件上限为2000本，并且会占用 Google 账号的 15G 免费容量。&lt;/li&gt;
+&lt;li&gt;语音朗读仅对英文友好，中文非常不自然（还好我不太需要它读中文）。&lt;/li&gt;
+&lt;li&gt;阅读页面背景和字体选择有限。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Google Play Books 完美适配了我的需求：真正实现了多平台无缝阅读。Kindle 也有 PC 端和网页版，但仅支持阅读在亚马逊购买的书籍，对于我这种有大量本地书籍的用户相当于只能在移动端使用。之前我甚至装了 Windows Subsystem for Android ，再在 WSA 里安装 Kindle Android ，用如此迂回的方式来实现电脑端同步阅读。而现在我只需在浏览器打开 Google Play Books 页面。笔记和标注以 Google Docs 格式实时保存在Google Drive，可随时阅读和导出，比从前还得把 Kindle 连接电脑用第三方软件获取笔记实在是方便太多了！&lt;/p&gt;
+&lt;p&gt;Ps，其实微信读书也能上传书籍（epub格式）并支持在网页端同步阅读，但我当然不会选它啦！&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>无油清爽酸奶戚风</title>
 <link>https://thewanderingallison.github.io/posts/cooking02/</link>
 <pubDate>Fri, 17 Jun 2022 23:19:26 +0100</pubDate>
@@ -30,11 +56,11 @@
 &lt;/ul&gt;
 &lt;h3 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;分离蛋黄蛋清。蛋白加入无水无油的打蛋盆内，蛋黄加入另一干净碗内。&lt;/li&gt;
-&lt;li&gt;将打蛋盆放入冷冻室（时间不要太久，十分钟足以，这期间来处理蛋黄和其他材料）。&lt;/li&gt;
+&lt;li&gt;分离蛋黄蛋白。蛋白加入无水无油的打蛋盆内，蛋黄加入另一干净碗内。&lt;/li&gt;
+&lt;li&gt;将打蛋盆放入冷冻室（时间不要太久，十分钟足矣，这期间来处理蛋黄和其他材料）。&lt;/li&gt;
 &lt;li&gt;蛋黄碗内加入酸奶，盐，搅拌均匀（我喜欢再加 10g 浓缩柠檬汁，戚风会更清爽，不加也没关系）。筛入低筋粉，刮刀翻拌均匀。想要蛋黄糊更细腻可以再整体过筛一遍（我是个懒人从来不筛）。&lt;/li&gt;
 &lt;li&gt;烤箱预热 180℃ 。&lt;/li&gt;
-&lt;li&gt;取出蛋白盆，加入砂糖和柠檬汁（或白醋），打蛋器高速打发至蛋白糊蓬松，调整一下角度保证各个角落都有处理到，继续打发至可以用打蛋器拉出直立尖角。&lt;/li&gt;
+&lt;li&gt;取出蛋白盆，加入砂糖和几滴柠檬汁（或白醋），打蛋器贴盆高速打发，调整角度保证各个角落都有处理到，直到蛋白可以用打蛋器拉出直立尖角，这时倒扣打蛋盆蛋白也不会流动。&lt;/li&gt;
 &lt;li&gt;用刮刀取 1/3 蛋白糊到蛋黄糊碗中，拌匀。再将混合物倒回打蛋盆内搅拌均匀，依然是翻拌和切拌手法，不要划圈搅拌。&lt;/li&gt;
 &lt;li&gt;将面糊倒入模具，轻轻震几下消去气泡后送入烤箱。&lt;/li&gt;
 &lt;li&gt;六寸或四寸模具 180℃ 30~35 分钟，纸杯 170℃ 30~35分钟。&lt;/li&gt;
