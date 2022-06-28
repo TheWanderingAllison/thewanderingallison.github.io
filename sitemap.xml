@@ -1,340 +1,204 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://thewanderingallison.github.io/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/cooking/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/cooking/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/food/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/food_diary_002/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/</loc>
     <lastmod>2022-06-20T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/google/</loc>
     <lastmod>2022-06-20T00:04:34+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox7/</loc>
     <lastmod>2022-06-20T00:04:34+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/reading/</loc>
     <lastmod>2022-06-20T00:04:34+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
     <lastmod>2022-06-20T00:04:34+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
     <lastmod>2022-06-20T00:04:34+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/cooking02/</loc>
     <lastmod>2022-06-17T23:19:26+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20220228/</loc>
     <lastmod>2022-06-14T22:30:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/monthly/</loc>
     <lastmod>2022-06-14T22:30:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/reading/</loc>
     <lastmod>2022-06-14T22:30:19+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/diary/</loc>
     <lastmod>2022-06-11T01:00:28+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/life/</loc>
     <lastmod>2022-06-11T01:00:28+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary_20220611/</loc>
     <lastmod>2022-06-11T01:00:28+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/food_diary_001/</loc>
     <lastmod>2022-06-10T13:55:52+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20211231/</loc>
     <lastmod>2022-05-02T22:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/microsoft/</loc>
     <lastmod>2022-01-18T01:15:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox6/</loc>
     <lastmod>2022-01-18T01:15:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/windows/</loc>
     <lastmod>2022-01-18T01:15:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox5/</loc>
     <lastmod>2021-12-09T00:00:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/cooking01/</loc>
     <lastmod>2021-12-05T00:15:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/wordcounting/</loc>
     <lastmod>2021-12-03T01:15:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox4/</loc>
     <lastmod>2021-12-03T01:15:37+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210831/</loc>
     <lastmod>2021-11-01T00:23:59-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/book/</loc>
     <lastmod>2021-11-01T00:23:59-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox3/</loc>
     <lastmod>2021-08-20T17:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/download/</loc>
     <lastmod>2021-08-20T17:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary5/</loc>
     <lastmod>2021-08-20T00:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/nobuy/</loc>
     <lastmod>2021-07-16T20:11:24+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary4/</loc>
     <lastmod>2021-07-16T20:11:24+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/search/</loc>
     <lastmod>2021-07-14T19:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox2/</loc>
     <lastmod>2021-07-14T19:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210630/</loc>
     <lastmod>2021-07-12T17:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox1/</loc>
     <lastmod>2021-06-26T17:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210430/</loc>
     <lastmod>2021-06-24T17:48:44-01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/poetry/</loc>
     <lastmod>2021-06-17T17:31:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book7/</loc>
     <lastmod>2021-06-17T17:31:12+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210228/</loc>
     <lastmod>2021-03-13T17:41:10+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/podcast/</loc>
     <lastmod>2021-02-08T18:42:08+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/2020podcast/</loc>
     <lastmod>2021-02-08T18:42:08+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210131/</loc>
     <lastmod>2021-02-06T19:41:53+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book6/</loc>
     <lastmod>2021-01-29T20:23:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary2/</loc>
     <lastmod>2021-01-24T20:11:24+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210101/</loc>
     <lastmod>2021-01-01T22:15:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/moive/</loc>
     <lastmod>2021-01-01T22:15:37+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/friends/</loc>
     <lastmod>2020-12-24T01:17:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/japan/</loc>
     <lastmod>2020-12-23T23:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book5/</loc>
     <lastmod>2020-12-23T23:23:04+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book4/</loc>
     <lastmod>2020-12-20T14:43:00+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/tags/sci-fi/</loc>
     <lastmod>2020-12-07T12:55:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book3/</loc>
     <lastmod>2020-12-07T12:55:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary1/</loc>
     <lastmod>2020-12-05T19:28:57+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/about/</loc>
     <lastmod>2020-12-05T01:17:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/archives/</loc>
     <lastmod>2020-12-05T01:17:21+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book2/</loc>
     <lastmod>2020-12-04T23:55:39+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/book1/</loc>
     <lastmod>2020-12-04T13:44:28+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/diary3/</loc>
     <lastmod>2020-06-08T18:40:17+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/g-edy88xrqs6/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/series/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/the-wandering-allison/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/true/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://thewanderingallison.github.io/vs/</loc>
   </url>
-  
 </urlset>
