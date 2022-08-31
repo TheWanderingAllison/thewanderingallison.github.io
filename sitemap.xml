@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://thewanderingallison.github.io/friends/</loc>
+    <lastmod>2022-08-24T01:17:21+00:00</lastmod>
+  </url><url>
     <loc>https://thewanderingallison.github.io/</loc>
     <lastmod>2022-08-07T19:12:00+02:00</lastmod>
   </url><url>
@@ -212,7 +215,5 @@
     <loc>https://thewanderingallison.github.io/true/</loc>
   </url><url>
     <loc>https://thewanderingallison.github.io/vs/</loc>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/friends/</loc>
   </url>
 </urlset>
