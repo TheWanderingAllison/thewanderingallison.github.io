@@ -7,10 +7,40 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Wed, 31 Aug 2022 22:00:01 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 31 Oct 2022 00:48:44 -0100</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/diary/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>现有数码产品</title>
+<link>https://thewanderingallison.github.io/posts/diary5/</link>
+<pubDate>Mon, 31 Oct 2022 00:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/diary5/</guid>
+<description>&lt;p&gt;2022.10 update
+好多东西都有变更但忘了写，延后许久来update一下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;手机&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Google pixel 1&lt;/del&gt;  已淘汰，现在只作为薅Google photos 无限原片上传的工具使用。
+Google pixel 3  2022.10 摔碎了屏幕，还能凑合用，可能很快得淘汰了。
+Nokia 5    备用机&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;平板&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Google Nexus 7 Ⅱ&lt;/del&gt;  2021.08报废&lt;br&gt;
+Google Pixel Slate  为了体验Chrome OS入的，太多坑了，怀疑这是我最后一次为Google信仰充值。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;电脑&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dell inspiron 7380 13.3&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;显示器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;AOC Q27PIU&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;电子阅读器&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Kindle 4 grey&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Kinde 7 white&lt;/del&gt;  2020.08转卖&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;移动硬盘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Sandisk E60 500G&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;蓝牙耳机&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Smartisan   便宜凑合用，现已退居二线做平板的耳机。
+Mpow&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>Food Diary 009</title>
@@ -795,31 +825,6 @@ pause &amp;gt; nul
 &lt;h2 id=&#34;可视化网页aria2-ng&#34;&gt;可视化网页Aria2 Ng&lt;/h2&gt;
 &lt;p&gt;Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34;&gt;Aria2 NG&lt;/a&gt;下载最新版本，解压之后把index.html文件复制粘贴到第一步里的aria2文件夹。&lt;/p&gt;
 &lt;p&gt;运行上一步创建的Start.vbs文件，再打开index文件，就能够在浏览器里看到Aria2 Ng操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。&lt;/p&gt;
-</description>
-</item>
-    
-    <item>
-<title>现有数码产品</title>
-<link>https://thewanderingallison.github.io/posts/diary5/</link>
-<pubDate>Fri, 20 Aug 2021 00:48:44 -0100</pubDate>
-      
-      <guid>https://thewanderingallison.github.io/posts/diary5/</guid>
-<description>&lt;p&gt;&lt;strong&gt;手机&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Google pixel 1&lt;/p&gt;
-&lt;p&gt;Nokia 5&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;平板&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;Google Nexus 7 Ⅱ&lt;/del&gt;  2021.08报废&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;电脑&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Dell inspiron 7380 13.3&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;显示器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;AOC Q27PIU&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;电子阅读器&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Kindle 4 grey&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;Kinde 7 white&lt;/del&gt;  2020.08转卖&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;移动硬盘&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Sandisk E60 500G&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;蓝牙耳机&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Smartisan&lt;/p&gt;
 </description>
 </item>
     

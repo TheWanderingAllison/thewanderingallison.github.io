@@ -52,7 +52,7 @@
     <meta name="twitter:description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
   
 
-  <meta property="og:updated_time" content=2022-10-24T19:09:03Z />
+  <meta property="og:updated_time" content=2022-10-31T00:48:44-0100 />
 
   
 
@@ -174,6 +174,23 @@
   
   
     <article class="article border-b border-gray-400">
+      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/toolbox5/">Microsoft Launcher使用初体验</a></h1>
+
+      img{text-align: center; margin: 0 auto;}  使用安卓手机这么多年，这是我第一次使用第三方launcher，值得记录一下。
+手机：Google pixel 1
+系统：Android 10 没错，我还在用着上古产品和上古系统，以下内容都只基于个人感受，不保证适用于所有机型。 特色功能 自带Bing壁纸，每天都可以看不同的图片，也可以直接点击图标快速更换。
+负一屏有两栏，一栏是推送的信息流，一栏是可以自定义的各种widget集成。只要是能够添加到桌面的wiget都可以添到这里，非常方便。
+原生的负一屏文章推送和chrome首页总是重叠，换了Microsoft Launcher之后，因为是基于两个不同生态的账号，就不会再有这个问题。
+还有一个特有widget是screen time，加到home page每次一眼就能看到使用时长。点亮屏幕看到用时过长偶尔我也会自觉放下手机。
+高度自定义的各类设定 Microsoft Launcher在各方面都给用户留下了高度自定义的空间。
+有比原生launcher更丰富的手势操作，提供launcher、app、shortcuts三种不同维度的快捷跳转。
+Search bar不像Google牛皮癣一样横在首页无法去除，而是下拉才会出现，默认搜索引擎可以自由更换，非常良心了！我改成了duck duck go。
+Dock栏的设定也非常多样，光是图标就可以丧心病狂多到12个， just like 👇。 当然实际上这么多并不实用，我会打开它的swipe up to expand dock功能，这样可以把像电话短信这类常用却又会不小心误碰的应用藏在第二排，保证它们始终在每个页面底部，可以快速打开，同时又能避免误触导致的误打电话社死瞬间。 之前是听说可以用Microsoft Launcher来实现电脑和手机的剪贴板无缝对接，所以兴致勃勃下载试用。但实际上这项功能通过 Microsoft SwiftKey Keyboard就能够达成。不过使用下来发现这个输入法不支持图片的复制粘贴，就还是转回Gboard了。
+另一个不足之处是在Microsoft Launcher中使用work profile没有快捷开关，必须进原生系统setting里才能关掉，而pixel launcher里关闭work profile非常方便。
+总结：值得一试，亮点不少，难得不臃肿的Microsoft应用。
+    </article>
+  
+    <article class="article border-b border-gray-400">
       <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/cooking001/">零难度一锅端无油鸡腿焖饭</a></h1>
 
       原方来自下厨房 。
@@ -240,27 +257,6 @@
 重点注意：dir=D:\download、input-file=D:\aria2\aria2.session、save-session=D:\aria2\aria2.session、log=D:\aria2\aria2.log 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是aria2.log文件所在的位置。
 最末尾的bt-tracker=，在GitHub - ngosang/trackerslist 获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。
 ## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ## ## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释 ## ## 文件保存相关 ## # 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置 dir=D:\Movies # 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M disk-cache=32M # 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc # 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc # falloc和trunc则需要文件系统和内核支持 # NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项 file-allocation=falloc # 断点续传 continue=true ## 下载连接相关 ## # 最大同时下载任务数, 运行时可修改, 默认:5 max-concurrent-downloads=1 # 同一服务器连接数, 添加时可指定, 默认:1 max-connection-per-server=5 # 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M # 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载 min-split-size=10M # 单个任务最大线程数, 添加时可指定, 默认:5 split=5 # 整体下载速度限制, 运行时可修改, 默认:0 max-overall-download-limit=0 # 单个任务下载速度限制, 默认:0 max-download-limit=0 # 整体上传速度限制, 运行时可修改, 默认:0 #max-overall-upload-limit=0 # 单个任务上传速度限制, 默认:0 max-upload-limit=0 # 禁用IPv6, 默认:false disable-ipv6=true ## 进度保存相关 ## # 从会话文件中读取下载任务 input-file=D:\Movies\aria2.
-    </article>
-  
-    <article class="article border-b border-gray-400">
-      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/diary5/">现有数码产品</a></h1>
-
-      手机
-Google pixel 1
-Nokia 5
-平板
-Google Nexus 7 Ⅱ 2021.08报废
-电脑
-Dell inspiron 7380 13.3
-显示器
-AOC Q27PIU
-电子阅读器
-Kindle 4 grey
-Kinde 7 white 2020.08转卖
-移动硬盘
-Sandisk E60 500G
-蓝牙耳机
-Smartisan
     </article>
   
     <article class="article border-b border-gray-400">
