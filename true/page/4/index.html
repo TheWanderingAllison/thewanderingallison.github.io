@@ -174,6 +174,19 @@
   
   
     <article class="article border-b border-gray-400">
+      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/toolbox3/">Aria2 配置过程</a></h1>
+
+      用Geek清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。
+下载 Aria2 从官网 下载Aria2。
+解压之后得到一个Aria2文件夹，在该文件夹内新建aria2.conf、aria2.session、aria2.log 三个空文件。
+将aria2.session 文件移动到下载文件夹中（举例 D:\download）。
+配置 aria2.conf 文件 打开aria2.conf文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。
+重点注意：dir=D:\download、input-file=D:\aria2\aria2.session、save-session=D:\aria2\aria2.session、log=D:\aria2\aria2.log 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是aria2.log文件所在的位置。
+最末尾的bt-tracker=，在GitHub - ngosang/trackerslist 获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。
+## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ## ## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释 ## ## 文件保存相关 ## # 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置 dir=D:\Movies # 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M disk-cache=32M # 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc # 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc # falloc和trunc则需要文件系统和内核支持 # NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项 file-allocation=falloc # 断点续传 continue=true ## 下载连接相关 ## # 最大同时下载任务数, 运行时可修改, 默认:5 max-concurrent-downloads=1 # 同一服务器连接数, 添加时可指定, 默认:1 max-connection-per-server=5 # 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M # 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载 min-split-size=10M # 单个任务最大线程数, 添加时可指定, 默认:5 split=5 # 整体下载速度限制, 运行时可修改, 默认:0 max-overall-download-limit=0 # 单个任务下载速度限制, 默认:0 max-download-limit=0 # 整体上传速度限制, 运行时可修改, 默认:0 #max-overall-upload-limit=0 # 单个任务上传速度限制, 默认:0 max-upload-limit=0 # 禁用IPv6, 默认:false disable-ipv6=true ## 进度保存相关 ## # 从会话文件中读取下载任务 input-file=D:\Movies\aria2.
+    </article>
+  
+    <article class="article border-b border-gray-400">
       <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/diary4/">NoBuy 计划 2.0</a></h1>
 
       之前列出了十类不再购买的商品，现在2021已经过半，来回顾一下计划执行情况，以及总结新的 NoBuy 类别。
@@ -413,20 +426,6 @@ Steve说
   离恨恰如青草，更远更行还生。
   林花谢了春红，太匆匆，无奈朝来寒雨晚来风。 胭脂泪，相留醉，几时重？自是人生长恨水长东。
  ​
-    </article>
-  
-    <article class="article border-b border-gray-400">
-      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/book6/">何为自苦，使我心悲</a></h1>
-
-      img{text-align: center; margin: 0 auto;}  曹操、曹丕、曹植父子三人，可谓是一门三文豪的代表了吧，后世能在声名上与之匹敌的，估计也就是苏洵一家子了。父子三人，多数人最熟悉的当是曹丞相，而曹丕曹植兄弟俩流传最广的是七步诗的故事。我曾在很久前读到曹丕的一首燕歌行，非常意外的推翻了对他的既定印象，到现在都能背出来。
- 秋风萧瑟天气凉， 草木摇落露为霜。 群燕辞归雁南翔。 念君客游思断肠， 谦谦思归恋故乡， 君何淹留寄他方？ 贱妾茕茕守空房， 忧来思君不敢忘， 不觉泪下沾衣裳。 援琴鸣弦发清商， 短歌微吟不能长。 明月皎皎照我床， 星汉西流夜未央。 牵牛织女遥相望， 尔独何辜限河梁？
- 买这本《三曹诗选》，我的目的就是为了读曹丕。但其实整本诗集的遴选、题解、注释都做得很好，值得一读。
-说来有趣，曹丕才是父子三人里唯一当了皇帝的那个，可是不同于曹操的慷慨激昂，也不同于曹植的华美飞扬，他的文笔竟是意外的清丽婉约，尤其可见汉乐府民歌的影子。我很喜欢主题是劝君行乐的句子，可能是因为人生太短，悲观的同时忍不住就要告诉自己“昼短夜长，需秉烛夜游”，也算是一种悲观的乐观主义了。
-很好奇，当了皇帝的人，为什么总是有种别样的丧气，他写给朋友的信里，居然还直截了当的说，人百年之后，不过粪土耳，也是格外直白。对人生天地的悲观，让他有好多这样的句子，略摘几句。
- 人生如寄，多忧何为？今我不乐，岁月如驰。
-  人亦有言，忧令人老。嗟我白发，生一何蚤。
-  今日乐，不可忘。乐未央，为乐苦常迟，岁月逝，忽若飞。何为自苦，使我心悲。
- 快乐的人是不需要提醒自己要行乐的，只有常怀忧愁的人才会对欢乐念念不忘。
     </article>
   
 
