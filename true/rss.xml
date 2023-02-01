@@ -12,7 +12,7 @@
     
     
     <item>
-<title>Google play books再体验</title>
+<title>Google play books 再体验</title>
 <link>https://thewanderingallison.github.io/posts/toolbox8/</link>
 <pubDate>Wed, 01 Feb 2023 20:53:55 +0900</pubDate>
       
@@ -49,7 +49,7 @@ img{text-align: center; margin: 0 auto;}
 &lt;p&gt;想过可能的方案，一种是利用 Google docs 的markdown api 接口批量转成 md 格式。另一种是用 python 脚本处理电脑上的 drive notes 文件夹，再转成 md 格式同步到我的 obsdian 对应文件夹里。只是我这三脚猫 coding 水平目前还力有未逮，留待以后再说吧。&lt;/p&gt;
 &lt;p&gt;另外也有付费选项：readwise 软件支持同步多个阅读 app 的笔记，包括 kindle，google play books 等等。但我暂时还不想为此花钱。&lt;/p&gt;
 &lt;h3 id=&#34;其他功能&#34;&gt;其他功能&lt;/h3&gt;
-&lt;p&gt;在 App 中可以开启朗读功能，英文语音非常自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反应说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！&lt;/p&gt;
+&lt;p&gt;在 App 中可以开启朗读功能，英文语音非常自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反映说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！&lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;结语&lt;/h3&gt;
 &lt;p&gt;可以看到作为阅读软件， Google play books 并不是市面上最优秀的那个，但它的核心竞争力在于，完全实现了所有平台同步，甚至很多功能对于网页更为友好！这让 PC 爱好者如我简直感激涕零。我厌烦透了所有操作都得在手机上进行。&lt;/p&gt;
 </description>
