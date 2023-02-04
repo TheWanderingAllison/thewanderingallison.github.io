@@ -1,15 +1,15 @@
 <rss version="2.0"
     xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Cooking on The Wandering Allison</title>
-        <link>https://thewanderingallison.github.io/categories/cooking/</link>
-        <description>Recent content in Cooking on The Wandering Allison</description>
+        <title>Articles on The Wandering Allison</title>
+        <link>https://thewanderingallison.github.io/tags/articles/</link>
+        <description>Recent content in Articles on The Wandering Allison</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Thu, 02 Feb 2023 20:32:48 +0300</lastBuildDate>
+        <lastBuildDate>Fri, 03 Feb 2023 20:00:25 +0400</lastBuildDate>
     
-        <atom:link href="https://thewanderingallison.github.io/categories/cooking/rss.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://thewanderingallison.github.io/tags/articles/rss.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
