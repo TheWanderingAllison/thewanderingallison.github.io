@@ -104,7 +104,7 @@ img{text-align: center; margin: 0 auto;}
 &lt;p&gt;支持书籍导出，仅可在浏览器中进行，不可批量操作。但有个迷惑之处是偶尔会碰到原格式是 epub 却只能导出为 pdf ，目前还没找到原因。&lt;/p&gt;
 &lt;p&gt;无法编辑书籍信息。它是通过读取 epub 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 calibre 改掉内部信息才能保证在 Play Books 里显示正确。&lt;/p&gt;
 &lt;p&gt;有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。&lt;/p&gt;
-&lt;p&gt;我常用的下载平台是 zlib ，本地电脑也安装了 Google Drive，因此通常是 z libaray - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
+&lt;p&gt;我常用的下载平台是 zlib ，本地电脑也安装了 Google Drive，因此通常是 zlib - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
 &lt;p&gt;bonus：&lt;/p&gt;
 &lt;p&gt;目前 Play Books 中的书籍不会占用 google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。&lt;/p&gt;
 &lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
