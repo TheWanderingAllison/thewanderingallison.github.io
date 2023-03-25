@@ -12,6 +12,44 @@
     
     
     <item>
+<title>一个非技术流的blog建站流程</title>
+<link>https://thewanderingallison.github.io/posts/blog_setting/</link>
+<pubDate>Fri, 24 Mar 2023 21:37:34 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting/</guid>
+<description>&lt;p&gt;我终于也迎来了这一天：甭管正经博文更新了几篇，总要写篇建站日记。&lt;/p&gt;
+&lt;p&gt;网上有太多教程，而我也并没有掌握任何 coding 技能，所以只是梳理一遍流程方便后续据此查找，本篇不会涉及更细节的步骤。&lt;/p&gt;
+&lt;p&gt;多啰嗦几句为什么我会选择 Hugo + GitHub pages 的搭配。我的需求非常简单：有 rss，不要复杂装饰，不要花哨框架，不要冗余安装。有些高度自定义需要太多设置的会在第一时间劝退我（是的我就是在吐槽 notion）。而使用 GitHub pages 无需自己购买域名，对我也是极大利好。&lt;/p&gt;
+&lt;p&gt;好了不多废话，进入极简流程。&lt;/p&gt;
+&lt;h2 id=&#34;设置流程&#34;&gt;设置流程&lt;/h2&gt;
+&lt;h4 id=&#34;安装并创建hugo站点&#34;&gt;安装并创建Hugo站点&lt;/h4&gt;
+&lt;p&gt;参考 &lt;a href=&#34;https://gohugo.io/installation/&#34;&gt;官方文档&lt;/a&gt; 。&lt;/p&gt;
+&lt;h4 id=&#34;配置主题&#34;&gt;配置主题&lt;/h4&gt;
+&lt;p&gt;浏览 &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;主题列表&lt;/a&gt; 选定主题，阅读对应文档安装并进行个人化更改。&lt;/p&gt;
+&lt;h4 id=&#34;关联hugo-public-文件夹&#34;&gt;关联Hugo public 文件夹&lt;/h4&gt;
+&lt;p&gt;创建 Hugo 站点后会自动生成 public 文件夹，将此文件夹初始化为 git 仓库并关联至个人的 &lt;code&gt;username.github.io&lt;/code&gt; 仓库。&lt;/p&gt;
+&lt;h4 id=&#34;关联-hugo-文件夹&#34;&gt;关联 Hugo 文件夹&lt;/h4&gt;
+&lt;p&gt;将本地电脑上的 Hugo 文件夹 git push 到另一 GitHub 仓库，并在此仓库内配置 GitHub action，网上有很多现成文件可抄。目的是一旦发生 push 会自动部署到上一步的 &lt;code&gt;username.github.io&lt;/code&gt; 仓库。另外我还设置了每天一次的定时更新，是为了兼顾我的豆瓣标记同步，下文会详说。&lt;/p&gt;
+&lt;h4 id=&#34;增加其他功能&#34;&gt;增加其他功能&lt;/h4&gt;
+&lt;p&gt;设置评论区、增加 google analytics 统计。&lt;/p&gt;
+&lt;h4 id=&#34;设置豆瓣标记同步&#34;&gt;设置豆瓣标记同步&lt;/h4&gt;
+&lt;p&gt;教程 &lt;a href=&#34;https://imnerd.org/doumark.html&#34;&gt;豆瓣书影音同步 GitHub Action | 怡红院落 (imnerd.org)&lt;/a&gt; ，&lt;a href=&#34;https://immmmm.com/doumark-action/&#34;&gt;「电影 / 阅读」页面，顶！ :: 木木木木木 (immmmm.com)&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;设置完成后会每天抓取豆瓣的读过/看过/听过并同步到个人书影音墙。实现成果可参考 &lt;a href=&#34;https://thewanderingallison.github.io/books/&#34;&gt;我的阅读页面&lt;/a&gt; 。&lt;/p&gt;
+&lt;h2 id=&#34;后续维护&#34;&gt;后续维护&lt;/h2&gt;
+&lt;p&gt;每次进电脑里的 Hugo 文件夹用 &lt;code&gt;hugo new post&lt;/code&gt; 来写新博文显然不现实，而我的本地文档都在另一 obsidian 文件夹内进行管理。因此基于此的流程如下。&lt;/p&gt;
+&lt;h4 id=&#34;本地电脑文档同步&#34;&gt;本地电脑文档同步&lt;/h4&gt;
+&lt;p&gt;安装 FreeFileSync 软件，将 obsidan 里的 blog-posts 文件夹和 hugo 里的 content 文件夹设为 &lt;strong&gt;更新同步&lt;/strong&gt; ，并设置每日的自动更新时间。具体教程和解释可参考少数派这篇文章：&lt;a href=&#34;https://sspai.com/post/68473&#34;&gt;App+1 | 跨平台、免费的文件同步工具：FreeFileSync - 少数派 (sspai.com)&lt;/a&gt;  。&lt;/p&gt;
+&lt;p&gt;这样做的好处是可以集中管理电脑里的所有文档，在 obsidian 里写 md 文档显然更方便。写完之后无需手动转移文章对应文件到 Hugo 文件夹，而是由 FreeFileSync 完成同步。&lt;/p&gt;
+&lt;h4 id=&#34;推送更新&#34;&gt;推送更新&lt;/h4&gt;
+&lt;p&gt;提前在 VS Code 软件里登录 github 账号并关联 Hugo 仓库。&lt;/p&gt;
+&lt;p&gt;打开 VS Code 检查对应文档后 commit 并 sync 更新。没有设置自动脚本是为了多增加一次校对步骤（本人的错别字实在是太多了）！&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;blog 的图床我也是用的 GitHub，可下载 PicGo 软件进行设置，还可在 obsidian 中安装插件实现自动上传。&lt;/p&gt;
+&lt;p&gt;有很多细节没有详述，发现写一篇清晰易懂的教程着实是个大工程，而我既然不是专业人士也就不班门弄斧了。仅为日后自己参考使用。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>2023一二月读书记录</title>
 <link>https://thewanderingallison.github.io/posts/20230228/</link>
 <pubDate>Sun, 19 Mar 2023 00:27:43 +0000</pubDate>
