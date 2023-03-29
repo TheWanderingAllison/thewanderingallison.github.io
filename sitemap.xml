@@ -3,24 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thewanderingallison.github.io/</loc>
-    <lastmod>2023-03-24T21:37:34+00:00</lastmod>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
   </url><url>
-    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
-    <lastmod>2023-03-24T21:37:34+00:00</lastmod>
+    <loc>https://thewanderingallison.github.io/tags/book/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/categories/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/reading/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/categories/reading/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/abandoned_books_01/</loc>
+    <lastmod>2023-03-28T22:12:41+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
     <lastmod>2023-03-24T21:37:34+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/github/</loc>
     <lastmod>2023-03-24T21:37:34+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/hugo/</loc>
-    <lastmod>2023-03-24T21:37:34+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/posts/</loc>
-    <lastmod>2023-03-24T21:37:34+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/</loc>
     <lastmod>2023-03-24T21:37:34+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
@@ -33,12 +45,6 @@
     <lastmod>2023-03-19T00:27:43+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/monthly/</loc>
-    <lastmod>2023-03-19T00:27:43+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/reading/</loc>
-    <lastmod>2023-03-19T00:27:43+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/categories/reading/</loc>
     <lastmod>2023-03-19T00:27:43+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/20221231/</loc>
@@ -201,9 +207,6 @@
     <lastmod>2021-12-03T01:15:37+01:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/20210831/</loc>
-    <lastmod>2021-11-01T00:23:59-01:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/book/</loc>
     <lastmod>2021-11-01T00:23:59-01:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox3/</loc>
