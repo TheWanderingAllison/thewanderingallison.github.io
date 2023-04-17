@@ -303,8 +303,8 @@ Android / ChromeOS / Chrome on Windows。&lt;/p&gt;
 &lt;p&gt;上传方式：&lt;br&gt;
 在浏览器中打开 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 epub 文件用 App 打开，会自动上传至云端。&lt;/p&gt;
 &lt;p&gt;支持书籍导出，仅可在浏览器中进行，不可批量操作。&lt;/p&gt;
-&lt;p&gt;&lt;del&gt;但有个迷惑之处是偶尔会碰到原格式是 epub 却只能导出为 pdf ，目前还没找到原因。&lt;/del&gt;
-2023.04.16 update:
+&lt;p&gt;&lt;del&gt;但有个迷惑之处是偶尔会碰到原格式是 epub 却只能导出为 pdf ，目前还没找到原因。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;2023.04.16 update : &lt;br&gt;
 偶然看到帖子说这只是 google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。&lt;/p&gt;
 &lt;p&gt;无法编辑书籍信息。它是通过读取 epub 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 calibre 改掉内部信息才能保证在 Play Books 里显示正确。&lt;/p&gt;
 &lt;p&gt;有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。但在 App 里一次只能将一本书加入一个书架，网页版可以同时选择多个。&lt;/p&gt;
@@ -328,7 +328,7 @@ Android / ChromeOS / Chrome on Windows。&lt;/p&gt;
 &lt;p&gt;另外也有付费选项：readwise 软件似乎是支持多个阅读 App 笔记同步的，包括 kindle，Google Play Books 等等。但我暂时还不想为此花钱。&lt;/p&gt;
 &lt;h3 id=&#34;其他功能&#34;&gt;其他功能&lt;/h3&gt;
 &lt;p&gt;在 App 中可以开启朗读功能，英文语音非常自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反映说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！
-而网页版虽不支持但可以在 edge 里用 read aloud 功能曲线救国。&lt;/p&gt;
+而网页版虽不支持朗读但可以在 edge 里用 read aloud 功能曲线救国。&lt;/p&gt;
 &lt;p&gt;另外就是 google 全系产品的特色：可以无痛切换多个账号，因此如果想区分阅读状态的话也可以非常方便地用不同账号来进行。&lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;结语&lt;/h3&gt;
 &lt;p&gt;可以看到作为阅读软件， Google Play Books 并不是市面上最优秀的那个，但它的核心竞争力在于，完全实现了所有平台同步，甚至很多功能对于网页更为友好！这让 PC 爱好者如我简直感激涕零。我厌烦透了所有操作都得在手机上进行。&lt;/p&gt;
