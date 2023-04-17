@@ -292,15 +292,14 @@ img{text-align: center; margin: 0 auto;}
 <pubDate>Wed, 01 Feb 2023 20:53:55 +0900</pubDate>
       
       <guid>https://thewanderingallison.github.io/posts/toolbox8/</guid>
-<description>&lt;style type=&#34;text/css&#34;&gt;
-img{text-align: center; margin: 0 auto;}
-&lt;/style&gt;
-&lt;p&gt;Google Play Books 作为我的主力阅读工具已经超过半年，觉得有必要更新一下使用体验。&lt;/p&gt;
-&lt;p&gt;使用方式：仅上传自有书籍。（不过在 Play Books 内也是可以购买电子书和 audiobook 的。）&lt;/p&gt;
-&lt;p&gt;使用平台：Android / ChromeOS / Chrome on Windows。&lt;/p&gt;
+<description>&lt;p&gt;Google Play Books 作为我的主力阅读工具已经超过半年，觉得有必要更新一下使用体验。&lt;/p&gt;
+&lt;p&gt;使用方式： &lt;br&gt;
+仅上传自有书籍（不过在 Play Books 内也是可以购买电子书和 audiobook 的）。&lt;/p&gt;
+&lt;p&gt;使用平台：&lt;br&gt;
+Android / ChromeOS / Chrome on Windows。&lt;/p&gt;
 &lt;h3 id=&#34;书籍上传存储管理&#34;&gt;书籍上传/存储/管理&lt;/h3&gt;
 &lt;p&gt;支持格式为 epub 和 pdf 。上传文件大小限制为 100 MB。据说上传上限为 2000 本（未验证）。偶尔会有一些 epub 文件显示处理失败，用 calibre 转换一遍再上传就好。据说可能是从 Apple books 里导出的，这种文件传到 kindle 也会有乱码。不知真假但本果黑就当它是真的并且喜闻乐见地表示苹果辣鸡！&lt;/p&gt;
-&lt;p&gt;上传方式：
+&lt;p&gt;上传方式：&lt;br&gt;
 在浏览器中打开 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 epub 文件用 App 打开，会自动上传至云端。&lt;/p&gt;
 &lt;p&gt;支持书籍导出，仅可在浏览器中进行，不可批量操作。&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;但有个迷惑之处是偶尔会碰到原格式是 epub 却只能导出为 pdf ，目前还没找到原因。&lt;/del&gt;
@@ -309,8 +308,8 @@ img{text-align: center; margin: 0 auto;}
 &lt;p&gt;无法编辑书籍信息。它是通过读取 epub 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 calibre 改掉内部信息才能保证在 Play Books 里显示正确。&lt;/p&gt;
 &lt;p&gt;有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。但在 App 里一次只能将一本书加入一个书架，网页版可以同时选择多个。&lt;/p&gt;
 &lt;p&gt;我常用的下载平台是 zlib ，本地电脑也安装了 Google Drive，因此通常是 zlib - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
-&lt;p&gt;bonus：&lt;/p&gt;
-&lt;p&gt;目前 Play Books 中的书籍不会占用 google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。&lt;/p&gt;
+&lt;p&gt;bonus： &lt;br&gt;
+目前 Play Books 中的书籍不会占用 google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。&lt;/p&gt;
 &lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
 &lt;p&gt;最重要的就是所有平台阅读进度都能够同步，注意，我说的不仅仅是各移动设备，还包括了 web 浏览器。只要拥有一个 google 账号就可以！&lt;/p&gt;
 &lt;p&gt;常用功能都有，书签、多颜色标注、内置词典和翻译等等。够用，但不出色。&lt;/p&gt;
