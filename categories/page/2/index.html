@@ -52,7 +52,7 @@
     <meta name="twitter:description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
   
 
-  <meta property="og:updated_time" content=2023-06-17T21:17:35-0800 />
+  <meta property="og:updated_time" content=2023-06-18T20:24:01-0800 />
 
   
 
@@ -172,6 +172,21 @@
 <div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
 
   
+  
+    <article class="article border-b border-gray-400">
+      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/blog_setting/">一个非技术流的blog建站流程</a></h1>
+
+      我终于也迎来了这一天：甭管正经博文更新了几篇，总要写篇建站日记。
+网上有太多教程，而我也并没有掌握任何 coding 技能，所以只是梳理一遍流程方便后续据此查找，本篇不会涉及更细节的步骤。
+多啰嗦几句为什么我会选择 Hugo + GitHub pages 的搭配。我的需求非常简单：有 rss，不要复杂装饰，不要花哨框架，不要冗余安装。有些高度自定义需要太多设置的会在第一时间劝退我（是的我就是在吐槽 notion）。而使用 GitHub pages 无需自己购买域名，对我也是极大利好。
+好了不多废话，进入极简流程。
+设置流程 安装并创建Hugo站点 参考 官方文档 。
+配置主题 浏览 主题列表 选定主题，阅读对应文档安装并进行个人化更改。
+关联Hugo public 文件夹 创建 Hugo 站点后会自动生成 public 文件夹，将此文件夹初始化为 git 仓库并关联至个人的 username.github.io 仓库。
+关联 Hugo 文件夹 将本地电脑上的 Hugo 文件夹 git push 到另一 GitHub 仓库，并在此仓库内配置 GitHub action，网上有很多现成文件可抄。目的是一旦发生 push 会自动部署到上一步的 username.github.io 仓库。另外我还设置了每天一次的定时更新，是为了兼顾我的豆瓣标记同步，下文会详说。
+增加其他功能 设置评论区、增加 google analytics 统计。
+设置豆瓣标记同步 教程 豆瓣书影音同步 GitHub Action | 怡红院落 (imnerd.org) ，「电影 / 阅读」页面，顶！ :: 木木木木木 (immmmm.
+    </article>
   
     <article class="article border-b border-gray-400">
       <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/20230228/">2023一二月读书记录</a></h1>
@@ -339,14 +354,6 @@ Good Luck to You, Leo Grande 蛮不错！表演既松弛又准确，有一些些
 印象最深的是那个沉迷于长城的石彬伦，何伟问他什么时候打算发表考察结果，他总是说再等等。而距这本书出版也已经过了好些年，去网上搜索似乎依然没有看到他的文章。
 写埃及的那篇让我很想好好读读何伟的 The Buried （书没读几本 TBR 倒是越来越长）。
 华氏451 译本一看就是老派文人的译法，前段有些会让人出戏，情节也不甚精彩。而且活在当下魔幻的中国再读乌托邦文学便会常常觉得，就这些吗？你们对于极权、监视、控制的想象就只有这些吗？现实比这些作家笔下的世界更加荒谬。因此前半部分让我颇为索然无味，当时已经分心到想着读完去豆瓣打三星该说什么。但就在这时进入到了主角的逃亡段落，与其他流亡者相逢时，那些关于书的描述和比喻一下子震慑到了我。人成为了图书馆，人类葬送了一切，同时又是人类保存了这一切。而凤凰的那一段同样也是美到让人战栗。科幻的快感就在于此，到达那些我所不能及的想象的瑰丽之地。
-    </article>
-  
-    <article class="article border-b border-gray-400">
-      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/food_diary_012/">Food Diary 012</a></h1>
-
-      最近吃了啥。
-近来吃饭又是很不规律，乱七八糟瞎对付。吃得最认真的还是早饭这一顿。
-百吃不腻的香蕉泥+花生酱抹欧包。 满满一盘的水果让人开心！尤其是有我最爱吃的脆柿子。 火力过大的吐司。 又做了番茄大蒜烤鸡腿，香喷喷。 煮了一盒茶叶蛋，消耗掉了时间太久的红茶。 烤了盘热量炸弹apple tart。最底下是酥脆的shortbread饼底，上面一层是细腻的芝士蛋糕，然后是混合了肉桂粉烤到流蜜的苹果片，最上面是香脆的椰子片。本应再洒上一层糖粉会更好看，但自己吃就省略这步了。总之是十二分满足~ 
     </article>
   
 
