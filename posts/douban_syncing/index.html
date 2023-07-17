@@ -223,12 +223,12 @@
 <p>（其实还有点问题，我的 blog header 太宽挡住了一部分页面，网页版的我改掉了，但没对手机页面进行适配，就这么先凑合着吧！）</p>
 <p>同步到 notion 原作者也给了教程，我试了下他给的 notion template 导入数据有点问题，而我实在是对 notion 的编辑逻辑感到苦手，不想自己一个个设置 block 属性，遂放弃。如果不在意缺少 ISBN 和愿意自己设置 notion template，可以略过上面的 rss 同步方式直接选用这个。</p>
 <h2 id="neodb">Neodb</h2>
-<p>~~懒得每次把豆瓣标记内容复制一遍到 neodb ，幸好它也支持数据导入（豆坟格式的 excel 表格），我因为很久之前就卸载了豆坟插件，所以用 python + pandas 把上一步 blog 里的 csv 文件筛选关键字段转换成 excel ，每隔一两个月导入一次。 ~~</p>
+<p><del>懒得每次把豆瓣标记内容复制一遍到 neodb ，幸好它也支持数据导入（豆坟格式的 excel 表格），我因为很久之前就卸载了豆坟插件，所以用 python + pandas 把上一步 blog 里的 csv 文件筛选关键字段转换成 excel ，每隔一两个月导入一次。</del></p>
 <p><del>以读过为例，大概如下图，呃相当粗糙的代码。总之有这几项就能成功导入。</del></p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622180322.png" alt=""></p>
-<p>~~其实 neodb 既然有开放 api，那理论上应该也能用 GitHub Action 自动获取更新，那样就可以彻底放弃豆瓣，把 neodb 作为首次标记渠道，再同步到 notion 或是 blog 。可我还没打定主意彻底转向它，也怕 neodb 作为网友自发维护的项目哪天就停止运行了，豆瓣虽然一直半死不活的但应该还能再苟一阵子……吧？当然更重要的是我只读了遍 GitHub Action 官方文档，大概了解流程和运作原理，根本没写过，等哪天实在需要再说。    ~~</p>
-<p><strong>2023.07.17 update:</strong> <br>
-上面提到的 notion 同步工具现在增加了 neodb 同步，所以也实现了完全自动化！再也不用手动导入啦。</p>
+<p><del>其实 neodb 既然有开放 api，那理论上应该也能用 GitHub Action 自动获取更新，那样就可以彻底放弃豆瓣，把 neodb 作为首次标记渠道，再同步到 notion 或是 blog 。可我还没打定主意彻底转向它，也怕 neodb 作为网友自发维护的项目哪天就停止运行了，豆瓣虽然一直半死不活的但应该还能再苟一阵子……吧？当然更重要的是我只读了遍 GitHub Action 官方文档，大概了解流程和运作原理，根本没写过，等哪天实在需要再说。</del></p>
+<p><strong>2023.07.17 update:</strong></p>
+<p>上面提到的 notion 同步工具现在增加了 neodb 同步，所以也实现了自动化，再也不用手动导入啦。</p>
 <h2 id="goodreads">Goodreads</h2>
 <p>顺便一提 Goodreads，它也接受导入，既然手头有这么多渠道的数据，就折腾下试试看。</p>
 <p>首先根据这个链接 <a href="https://www.goodreads.com/review/import">Import/Export Books to My Account | Goodreads</a> 查看 sample 文件，最不可或缺的是 ISBN，其他其实只要评分、评论、标记时间以及读过状态就够了。我只选择了以下几栏。</p>
