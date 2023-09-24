@@ -174,6 +174,17 @@
   
   
     <article class="article border-b border-gray-400">
+      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/toolbox20230923/">记一次微小的成功</a></h1>
+
+      看各式教程我时常感到无可救药的挫败，不停地怀疑自己真的有这么愚蠢吗？虽然不能称聪明，起码基本的理解和学习能力我不应该缺少啊，为什么在看代码相关的内容总是如此地费劲，时时刻刻都在自我怀疑。
+但也有成功解决问题的时刻，即使是非常微小的成功，也想记下来给自己一点鼓励。
+好了言归正传。前阵子在微信读书上存档下了 《傲慢的堡垒》 这本书的 html 文件，按照惯例想转成 epub 时发现这本书的微信读书版本有个非常离谱的问题 —— 所有的 21 世纪日期都莫名其妙加了 100 年，从头到尾无一例外。第一章就是 &ldquo;在2107 年……&quot;，而豆瓣阅读的版本里数字都是对的，大概率应该不是出版社的问题吧。
+总之，我无法容忍看到这些数字时将就着自行换算，所以打算纠正一下。肯定不能用查找替换把 “21” 换成 “20” 了事，毕竟还有 2021 年这种数字存在。
+解决方案就是，在 calibre 里点击出查找替换功能，用 (21)(\d{2}) 这个 regex 表达式作为查找条件，然后 Mode 选择 Regex-function ，再点击 Function 旁边的 Create/edit，弹出编辑窗口，return 值改为  &quot;20&quot; + str(match.group(2)) 。命名这个 function 后返回上一界面，在 Function 下拉窗口找到自定义命令，查找，全部替换，完成！ （一共处理了 400 多处，在什么情况下才会把这么多数字都弄错啊！）
+这肯定不是最优解，但管他呢！只要解决了我就是成功的！
+    </article>
+  
+    <article class="article border-b border-gray-400">
       <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/20230731/">2023七月读书记录</a></h1>
 
       p:has( img:nth-child(4)){column-count:4;}  点击我的 阅读页面 即可跳转对应条目。
@@ -339,21 +350,6 @@ Notion Notion 同步用的是在长毛象看到的 教程 。
 极限操作一番之后，身体很累，心情神奇地变好了一点。路上听 The First Slam Dunk 的 OST，正好听到良田海边回忆的那一段，忧伤又平静，成功安抚到了我。感激今年有这样的作品，可以让我在幻想的世界中逃避的久一些。
     </article>
   
-    <article class="article border-b border-gray-400">
-      <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/book_20230619/">我选择保留偏见</a></h1>
-
-      混更新思路：翻开我的读书笔记。
-几年前读特德姜的短篇集《降临》，《赏心悦目：审美干扰镜提案风波纪实》这篇我觉得很有意思，把当初的纸质笔记电子化一下存个档吧~
-总之就是基于人可以安装审美干扰镜去除外貌偏见的设定从而衍生出的一系列讨论。
-读这篇时我反复摇摆，时而觉得去除审美干扰是个好主意，时而又觉得这相当于剥夺了一部分我的权利。
-这篇的设置也非常有意思，多方人物多视角发言再加上不时的社会新闻播报，非常像现实生活中对热点事件的追踪。
-而最终我的态度是：不会安装。
-因为某种意义上，正是“我”的偏见、“我”的偏向和喜好塑造成了现在的“我”。哪怕一部分的我是由于当时的社会环境所造成，哪怕有失偏颇，但正是这所有的一切，才构成了当下的我。如果不能出于自由意志而做出决定，而是由科学、专家判定审美标准，又谈何自我呢？
-人是会变化的。人一生中会接触许许多多事物和理念，它们会从意想不到的方面去塑造人。就像流水击打卵石，恰似无所知觉，可每一次冲击都是雕琢的过程，水静止，卵石才定型。人也是这样吧，直到死亡的那一刻（或者停止思考的那一刻），才能盖棺论定，否则永远不要低估人改变的可能。
-也正是这份流动性让每一个当下，每一份认知都变得独一无二。安装了审美干扰镜，相当于剥夺了人成长的一份乐趣。人会犯错，会走弯路，会先入为主，但是傲慢和偏见、嫉妒、自卑等等负面情绪造就了人的复杂性和迷人度，我不愿放弃这些。
-而且，就算安装了外貌干扰镜又能如何呢？智商、性格、财富，等等等等，人类总会找到更多可判定、可比较的东西。更何况，谁又能保证这面镜子就是公正的？标准由谁制定？镜子又由谁制造？谁来安装，谁来调试，谁去后续跟踪维护数据？都是人，拥有偏见的人。因此永远不会存在绝对的公平。而在此基础上，让每个人都能根据自己喜好自由选择的社会，我觉得才是最大的公平。
-    </article>
-  
 
   
     
@@ -377,13 +373,13 @@ Notion Notion 同步用的是在长毛象看到的 教程 。
     <span aria-hidden="true">&nbsp;&hellip;&nbsp;</span>
   </li>
   <li class="page-item">
-    <a class="page-link" href="/true/page/8/">8</a>
+    <a class="page-link" href="/true/page/9/">9</a>
   </li>
   <li class="page-item">
     <a href="/true/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
   </li>
   <li class="page-item">
-    <a href="/true/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    <a href="/true/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
   </li>
 </ul>
 
