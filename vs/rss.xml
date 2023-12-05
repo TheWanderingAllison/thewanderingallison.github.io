@@ -18,38 +18,38 @@
       
       <guid>https://thewanderingallison.github.io/posts/app_defaults_2023/</guid>
 <description>&lt;style&gt;
-code{background:#F7FB05;}
+strong{background:#F7FB05;}
 &lt;/style&gt;
 &lt;p&gt;嗯为了水博客不择手段……&lt;/p&gt;
 &lt;p&gt;从 &lt;a href=&#34;https://blog.douchi.space/app-defaults&#34;&gt;椒老师&lt;/a&gt; 那边看到的问卷索性也来填一下了！原项目链接是 &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;https://defaults.rknight.me/&lt;/a&gt; ，我还没想好要不要提交到这个项目的 GitHub 下……&lt;/p&gt;
-&lt;p&gt;📨&lt;code&gt;Mail Client&lt;/code&gt; Gmail&lt;/p&gt;
-&lt;p&gt;📮&lt;code&gt;Mail Server&lt;/code&gt; Gmail&lt;/p&gt;
-&lt;p&gt;📝&lt;code&gt;Notes&lt;/code&gt; Google Keep, Microsoft Sticky Notes&lt;/p&gt;
-&lt;p&gt;✅&lt;code&gt;To-Do&lt;/code&gt; Google Keep, Google Tasks&lt;/p&gt;
-&lt;p&gt;📷&lt;code&gt;iPhone Photo Shooting&lt;/code&gt; I&amp;rsquo;m an Apple hater and will never use Apple products (at least for now🤣)&lt;/p&gt;
-&lt;p&gt;🟦&lt;code&gt;Photo Management&lt;/code&gt; Google Photos&lt;/p&gt;
-&lt;p&gt;📆&lt;code&gt;Calendar&lt;/code&gt; Google Calendar&lt;/p&gt;
-&lt;p&gt;📁&lt;code&gt;Cloud File Storage&lt;/code&gt; Google Drive, OneDrive&lt;/p&gt;
-&lt;p&gt;📖&lt;code&gt;RSS&lt;/code&gt; Inoreader&lt;/p&gt;
-&lt;p&gt;🙍🏻‍♂️&lt;code&gt;Contacts&lt;/code&gt; Google Contacts&lt;/p&gt;
-&lt;p&gt;🌐&lt;code&gt;Browser&lt;/code&gt; Chrome, Microsoft Edge, Firefox&lt;/p&gt;
-&lt;p&gt;💬&lt;code&gt;Chat&lt;/code&gt; Discord, WeChat&lt;/p&gt;
-&lt;p&gt;🔖&lt;code&gt;Bookmarks&lt;/code&gt; Chrome, Microsoft Edge&lt;/p&gt;
-&lt;p&gt;📑&lt;code&gt;Read It Later&lt;/code&gt; N/A&lt;/p&gt;
-&lt;p&gt;📜&lt;code&gt;Word Processing&lt;/code&gt; Obsidian&lt;/p&gt;
-&lt;p&gt;📈&lt;code&gt;Spreadsheets&lt;/code&gt; Microsoft Excel&lt;/p&gt;
-&lt;p&gt;📊&lt;code&gt;Presentations&lt;/code&gt; N/A&lt;/p&gt;
-&lt;p&gt;🛒&lt;code&gt;Shopping Lists&lt;/code&gt; Google Keep&lt;/p&gt;
-&lt;p&gt;🍴&lt;code&gt;Meal Planning&lt;/code&gt; N/A&lt;/p&gt;
-&lt;p&gt;💰&lt;code&gt;Budgeting and Personal Finance&lt;/code&gt; MoneyWiz&lt;/p&gt;
-&lt;p&gt;📰&lt;code&gt;News&lt;/code&gt; RSS feeds, several journalists&#39; columns&lt;/p&gt;
-&lt;p&gt;🎵&lt;code&gt;Music&lt;/code&gt; Spotify, YouTube Music&lt;/p&gt;
-&lt;p&gt;🎤&lt;code&gt;Podcasts&lt;/code&gt; Google Podcasts (Google kills a product I love AGAIN!  )&lt;/p&gt;
-&lt;p&gt;🔐&lt;code&gt;Password Management&lt;/code&gt; Chrome&lt;/p&gt;
+&lt;p&gt;📨&lt;strong&gt;Mail Client&lt;/strong&gt; Gmail&lt;/p&gt;
+&lt;p&gt;📮&lt;strong&gt;Mail Server&lt;/strong&gt; Gmail&lt;/p&gt;
+&lt;p&gt;📝&lt;strong&gt;Notes&lt;/strong&gt; Google Keep, Microsoft Sticky Notes&lt;/p&gt;
+&lt;p&gt;✅&lt;strong&gt;To-Do&lt;/strong&gt; Google Keep, Google Tasks&lt;/p&gt;
+&lt;p&gt;📷&lt;strong&gt;iPhone Photo Shooting&lt;/strong&gt; I&amp;rsquo;m an Apple hater and will never use Apple products (at least for now🤣)&lt;/p&gt;
+&lt;p&gt;🟦&lt;strong&gt;Photo Management&lt;/strong&gt; Google Photos&lt;/p&gt;
+&lt;p&gt;📆&lt;strong&gt;Calendar&lt;/strong&gt; Google Calendar&lt;/p&gt;
+&lt;p&gt;📁&lt;strong&gt;Cloud File Storage&lt;/strong&gt; Google Drive, OneDrive&lt;/p&gt;
+&lt;p&gt;📖&lt;strong&gt;RSS&lt;/strong&gt; Inoreader&lt;/p&gt;
+&lt;p&gt;🙍🏻‍♂️&lt;strong&gt;Contacts&lt;/strong&gt; Google Contacts&lt;/p&gt;
+&lt;p&gt;🌐&lt;strong&gt;Browser&lt;/strong&gt; Chrome, Microsoft Edge, Firefox&lt;/p&gt;
+&lt;p&gt;💬&lt;strong&gt;Chat&lt;/strong&gt; Discord, WeChat&lt;/p&gt;
+&lt;p&gt;🔖&lt;strong&gt;Bookmarks&lt;/strong&gt; Chrome, Microsoft Edge&lt;/p&gt;
+&lt;p&gt;📑&lt;strong&gt;Read It Later&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;📜&lt;strong&gt;Word Processing&lt;/strong&gt; Obsidian&lt;/p&gt;
+&lt;p&gt;📈&lt;strong&gt;Spreadsheets&lt;/strong&gt; Microsoft Excel&lt;/p&gt;
+&lt;p&gt;📊&lt;strong&gt;Presentations&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;🛒&lt;strong&gt;Shopping Lists&lt;/strong&gt; Google Keep&lt;/p&gt;
+&lt;p&gt;🍴&lt;strong&gt;Meal Planning&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;💰&lt;strong&gt;Budgeting and Personal Finance&lt;/strong&gt; MoneyWiz&lt;/p&gt;
+&lt;p&gt;📰&lt;strong&gt;News&lt;/strong&gt; RSS feeds, several journalists&#39; columns&lt;/p&gt;
+&lt;p&gt;🎵&lt;strong&gt;Music&lt;/strong&gt; Spotify, YouTube Music&lt;/p&gt;
+&lt;p&gt;🎤&lt;strong&gt;Podcasts&lt;/strong&gt; Google Podcasts (Google kills a product I love AGAIN!  )&lt;/p&gt;
+&lt;p&gt;🔐&lt;strong&gt;Password Management&lt;/strong&gt; Chrome&lt;/p&gt;
 &lt;p&gt;And something more:&lt;/p&gt;
-&lt;p&gt;😘&lt;code&gt;Blog Platform&lt;/code&gt; Github Pages + Hugo&lt;/p&gt;
-&lt;p&gt;📚&lt;code&gt;Reading app&lt;/code&gt; Google Play Books, WeRead  &lt;/p&gt;
-&lt;p&gt;⌨️&lt;code&gt;Text Input&lt;/code&gt; Gboard on phone, Microsoft Pinyin with Flypy Double Pinyin on Windows&lt;/p&gt;
+&lt;p&gt;😘&lt;strong&gt;Blog Platform&lt;/strong&gt; Github Pages + Hugo&lt;/p&gt;
+&lt;p&gt;📚&lt;strong&gt;Reading app&lt;/strong&gt; Google Play Books, WeRead  &lt;/p&gt;
+&lt;p&gt;⌨️&lt;strong&gt;Text Input&lt;/strong&gt; Gboard on phone, Microsoft Pinyin with Flypy Double Pinyin on Windows&lt;/p&gt;
 </description>
 </item>
     
