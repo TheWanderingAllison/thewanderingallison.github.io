@@ -495,6 +495,10 @@ p:has(&gt; img:nth-child(4)){column-count:4;}
       
       <guid>https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/</guid>
 <description>&lt;p&gt;&lt;strong&gt;本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2023.12.15的更新：&lt;/p&gt;
+&lt;p&gt;后文内容可以不用再看，现在两个渠道就可以方便获取 RSS。&lt;/p&gt;
+&lt;p&gt;一 &lt;a href=&#34;https://neodb.social/&#34;&gt;Neodb&lt;/a&gt; 收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。&lt;/p&gt;
+&lt;p&gt;二 安装&lt;a href=&#34;https://github.com/DIYgod/RSSHub-Radar&#34;&gt;RssHub Radar&lt;/a&gt;插件，它也支持小宇宙播客的 RSS 抓取。&lt;/p&gt;
 &lt;p&gt;虽然最近听播客的时间大大减少，但之前为了获取播客 RSS 的努力可是丝毫不少，来简单存个档吧。我日常使用的收听渠道是 Google Podcasts，英文世界的播客节目想要获取 RSS 都非常容易，大部分有官方网站，提供多渠道订阅方式和 RSS 链接，而中文播客届好多都无视 Google，不光在 Google Podcasts 页面搜不到，很多还根本不提供 RSS，找起来极其费劲。&lt;/p&gt;
 &lt;h2 id=&#34;1-通过播客名获取&#34;&gt;1. 通过播客名获取&lt;/h2&gt;
 &lt;p&gt;我最常用的是 &lt;a href=&#34;https://www.podbean.com/&#34;&gt;Podbean&lt;/a&gt; ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 &lt;a href=&#34;https://podcastrepublic.net&#34;&gt;https://podcastrepublic.net&lt;/a&gt; 和  &lt;a href=&#34;https://pod.link&#34;&gt;https://pod.link&lt;/a&gt; ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。&lt;/p&gt;
