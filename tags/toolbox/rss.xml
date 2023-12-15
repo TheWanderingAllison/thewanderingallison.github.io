@@ -7,10 +7,29 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sun, 03 Dec 2023 19:24:34 +0900</lastBuildDate>
+        <lastBuildDate>Thu, 14 Dec 2023 23:49:34 -0400</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/toolbox/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>在Google Play Books中使用Microsoft Azure TTS</title>
+<link>https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/</link>
+<pubDate>Thu, 14 Dec 2023 23:49:34 -0400</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/</guid>
+<description>&lt;style&gt;
+p:has(&gt;img:nth-child(3)){column-count:3;}
+&lt;/style&gt;
+&lt;p&gt;Google Play Books 虽然有朗读功能但实在不太自然，读中文尤其差劲，也不能倍速。微信读书听书功能还不错，但自有书籍我在微信读书网页版死活都上传不成功，又不想费事把书再下载一遍到手机上再传到微信读书里，更何况有些书我完全不相信微信读书的安全性。&lt;/p&gt;
+&lt;p&gt;所以开始寻摸解决方案，在 &lt;a href=&#34;https://www.reddit.com/r/Android/comments/107h4ax/guide_on_how_to_use_microsoft_azures_texttospeech/&#34;&gt;reddit&lt;/a&gt;上找到了。&lt;/p&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://github.com/ag2s20150909/TTS/releases/tag/0.2_202212201955&#34;&gt;TTS App&lt;/a&gt;，安装。在手机设置里搜索 &lt;code&gt;text-to-speech output&lt;/code&gt; ，更改 &lt;code&gt;Preferred engine&lt;/code&gt; 为 TTS ，选择语音方案，调整语速。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202312160015646.png&#34; alt=&#34;|200&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202312160015679.png&#34; alt=&#34;|200&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202312160016021.png&#34; alt=&#34;|200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;进入 Play Books，愉快开听！现在就是倍速+自然的微软语音朗读啦！&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>My App Defaults 2023</title>
@@ -499,6 +518,7 @@ p:has(&gt; img:nth-child(4)){column-count:4;}
 &lt;p&gt;后文内容可以不用再看，现在两个渠道就可以方便获取 RSS。&lt;/p&gt;
 &lt;p&gt;一 &lt;a href=&#34;https://neodb.social/&#34;&gt;Neodb&lt;/a&gt; 收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。&lt;/p&gt;
 &lt;p&gt;二 安装&lt;a href=&#34;https://github.com/DIYgod/RSSHub-Radar&#34;&gt;RssHub Radar&lt;/a&gt;插件，它也支持小宇宙播客的 RSS 抓取。&lt;/p&gt;
+&lt;hr&gt;
 &lt;p&gt;虽然最近听播客的时间大大减少，但之前为了获取播客 RSS 的努力可是丝毫不少，来简单存个档吧。我日常使用的收听渠道是 Google Podcasts，英文世界的播客节目想要获取 RSS 都非常容易，大部分有官方网站，提供多渠道订阅方式和 RSS 链接，而中文播客届好多都无视 Google，不光在 Google Podcasts 页面搜不到，很多还根本不提供 RSS，找起来极其费劲。&lt;/p&gt;
 &lt;h2 id=&#34;1-通过播客名获取&#34;&gt;1. 通过播客名获取&lt;/h2&gt;
 &lt;p&gt;我最常用的是 &lt;a href=&#34;https://www.podbean.com/&#34;&gt;Podbean&lt;/a&gt; ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 &lt;a href=&#34;https://podcastrepublic.net&#34;&gt;https://podcastrepublic.net&lt;/a&gt; 和  &lt;a href=&#34;https://pod.link&#34;&gt;https://pod.link&lt;/a&gt; ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。&lt;/p&gt;
