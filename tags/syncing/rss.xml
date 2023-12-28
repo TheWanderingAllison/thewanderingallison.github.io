@@ -19,7 +19,7 @@
       
       <guid>https://thewanderingallison.github.io/posts/20231031/</guid>
 <description>&lt;style&gt;
-P: has (&gt; img: nth-child (2)){column-count: 2;}
+p:has(&gt; img:nth-child(2)){column-count:2;}
 &lt;/style&gt;
 &lt;p&gt;点击我的 &lt;a href=&#34;https://thewanderingallison.github.io/books/&#34;&gt;阅读页面&lt;/a&gt; 即可跳转对应条目。&lt;/p&gt;
 &lt;p&gt;十月我看得是不是有点多了？完全写不动了所以简单点评下，特别喜欢的之后会拎出来单独写或者发摘抄。&lt;/p&gt;
@@ -40,10 +40,10 @@ P: has (&gt; img: nth-child (2)){column-count: 2;}
 &lt;p&gt;无比熟悉的、在家中忙碌操劳却不被看见的女性长辈生活片段。&lt;/p&gt;
 &lt;p&gt;有几个画面挺惊艳，但总体来说故事有点单薄撑不起一本书的体量。编辑建议加的婶婶视角画蛇添足，“我”单方面的忖度反倒让这个视角显得轻飘。而且一本 100 页的小册子，有十来页是作者手记似乎也没什么必要？不过还是很高兴有这样的书出现，讲述、看见，这也是一种力量。&lt;/p&gt;
 &lt;h3 id=&#34;梦晕&#34;&gt;梦晕&lt;/h3&gt;
-&lt;p&gt;在那做梦的人的梦中，被梦到的人醒了。&lt;br&gt;
-一个关于梦中梦的绘本，故事不算特别出彩，但是画风看起来很舒服。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/p6415675.webp&#34; alt=&#34;pic1 of book&#34;&gt;
-&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/p6415594.webp&#34; alt=&#34;pic2 of book&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在那做梦的人的梦中，被梦到的人醒了。&lt;/p&gt;
+&lt;p&gt;一个关于梦中梦的绘本，故事不算特别出彩，但是画风看起来很舒服。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/p6415675.webp&#34; alt=&#34;pic1 of book&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/p6415594.webp&#34; alt=&#34;pic2 of book&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;羽毛&#34;&gt;羽毛&lt;/h3&gt;
 &lt;p&gt;五星推荐。之后会详细写写我喜欢的点。&lt;/p&gt;
 &lt;p&gt;关于羽毛的一切。有谁会不为羽毛着迷呢？&lt;/p&gt;
@@ -73,7 +73,7 @@ P: has (&gt; img: nth-child (2)){column-count: 2;}
 &lt;h3 id=&#34;裸泳&#34;&gt;裸泳&lt;/h3&gt;
 &lt;p&gt;虽说是随笔集，可……真的有点太碎了，像是凌乱的日记集合，也没什么主题和编排。我只打了三星，但很高兴看到伊藤诗织慢慢从那场糟糕的事件中恢复过来，这就足够。&lt;/p&gt;
 &lt;h3 id=&#34;濒临狂野的心&#34;&gt;濒临狂野的心&lt;/h3&gt;
-&lt;p&gt;读书会的朋友很喜欢这个作家于是我找来读了。这是她的第一本书，可以看得出作者非常敏锐，也不凡一些很有灵气的句子，可总的来说还是不够成熟。意识流写法，但这时她还力有未逮，于是读起来好多地方显得滞涩，像是卡顿住的复读机，非常难受。同作者的最后一本书《星辰时刻》我读了一小半，文字如行云流水，读着舒服多了。&lt;/p&gt;
+&lt;p&gt;读书会的朋友很喜欢这个作家于是我找来读了。这是她的第一本书，可以看出作者非常敏锐，也不乏一些很有灵气的句子，可总的来说还是不够成熟。意识流写法，但这时她还力有未逮，于是读起来好多地方显得滞涩，像是卡顿的复读机，非常难受。同作者的最后一本书《星辰时刻》我读了一小半，文字如行云流水，读着舒服多了。&lt;/p&gt;
 &lt;h3 id=&#34;the-shepherds-view&#34;&gt;The Shepherd&amp;rsquo;s View&lt;/h3&gt;
 &lt;p&gt;牧人的生活片段。&lt;/p&gt;
 &lt;p&gt;之前读了这个作者的《放牧人生》（见&lt;a href=&#34;https://thewanderingallison.github.io/posts/20230331&#34;&gt;三月读书记录&lt;/a&gt;）很好奇他的生活就又找了这本来看。算是摄影集+简述牧人传统+一些生活记录。文字不多对我这个英语苦手来说读起来才不那么费劲儿。湖区的风景真是极美的，随便贴几张图。&lt;/p&gt;
@@ -82,11 +82,9 @@ P: has (&gt; img: nth-child (2)){column-count: 2;}
 &lt;p&gt;但读到这样的段落，我也忍不住五味杂陈。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;At school the next day, when the children are asked by their teachers what they enjoyed the most, the same answer comes back time and again: what the children love the most is running free for forty-five minutes in a field. And after all our hand-wringing about what they should “learn.”&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;I like to watch them running around, tumbling and getting dirty hands or wet knees. Sometimes they spread their arms out, like wings, and run down the hill as if they are flying. One little boy came running back to his teacher, red-faced, and shouted, “Look, Miss! We’re like birds!” The teacher turned to me and said, “You know, hardly any of them have ever been this free before. It’s amazing.”&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;/blockquote&gt;
 &lt;p&gt;When I hear this, I am not sure whether to laugh with joy or to cry with despair, because something so simple, so normal to previous generations, is now vanishingly rare for so many children. What kind of world have we created? Everyone should have a place where they can spread their wings and fly.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;工业化现代化的时代里，还固守着旧传统的人似乎显得不合时宜，可是人为地切断人类和自然的联系，似乎也不会让我们感到快乐。&lt;/p&gt;
 &lt;h3 id=&#34;如幽女怨怼之物&#34;&gt;如幽女怨怼之物&lt;/h3&gt;
 &lt;p&gt;我已经成长到了为推理小说付出了 50 分钟的沉没成本、阅读进度达到 1/3 、没看到谜底揭开也能坦然放弃的地步了呢！&lt;/p&gt;
