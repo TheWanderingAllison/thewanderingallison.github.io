@@ -209,14 +209,14 @@
 <p>使用平台：Android / ChromeOS / Chrome on Windows。</p>
 <h3 id="书籍上传存储管理">书籍上传/存储/管理</h3>
 <p>支持格式为 epub 和 pdf 。上传文件大小限制为 100 MB。据说上传上限为 2000 本（未验证）。偶尔会有一些 epub 文件显示处理失败，用 calibre 转换一遍再上传就好。据说可能是从 Apple books 里导出的，这种文件传到 kindle 也会有乱码。不知真假但本果黑就当它是真的并且喜闻乐见地表示苹果辣鸡！</p>
-<p>上传方式：  </p>
-<p>在浏览器中打开 <a href="https://play.google.com/books">https://play.google.com/books</a> ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 epub 文件用 App 打开，会自动上传至云端。</p>
+<p>上传方式：  
+在浏览器中打开 <a href="https://play.google.com/books">https://play.google.com/books</a> ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 epub 文件用 App 打开，会自动上传至云端。</p>
 <p>支持书籍导出，仅可在浏览器中进行，不可批量操作。</p>
 <p><del>但有个迷惑之处是偶尔会碰到原格式是 epub 却只能导出为 pdf ，目前还没找到原因。</del><br>
 (2023.04.16 update :
 偶然看到帖子说这只是 google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。)</p>
 <p>无法编辑书籍信息。它是通过读取 epub 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 calibre 改掉 metadata 才能保证在 Play Books 里显示正确。</p>
-<p>有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。App 里一次只能将一本书加入一个书架，网页版可选择多个书架。不过后续 App 更新后可以将多本书一次性放入单个书架，而网页版不支持，</p>
+<p>有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。App 里一次只能将一本书加入一个书架，网页版可选择多个书架。不过后续 App 更新后可以将多本书一次性放入单个书架，而网页版不支持。</p>
 <p>我常用的下载平台是 z library ，本地电脑也安装了 Google Drive，因此通常是 z library - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。</p>
 <p>bonus：<br>
 目前 Play Books 中的书籍不会占用 google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。</p>
@@ -231,11 +231,11 @@
 <p>可以开启自动笔记功能，所有笔记会以 Google Docs 形式保存在 Google Drive 里。</p>
 <p>但要注意，不要试图编辑这些文档。所有内容都是和 Play Books 里的书籍标注同步的，仅对文档进行的编辑会在下一次打开图书后自动消失。但很神奇的是，删除 Books 里的图书，笔记却依然会被保留。建议只把笔记文件夹作为原始档案参考，后续对笔记的再加工在其他地方进行。</p>
 <p>而对我来说，还亟待解决的是笔记的自动化处理问题。我本地所有文档都是 markdown 格式，最好是能把 notes 文件夹同步到 obsidian 的 valut 里。</p>
-<p>想过可能的方案，一种是利用 Google Docs 的 markdown api 接口批量转成 md 格式。另一种是用 python 脚本处理电脑上的 Google Drive Notes 文件夹，再转成 md 格式同步到我的 obsdian 对应文件夹里。只是我这三脚猫 coding 水平目前还力有未逮，留待以后再说吧。</p>
+<p>想过可能的方案，一种是利用 Google Docs 的 markdown api 接口批量转成 md 格式。另一种是用 python 脚本处理电脑上的 Google Drive Notes 文件夹，再转成 md 格式同步到我的 obsidian 对应文件夹里。只是我这三脚猫 coding 水平目前还力有未逮，留待以后再说吧。</p>
 <p>另外也有付费选项：readwise 软件似乎是支持多个阅读 App 笔记同步的，包括 kindle，Google Play Books 等等。但我暂时还不想为此花钱。</p>
 <h3 id="其他功能">其他功能</h3>
 <p>在 App 中可以开启朗读功能，英文语音非常自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反映说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！(还可以更进一步使用微软的 TTS 阅读，中英文都相当自然，详见<a href="https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/">这篇</a>。)</p>
-<p>而网页版虽不支持朗读但可以在 edge 里用 read aloud 功能曲线救国。</p>
+<p>而网页版虽不支持朗读但可以在 edge 里用 read aloud 功能或者在浏览器里安装 TTS 插件曲线救国。</p>
 <p>另外就是 google 全系产品的特色：可以无痛切换多个账号，因此如果想区分阅读状态的话也可以非常方便地用不同账号来进行。</p>
 <h3 id="结语">结语</h3>
 <p>可以看到作为阅读软件， Google Play Books 并不是市面上最优秀的那个，但它的核心竞争力在于，完全实现了所有平台同步，甚至很多功能对于网页更为友好！这让 PC 爱好者如我简直感激涕零。我厌烦透了所有操作都得在手机上进行。</p>
