@@ -219,10 +219,10 @@
 <h2 id="豆瓣">豆瓣</h2>
 <p>纯手动，读完/看完后挨个标记。</p>
 <h2 id="notion">Notion</h2>
-<p>Notion 同步用的是在长毛象看到的 <a href="https://zhuzi.dev/2021/06/05/douban-backup-sync-notion/">教程</a> 。</p>
+<p>Notion 同步用的是在长毛象看到的 <a href="https://zhuzi.dev/posts/2021-06-05-douban-backup-sync-notion/">教程</a> 。</p>
 <p>原理是通过 GitHub Action 定期抓取用户的豆瓣 rss feed 来获取更新，缺点是每次只能抓取最近 10 条记录，此前数据只能手动导入（用豆坟或油猴插件一次性获取）。而豆坟导出的数据不含海报信息，这样一来从前的记录无法显示图片，总觉得略微遗憾。notion 本身的显示页面也不是很灵活，加载还很慢，得不停点击 load more 才会继续显示，我单纯是因为不需要手动就姑且当多个备份仓库了。</p>
-<p>实现成果如下图。  <br>
-<img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230620114650.png" alt=""></p>
+<p>实现成果如下图。
+<img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230620114650.png" alt="notion-page"></p>
 <h2 id="blog">Blog</h2>
 <p>同样是全自动，只需初始设定完毕后续就无需手动操作。</p>
 <p>教程 <a href="https://imnerd.org/doumark.html">豆瓣书影音同步 GitHub Action</a> 。</p>
@@ -230,20 +230,20 @@
 <p>但获取数据只是第一步，将数据可视化还需要更多折腾。作者提供了两个途径，一是同步到 blog，二是同步到 notion 。</p>
 <p>同步到 blog 具体就是往自己的静态博客里加几个网页，再写对应的 CSS ，让 csv 文件能够以图片墙形式显示，我抄的这个 <a href="https://immmmm.com/doumark-action/">「电影 / 阅读」页面，顶！</a> ， 略微做了点改动。</p>
 <p>实现成果可点击 <a href="https://thewanderingallison.github.io/books/">书</a> 、<a href="https://thewanderingallison.github.io/movies/">影</a> 、<a href="https://thewanderingallison.github.io/music/">音</a> 页面查看。</p>
-<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622185307.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622185307.png" alt="book"></p>
 <p>（其实还有点问题，我的 blog header 太宽挡住了一部分页面，网页版的我改掉了，但没对手机页面进行适配，就这么先凑合着吧！）</p>
 <p>同步到 notion 原作者也给了教程，我试了下他给的 notion template 导入数据有点问题，而我实在是对 notion 的编辑逻辑感到苦手，不想自己一个个设置 block 属性，遂放弃。如果不在意缺少 ISBN 和愿意自己设置 notion template，可以略过上面的 rss 同步方式直接选用这个。</p>
 <h2 id="neodb">Neodb</h2>
 <p><del>懒得每次把豆瓣标记内容复制一遍到 neodb ，幸好它也支持数据导入（豆坟格式的 excel 表格），我因为很久之前就卸载了豆坟插件，所以用 python + pandas 把上一步 blog 里的 csv 文件筛选关键字段转换成 excel ，每隔一两个月导入一次。</del></p>
 <p><del>以读过为例，大概如下图，呃相当粗糙的代码。总之有这几项就能成功导入。</del></p>
-<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622180322.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622180322.png" alt="neodb"></p>
 <p><del>其实 neodb 既然有开放 api，那理论上应该也能用 GitHub Action 自动获取更新，那样就可以彻底放弃豆瓣，把 neodb 作为首次标记渠道，再同步到 notion 或是 blog 。可我还没打定主意彻底转向它，也怕 neodb 作为网友自发维护的项目哪天就停止运行了，豆瓣虽然一直半死不活的但应该还能再苟一阵子……吧？当然更重要的是我只读了遍 GitHub Action 官方文档，大概了解流程和运作原理，根本没写过，等哪天实在需要再说。</del></p>
 <p><strong>2023.07.17 update:</strong></p>
 <p>上面提到的 notion 同步工具现在增加了 neodb 同步，所以也实现了自动化，再也不用手动导入啦。</p>
 <h2 id="goodreads">Goodreads</h2>
 <p>顺便一提 Goodreads，它也接受导入，既然手头有这么多渠道的数据，就折腾下试试看。</p>
 <p>首先根据这个链接 <a href="https://www.goodreads.com/review/import">Import/Export Books to My Account | Goodreads</a> 查看 sample 文件，最不可或缺的是 ISBN，其他其实只要评分、评论、标记时间以及读过状态就够了。我只选择了以下几栏。</p>
-<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622181321.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622181321.png" alt="goodreads"></p>
 <p>试验了下，上半年的 60 本书，成功导入 51 本，剩余无法识别，应该是因为有些中文书暂时没有条目。失败比例还是颇高，我大概率会放弃这个平台了。</p>
 <p>最后，对自己的灵魂质问，我是闲出问题来了吗？写这个干嘛？算了，就当给自己存个档吧！</p>
 
