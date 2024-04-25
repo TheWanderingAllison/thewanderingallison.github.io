@@ -22,7 +22,7 @@
 &lt;p&gt;安装 &lt;a href=&#34;https://github.com/Ellpeck/ObsidianCustomFrames&#34;&gt;CustomFrames&lt;/a&gt; 插件。&lt;/p&gt;
 &lt;p&gt;在 Obsidian 设置中打开 Custom Frames，Add Frame。
 &lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252027937.png&#34; alt=&#34;step 1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;给新增的 Frame 添加必要信息，&lt;code&gt;Display Name&lt;/code&gt; 、&lt;code&gt;Icon&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt; 分别对应名称（自己随便起），图标（在 Lucion icons 选喜欢的），要打开的网页（GPB 就是 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ）。
+&lt;p&gt;给新增的 Frame 添加必要信息，&lt;code&gt;Display Name&lt;/code&gt; 、&lt;code&gt;Icon&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt; 分别对应名称（自己随便起），图标（在 Lucide icons 选喜欢的），要打开的网页（GPB 就是 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ）。
 &lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252030133.png&#34; alt=&#34;step 2&#34;&gt;&lt;/p&gt;
 &lt;p&gt;选中 Add Ribbon Icon 会自动在 Obsidian 侧边栏生成快键访问图标，如下图。
 &lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252040639.png&#34; alt=&#34;step 3&#34;&gt;&lt;/p&gt;
