@@ -225,8 +225,8 @@
 <p>在浏览器中打开 <a href="https://play.google.com/books">https://play.google.com/books</a> ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 EPUB 文件用 App 打开，会自动上传至云端。</p>
 <p>支持书籍导出，仅可在浏览器中进行，不可批量操作。</p>
 <p><del>但有个迷惑之处是偶尔会碰到原格式是 EPUB 却只能导出为 PDF ，目前还没找到原因。</del></p>
-<p><em><strong>2023.04.16 update:</strong></em><br>
-<em><strong>偶然看到帖子说这只是 Google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。</strong></em></p>
+<p><em>2023.04.16 update:</em><br>
+<em>偶然看到帖子说这只是 Google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。</em></p>
 <p>无法编辑书籍信息。它是通过读取 EPUB 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 Calibre 改掉 metadata 才能保证在 Play Books 里显示正确。</p>
 <p>有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。网页版支持批量选中多本书同时加入多个书架，App 仅支持每次将多本书加入单一书架。</p>
 <p>我常用的下载平台是 z library ，本地电脑也安装了 Google Drive，因此通常是 z library - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。</p>
@@ -239,14 +239,14 @@
 <p>只有寥寥几种英文字体可选。App 和 网页都支持 dark-mode 。</p>
 <p>不能指定页数或进度精确跳转。只能通过拉进度条或点击目录/书签/笔记来实现，页数过多的书籍最好是勤加书签来实现前后快速翻看。</p>
 <p><del>不能跨页标记。</del><br>
-<em><strong>2024.05.07 更新，根据评论区的提醒 web 端支持跨页但 App 依然不可以。</strong></em></p>
+<em>2024.05.07 更新，根据评论区的提醒 web 端支持跨页但 App 依然不可以。</em></p>
 <h3 id="笔记">笔记</h3>
 <p>可以开启自动笔记功能，所有笔记会以 Google Docs 形式保存在 Google Drive 里。</p>
 <p>但要注意，不要试图编辑这些文档。所有内容都是和 Play Books 里的书籍标注同步的，仅对文档进行的编辑会在下一次打开图书后自动消失。但删除 Books 里的图书，笔记却依然会被保留。建议只把笔记文件夹作为原始档案参考，后续对笔记的再加工在其他地方进行。</p>
 <p>而对我来说，还亟待解决的是笔记的自动化处理问题。我本地所有文档都是 markdown 格式，最好是能把 Drive 里的笔记文件夹同步到 Obsidian。</p>
 <p>想过可能的方案，一种是利用 Google Docs 的 markdown api 接口批量转成 md 格式。另一种是用 python 脚本处理电脑上的 Google Drive Notes 文件夹，再转成 md 格式同步到我的 Obsidian 对应文件夹里。只是我这三脚猫水平目前还力有未逮，留待以后再说吧。</p>
-<p><em><strong>2024.05.07 更新：</strong></em><br>
-<em><strong>放弃批量转换 Google Docs 成 md ，直接在 Obsidian 里访问 Google Play Books 和笔记，详见另一篇 <a href="https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian/">博文</a>。Google Docs 文档只作为原始材料参照使用，感想和对笔记的精加工都另建 md 文件。</strong></em></p>
+<p><em>2024.05.07 更新：</em><br>
+<em>放弃批量转换 Google Docs 成 md ，直接在 Obsidian 里访问 Google Play Books 和笔记，详见另一篇 <a href="https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian/">博文</a>。Google Docs 文档只作为原始材料参照使用，感想和对笔记的精加工都另建 md 文件。</em></p>
 <h3 id="其他功能">其他功能</h3>
 <p>在 App 中可以开启朗读功能，英文语音较为自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反映说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！还可以更进一步使用微软的 TTS 阅读，中英文都相当自然，详见 <a href="https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/">这篇</a>。</p>
 <p>而网页版虽不支持朗读但可以在 edge 里用 read aloud 功能或者在浏览器里安装 TTS 插件曲线救国。</p>
