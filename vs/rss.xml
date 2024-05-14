@@ -3724,10 +3724,7 @@ p:has(&gt; img:nth-child(2)){column-count:2;}
 <pubDate>Thu, 14 Dec 2023 23:49:34 -0400</pubDate>
       
       <guid>https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/</guid>
-<description>&lt;style&gt;
-p:has(&gt;img:nth-child(3)){column-count:3;}
-&lt;/style&gt;
-&lt;p&gt;Google Play Books 虽然有朗读功能但实在不太自然，读中文尤其差劲，也不能倍速。微信读书听书功能还不错，但自有书籍我在微信读书网页版死活都上传不成功，又不想费事把书再下载一遍到手机上再传到微信读书里，更何况有些书我完全不相信微信读书的安全性。&lt;/p&gt;
+<description>&lt;p&gt;Google Play Books 虽然有朗读功能但实在不太自然，读中文尤其差劲，也不能倍速。微信读书听书功能还不错，但自有书籍我在微信读书网页版死活都上传不成功，又不想费事把书再下载一遍到手机上再传到微信读书里，更何况有些书我完全不相信微信读书的安全性。&lt;/p&gt;
 &lt;p&gt;所以开始寻摸解决方案，在 &lt;a href=&#34;https://www.reddit.com/r/Android/comments/107h4ax/guide_on_how_to_use_microsoft_azures_texttospeech/&#34;&gt;reddit&lt;/a&gt;上找到了。&lt;/p&gt;
 &lt;p&gt;下载 &lt;a href=&#34;https://github.com/ag2s20150909/TTS/releases/tag/0.2_202212201955&#34;&gt;TTS App&lt;/a&gt;，安装。在手机设置里搜索 &lt;code&gt;text-to-speech output&lt;/code&gt; ，更改 &lt;code&gt;Preferred engine&lt;/code&gt; 为 TTS ，选择语音方案，调整语速。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202312160015646.png&#34; alt=&#34;|200&#34;&gt;
