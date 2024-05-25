@@ -1,15 +1,15 @@
 <rss version="2.0"
     xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on The Wandering Allison</title>
-        <link>https://thewanderingallison.github.io/posts/rss.xml</link>
-        <description>Recent content in Posts on The Wandering Allison</description>
+        <title>The Wandering Allison</title>
+        <link>https://thewanderingallison.github.io/rss.xml</link>
+        <description>Recent content on The Wandering Allison</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
         <lastBuildDate>Sat, 25 May 2024 00:11:23 +0000</lastBuildDate>
     
-        <atom:link href="https://thewanderingallison.github.io/posts/rss.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     
     
