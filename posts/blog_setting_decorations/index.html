@@ -243,31 +243,19 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 
 {{ <span style="color:#a61717;background-color:#e3d2d2">$</span>douURL <span style="color:#000;font-weight:bold">:=</span> index <span style="color:#a61717;background-color:#e3d2d2">$</span>item <span style="color:#099">5</span>}}
 
-  
 &lt;div class=<span style="color:#d14">&#34;db-card&#34;</span>&gt;
-
     &lt;div class=<span style="color:#d14">&#34;db-card-subject&#34;</span>&gt;
-
         &lt;div class=<span style="color:#d14">&#34;db-card-post&#34;</span>&gt;&lt;img loading=<span style="color:#d14">&#34;lazy&#34;</span> decoding=<span style="color:#d14">&#34;async&#34;</span> referrerpolicy=<span style="color:#d14">&#34;no-referrer&#34;</span> src=<span style="color:#d14">&#34;{{index $item 3}}&#34;</span>&gt;
-
         &lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
         &lt;div class=<span style="color:#d14">&#34;db-card-content&#34;</span>&gt;
-
             &lt;div class=<span style="color:#d14">&#34;db-card-title&#34;</span>&gt;&lt;a href=<span style="color:#d14">&#34;{{ $douURL }}&#34;</span> class=<span style="color:#d14">&#34;cute&#34;</span> target=<span style="color:#d14">&#34;_blank&#34;</span> rel=<span style="color:#d14">&#34;noreferrer&#34;</span>&gt;{{ index <span style="color:#a61717;background-color:#e3d2d2">$</span>item <span style="color:#099">1</span> }}&lt;<span style="color:#000;font-weight:bold">/</span>a&gt;&lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
             &lt;div class=<span style="color:#d14">&#34;db-card-abstract&#34;</span>&gt;{{ index <span style="color:#a61717;background-color:#e3d2d2">$</span>item <span style="color:#099">2</span> }}&lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
         &lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
     &lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
 &lt;<span style="color:#000;font-weight:bold">/</span>div&gt;
-
 {{end}}
-
 {{end}}
-</code></pre></div><p>为了方便我也没用链接而是用的条目 id 作为参数，用起来就是这样效果如下。</p>
+</code></pre></div><p>为了方便我也没用链接而是用的条目 id 作为参数，用起来效果如下。</p>
 <style>
      
     .db-card {

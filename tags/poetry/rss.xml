@@ -37,31 +37,19 @@
 
 {{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;douURL &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;5&lt;/span&gt;}}
 
-  
 &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card&amp;#34;&lt;/span&gt;&amp;gt;
-
     &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-subject&amp;#34;&lt;/span&gt;&amp;gt;
-
         &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-post&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;img loading=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;lazy&amp;#34;&lt;/span&gt; decoding=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;async&amp;#34;&lt;/span&gt; referrerpolicy=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;no-referrer&amp;#34;&lt;/span&gt; src=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{index $item 3}}&amp;#34;&lt;/span&gt;&amp;gt;
-
         &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
         &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-content&amp;#34;&lt;/span&gt;&amp;gt;
-
             &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-title&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;a href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $douURL }}&amp;#34;&lt;/span&gt; class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;cute&amp;#34;&lt;/span&gt; target=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt; rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;noreferrer&amp;#34;&lt;/span&gt;&amp;gt;{{ index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt; }}&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;a&amp;gt;&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
             &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-abstract&amp;#34;&lt;/span&gt;&amp;gt;{{ index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt; }}&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
         &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
     &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
 &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
-
 {{end}}
-
 {{end}}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了方便我也没用链接而是用的条目 id 作为参数，用起来就是这样效果如下。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了方便我也没用链接而是用的条目 id 作为参数，用起来效果如下。&lt;/p&gt;
 &lt;style&gt;
      
     .db-card {
