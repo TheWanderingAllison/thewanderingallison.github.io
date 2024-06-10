@@ -38254,13 +38254,13 @@ Sally and her brothers are walking home from school along the dunes in their Mai
 &lt;p&gt;安装 &lt;a href=&#34;https://github.com/Ellpeck/ObsidianCustomFrames&#34;&gt;CustomFrames&lt;/a&gt; 插件。&lt;/p&gt;
 &lt;p&gt;在 Obsidian 设置中打开 Custom Frames，Add Frame。
 &lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252027937.png&#34; alt=&#34;step 1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;给新增的 Frame 添加必要信息，&lt;code&gt;Display Name&lt;/code&gt; 、&lt;code&gt;Icon&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt; 分别对应名称（自己随便起），图标（在 Lucide icons 选喜欢的），要打开的网页（GPB 就是 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ）。
-&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252030133.png&#34; alt=&#34;step 2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;选中 Add Ribbon Icon 会自动在 Obsidian 侧边栏生成快捷访问图标，如下图。
-&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252040639.png&#34; alt=&#34;step 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;给新增的 Frame 添加必要信息，&lt;code&gt;Display Name&lt;/code&gt; 、&lt;code&gt;Icon&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt; 分别对应名称（自己随便起），图标（在 Lucide icons 选喜欢的），要打开的网页（GPB 就是 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252030133.png&#34; alt=&#34;step 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 Add Ribbon Icon 会自动在 Obsidian 侧边栏生成快捷访问图标，如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252040639.png&#34; alt=&#34;step 3&#34;&gt;&lt;/p&gt;
 &lt;p&gt;如果还想在 Obsidian 中直接访问保存在 Google Drive 的读书笔记 Google Docs 文件，就依照上述步骤再创建一个 Frame ，URL 填写 &lt;a href=&#34;https://docs.google.com/&#34;&gt;https://docs.google.com/&lt;/a&gt; 。&lt;/p&gt;
-&lt;p&gt;同时打开的效果。
-&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252051894.png&#34; alt=&#34;example image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;同时打开的效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202404252051894.png&#34; alt=&#34;example image&#34;&gt;&lt;/p&gt;
 &lt;p&gt;使用这个方法可以添加各种网站，比如微信读书（但这个废物现在不用也罢）、Google Keep、Notion 等等。但如果有强烈隐私顾虑请自行斟酌使用，详见插件说明 &lt;a href=&#34;https://github.com/Ellpeck/ObsidianCustomFrames/issues/54#issuecomment-1210879685&#34;&gt;Security Concern · Issue #54 · Ellpeck/ObsidianCustomFrames&lt;/a&gt;，我这个 Google 账号只用来看书，所以没有太多安全方面的担忧。&lt;/p&gt;
 </description>
 </item>
@@ -43210,8 +43210,8 @@ img{text-align: center; margin: 0 auto;}
 &lt;h3 id=&#34;comedy-wildlife-photography-awardshttpswwwcomedywildlifephotocomgalleryfinalists2022_finalistsphp&#34;&gt;&lt;a href=&#34;https://www.comedywildlifephoto.com/gallery/finalists/2022_finalists.php&#34;&gt;Comedy Wildlife Photography Awards&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;超可爱的动物滑稽时刻摄影大赛。
 随便放两张。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.comedywildlifephoto.com/images/gallery/9/00001169_p.jpg&#34; alt=&#34;&#34;&gt;
-&lt;img src=&#34;https://www.comedywildlifephoto.com/images/gallery/6/00001166_p.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.comedywildlifephoto.com/images/gallery/9/00001169_p.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.comedywildlifephoto.com/images/gallery/6/00001166_p.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;当一个89岁的女人决定去办身份证httpswwwdoubancomnote842237369&#34;&gt;&lt;a href=&#34;https://www.douban.com/note/842237369&#34;&gt;当一个89岁的女人决定去办身份证&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;玛利亚·索的故事。&lt;/p&gt;
 &lt;p&gt;她也是迟子建小说《额尔古纳河右岸》的女主人公原型。&lt;/p&gt;
@@ -44836,7 +44836,7 @@ img{text-align: center; margin: 0 auto;}
 &lt;h2 id=&#34;用什么听&#34;&gt;用什么听&lt;/h2&gt;
 &lt;p&gt;一直用的 Google podcasts，没有试过其他软件。&lt;/p&gt;
 &lt;p&gt;前几年网页端还不支持，只能通过 app 分享链接到 pc 端浏览器，现在终于也收录到 Google 主页的产品集合里，有正式的页面。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/podcast-web.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/podcast-web.png&#34; alt=&#34;google podcasts&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;有 web 端和 app，方便不同设备上收听&lt;/li&gt;
@@ -44854,22 +44854,24 @@ img{text-align: center; margin: 0 auto;}
 &lt;p&gt;大部分主播语速都不算快，我通常是1.5倍速听，有些特别慢的会开到1.7。&lt;/p&gt;
 &lt;h3 id=&#34;几乎每期都听&#34;&gt;几乎每期都听&lt;/h3&gt;
 &lt;p&gt;这里列出的节目是每期都会打开，但未必会听完。像声东击西有一期《朱一旦的枯燥生活》，我完全没听说过这个人，这期内容也不是很有趣，听了几分钟就放弃了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio1.png&#34; alt=&#34;&#34;&gt;&lt;strong&gt;硅谷早知道&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio1.png&#34; alt=&#34;硅谷早知道&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;硅谷早知道&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我既不在美国也不在科技行业，天知道我为什么每期都听······&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio2.png&#34; alt=&#34;&#34;&gt; &lt;strong&gt;声东击西&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio2.png&#34; alt=&#34;声东击西&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;声东击西&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;和上面的硅谷早知道一样，也是徐涛主持的节目。我还蛮喜欢她的风格，温柔可亲，不会咄咄逼人。可能也是资深记者出身的缘故，口条利落。有些主播普通话相当不标准，时不时出现嗯、啊之类的语气词，还蛮影响听感的。&lt;/p&gt;
 &lt;p&gt;虽然节目介绍里说“带你看不一样的美国”，但是主题其实远远不限于此，节目里可以听到各种行业，比如在中国农村搞垃圾分类，在中国搞生态农业。也会聊文化现象，比如黑帮电影、魔兽世界。还有去年我全程收听的美国大选系列。总之，包罗万象，更确切的说，是“带你看不一样的世界”。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio3.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio3.png&#34; alt=&#34;惊奇电台&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;惊奇电台&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;科幻爱好者一定不容错过。&lt;/p&gt;
 &lt;p&gt;时常有科幻作者来作嘉宾，聊起科幻作品会有很多想不到的角度。有一期是关于&lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9qdXN0cG9kbWVkaWEuY29tL3Jzcy9hbWF6aW5nLXBvZGNhc3QueG1s/episode/aHR0cHM6Ly9kdHMucG9kdHJhYy5jb20vcmVkaXJlY3QubXAzL2p1c3Rwb2RtZWRpYS5jb20vYXVkaW8vYW1hemluZy1wb2RjYXN0L2FtYXppbmctZXAwMy0yMDIwMTAyNC5tcDM?sa=X&amp;amp;ved=0CAUQkfYCahcKEwiwq4ze-tzuAhUAAAAAHQAAAAAQXw&#34;&gt;&lt;strong&gt;道格拉斯·亚当斯&lt;/strong&gt;&lt;/a&gt;，其实我不算太喜欢他的作品，感觉整本书都是段子，黑色幽默和无厘头的大集合。节目里说似乎岛国盛产这种“冷烂欠”的类型，比如英国、日本，而中国、美国的作者和读者就更偏爱“宏大叙事”。欸好像还真是这样！&lt;/p&gt;
 &lt;p&gt;目前听完的每一期都喜欢！还有些作者我正计划去读，因此囤着节目等读完了再听。&lt;/p&gt;
 &lt;p&gt;同类主题的还有 &lt;a href=&#34;https://podcasts.google.com/feed/aHR0cHM6Ly9yc3MuYXQ0YW0uaW8veGltYWxheWEvMzk0MzgwOTAueG1s&#34;&gt;&lt;strong&gt;铥铥科幻电波&lt;/strong&gt;&lt;/a&gt;，但还是惊奇电台的质量更高。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio4.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio4.png&#34; alt=&#34;讀立日&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;讀立日 Readependence Day&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;该节目也可以改称：论如何文采斐然又言之有物的卖安利！&lt;/p&gt;
 &lt;p&gt;主播推荐的每一本书我都想读。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/thewanderingallison/blog/master/radio5.png&#34; alt=&#34;时差&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;时差 in-betweenness&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;充满浓浓学术气息的播客节目。每期嘉宾都有一大串高校title，感觉马上可以开学术论坛的那种。节目聊的话题很多也是嘉宾的研究主题，内容相当扎实。&lt;/p&gt;
 &lt;h3 id=&#34;挑主题听&#34;&gt;挑主题听&lt;/h3&gt;
