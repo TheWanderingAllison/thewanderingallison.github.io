@@ -7,10 +7,24 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sun, 26 May 2024 19:00:38 +0100</lastBuildDate>
+        <lastBuildDate>Mon, 10 Jun 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>解决无法在edge浏览器设置中使用搜索的问题</title>
+<link>https://thewanderingallison.github.io/posts/fix_edge_settings_search_error/</link>
+<pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/fix_edge_settings_search_error/</guid>
+<description>&lt;p&gt;翻电脑文档发现之前的故障截图，顺便用中文关键词搜了下，结果时隔半年无论 Bing 还是 Google 都还是得不出靠谱结果，所以简单水一篇，或许能帮助到其他人。&lt;/p&gt;
+&lt;p&gt;去年莫名其妙地 edge 设置搜索功能无法使用，进入浏览器设置页面想搜比如 password 之类，只要在左上角搜索框输入字符，浏览器页面就会直接变空白，如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406112048045.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;网上也有人提出同样问题，像 &lt;a href=&#34;https://answers.microsoft.com/en-us/microsoftedge/forum/all/ms-edge-settings-page-goes-blank-when-searching/9f6e41a6-aff8-4bdd-bd82-288b4646f046&#34;&gt;MS Edge settings page goes blank when searching - Microsoft Community&lt;/a&gt; 和 &lt;a href=&#34;https://answers.microsoft.com/zh-hans/microsoftedge/forum/all/edge%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE/ef82eb21-08e8-4956-80bb-d3b1062469c2&#34;&gt;edge浏览器设置中的搜索无法正常使用 - Microsoft Community&lt;/a&gt; 但里面的解决方案对我的浏览器都无效。最后是通过 &lt;code&gt;Settings&lt;/code&gt; - &lt;code&gt;Reset settings&lt;/code&gt; 重置设置（只会影响首页 pinned tabs 和需要重新启用插件，不会丢失其他信息）解决，之后没有再出现过类似问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406112151081.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>专业退堂鼓表演艺术家的弃文list(之二)</title>
