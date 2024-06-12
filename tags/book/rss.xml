@@ -13,6 +13,39 @@
     
     
     <item>
+<title>Shame! Shame! —— 一些针对墙内互联网的工具</title>
+<link>https://thewanderingallison.github.io/posts/toolbox20240612/</link>
+<pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox20240612/</guid>
+<description>&lt;p&gt;取这个题目脑子里第一反应冒出的是权游里瑟曦游街众人大喊 SHAME SHAME 那幕，但是仔细想想，为什么要通过让一个女人赤身裸体来羞辱她呢？这其实让我不舒服，所以放弃了插入 gif 做头图。&lt;/p&gt;
+&lt;p&gt;而这句 shame，既是想喊给各个墙内互联网公司听，也是对自己说——我真不愿意承认自己为了&lt;del&gt;嗑男人&lt;/del&gt;而忍辱负重地承受了墙内网站如此多的羞辱！&lt;/p&gt;
+&lt;p&gt;好吧，我一边疯狂辱骂国内互联网生态，一边有时还是不得不使用它们。以往我只是需要在必要时忍受一下腾讯和阿里这两家公司，其他泛娱乐平台都几乎不用。结果，去年上头灌篮高手和今年年初时上头某几个音乐剧演员，让我不得不大幅度依赖某些社交平台，而我为此所愿意付出的极限是使用改良后的网页版——这是我的底线。而最近清醒过来之后，决定还是写写当时用的这些小工具们。都是油猴脚本，需要在浏览器先安装油猴插件。&lt;/p&gt;
+&lt;h2 id=&#34;豆瓣&#34;&gt;豆瓣&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/en/scripts/470187&#34;&gt;豆瓣小组功能增强-v2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/scripts/441100&#34;&gt;豆瓣小组屏蔽用户及屏蔽关键词&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在豆瓣小组高强度冲浪了三个月，发现豆瓣的黑名单功能形同虚设，即使已拉黑账号，在小组帖子里依然可以看到对方发言，用上述两个工具可以有效屏蔽关键词和用户，以及能够实现主贴、评论区、页首、页尾等的跳转，爬楼更加方便。&lt;/p&gt;
+&lt;h2 id=&#34;微博&#34;&gt;微博&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tiansh.github.io/yawf/&#34;&gt;YAML 药方&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;话不多说，请看这清爽的首页！没有广告、没有推荐关注、没有热搜、时间轴正常，夫复何求！设置里有更多功能，可以细致地根据自己需求调整。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406112242333.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;b-站&#34;&gt;B 站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/en/scripts/467511-bilibili&#34;&gt;Bilibili - 在未登录的情况下自动并无限试用最高画质&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/en/scripts/467474&#34;&gt;Bilibili - 防止视频被自动暂停及弹出登录窗口&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://greasyfork.org/en/scripts/473498&#34;&gt;Bilibili - 在未登录的情况下照常加载评论&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作者还有其他几个脚本也是针对 B 站，不过以上三个已经足够满足我的需求。平时我几乎不用 B 站，但前阵子为了看音乐剧各种物料和返场只能忍受一下了。&lt;/p&gt;
+&lt;h2 id=&#34;lofter&#34;&gt;Lofter&lt;/h2&gt;
+&lt;p&gt;这个没有网页工具，我始终没绑定手机号，app 也登不上，但有些作者只在 Lofter 更新，所以靠着 RSSHub 生成了作者的订阅源，具体可看 &lt;a href=&#34;https://docs.rsshub.app/routes/social-media#user-1&#34;&gt;文档&lt;/a&gt;，从此就可以在 Inoreader 里追文了。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>解决无法在edge浏览器设置中使用搜索的问题</title>
 <link>https://thewanderingallison.github.io/posts/fix_edge_settings_search_error/</link>
 <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
