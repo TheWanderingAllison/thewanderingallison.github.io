@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Wed, 12 Jun 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
@@ -44425,16 +44425,16 @@ img{text-align: center; margin: 0 auto;}
 <pubDate>Fri, 20 Aug 2021 17:48:44 -0100</pubDate>
       
       <guid>https://thewanderingallison.github.io/posts/toolbox3/</guid>
-<description>&lt;p&gt;用Geek清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。&lt;/p&gt;
+<description>&lt;p&gt;用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。&lt;/p&gt;
 &lt;h2 id=&#34;下载-aria2&#34;&gt;下载 Aria2&lt;/h2&gt;
-&lt;p&gt;从&lt;a href=&#34;http://aria2.github.io/&#34;&gt;官网&lt;/a&gt; 下载Aria2。&lt;br&gt;
-解压之后得到一个Aria2文件夹，在该文件夹内新建aria2.conf、aria2.session、aria2.log  三个空文件。&lt;br&gt;
-将aria2.session 文件移动到下载文件夹中（举例 &lt;code&gt;D:\download&lt;/code&gt;）。&lt;/p&gt;
-&lt;h2 id=&#34;配置-aria2conf-文件&#34;&gt;配置 aria2.conf 文件&lt;/h2&gt;
-&lt;p&gt;打开aria2.conf文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。&lt;/p&gt;
-&lt;p&gt;重点注意：&lt;code&gt;dir=D:\download&lt;/code&gt;、&lt;code&gt;input-file=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;save-session=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;log=D:\aria2\aria2.log&lt;/code&gt; 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是aria2.log文件所在的位置。&lt;/p&gt;
+&lt;p&gt;从&lt;a href=&#34;http://aria2.github.io/&#34;&gt;官网&lt;/a&gt; 下载 Aria2。&lt;br&gt;
+解压之后得到一个Aria2文件夹，在该文件夹内新建 &lt;code&gt;aria2.conf&lt;/code&gt;、&lt;code&gt;aria2.session&lt;/code&gt;、&lt;code&gt;aria2.log&lt;/code&gt; 三个空文件。&lt;br&gt;
+将 &lt;code&gt;aria2.session&lt;/code&gt; 文件移动到下载文件夹中（举例 &lt;code&gt;D:\download&lt;/code&gt;）。&lt;/p&gt;
+&lt;h2 id=&#34;配置-aria2conf-文件&#34;&gt;配置 &lt;code&gt;aria2.conf&lt;/code&gt; 文件&lt;/h2&gt;
+&lt;p&gt;打开 &lt;code&gt;aria2.conf&lt;/code&gt; 文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。&lt;/p&gt;
+&lt;p&gt;重点注意：&lt;code&gt;dir=D:\download&lt;/code&gt;、&lt;code&gt;input-file=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;save-session=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;log=D:\aria2\aria2.log&lt;/code&gt; 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是 &lt;code&gt;aria2.log&lt;/code&gt; 文件所在的位置。&lt;/p&gt;
 &lt;p&gt;最末尾的&lt;code&gt;bt-tracker=&lt;/code&gt;，在&lt;a href=&#34;https://github.com/ngosang/trackerslist&#34;&gt;GitHub - ngosang/trackerslist&lt;/a&gt; 获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
 ## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
 
 ## 文件保存相关 ##
@@ -44542,17 +44542,15 @@ bt-tracker=udp://tracker.opentrackr.org:1337/announce,udp://9.rarbg.com:2810/ann
 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;新建startexit脚本&#34;&gt;新建Start、Exit脚本&lt;/h2&gt;
 &lt;p&gt;每次要用命令启动和退出Aria2未免太折磨人，用记事本新建一个Start.vbs文件，复制以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;CreateObject(&amp;quot;WScript.Shell&amp;quot;).Run &amp;quot;aria2c.exe --conf-path=aria2.conf&amp;quot;,0
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;再建一个Exit.bat文件，复制以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;@echo off &amp;amp; title Aria2 Stop
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CreateObject&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;WScript.Shell&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;.Run &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;aria2c.exe --conf-path=aria2.conf&amp;#34;&lt;/span&gt;,0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再建一个Exit.bat文件，复制以下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;@echo off &amp;amp; title Aria2 Stop
 Taskkill /F /IM aria2c.exe
 pause &amp;gt; nul   
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这样就可以通过双击这两个文件启动或退出 Aria2了。把 Start.vbs 文件放到系统启动文件夹（开始-所有程序-启动文件夹-打开  &lt;code&gt;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;），就可以实现开机启动。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就可以通过双击这两个文件启动或退出 Aria2 了。把 Start.vbs 文件放到系统启动文件夹（开始-所有程序-启动文件夹-打开  &lt;code&gt;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;），就可以实现开机启动。&lt;/p&gt;
 &lt;h2 id=&#34;可视化网页aria2-ng&#34;&gt;可视化网页Aria2 Ng&lt;/h2&gt;
-&lt;p&gt;Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34;&gt;Aria2 NG&lt;/a&gt;下载最新版本，解压之后把index.html文件复制粘贴到第一步里的aria2文件夹。&lt;/p&gt;
-&lt;p&gt;运行上一步创建的Start.vbs文件，再打开index文件，就能够在浏览器里看到Aria2 Ng操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。&lt;/p&gt;
+&lt;p&gt;Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34;&gt;Aria2 NG&lt;/a&gt;下载最新版本，解压之后把&lt;code&gt;index.html&lt;/code&gt;文件复制粘贴到第一步里的 aria2 文件夹。&lt;/p&gt;
+&lt;p&gt;运行上一步创建的 &lt;code&gt;Start.vbs&lt;/code&gt; 文件，再打开 &lt;code&gt;index.html&lt;/code&gt; 文件，就能够在浏览器里看到 Aria2 Ng 操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。&lt;/p&gt;
 </description>
 </item>
     

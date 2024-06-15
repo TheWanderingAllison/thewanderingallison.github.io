@@ -24,18 +24,18 @@
   <meta property="og:locale" content="en">
   <meta name="language" content="en">
   
-  <title itemprop="name">Toolbox &middot; The Wandering Allison</title>
-  <meta property="og:title" content="Toolbox &middot; The Wandering Allison" />
-  <meta name="twitter:title" content="Toolbox &middot; The Wandering Allison" />
-  <meta itemprop="name" content="Toolbox &middot; The Wandering Allison" />
+  <title itemprop="name">解决 aria2.log 文件过大问题 &middot; The Wandering Allison</title>
+  <meta property="og:title" content="解决 aria2.log 文件过大问题 &middot; The Wandering Allison" />
+  <meta name="twitter:title" content="解决 aria2.log 文件过大问题 &middot; The Wandering Allison" />
+  <meta itemprop="name" content="解决 aria2.log 文件过大问题 &middot; The Wandering Allison" />
   <meta name="application-name" content="The Wandering Allison" />
   <meta property="og:site_name" content="The Wandering Allison" />
   
-  <base href="https://thewanderingallison.github.io/categories/toolbox/">
-  <link rel="canonical" href="https://thewanderingallison.github.io/categories/toolbox/" itemprop="url" />
-  <meta name="url" content="https://thewanderingallison.github.io/categories/toolbox/" />
-  <meta name="twitter:url" content="https://thewanderingallison.github.io/categories/toolbox/" />
-  <meta property="og:url" content="https://thewanderingallison.github.io/categories/toolbox/" />
+  <base href="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/" />
+  <meta name="twitter:url" content="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/" />
   
   
   
@@ -48,11 +48,23 @@
   <meta name="twitter:card" content="summary_large_image" />
   
   
-  <meta property="og:type" content="website" />
-  <meta itemprop="description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
-  <meta property="og:description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
-  <meta name="description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
-  <meta name="twitter:description" content="我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。" />
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="给自己简单存个档。 这两天用 SpaceSniffer 检查 D 盘空间时意外发现 aria2.log 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，aria2c logging is too large · Issue" />
+  <meta property="og:description" content="给自己简单存个档。 这两天用 SpaceSniffer 检查 D 盘空间时意外发现 aria2.log 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，aria2c logging is too large · Issue" />
+  <meta name="description" content="给自己简单存个档。 这两天用 SpaceSniffer 检查 D 盘空间时意外发现 aria2.log 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，aria2c logging is too large · Issue" />
+  <meta name="twitter:description" content="给自己简单存个档。 这两天用 SpaceSniffer 检查 D 盘空间时意外发现 aria2.log 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，aria2c logging is too large · Issue" />
+  <meta property="article:published_time" content=" 2024-06-15T00:00:00Z" />
+  <meta name="twitter:label1" value="Reading time" />
+  
+  <meta name="twitter:data1" value="1 minute" />
+  
+  <meta name="twitter:label2" value="Published" />
+  <meta name="twitter:data2" value=" June 15, 2024" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Download" />
+  
   
 
   <meta property="og:updated_time" content=2024-06-15T00:00:00Z />
@@ -77,9 +89,6 @@
   
   <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
   
-  
-  <link href="" rel="alternate"
-    type="application/rss+xml" title="Toolbox &middot; The Wandering Allison" />
   
   
 
@@ -179,94 +188,89 @@
   </header>
 
 <main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
-  <div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
 
-  <article class="article">
-    <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/categories/toolbox/">Category: Toolbox </a></h1>
+<style>
+ 
+p:has(> img:nth-child(2)){column-count:2;column-gap:8px;margin:6px 0;}
+p:has(> img:nth-child(3)){column-count:3;}
+p:has(> img:nth-child(4)){column-count:4;}
+p:has(> img:nth-child(5)){column-count:5;}
+p:has(> img:nth-child(6)){column-count:4;}
+p:has(> img:nth-child(2)) img{display:inherit;}
+p:has(> img:nth-child(6)) img{margin-bottom:8px;}
+</style>
 
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/aria2.log_file_is_too_large/">解决 aria2.log 文件过大问题</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/toolbox20240612/">Shame! Shame! —— 一些针对墙内互联网的工具</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/fix_edge_settings_search_error/">解决无法在edge浏览器设置中使用搜索的问题</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/blog_setting_decorations/">简单装修1.0</a></h3>
+<article class="article">
+    <h1 class="artitle__title"><a href="https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/">解决 aria2.log 文件过大问题</a></h1>
 
     
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/how-to-use-gpb-in-obsidian/">在 Obsidian 中使用Google Play Books</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/">在Google Play Books中使用Microsoft Azure TTS</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/app_defaults_2023/">My App Defaults 2023</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/toolbox20230923/">记一次微小的成功</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/how_to_get_podcast_rss_feeds/">如何获取podcast的RSS</a></h3>
-
-    
-      <div class="border-b border-gray-400">
-        <h3 class="text-3xl font"><a href="/posts/douban_syncing/">一些偷懒的豆瓣书影音同步流程</a></h3>
-
-    
-  </article>
-
+<ul id="categories">
   
-    
-
-<nav aria-label="Page navigation">
-  <ul class="mt-2 flex justify-center">
-    
-      <li>
-        <span class="m-2 p-2 opacity-25">First</span>
-      </li>
-      <li>
-        <span class="m-2 p-2 opacity-25">Prev</span>
-      </li>
-    
-
-    
-      
-      <li>
-        <span class="m-2 p-2 font-bold" href="/categories/toolbox/">1</span>
-      </li>
-      
-    
-      
-      <li>
-        <a class="m-2 p-2" href="/categories/toolbox/page/2/">2</a>
-      </li>
-      
-    
-
-    
-      <li>
-        <a class="m-2 p-2" href="/categories/toolbox/page/2/" rel="next">Next</a>
-      </li>
-      <li>
-        <a class="m-2 p-2" href="/categories/toolbox/page/2/">Last</a>
-      </li>
-    
-  </ul>
-</nav>
-
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
   
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2024-06-15T00:00:00&#43;00:00">
+            15 Jun, 2024
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>给自己简单存个档。</p>
+<p>这两天用 <a href="http://www.uderzo.it/main_products/space_sniffer/">SpaceSniffer</a> 检查 <code>D</code> 盘空间时意外发现 <code>aria2.log</code> 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，<a href="https://github.com/wahyd4/aria2-ariang-docker/issues/2">aria2c logging is too large · Issue #2 · wahyd4/aria2-ariang-docker </a>，解决方法也很简单，打开 <code>aria2.conf</code> 文件，把 <code>log-level=info</code> 变更为 <code>log-level=error</code>，如果原来并没有设置 <code>log-levl</code> 那直接加上 <code>log-level=error</code> 就好。这样的目的是只记录 <code>error</code> 状况下的 log 信息。之前的 <code>aria2.log</code> 文件可以直接删掉，再重建一个新的 <code>aria2.log</code> 文件。</p>
+<p>下次如果需要从头配置 Aria2，记得直接把上面那行加到 <code>aria2.conf</code> 里，这样从一开始就可以避免 log 文件过大的问题。</p>
+<p>顺便贴一下之前写的 <a href="https://thewanderingallison.github.io/posts/toolbox3">配置流程</a>。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/download">Download</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out" href="/posts/toolbox20240612/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">Shame! Shame! —— 一些针对墙内互联网的工具</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
 
     </main>
   
