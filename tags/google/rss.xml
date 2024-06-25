@@ -7,10 +7,32 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Thu, 14 Dec 2023 23:49:34 -0400</lastBuildDate>
+        <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/google/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>解决 Disqus 邮件被 Gmail 标记为 spam 问题</title>
+<link>https://thewanderingallison.github.io/posts/disqus_labelled_as_spam_in_gmail/</link>
+<pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/disqus_labelled_as_spam_in_gmail/</guid>
+<description>&lt;p&gt;最近几个月我的 Disqus 通知一直被 Gmail 锲而不舍地识别为 spam 邮件，不管我是把 Disqus 发信地址添加为联系人也好，还是每次勤勤恳恳把邮件从 spam 移出再点击“ Not Spam” 也好，都毫无效果。&lt;/p&gt;
+&lt;p&gt;今天又经历了一次我简直怒发冲冠，已经在考虑是否应该更换评论系统了，但不想折腾的心终究是占了上风，研究了一下 Gmail 的设置终于解决了这个问题。&lt;/p&gt;
+&lt;p&gt;首先查看 Disqus 发消息的邮箱，不知每个人是否都相同，总之我的是 &lt;a href=&#34;mailto:notifications@maas.disqus.com&#34;&gt;notifications@maas.disqus.com&lt;/a&gt; ，复制该地址。&lt;/p&gt;
+&lt;p&gt;打开 Gmail 网页版，点击右上角齿轮图标，点击 &lt;code&gt;See All Settings&lt;/code&gt; 进入设置页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406251835328.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 &lt;code&gt;Filters and Blocked Addresses&lt;/code&gt;，接着点击 &lt;code&gt;Create a new filter&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406251837014.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;From&lt;/code&gt; 一栏粘贴 Disqus 邮箱地址，再点击 &lt;code&gt;Create filter&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406251838354.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 &lt;code&gt;Never send it to Spam&lt;/code&gt;，点击 &lt;code&gt;Create filter&lt;/code&gt; 确认。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406251839877.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成！&lt;/p&gt;
+&lt;p&gt;用另一个 Disqus 账号给自己评论测试，终于可以正常收到邮件了……写完才想起来去网上搜了下，原来受害者大把，没点进去看其他人怎么解决的，顺手写个过程或许可以帮到有同样困扰的人。&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>Tautonym</title>
