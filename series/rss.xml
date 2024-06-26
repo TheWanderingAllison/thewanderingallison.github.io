@@ -43475,7 +43475,7 @@ img{text-align: center; margin: 0 auto;}
 &lt;em&gt;偶然看到帖子说这只是 Google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;无法编辑书籍信息。它是通过读取 EPUB 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 Calibre 改掉 metadata 才能保证在 Play Books 里显示正确。&lt;/p&gt;
 &lt;p&gt;有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。网页版支持批量选中多本书同时加入多个书架，App 仅支持每次将多本书加入单一书架。&lt;/p&gt;
-&lt;p&gt;我常用的下载平台是 z library ，本地电脑也安装了 Google Drive，因此通常是 z library - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
+&lt;p&gt;本地电脑安装了 Google Drive，因此通常是下载文件 - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
 &lt;p&gt;Bonus:&lt;/p&gt;
 &lt;p&gt;目前 Play Books 中的书籍不会占用 Google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。&lt;/p&gt;
 &lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
