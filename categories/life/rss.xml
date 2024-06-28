@@ -37,7 +37,7 @@
 &lt;p&gt;部署结束后进入项目的 Deployment 页面点击 &lt;code&gt;Visit&lt;/code&gt; 访问 Umami。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406282026132.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;首次进入需输入账号密码，初始账号为 &lt;code&gt;admin&lt;/code&gt;，密码为 &lt;code&gt;umami&lt;/code&gt;，可自行在设置中更改。记住网址和账号密码，后续可通过该地址访问查看网站统计数据。&lt;/p&gt;
-&lt;p&gt;在页面中点击 &lt;code&gt;Add Website&lt;/code&gt; 添加自己的网站，格式为 &lt;code&gt;mydomin.com&lt;/code&gt;。完成后复制 &lt;code&gt;Tracking Code&lt;/code&gt; 加到自己网站的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 里，静态博客的话通常是 &lt;code&gt;layouts/partials/head.html&lt;/code&gt; 文件，具体可查看自己的博客结构。这部分没截图，可以参考&lt;a href=&#34;https://umami.is/docs/collect-data&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;在页面中点击 &lt;code&gt;Add Website&lt;/code&gt; 添加自己的网站，格式为 &lt;code&gt;mydomin.com&lt;/code&gt;。完成后复制 &lt;code&gt;Tracking Code&lt;/code&gt; 加到自己网站的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 里，静态博客的话通常是 &lt;code&gt;layouts/partials/header.html&lt;/code&gt; 文件，具体可查看自己的博客结构。这部分没截图，可以参考&lt;a href=&#34;https://umami.is/docs/collect-data&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;完成！&lt;/p&gt;
 </description>
 </item>
