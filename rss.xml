@@ -7,10 +7,40 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>使用 Vercel 自建 Umami 服务</title>
+<link>https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel/</link>
+<pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel/</guid>
+<description>&lt;p&gt;怎么回事，我最近净是在发 how to 类的水文，这里才不是个技术博客！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://umami.is/images/app.jpg&#34; alt=&#34;umami&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Umami 是一个开源的网站数据统计工具，之前在友邻那里看到了&lt;a href=&#34;https://thirdshire.com/running-umami-on-planetscale-vercel&#34;&gt;设置教程&lt;/a&gt;，虽然有些许心动但是不想折腾的心占了上风。最近点开 Google Analytics 着实是有些厌烦 GA 的臃肿页面，于是又翻开这篇研究了下。如果不打算自建，可以参考上方教程只使用 Umami 官方的 Umami Cloud 服务，本篇不再赘述。&lt;/p&gt;
+&lt;p&gt;由于并没有自己的服务器，也不想再多寻找和注册免费的数据库提供商，因此折腾着用 Vercel 完成了数据库 + Umami 的部署。&lt;/p&gt;
+&lt;p&gt;下面进入极简流程。&lt;/p&gt;
+&lt;h2 id=&#34;前期准备&#34;&gt;前期准备&lt;/h2&gt;
+&lt;p&gt;GitHub 账号，Vercel 账号，Umami 账号。&lt;/p&gt;
+&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h2&gt;
+&lt;p&gt;登录 &lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel&lt;/a&gt; ，点击 &lt;code&gt;Storage&lt;/code&gt; 创建 Postgres 数据库。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281955778.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281955938.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;创建成功后查看数据库的 &lt;code&gt;.env.local&lt;/code&gt;，点击 &lt;code&gt;Show secret&lt;/code&gt; 复制 &lt;code&gt;POSTGRES_PRISMA_URL&lt;/code&gt; 的值（引号里面的部分）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281958572.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;根据 Umami  &lt;a href=&#34;https://Umami.is/docs/guides/running-on-vercel&#34;&gt;官方文档&lt;/a&gt;，可以直接一键 &lt;a href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FUmami-software%2FUmami&amp;amp;env=DATABASE_URL&#34;&gt;Deploy&lt;/a&gt; 到 Vercel。点击后页面如下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406282008572.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在红色框内填入对应内容，然后分别点击 &lt;code&gt;Create&lt;/code&gt; 和 &lt;code&gt;Deploy&lt;/code&gt;，等待部署完成。&lt;/p&gt;
+&lt;p&gt;部署结束后进入项目的 Deployment 页面点击 &lt;code&gt;Visit&lt;/code&gt; 访问 Umami。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406282026132.png&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;首次进入需输入账号密码，初始账号为 &lt;code&gt;admin&lt;/code&gt;，密码为 &lt;code&gt;umami&lt;/code&gt;，可自行在设置中更改。记住网址和账号密码，后续可通过该地址访问查看网站统计数据。&lt;/p&gt;
+&lt;p&gt;在页面中点击 &lt;code&gt;Add Website&lt;/code&gt; 添加自己的网站，格式为 &lt;code&gt;mydomin.com&lt;/code&gt;。完成后复制 &lt;code&gt;Tracking Code&lt;/code&gt; 加到自己网站的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 里，静态博客的话通常是 &lt;code&gt;layouts/partials/head.html&lt;/code&gt; 文件，具体可查看自己的博客结构。这部分没截图，可以参考&lt;a href=&#34;https://umami.is/docs/collect-data&#34;&gt;官方文档&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;完成！&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>解决 Disqus 邮件被 Gmail 标记为 spam 问题</title>

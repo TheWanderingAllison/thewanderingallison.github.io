@@ -3,10 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thewanderingallison.github.io/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/categories/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/umami/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/vercel/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel/</loc>
+    <lastmod>2024-06-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/disqus/</loc>
     <lastmod>2024-06-25T00:00:00+00:00</lastmod>
@@ -15,18 +36,6 @@
     <lastmod>2024-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/google/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/posts/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
-    <lastmod>2024-06-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
     <lastmod>2024-06-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/disqus_labelled_as_spam_in_gmail/</loc>
