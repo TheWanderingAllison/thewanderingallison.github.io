@@ -7,10 +7,130 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>试图同步 Play Books 笔记的失败尝试</title>
+<link>https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/</link>
+<pubDate>Fri, 05 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/</guid>
+<description>&lt;p&gt;一次无果的尝试，但这个过程还是记录下，失败也是积攒经验的一种方式，没准之后我就能解决了呢。&lt;/p&gt;
+&lt;p&gt;不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔记，于是我不甘心地还是想寻觅一个方法能够把 Google Play Books 自动保存的 Google Docs 笔记文件转成 Markdown 也同步到 Obsidian 里。&lt;/p&gt;
+&lt;h2 id=&#34;day-1&#34;&gt;Day 1&lt;/h2&gt;
+&lt;p&gt;初步想法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;获取 Google Docs API 和 Google Drive API&lt;/li&gt;
+&lt;li&gt;指定 Google Drive 文件夹 ID 和本地 md 文件夹地址&lt;/li&gt;
+&lt;li&gt;遍历 Drive 文件夹，获取 Doc 文件的标题和最后修改时间
+&lt;ul&gt;
+&lt;li&gt;若本地文件夹不存在同名 md 文档，则创建 md，将从 Docs API 中获得的 JSON 转成 Markdown&lt;/li&gt;
+&lt;li&gt;若存在同名文档，比较最后修改时间，若 Doc 晚于 md，更新 md；反之则不操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;将以上 python 脚本保存后，在 Windows Task Scheduler 中创建新任务，设置定时运行，就可以实现自动更新 Google Play Books 笔记。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;让 ChatGPT 老师帮我写完这个 python script 之后我信心满满开始尝试，中途安装了多少 library 也暂且不提，总之无数次操作之后还是频繁报错网络问题，不是 SSL 无法连接就是什么超时，但我单单用 &lt;code&gt;request&lt;/code&gt; 试 &lt;a href=&#34;http://www.google.com&#34;&gt;http://www.google.com&lt;/a&gt; 得到的 &lt;code&gt;reponse.status&lt;/code&gt; 明明也是 200，无语问苍天，到底问题出在哪里！很快我的当日免费提问额度用完，我也头晕脑胀，偃旗息鼓，来日再战。&lt;/p&gt;
+&lt;p&gt;另外通过 API 获取 Docs 的 JSON 数据一点都不简单！存一下 ChatGPT 给的步骤。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Enable Google Docs API&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to the Google Cloud Console.&lt;/li&gt;
+&lt;li&gt;Create a new project or select an existing one.&lt;/li&gt;
+&lt;li&gt;Enable the Google Docs API for your project.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Set Up Credentials&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In the Google Cloud Console, go to the &amp;ldquo;Credentials&amp;rdquo; section.&lt;/li&gt;
+&lt;li&gt;Create OAuth 2.0 credentials.&lt;/li&gt;
+&lt;li&gt;Download the credentials JSON file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Authorize API and Download Document&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use the Google Docs API to download the document. Here&amp;rsquo;s a Python script to do this:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;os&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;json&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;google.oauth2&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; service_account
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#555&#34;&gt;googleapiclient.discovery&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; build
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Set up the service account credentials&lt;/span&gt;
+credentials &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; service_account&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;Credentials&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;from_service_account_file(
+    &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;path/to/credentials.json&amp;#39;&lt;/span&gt;,
+    scopes&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;[&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;https://www.googleapis.com/auth/documents.readonly&amp;#39;&lt;/span&gt;]
+)
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Build the service&lt;/span&gt;
+service &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; build(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;docs&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;v1&amp;#39;&lt;/span&gt;, credentials&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;credentials)
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# The ID of the Google Doc&lt;/span&gt;
+document_id &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;your_document_id_here&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Fetch the document&lt;/span&gt;
+document &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; service&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;documents()&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;get(documentId&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;document_id)&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;execute()
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;# Save the document as a JSON file&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#0086b3&#34;&gt;open&lt;/span&gt;(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;document.json&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;w&amp;#39;&lt;/span&gt;) &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;as&lt;/span&gt; f:
+    json&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;dump(document, f, indent&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt;)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Replace &lt;code&gt;path/to/credentials.json&lt;/code&gt; with the path to your downloaded credentials file and &lt;code&gt;your_document_id_here&lt;/code&gt; with the ID of your   Google Doc.&lt;/p&gt;
+&lt;h2 id=&#34;day-2&#34;&gt;Day 2&lt;/h2&gt;
+&lt;p&gt;不死心，我又来了。&lt;/p&gt;
+&lt;p&gt;既然在本地跑这个脚本有问题，那先试试看 API 能不能获取成功呢？Google 有个 &lt;a href=&#34;https://developers.google.com/oauthplayground/&#34;&gt;OAuth 2.0 Playground&lt;/a&gt; 可以在线测试。ChatGPT 给的教程如下。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;step-1-open-the-oauth-20-playground&#34;&gt;Step 1: Open the OAuth 2.0 Playground&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to the OAuth 2.0 Playground.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-2-configure-the-playground&#34;&gt;Step 2: Configure the Playground&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on the settings icon (gear) in the upper-right corner.&lt;/li&gt;
+&lt;li&gt;Check the box for &lt;code&gt;Use your own OAuth credentials&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Input your Client ID and Client Secret obtained from the Google Cloud Console.&lt;/li&gt;
+&lt;li&gt;Click on &lt;code&gt;Close&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-3-authorize-the-api-scopes&#34;&gt;Step 3: Authorize the API Scopes&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;In the left sidebar, under &amp;ldquo;Step 1&amp;rdquo;, find the Google Docs API scopes. You can search for &lt;code&gt;https://www.googleapis.com/auth/&amp;gt; documents.readonly&lt;/code&gt; for read-only access.&lt;/li&gt;
+&lt;li&gt;Click on the scope checkbox to select it.&lt;/li&gt;
+&lt;li&gt;Click on &lt;code&gt;Authorize APIs&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-4-authenticate&#34;&gt;Step 4: Authenticate&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;You will be redirected to the Google sign-in page. Sign in with the Google account that has access to the Google Docs you want to &amp;gt; test.&lt;/li&gt;
+&lt;li&gt;You will be redirected back to the OAuth Playground with an authorization code filled in.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-5-exchange-authorization-code-for-tokens&#34;&gt;Step 5: Exchange Authorization Code for Tokens&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click on &lt;code&gt;Exchange authorization code for tokens&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;The access token and refresh token will be displayed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;step-6-make-api-requests&#34;&gt;Step 6: Make API Requests&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Under &amp;ldquo;Step 3&amp;rdquo;, set up the request. You will be making a &lt;code&gt;GET&lt;/code&gt; request to &lt;code&gt;https://docs.googleapis.com/v1/documents/{documentId}&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Replace &lt;code&gt;{documentId}&lt;/code&gt; with the actual ID of the Google Docs document you want to test.&lt;/li&gt;
+&lt;li&gt;Click on &lt;code&gt;Send the request&lt;/code&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;example-api-request-and-response&#34;&gt;Example API Request and Response&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Request URL&lt;/strong&gt;: &lt;code&gt;https://docs.googleapis.com/v1/documents/YOUR_DOCUMENT_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Response&lt;/strong&gt;: You will get a JSON response with the document content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用测试 API 可以正常获得 JSON 数据，不过 Docs 的数据居然有那——么——长，一个很短的文档导出成 JSON 时就已经有快 100 KB ，我真是想得太简单了！格式复杂得让人头晕，而且每个段落对应的 &lt;code&gt;content&lt;/code&gt; 内容，中文部分居然全是用 Unicode 显示的！难怪一眼望过去我说怎么一个熟悉的字都没有！&lt;/p&gt;
+&lt;p&gt;不过又找了下 GitHub，发现有人写了类似的处理 Google Docs 的工具，&lt;a href=&#34;https://github.com/AnandChowdhary/docs-markdown&#34;&gt;Convert a Google Docs file (API response) to Markdown&lt;/a&gt; ，等我下次试试看。本次尝试以完美失败告终（苦笑）。&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>使用 Vercel 自建 Umami 服务</title>
