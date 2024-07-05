@@ -56,7 +56,7 @@
   <meta property="article:published_time" content=" 2024-07-05T00:00:00Z" />
   <meta name="twitter:label1" value="Reading time" />
   
-  <meta name="twitter:data1" value="3 minutes" />
+  <meta name="twitter:data1" value="2 minutes" />
   
   <meta name="twitter:label2" value="Published" />
   <meta name="twitter:data2" value=" July 5, 2024" />
@@ -234,68 +234,31 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔记，于是我不甘心地还是想寻觅一个方法能够把 Google Play Books 自动保存的 Google Docs 笔记文件转成 Markdown 也同步到 Obsidian 里。</p>
 <h2 id="day-1">Day 1</h2>
 <p>初步想法：</p>
-<ol>
-<li>获取 Google Docs API 和 Google Drive API</li>
-<li>指定 Google Drive 文件夹 ID 和本地 md 文件夹地址</li>
-<li>遍历 Drive 文件夹，获取 Doc 文件的标题和最后修改时间
+<p>（一）获取 Google Docs API 和 Google Drive API</p>
+<p>（二）指定 Google Drive 文件夹 ID 和本地 md 文件夹地址</p>
+<p>（三）遍历 Drive 文件夹，获取 Doc 文件的标题和最后修改时间</p>
 <ul>
-<li>若本地文件夹不存在同名 md 文档，则创建 md，将从 Docs API 中获得的 JSON 转成 Markdown</li>
+<li>若本地文件夹不存在同名 md 文档，则创建 md，将从 Docs API 中获得的 JSON 转成 Markdown。</li>
 <li>若存在同名文档，比较最后修改时间，若 Doc 晚于 md，更新 md；反之则不操作。</li>
 </ul>
-</li>
-<li>将以上 python 脚本保存后，在 Windows Task Scheduler 中创建新任务，设置定时运行，就可以实现自动更新 Google Play Books 笔记。</li>
-</ol>
+<p>将以上 python 脚本保存后，在 Windows Task Scheduler 中创建新任务，设置定时运行，就可以实现自动更新 Google Play Books 笔记。</p>
 <p>让 ChatGPT 老师帮我写完这个 python script 之后我信心满满开始尝试，中途安装了多少 library 也暂且不提，总之无数次操作之后还是频繁报错网络问题，不是 SSL 无法连接就是什么超时，但我单单用 <code>request</code> 试 <a href="http://www.google.com">http://www.google.com</a> 得到的 <code>reponse.status</code> 明明也是 200，无语问苍天，到底问题出在哪里！很快我的当日免费提问额度用完，我也头晕脑胀，偃旗息鼓，来日再战。</p>
 <p>另外通过 API 获取 Docs 的 JSON 数据一点都不简单！存一下 ChatGPT 给的步骤。</p>
-<ol>
-<li>
-<p><strong>Enable Google Docs API</strong>:</p>
+<blockquote>
+<h3 id="enable-google-docs-api">Enable Google Docs API</h3>
 <ul>
 <li>Go to the Google Cloud Console.</li>
 <li>Create a new project or select an existing one.</li>
 <li>Enable the Google Docs API for your project.</li>
 </ul>
-</li>
-<li>
-<p><strong>Set Up Credentials</strong>:</p>
+<h3 id="set-up-credentials">Set Up Credentials</h3>
 <ul>
 <li>In the Google Cloud Console, go to the &ldquo;Credentials&rdquo; section.</li>
 <li>Create OAuth 2.0 credentials.</li>
 <li>Download the credentials JSON file.</li>
 </ul>
-</li>
-<li>
-<p><strong>Authorize API and Download Document</strong>:</p>
-<ul>
-<li>Use the Google Docs API to download the document. Here&rsquo;s a Python script to do this:</li>
-</ul>
-</li>
-</ol>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">os</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">json</span>
-<span style="color:#000;font-weight:bold">from</span> <span style="color:#555">google.oauth2</span> <span style="color:#000;font-weight:bold">import</span> service_account
-<span style="color:#000;font-weight:bold">from</span> <span style="color:#555">googleapiclient.discovery</span> <span style="color:#000;font-weight:bold">import</span> build
-
-<span style="color:#998;font-style:italic"># Set up the service account credentials</span>
-credentials <span style="color:#000;font-weight:bold">=</span> service_account<span style="color:#000;font-weight:bold">.</span>Credentials<span style="color:#000;font-weight:bold">.</span>from_service_account_file(
-    <span style="color:#d14">&#39;path/to/credentials.json&#39;</span>,
-    scopes<span style="color:#000;font-weight:bold">=</span>[<span style="color:#d14">&#39;https://www.googleapis.com/auth/documents.readonly&#39;</span>]
-)
-
-<span style="color:#998;font-style:italic"># Build the service</span>
-service <span style="color:#000;font-weight:bold">=</span> build(<span style="color:#d14">&#39;docs&#39;</span>, <span style="color:#d14">&#39;v1&#39;</span>, credentials<span style="color:#000;font-weight:bold">=</span>credentials)
-
-<span style="color:#998;font-style:italic"># The ID of the Google Doc</span>
-document_id <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;your_document_id_here&#39;</span>
-
-<span style="color:#998;font-style:italic"># Fetch the document</span>
-document <span style="color:#000;font-weight:bold">=</span> service<span style="color:#000;font-weight:bold">.</span>documents()<span style="color:#000;font-weight:bold">.</span>get(documentId<span style="color:#000;font-weight:bold">=</span>document_id)<span style="color:#000;font-weight:bold">.</span>execute()
-
-<span style="color:#998;font-style:italic"># Save the document as a JSON file</span>
-<span style="color:#000;font-weight:bold">with</span> <span style="color:#0086b3">open</span>(<span style="color:#d14">&#39;document.json&#39;</span>, <span style="color:#d14">&#39;w&#39;</span>) <span style="color:#000;font-weight:bold">as</span> f:
-    json<span style="color:#000;font-weight:bold">.</span>dump(document, f, indent<span style="color:#000;font-weight:bold">=</span><span style="color:#099">2</span>)
-
-</code></pre></div><p>Replace <code>path/to/credentials.json</code> with the path to your downloaded credentials file and <code>your_document_id_here</code> with the ID of your   Google Doc.</p>
+<h3 id="authorize-api-and-download-document">Authorize API and Download Document</h3>
+</blockquote>
 <h2 id="day-2">Day 2</h2>
 <p>不死心，我又来了。</p>
 <p>既然在本地跑这个脚本有问题，那先试试看 API 能不能获取成功呢？Google 有个 <a href="https://developers.google.com/oauthplayground/">OAuth 2.0 Playground</a> 可以在线测试。ChatGPT 给的教程如下。</p>
@@ -340,7 +303,7 @@ document <span style="color:#000;font-weight:bold">=</span> service<span style="
 </ul>
 </blockquote>
 <p>用测试 API 可以正常获得 JSON 数据，不过 Docs 的数据居然有那——么——长，一个很短的文档导出成 JSON 时就已经有快 100 KB ，我真是想得太简单了！格式复杂得让人头晕，而且每个段落对应的 <code>content</code> 内容，中文部分居然全是用 Unicode 显示的！难怪一眼望过去我说怎么一个熟悉的字都没有！</p>
-<p>不过又找了下 GitHub，发现有人写了类似的处理 Google Docs 的工具，<a href="https://github.com/AnandChowdhary/docs-markdown">Convert a Google Docs file (API response) to Markdown</a> ，等我下次试试看。本次尝试以完美失败告终（苦笑）。</p>
+<p>又找了下 GitHub，发现有人写了类似的处理 Google Docs 的工具，<a href="https://github.com/AnandChowdhary/docs-markdown">Convert a Google Docs file (API response) to Markdown</a> ，等我下次试试看。本次尝试以完美失败告终（苦笑）。</p>
 
     </div>
     
@@ -638,7 +601,7 @@ document <span style="color:#000;font-weight:bold">=</span> service<span style="
     Copyright © 2020-2024 The Wandering Allison
   </div>  
   <div class="totalcount">
-    <span> 这个人已经废话了 155.8k 字！ </span>
+    <span> 这个人已经废话了 155.7k 字！ </span>
   </div>
 </footer>
 
