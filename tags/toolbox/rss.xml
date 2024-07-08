@@ -7,10 +7,24 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Fri, 05 Jul 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jul 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/toolbox/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>修理空调内机漏水问题</title>
+<link>https://thewanderingallison.github.io/posts/fix_ac_leaking_water/</link>
+<pubDate>Mon, 08 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/fix_ac_leaking_water/</guid>
+<description>&lt;p&gt;去年冬天开空调时就发现漏水，但当时天气很快转暖，我就本着逃避心态不想管它。眨眼间夏天来了，连着 38 ℃ 高温轰炸，空调才开半小时，又开始滴滴答答两头漏水，高温+潮湿，没空调真的活不了，好吧，来看看能不能自己解决。&lt;/p&gt;
+&lt;p&gt;网上搜空调漏水，大概率就是接水盘、排水孔又或者水管问题。那我的空调其他功能正常，并且只有到开机一定时间后开始漏水，说明接水盘没问题，那么就是排水不畅导致接水盘水溢出了。&lt;/p&gt;
+&lt;p&gt;按照 YouTube 上这个教程，拆掉空调外壳，找到排水孔，清理排水孔处灰尘。往接水盘倒了一整壶水试试看，顺利排出。&lt;/p&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/pXeq9VINktw&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;再开机，一切正常。靠自己劳动吹上的冷气格外惬意呢！&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>试图同步 Play Books 笔记的失败尝试</title>
