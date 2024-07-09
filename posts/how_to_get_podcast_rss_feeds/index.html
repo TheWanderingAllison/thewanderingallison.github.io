@@ -231,24 +231,36 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
       <p><strong>本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！</strong></p>
 <p>2023.12.15的更新：</p>
 <p>后文内容可以不用再看，现在两个渠道就可以方便获取 RSS。</p>
-<p>一 <a href="https://neodb.social/">Neodb</a> 收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。</p>
-<p>二安装 <a href="https://github.com/DIYgod/RSSHub-Radar">RSSHub Radar</a> 插件，它也支持小宇宙播客的 RSS 抓取。</p>
+<p>一 
+<a href="https://thewanderingallison.github.io/posts/https//neodb.social/">Neodb</a>
+ 收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。</p>
+<p>二安装 
+<a href="https://thewanderingallison.github.io/posts/https//github.com/diygod/rsshub-radar">RSSHub Radar</a>
+ 插件，它也支持小宇宙播客的 RSS 抓取。</p>
 <hr>
 <p>虽然最近听播客的时间大大减少，但之前为了获取播客 RSS 的努力可是丝毫不少，来简单存个档吧。我日常使用的收听渠道是 Google Podcasts，英文世界的播客节目想要获取 RSS 都非常容易，大部分有官方网站，提供多渠道订阅方式和 RSS 链接，而中文播客届好多都无视 Google，不光在 Google Podcasts 页面搜不到，很多还根本不提供 RSS，找起来极其费劲。</p>
 <h2 id="1-通过播客名获取">1. 通过播客名获取</h2>
-<p>我最常用的是 <a href="https://www.podbean.com/">Podbean</a> ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 <a href="https://podcastrepublic.net">https://podcastrepublic.net</a> 和  <a href="https://pod.link">https://pod.link</a> ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。</p>
+<p>我最常用的是 
+<a href="https://thewanderingallison.github.io/posts/https//www.podbean.com/">Podbean</a>
+ ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 <a href="https://podcastrepublic.net">https://podcastrepublic.net</a> 和  <a href="https://pod.link">https://pod.link</a> ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626125524.png" alt=""></p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626125557.png" alt=""></p>
 <h2 id="2-通过播客的-apple-podcasts-链接获取">2. 通过播客的 Apple Podcasts 链接获取</h2>
-<p><a href="https://getRSSfeed.com/">getRSSfeed</a> 这个网站支持从 Apple Podcasts 、Google Podcasts 等多渠道解析 RSS。</p>
+<p>
+<a href="https://thewanderingallison.github.io/posts/https//getrssfeed.com/">getRSSfeed</a>
+ 这个网站支持从 Apple Podcasts 、Google Podcasts 等多渠道解析 RSS。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626203430.png" alt=""></p>
 <p>有些播客通过第一种渠道无法检索到但已经提交到了 Apple Podcasts ，在已知链接的情况下可以用上文的网站获取。那么问题来了，Apple Podcasts 网页版是个摆设，也不支持站内搜索，没有他人分享无法直接获取节目链接，可以试着用 <code>inurl:https://podcasts.apple.com/</code> 或者 <code>site:https://podcasts.apple.com/</code> 这种方式找，但太冷门的播客此前根本没人访问过搜索引擎是不会收录的，于是变成了一个死循环。可能只能拜托身边用苹果的朋友分享一下了……</p>
 <h3 id="3-通过喜马拉雅-fm-专辑页面获取">3. 通过喜马拉雅 FM 专辑页面获取</h3>
 <p>还有些播客只在喜马拉雅更新，如果它是 host 在喜马拉雅上的话，那么在网站内搜索找到对应的专辑列表，网址通常是 <code>https://www.ximalaya.com/album/XXXXXXXX</code> ，在这串网址后加上 <code>.xml</code> 就是对应的 RSS 链接。</p>
 <h3 id="4-小宇宙">4. 小宇宙</h3>
-<p>这个流氓无解，除非主播在其他平台提交过，不然光凭小宇宙链接是搞不出 RSS 的，或者用 <a href="https://docs.rsshub.app/">RSSHub</a>  自建服务，可为了这狗屁平台我至于吗！</p>
+<p>这个流氓无解，除非主播在其他平台提交过，不然光凭小宇宙链接是搞不出 RSS 的，或者用 
+<a href="https://thewanderingallison.github.io/posts/https//docs.rsshub.app/">RSSHub</a>
+  自建服务，可为了这狗屁平台我至于吗！</p>
 <h3 id="5其他">5.其他</h3>
-<p>还有人做了一个<a href="https://getpodcast.xyz/">集合页面</a>，可以索引到一些中文节目，不过他这里提供的节目上面都能搜到，但也算是多个途径吧。</p>
+<p>还有人做了一个
+<a href="https://thewanderingallison.github.io/posts/https//getpodcast.xyz/">集合页面</a>
+，可以索引到一些中文节目，不过他这里提供的节目上面都能搜到，但也算是多个途径吧。</p>
 <p>总之，国内的播客创作者能不能有点意识，除非是平台独占或是付费节目，不然请养成多平台分发和自觉提供 RSS 的习惯好吗？这一点都不麻烦！这个世界上不是只有小宇宙和 Apple Podcasts 的！这两垃圾都只能在 app 里使用究竟有哪里好了！也请至少提供一个这些 app 外的联系渠道，有的播客只在小宇宙上传一份，再给一个微博账号，好像这样就能容易找到一样。问题在于，我上次好不容易摸到了一个超冷门播客的微博，为了留言还不得不安全验证我那 N 年没登的账户，结果对方回复给我的评论被新浪秒吞！我收到了评论提示，点进去一片空白，又试一次，对方回复，再被吞，气到想骂人。</p>
 <p>而日常分享节目的人，请养成提供链接的习惯，不要一张截图或一个二维码就了事。就算用的是 Apple Podcasts 甚至是小宇宙这种完全无法获取 RSS 的流氓软件，用链接的形式分享出来那么至少没有安装 app 的人也能够在网页中打开收听完当期节目。</p>
 <p>PS，本来只想随便写写，没想到查证一些内容那么麻烦，有些放进来有些累赘也就省略了，我都不怎么听播客了干这吃力不讨好的事是何苦？</p>
