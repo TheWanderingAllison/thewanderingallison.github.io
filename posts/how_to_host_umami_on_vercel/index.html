@@ -233,7 +233,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
       <p>怎么回事，我最近净是在发 how to 类的水文，这里才不是个技术博客！</p>
 <p><img src="https://umami.is/images/app.jpg" alt="umami"></p>
 <p>Umami 是一个开源的网站数据统计工具，之前在友邻那里看到了
-<a href="https://thewanderingallison.github.io/posts/https//thirdshire.com/running-umami-on-planetscale-vercel">设置教程</a>
+
+<a href="https://thirdshire.com/running-umami-on-planetscale-vercel">设置教程</a>
 ，虽然有些许心动但是不想折腾的心占了上风。最近点开 Google Analytics 着实是有些厌烦 GA 的臃肿页面，于是又翻开这篇研究了下。如果不打算自建，可以参考上方教程只使用 Umami 官方的 Umami Cloud 服务，本篇不再赘述。</p>
 <p>由于并没有自己的服务器，也不想再多寻找和注册免费的数据库提供商，因此折腾着用 Vercel 完成了数据库 + Umami 的部署。</p>
 <p>下面进入极简流程。</p>
@@ -241,16 +242,19 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>GitHub 账号，Vercel 账号，Umami 账号。</p>
 <h2 id="操作步骤">操作步骤</h2>
 <p>登录 
-<a href="https://thewanderingallison.github.io/posts/https//vercel.com/">Vercel</a>
+
+<a href="https://vercel.com/">Vercel</a>
  ，点击 <code>Storage</code> 创建 Postgres 数据库。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281955778.png" alt="image.png"></p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281955938.png" alt="image.png"></p>
 <p>创建成功后查看数据库的 <code>.env.local</code>，点击 <code>Show secret</code> 复制 <code>POSTGRES_PRISMA_URL</code> 的值（引号里面的部分）。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406281958572.png" alt="image.png"></p>
 <p>根据 Umami  
-<a href="https://thewanderingallison.github.io/posts/https//umami.is/docs/guides/running-on-vercel">官方文档</a>
+
+<a href="https://Umami.is/docs/guides/running-on-vercel">官方文档</a>
 ，可以直接一键 
-<a href="https://thewanderingallison.github.io/posts/https//vercel.com/new/clonerepository-urlhttps%3a%2f%2fgithub.com%2fumami-software%2fumamienvdatabase_url">Deploy</a>
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FUmami-software%2FUmami&amp;env=DATABASE_URL">Deploy</a>
  到 Vercel。点击后页面如下。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406282008572.png" alt="image.png"></p>
 <p>在红色框内填入对应内容，然后分别点击 <code>Create</code> 和 <code>Deploy</code>，等待部署完成。</p>
@@ -258,7 +262,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202406282026132.png" alt="image.png"></p>
 <p>首次进入需输入账号密码，初始账号为 <code>admin</code>，密码为 <code>umami</code>，可自行在设置中更改。记住网址和账号密码，后续可通过该地址访问查看网站统计数据。</p>
 <p>在页面中点击 <code>Add Website</code> 添加自己的网站，格式为 <code>mydomin.com</code>。完成后复制 <code>Tracking Code</code> 加到自己网站的 <code>&lt;head&gt;</code> 里，静态博客的话通常是 <code>layouts/partials/header.html</code> 文件，具体可查看自己的博客结构。这部分没截图，可以参考
-<a href="https://thewanderingallison.github.io/posts/https//umami.is/docs/collect-data">官方文档</a>
+
+<a href="https://umami.is/docs/collect-data">官方文档</a>
 。</p>
 <p>完成！</p>
 

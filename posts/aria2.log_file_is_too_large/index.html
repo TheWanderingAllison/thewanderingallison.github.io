@@ -230,13 +230,16 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
     <div class="py-5">
       <p>给自己简单存个档。</p>
 <p>这两天用 
-<a href="https://thewanderingallison.github.io/posts/http//www.uderzo.it/main_products/space_sniffer/">SpaceSniffer</a>
+
+<a href="http://www.uderzo.it/main_products/space_sniffer/">SpaceSniffer</a>
  检查 <code>D</code> 盘空间时意外发现 <code>aria2.log</code> 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，
-<a href="https://thewanderingallison.github.io/posts/https//github.com/wahyd4/aria2-ariang-docker/issues/2">aria2c logging is too large · Issue #2 · wahyd4/aria2-ariang-docker </a>
+
+<a href="https://github.com/wahyd4/aria2-ariang-docker/issues/2">aria2c logging is too large · Issue #2 · wahyd4/aria2-ariang-docker </a>
 ，解决方法也很简单，打开 <code>aria2.conf</code> 文件，把 <code>log-level=info</code> 变更为 <code>log-level=error</code>，如果原来并没有设置 <code>log-levl</code> 那直接加上 <code>log-level=error</code> 就好。这样的目的是只记录 <code>error</code> 状况下的 log 信息。之前的 <code>aria2.log</code> 文件可以直接删掉，再重建一个新的 <code>aria2.log</code> 文件。</p>
 <p>下次如果需要从头配置 Aria2，记得直接把上面那行加到 <code>aria2.conf</code> 里，这样从一开始就可以避免 log 文件过大的问题。</p>
 <p>顺便贴一下之前写的 
-<a href="https://thewanderingallison.github.io/posts/https//thewanderingallison.github.io/posts/toolbox3">配置流程</a>
+
+<a href="https://thewanderingallison.github.io/posts/toolbox3">配置流程</a>
 。</p>
 
     </div>
