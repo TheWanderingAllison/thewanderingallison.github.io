@@ -7,10 +7,68 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Thu, 08 Aug 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 10 Aug 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>简单装修2.0</title>
+<link>https://thewanderingallison.github.io/posts/blog_setting_decorations_2/</link>
+<pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_decorations_2/</guid>
+<description>&lt;p&gt;
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations&#34;&gt;上次&lt;/a&gt;
+还说不会有装修 2.0 了吧，结果啪啪打脸。近期的一些变动。&lt;/p&gt;
+&lt;h2 id=&#34;umami&#34;&gt;Umami&lt;/h2&gt;
+&lt;p&gt;写了简单的
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel&#34;&gt;设置流程&lt;/a&gt;
+ 。&lt;/p&gt;
+&lt;p&gt;Umami 很简洁但有两个问题，一是似乎 Umami 不会显示来自中国的访问流量，GA 里排名第一的地区是中国，可 Umami 里完全没出现过。二是 Umami 没办法有效排除我自己的访问数据，但这是我的原因，因为走代理并且用了 WebRTC Leak Prevent 插件浏览器无法获取真实 IP，Umami 的设置中自然也无法过滤。但算了就这样吧。&lt;/p&gt;
+&lt;h2 id=&#34;homepage&#34;&gt;Homepage&lt;/h2&gt;
+&lt;p&gt;我的博客主题首页默认显示所有博文，数量不多时还好，但现在累积了数百篇首页就变得相当累赘。&lt;/p&gt;
+&lt;p&gt;把  &lt;code&gt;index.html&lt;/code&gt; 中原先的模块删掉，利用 Hugo 的 &lt;code&gt;range&lt;/code&gt; 语句生成最近 5 篇文章的列表，首页就清爽多啦。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;      {{ range first 5 (sort site.RegularPages &amp;#34;Date&amp;#34; &amp;#34;desc&amp;#34;) }}
+      &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;position: relative;&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;ol&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 15; margin-bottom: 15;&amp;#34;&lt;/span&gt;&amp;gt;
+          &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; no-underline rounded-md hover:bg-white transition duration-300 ease-in-out&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 5; margin-bottom: 5;&amp;#34;&lt;/span&gt;&amp;gt;
+            &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ .RelPermalink }}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;tracking-tight no-underline text-blue-600  mb-0&amp;#34;&lt;/span&gt;&amp;gt;
+              {{ .Title }}
+            &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
+          &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt;&amp;gt;
+        &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;ol&lt;/span&gt;&amp;gt;
+      &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt;&amp;gt;
+      {{ end }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;render-hook-for-links&#34;&gt;Render Hook for Links&lt;/h2&gt;
+&lt;p&gt;不想写中文了直接复制和 ChatGPT 的对话……&lt;/p&gt;
+&lt;p&gt;Use custom render hook to convert plain text links (e.g., &lt;code&gt;[title](plaintext)&lt;/code&gt;) and excludes real URLs (e.g., &lt;code&gt;[link](https://xxxxx)&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Create a file at layouts/_default/_markup/render-link.html.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
+{{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
+  {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}
+{{ end }}
+&amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $destination }}&amp;#34;&lt;/span&gt;&amp;gt;{{ .Text }}&amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we can use the simple &lt;code&gt;[title](plaintext)&lt;/code&gt; syntax for plain text links and normal syntax for real URLs in markdown files.&lt;/p&gt;
+&lt;p&gt;在 Obsidian 中用 markdown 的 &lt;code&gt;[title](filename)&lt;/code&gt; 替代原本双链 &lt;code&gt;[[filename]]&lt;/code&gt; 格式，这样既能保证我在 Obsidian 里跳转的是本地文件，用 Hugo 渲染完成后博客又能正常访问对应博文链接。&lt;/p&gt;
+&lt;h2 id=&#34;open-link-in-new-tab&#34;&gt;Open link in new tab&lt;/h2&gt;
+&lt;p&gt;更改链接打开方式，将默认的当前页面跳转改为新标签页打开。&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;baseof.html&lt;/code&gt; 中加入以下内容。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Js&#34; data-lang=&#34;Js&#34;&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#0086b3&#34;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;).forEach(&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;function&lt;/span&gt; (link) {
+      link.setAttribute(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;target&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;_blank&amp;#39;&lt;/span&gt;);
+      link.setAttribute(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;rel&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;noopener noreferrer&amp;#39;&lt;/span&gt;);
+    });
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+</item>
     
     <item>
 <title>Notes|Fish Everywhere</title>
