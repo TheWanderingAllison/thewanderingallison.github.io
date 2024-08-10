@@ -3569,7 +3569,7 @@ Sally and her brothers are walking home from school along the dunes in their Mai
 </article>
 
 
-    </main>
+  </main>
   
       
   
@@ -3892,9 +3892,16 @@ Sally and her brothers are walking home from school along the dunes in their Mai
 </script>
 
 
+<script>
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+
 </body>
+
 </html>
 
 
-  
 

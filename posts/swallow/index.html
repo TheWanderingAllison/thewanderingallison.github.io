@@ -315,7 +315,7 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 </article>
 
 
-    </main>
+  </main>
   
       
   
@@ -638,9 +638,16 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 </script>
 
 
+<script>
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+
 </body>
+
 </html>
 
 
-  
 

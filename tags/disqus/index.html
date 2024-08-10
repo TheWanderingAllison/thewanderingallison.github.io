@@ -199,7 +199,7 @@
 
   
 
-    </main>
+  </main>
   
       
   
@@ -522,9 +522,16 @@
 </script>
 
 
+<script>
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+
 </body>
+
 </html>
 
 
-  
 

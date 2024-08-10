@@ -345,7 +345,7 @@ img{text-align: center; margin: 0 auto;}
 </article>
 
 
-    </main>
+  </main>
   
       
   
@@ -668,9 +668,16 @@ img{text-align: center; margin: 0 auto;}
 </script>
 
 
+<script>
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+
 </body>
+
 </html>
 
 
-  
 

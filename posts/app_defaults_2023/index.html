@@ -312,7 +312,7 @@ strong{background:#F7FB05;}
 </article>
 
 
-    </main>
+  </main>
   
       
   
@@ -635,9 +635,16 @@ strong{background:#F7FB05;}
 </script>
 
 
+<script>
+    document.querySelectorAll('a').forEach(function (link) {
+      link.setAttribute('target', '_blank');
+      link.setAttribute('rel', 'noopener noreferrer');
+    });
+  </script>
+
 </body>
+
 </html>
 
 
-  
 
