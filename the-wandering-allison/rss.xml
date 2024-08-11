@@ -76,7 +76,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;render-hook-for-links&#34;&gt;Render Hook for Links&lt;/h2&gt;
 &lt;p&gt;不想写中文了直接复制和 ChatGPT 的对话……&lt;/p&gt;
 &lt;p&gt;Use custom render hook to convert plain text links (e.g., &lt;code&gt;[title](plaintext)&lt;/code&gt;) and excludes real URLs (e.g., &lt;code&gt;[link](https://xxxxx)&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Create a file at layouts/_default/_markup/render-link.html.&lt;/p&gt;
+&lt;p&gt;Create a file at &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
 {{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
   {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}
@@ -3287,11 +3287,11 @@ There are fish everywhere! Some of them live in fresh water, some of them live u
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Hagfish&lt;/strong&gt;：盲鳗，是仍存活于海洋中的生物活化石，它们的祖先五亿年前就已经在地球上生活。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Lamprey&lt;/strong&gt; ：&lt;del&gt;唯一幸存的&lt;/del&gt;无颌鱼（这里不对，因为上面的 hagfish 虽然有争议，但大多数学者还是认为 hagfish 是无颌鱼的一种）。靠长满牙齿的嘴巴吸食猎物血液。PS，长相十分抱歉，轻易不要搜图。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Tetrapod&lt;/strong&gt;：四足鱼，肢体可以帮助它们在水中移动。在漫长的演化过程中，这些早期的四足动物失去鳞片、发育出肺部，大约 3.5 亿年前它们开始出现在陆地上。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tetrapod&lt;/strong&gt;：四足动物（鱼），肢体可以帮助它们在水中移动。在漫长的演化过程中，这些早期的四足动物失去鳞片、发育出肺部，大约 3.5 亿年前它们开始出现在陆地上。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;freshwater-fish&#34;&gt;Freshwater fish&lt;/h3&gt;
-&lt;p&gt;淡水只占地球水表面积的 1% 却有40%的鱼类生活在淡水中。Antarctica 和 Australia 是最为干旱的两个大陆，前者不存在淡水鱼，后者只有大概 300 种本土物种。&lt;/p&gt;
-&lt;p&gt;亚马逊和及其支流孕育了超过 3000 种鱼类。其中的 Arapaima 体长可达三米，而 Bull Shark 是少数可以同时在淡水和海水中生活的鱼类。&lt;/p&gt;
+&lt;p&gt;淡水只占地球水表面积的 1% 却有 40% 的鱼类生活在淡水中。Antarctica 和 Australia 是最为干旱的两个大陆，前者不存在淡水鱼，后者只有大概 300 种本土物种。&lt;/p&gt;
+&lt;p&gt;亚马逊河及其支流孕育了超过 3000 种鱼类。其中的 Arapaima 体长可达三米，而 Bull Shark 是少数可以同时在淡水和海水中生活的鱼类。&lt;/p&gt;
 &lt;h4 id=&#34;unexpected-places&#34;&gt;Unexpected places&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Cave&lt;/strong&gt;：墨西哥的 blind cave fish，在地下生活的演化过程中失去了眼睛。&lt;/li&gt;
@@ -3313,8 +3313,8 @@ There are fish everywhere! Some of them live in fresh water, some of them live u
 &lt;h3 id=&#34;feeding&#34;&gt;Feeding&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Whale shark&lt;/strong&gt;：体型最大的鱼类却以最小的生物（浮游植物、小型鱼类）为食。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Anglerfish&lt;/strong&gt;：&lt;del&gt;像钓鱼姥一样点灯捉鱼&lt;/del&gt;，头上有一条悬下的触须，顶端发光诱使猎物靠近。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Catfish&lt;/strong&gt;：有多达 1,75,000  taste buds（人类只有 10,000 左右），其中大部分都分布在像猫咪一样的胡须上，可以有效帮助它们觅食。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Anglerfish&lt;/strong&gt;：&lt;del&gt;像钓鱼佬一样点灯捉鱼&lt;/del&gt;，头上有一条悬下的触须，顶端发光诱使猎物靠近。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Catfish&lt;/strong&gt;：有多达 1,75,000  taste buds（人类只有 10,000 左右），其中大部分都分布在像猫咪一样的胡须上，这可以有效帮助它们觅食。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Stonefish&lt;/strong&gt;：世界上最有毒的动物之一。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;and-more&#34;&gt;And more&lt;/h3&gt;
@@ -3353,7 +3353,7 @@ There are fish everywhere! Some of them live in fresh water, some of them live u
 &lt;p&gt;还读到一篇 The Atlantic 的文章，
 
 &lt;a href=&#34;https://www.theatlantic.com/science/archive/2019/01/hagfish-slime/581002/&#34;&gt;No One Is Prepared for Hagfish Slime&lt;/a&gt;
- ，这句 “Hagfish produce slime the way humans produce opinions—readily, swiftly, defensively, and prodigiously.”顿时让我笑出声，再一看作者，哈，Ed Yong，他的 &lt;em&gt;An Immense World&lt;/em&gt;  和 &lt;em&gt;I Contain Multitudes&lt;/em&gt; 都是科普书籍里的大热门。&lt;/p&gt;
+，这句 “Hagfish produce slime the way humans produce opinions—readily, swiftly, defensively, and prodigiously”顿时让我笑出声，再一看作者，哈，Ed Yong，他的 &lt;em&gt;An Immense World&lt;/em&gt;  和 &lt;em&gt;I Contain Multitudes&lt;/em&gt; 都是科普书籍里的大热门。&lt;/p&gt;
 &lt;h3 id=&#34;head-brain-and-skull&#34;&gt;Head, brain and skull&lt;/h3&gt;
 &lt;p&gt;绘本里提到鱼时用了 “fish have brains”，这让我发散开来，为什么要用 brain 而非 head 或者 skull ？它们的区别又在哪里？&lt;/p&gt;
 &lt;blockquote&gt;

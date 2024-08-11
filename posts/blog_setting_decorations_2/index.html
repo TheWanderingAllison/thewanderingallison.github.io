@@ -262,7 +262,7 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 </code></pre></div><h2 id="render-hook-for-links">Render Hook for Links</h2>
 <p>不想写中文了直接复制和 ChatGPT 的对话……</p>
 <p>Use custom render hook to convert plain text links (e.g., <code>[title](plaintext)</code>) and excludes real URLs (e.g., <code>[link](https://xxxxx)</code>).</p>
-<p>Create a file at layouts/_default/_markup/render-link.html.</p>
+<p>Create a file at <code>layouts/_default/_markup/render-link.html</code>.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $destination := .Destination }}
 {{ if not (or (strings.HasPrefix $destination &#34;http&#34;) (strings.HasPrefix $destination &#34;https&#34;) (strings.HasPrefix $destination &#34;//&#34;)) }}
   {{ $destination = (print &#34;/posts/&#34; $destination | urlize) }}
