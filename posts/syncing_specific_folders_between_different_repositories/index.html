@@ -235,9 +235,10 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
       <p>人为了逃避做正事究竟可以多荒谬——嗯说的是我自己。来简单记录一下最近两天的折腾。</p>
 <p>之前写过博客发布 
 
+
   
 
-<a href="/posts/blog_setting">流程</a>
+<a href="/posts/blog_setting" >流程</a>
 ，我的 Hugo 和 Obsidian Vault 并不在相同根目录下，日常写 MD 文档又都是在 Obsidian 中完成，为了避免每次手动挪文件到 Hugo 的 <code>content/posts</code>，当时采用了 FreeFileSync 来做本地不同文件夹下的同步，略为臃肿但有效。</p>
 <p>为什么又动了折腾的念头？我的笔电已服役快六年，性能愈发捉襟见肘，不常用软件都被卸载了，FreeFileSync 只用来同步一个小小的文件夹也太浪费。而且除了在 Google Drive 上同步 Obsidian 笔记，我也希望用 GitHub 定期备份加个双保险。</p>
 <p>我的想法：</p>
@@ -250,7 +251,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>而 Hugo 仓库收到 push 后会触发另一个 Github Action，会 deploy Hugo 再发布到我的 Github Pages。如果 Obsidian 里安装了 Git 插件，那 Obsidian 文件夹备份、博客发布，都只在 Obsidian 里就可一键完成。</p>
 <p>说起来很啰嗦，其实就是 A 仓库 <code>A1</code> 文件夹同步到 B 仓库 <code>B1</code> 文件夹而已。等我费劲弄完发现网上也是有现成轮子的，
 
-<a href="https://github.com/BetaHuhn/repo-file-sync-action">repo-file-sync-action</a>
+
+<a href="https://github.com/BetaHuhn/repo-file-sync-action" target="_blank" rel="noreferrer noopener">repo-file-sync-action</a>
 ，只是自己折腾总是格外有劲儿。全程都让 ChatGPT 帮我写，最后我问它，用 XX 题目来描述这个过程你觉得合适吗？结果 ChatGPT 唰唰给我生成了一整篇文章！行吧，那就却之不恭了。复制粘贴一下备个份。另外因为我多问了一嘴双向同步怎么搞，它又加了个反向的同步过程。</p>
 <hr>
 <p>In this article, we&rsquo;ll explore how to synchronize specific folders between different GitHub repositories using GitHub Actions. This is particularly useful for scenarios where you need to keep a subset of your files in sync across multiple projects.</p>
@@ -279,7 +281,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <ol>
 <li>Go to 
 
-<a href="https://github.com/settings/tokens">GitHub&amp;rsquo;s Personal Access Token settings</a>
+
+<a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer noopener">GitHub&rsquo;s Personal Access Token settings</a>
 .</li>
 <li>Generate a new token with the <code>repo</code> scope.</li>
 </ol>
@@ -738,7 +741,7 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
     Copyright © 2020-2024 The Wandering Allison
   </div>  
   <div class="totalcount">
-    <span> 这个人已经废话了 171k 字！ </span>
+    <span> 这个人已经废话了 170.9k 字！ </span>
   </div>
 </footer>
 
@@ -802,13 +805,6 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
   document.addEventListener('turbolinks:load', initHeader());
 </script>
 
-
-<script>
-    document.querySelectorAll('a').forEach(function (link) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
-    });
-  </script>
 
 </body>
 

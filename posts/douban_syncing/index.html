@@ -232,7 +232,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
     <div class="py-5">
       <p>喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其他数据无所谓，这长达十几年的档案还是割舍不下。最早豆瓣有封禁苗头时我陆续用 
 
-<a href="https://blog.doufen.org/posts/tofu-user-guide/">豆坟</a>
+
+<a href="https://blog.doufen.org/posts/tofu-user-guide/" target="_blank" rel="noreferrer noopener">豆坟</a>
  导出过几次数据，但这只是一堆 excel 表格，静止的数据并没有价值。期间用了几天 Goodreads，也试图用 neodb 取代豆瓣，但豆瓣最重要的一点：关注友邻的精神食粮动态，目前仍没有对手。因此我在挣扎之下处于半弃瓣状态，仅用它做标记，不再发言。</p>
 <p>现在我的书影音档案在四个地方：豆瓣、notion、blog 以及 neodb。</p>
 <h2 id="豆瓣">豆瓣</h2>
@@ -240,7 +241,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <h2 id="notion">Notion</h2>
 <p>Notion 同步用的是在长毛象看到的 
 
-<a href="https://zhuzi.dev/posts/2021-06-05-douban-backup-sync-notion/">教程</a>
+
+<a href="https://zhuzi.dev/posts/2021-06-05-douban-backup-sync-notion/" target="_blank" rel="noreferrer noopener">教程</a>
  。</p>
 <p>原理是通过 GitHub Action 定期抓取用户的豆瓣 rss feed 来获取更新，缺点是每次只能抓取最近 10 条记录，此前数据只能手动导入（用豆坟或油猴插件一次性获取）。而豆坟导出的数据不含海报信息，这样一来从前的记录无法显示图片，总觉得略微遗憾。notion 本身的显示页面也不是很灵活，加载还很慢，得不停点击 load more 才会继续显示，我单纯是因为不需要手动就姑且当多个备份仓库了。</p>
 <p>实现成果如下图。
@@ -249,23 +251,28 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>同样是全自动，只需初始设定完毕后续就无需手动操作。</p>
 <p>教程 
 
-<a href="https://imnerd.org/doumark.html">豆瓣书影音同步 GitHub Action</a>
+
+<a href="https://imnerd.org/doumark.html" target="_blank" rel="noreferrer noopener">豆瓣书影音同步 GitHub Action</a>
  。</p>
 <p>原理是使用 GitHub Action 定期抓取用户豆瓣书影音记录，在个人 GitHub 仓库里生成对应 csv 文件。优点是第一次启用就能获取全部历史数据，后续的自动更新也没有上面的十条数量限制，还能自行编辑 csv 文件增加新条目，比如被豆瓣和谐的那些。缺点是导出的数据居然缺了 ISBN！等我好好学习完 GitHub Action 就自己重写一个（遥遥无期的 flag ）。</p>
 <p>但获取数据只是第一步，将数据可视化还需要更多折腾。作者提供了两个途径，一是同步到 blog，二是同步到 notion 。</p>
 <p>同步到 blog 具体就是往自己的静态博客里加几个网页，再写对应的 CSS ，让 csv 文件能够以图片墙形式显示，我抄的这个 
 
-<a href="https://immmmm.com/doumark-action/">「电影 / 阅读」页面，顶！</a>
+
+<a href="https://immmmm.com/doumark-action/" target="_blank" rel="noreferrer noopener">「电影 / 阅读」页面，顶！</a>
  ， 略微做了点改动。</p>
 <p>实现成果可点击 
 
-<a href="https://thewanderingallison.github.io/books/">书</a>
+
+<a href="https://thewanderingallison.github.io/books/" target="_blank" rel="noreferrer noopener">书</a>
  、
 
-<a href="https://thewanderingallison.github.io/movies/">影</a>
+
+<a href="https://thewanderingallison.github.io/movies/" target="_blank" rel="noreferrer noopener">影</a>
  、
 
-<a href="https://thewanderingallison.github.io/music/">音</a>
+
+<a href="https://thewanderingallison.github.io/music/" target="_blank" rel="noreferrer noopener">音</a>
  页面查看。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622185307.png" alt="book"></p>
 <p>（其实还有点问题，我的 blog header 太宽挡住了一部分页面，网页版的我改掉了，但没对手机页面进行适配，就这么先凑合着吧！）</p>
@@ -281,7 +288,8 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>顺便一提 Goodreads，它也接受导入，既然手头有这么多渠道的数据，就折腾下试试看。</p>
 <p>首先根据这个链接 
 
-<a href="https://www.goodreads.com/review/import">Import/Export Books to My Account | Goodreads</a>
+
+<a href="https://www.goodreads.com/review/import" target="_blank" rel="noreferrer noopener">Import/Export Books to My Account | Goodreads</a>
  查看 sample 文件，最不可或缺的是 ISBN，其他其实只要评分、评论、标记时间以及读过状态就够了。我只选择了以下几栏。</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622181321.png" alt="goodreads"></p>
 <p>试验了下，上半年的 60 本书，成功导入 51 本，剩余无法识别，应该是因为有些中文书暂时没有条目。失败比例还是颇高，我大概率会放弃这个平台了。</p>
@@ -610,7 +618,7 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
     Copyright © 2020-2024 The Wandering Allison
   </div>  
   <div class="totalcount">
-    <span> 这个人已经废话了 171k 字！ </span>
+    <span> 这个人已经废话了 170.9k 字！ </span>
   </div>
 </footer>
 
@@ -674,13 +682,6 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
   document.addEventListener('turbolinks:load', initHeader());
 </script>
 
-
-<script>
-    document.querySelectorAll('a').forEach(function (link) {
-      link.setAttribute('target', '_blank');
-      link.setAttribute('rel', 'noopener noreferrer');
-    });
-  </script>
 
 </body>
 
