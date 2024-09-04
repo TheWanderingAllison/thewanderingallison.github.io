@@ -3233,7 +3233,7 @@ From the time he was a small boy, Wilson Bentley saw snowflakes as small miracle
 
 
 &lt;a href=&#34;https://snowflakebentley.com/images&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Photos taken by Bentley&lt;/a&gt;
-&lt;/p&gt;
+。&lt;/p&gt;
 &lt;h3 id=&#34;bringing-back-the-wolves&#34;&gt;Bringing Back the Wolves&lt;/h3&gt;
 &lt;style&gt;
      
@@ -16052,7 +16052,7 @@ From the time he was a small boy, Wilson Bentley saw snowflakes as small miracle
 &lt;p&gt;有点年头的绘本，我从 
 
 
-&lt;a href=&#34;https://archive.org/details/movies&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Internet Archive&lt;/a&gt;
+&lt;a href=&#34;https://archive.org/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Internet Archive&lt;/a&gt;
  借的。一开始还吐槽这种把所有动物都拟人化赋予人类感情的表现手法太过人类中心并且从另个角度来看未免也太地狱了。（小猪骄傲地说我的肉最多真的好吗！）不过换个角度想，在那个时代把动物认作是伙伴且着力表现它们和人类的牵绊也未尝不是坏事。而且画面表现确实细腻，到后来我也有点被打动。尤其是这张动物们坐摩天轮，脸上表情真是生动极了。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202408182145256.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;另外它多少也展现了早期还没有大规模工业化的家庭农场的细节，还是很有趣的。&lt;/p&gt;
@@ -35613,7 +35613,7 @@ And is not again to be met with.&lt;/p&gt;
     });
   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2024.08.27 更新：&lt;/p&gt;
-&lt;p&gt;发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以更改了一下逻辑，删除了 &lt;code&gt;script&lt;/code&gt;，把上一步的 &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt; 改为如下内容。这样近在新标签页打开外站链接，本站还是基于当前页面跳转。&lt;/p&gt;
+&lt;p&gt;发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以更改了一下逻辑，删除了 &lt;code&gt;script&lt;/code&gt;，把上一步的 &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt; 改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
 {{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
   {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}
