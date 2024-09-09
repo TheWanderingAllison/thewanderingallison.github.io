@@ -43,7 +43,7 @@ rss_ignore: false
 
   
 
-&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian.md&#34; &gt;在 Obsidian 中使用Google Play Books&lt;/a&gt;
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian&#34; &gt;在 Obsidian 中使用Google Play Books&lt;/a&gt;
  这篇里详细写过用途。&lt;/p&gt;
 &lt;h3 id=&#34;dataview&#34;&gt;Dataview&lt;/h3&gt;
 &lt;p&gt;强大的索引、查询工具。&lt;/p&gt;
@@ -79,7 +79,7 @@ sort file.mtime desc
 
   
 
-&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories.md&#34; &gt;Syncing Specific Folders Between Different Repositories Using GitHub Actions&lt;/a&gt;
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories&#34; &gt;Syncing Specific Folders Between Different Repositories Using GitHub Actions&lt;/a&gt;
  。&lt;/p&gt;
 &lt;p&gt;以此实现了：&lt;/p&gt;
 &lt;ol&gt;
