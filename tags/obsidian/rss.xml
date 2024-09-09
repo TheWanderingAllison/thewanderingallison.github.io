@@ -7,10 +7,103 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Thu, 25 Apr 2024 00:58:25 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/obsidian/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>我的 Obsidian 常用插件</title>
+<link>https://thewanderingallison.github.io/posts/obsidian_plugins/</link>
+<pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/obsidian_plugins/</guid>
+<description>&lt;p&gt;&lt;img src=&#34;https://thebusinessblocks.com/wp-content/uploads/2020/08/Untitled-design-3.png&#34; alt=&#34;Obsidian&#34;&gt;&lt;/p&gt;
+&lt;p&gt;好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思）。&lt;/p&gt;
+&lt;p&gt;而我这么喜欢 Obsidian 的原因就是，它既可以是开箱即用的 Markdown 文本编辑器，也可以根据用户的需求无限度复杂。最早我只是需要一个有预览功能的 Markdown 软件，打开就可以打字的那种，它完成得很好。后续的功能挖掘、插件安装，都是在使用过程中自然生长出的，Obsidian 强大的社区支持也让这些需求（几乎）都得以满足。&lt;/p&gt;
+&lt;h2 id=&#34;core-plugins&#34;&gt;Core Plugins&lt;/h2&gt;
+&lt;p&gt;除了 Sync（要收费）其他我基本都选择了开启。&lt;/p&gt;
+&lt;p&gt;不过说是插件，理解成软件自带的增强功能更合适，大部分也无需更进一步的设置，自然地就融入日常使用。&lt;/p&gt;
+&lt;h3 id=&#34;template&#34;&gt;Template&lt;/h3&gt;
+&lt;p&gt;唯一想要介绍的是 &lt;code&gt;Template&lt;/code&gt; 功能，通过它可以解放许多重复工作，比如博文的 &lt;code&gt;metadata&lt;/code&gt;，比如读书笔记的固定模板。可以创建多个 &lt;code&gt;Template&lt;/code&gt; 文件，配合 hotkey（我的自定义是 &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;I&lt;/kbd&gt;）快速插入。&lt;/p&gt;
+&lt;p&gt;下面是我的博文 &lt;code&gt;Template&lt;/code&gt; 文件， &lt;code&gt;{{date}}&lt;/code&gt; 会自动插入当前日期。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-metadata&#34; data-lang=&#34;metadata&#34;&gt;---
+title: &amp;quot;&amp;quot;
+date: {{date}}
+draft: true
+tags: 
+categories: 
+rss_ignore: false
+---
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;community-plugins&#34;&gt;Community Plugins&lt;/h2&gt;
+&lt;p&gt;顾名思义，是官方之外广大用户创造的插件。&lt;/p&gt;
+&lt;h3 id=&#34;custom-frame&#34;&gt;Custom Frame&lt;/h3&gt;
+&lt;p&gt;
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian.md&#34; &gt;在 Obsidian 中使用Google Play Books&lt;/a&gt;
+ 这篇里详细写过用途。&lt;/p&gt;
+&lt;h3 id=&#34;dataview&#34;&gt;Dataview&lt;/h3&gt;
+&lt;p&gt;强大的索引、查询工具。&lt;/p&gt;
+&lt;p&gt;我的用法其实很笨拙，只是为了在首页显示近期需要处理的文档。&lt;/p&gt;
+&lt;p&gt;创建一个名叫 &lt;code&gt;Homepage&lt;/code&gt; 的 canvas 页面，右击选中 &lt;code&gt;Pin&lt;/code&gt; 固定标签页，保证每次打开 Obsidian 都能看到。在 canvas 中新建多个 card，输入 &lt;code&gt;dataview&lt;/code&gt; 语句实现特定条件的表格或列表筛选显示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202409082323831.webp&#34; alt=&#34;Homepage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;左侧的 Drafts 是以表格形式列出文件 metadata 中的 &lt;code&gt;title&lt;/code&gt;、&lt;code&gt;tag&lt;/code&gt;，按照最后修改时间降序显示来自 &lt;code&gt;Blog-drafts&lt;/code&gt; 文件夹的最新十条内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Obsidian-dataview&#34; data-lang=&#34;Obsidian-dataview&#34;&gt;\`\`\`dataview
+table title, tags
+from &amp;quot;Blog-drafts&amp;quot;
+sort file.mtime desc
+limit 10
+\`\`\`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;右边的 Book 是以列表显示满足以下条件的文档（要求较多我懒得解释了）。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Obsidian-dataview&#34; data-lang=&#34;Obsidian-dataview&#34;&gt;\`\`\`dataview
+list from #Book or &amp;quot;Reading/Notes&amp;quot; and -&amp;quot;Templates&amp;quot;
+where isFinished = false or lastReadDate &amp;gt;= date(today) - dur(15 day)
+sort file.mtime desc
+\`\`\`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;而这只是非常初级的功能，只要阅读官方文档，尤其是大概懂一点 SQL 或者其他编程语言很快就能上手，更高级的用法我暂时也用不上，需要时再学吧！&lt;/p&gt;
+&lt;h3 id=&#34;easy-typing&#34;&gt;Easy Typing&lt;/h3&gt;
+&lt;p&gt;格式助手，排版救星。&lt;/p&gt;
+&lt;p&gt;开发者上传了视频 
+
+
+&lt;a href=&#34;https://www.bilibili.com/video/BV1jg411n7A4/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Obsidian 插件 Easy Typing：极大地提升中文用户在OB中的编辑体验&lt;/a&gt;
+详细讲解了用法，有些太 geeky 超过了我的能力范围，不过像连续全角转半角这种功能真是大大提升中文输入体验。&lt;/p&gt;
+&lt;h3 id=&#34;fleeting-note-sync&#34;&gt;Fleeting Note Sync&lt;/h3&gt;
+&lt;p&gt;配合 Fleeting Note 的浏览器插件同步网页剪藏内容到 Obsidian。&lt;/p&gt;
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+&lt;p&gt;我的用途主要是为了配合 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories.md&#34; &gt;Syncing Specific Folders Between Different Repositories Using GitHub Actions&lt;/a&gt;
+ 。&lt;/p&gt;
+&lt;p&gt;以此实现了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;备份 Obsidian 笔记到 Github 私人仓库&lt;/li&gt;
+&lt;li&gt;触发 Github Action，将 Obsidian 的两个文件夹分别同步到 GitHub A 账号的 A 博客仓库和 GitHub B 账号的 B 博客仓库，再分别触发仓库的 Hugo deploy action 实现最终的博客发布&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样两个博客的内容都只需在 Obsidian 里写完 Markdown 文档一键推送，不需要切换 GitHub 账号，不需要本地部署，更不需要打任何命令。啊！赞美造轮子的人，赞美 GitHub Action！&lt;/p&gt;
+&lt;h3 id=&#34;image-auto-upload-plugin&#34;&gt;Image Auto Upload Plugin&lt;/h3&gt;
+&lt;p&gt;配合 PicGo 实现图片上传至图床。&lt;/p&gt;
+&lt;p&gt;我只有写 blog 才偶尔需要插图，日常笔记是纯文字，所以不需要其他的图片管理插件。&lt;/p&gt;
+&lt;h3 id=&#34;open-link-with&#34;&gt;Open Link With&lt;/h3&gt;
+&lt;p&gt;目的是让外部链接默认在 Obsidian 新标签页打开无需跳转至系统浏览器。&lt;/p&gt;
+&lt;h3 id=&#34;tag-wrangler&#34;&gt;Tag Wrangler&lt;/h3&gt;
+&lt;p&gt;批量修改 tag 。&lt;/p&gt;
+&lt;h3 id=&#34;weread&#34;&gt;Weread&lt;/h3&gt;
+&lt;p&gt;在 Obsidian 中使用微信读书以及同步笔记。&lt;/p&gt;
+&lt;h2 id=&#34;hotkeys&#34;&gt;Hotkeys&lt;/h2&gt;
+&lt;p&gt;此外必须一提的是 Obsidian 堪称无穷无尽的 hotkeys。你几乎可以给每一个动作（以及插件功能）配置 hotkey。&lt;/p&gt;
+&lt;p&gt;最棒的地方在于大部分不需要强记，可以无缝衔接之前的使用经验。&lt;/p&gt;
+&lt;p&gt;首先文本，复制、粘贴、无格式粘贴、剪切、撤销、取消撤销又或者加粗、斜体之类，这些在各类文本编辑器中都是通用的；其次标签，打开、新键、关闭、恢复标签页，又或者用 &lt;kbd&gt;CTRL&lt;/kbd&gt; 加数字跳转至对应标签页，和 Chrome 或者 Edge 也都完全相同；再到文件管理，打开、新建，和 Windows 系统层面操作也别无二致。&lt;/p&gt;
+&lt;p&gt;那特有的那些呢？可以先打开设置面板看一眼究竟有哪些支持自定义，日后总会有某些操作频繁到不耐烦用鼠标多次点选，那时自然而然会生出用键盘的念头的。比如我常用的，插入新模板、打开 Google Play Books 、打开微信读书、插入日期、移动当前文件到其他位置等等等等。&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>Eyes</title>
