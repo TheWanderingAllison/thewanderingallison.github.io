@@ -12,6 +12,22 @@
     
     
     <item>
+<title>解决 MP4 无法读取 SD 卡问题</title>
+<link>https://thewanderingallison.github.io/posts/toolbox_mp4-cannot-read-sd-card-data/</link>
+<pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox_mp4-cannot-read-sd-card-data/</guid>
+<description>&lt;p&gt;前阵子翻出了古早 MP4 和更古早的 MP3， MP3 已经无法开机，倒是里头插着的 SD 卡还能用，我就塞进了 MP4 里。MP4 连上电脑时提示 SD 卡需要格式化，格式化后复制了不少新文件到 MP4 和 SD 卡里，打开 MP4 却发现虽然能够识别到 SD 卡的存在，试图读取时却提示 &lt;code&gt;NO DATA FILE&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;网上搜了半天也没结果，最后我终于想起来换了个关键词，得到的信息是：&lt;br&gt;
+&lt;strong&gt;FAT32&lt;/strong&gt; is the most common file system for SD cards used in MP4 devices. It&amp;rsquo;s widely supported by various MP4 players and offers a good balance between compatibility and storage capacity.&lt;/p&gt;
+&lt;p&gt;而我最开始在电脑上进行的那轮格式化，Windows 默认的格式是 &lt;code&gt;FAT&lt;/code&gt; 而非 &lt;code&gt;FAT32&lt;/code&gt;，再次连接电脑，下拉选择格式，格式化完成。重新复制文件到 SD 卡。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202409151448529.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开 MP4，可以正常播放啦！感觉大概率不会再有人写同样的问题了，在博客存个档吧。&lt;/p&gt;
+&lt;p&gt;以及，时隔多年再次用播放器，感觉很不错啊，可以走路、临睡前听，续航持久，功能专一，比手机好。&lt;/p&gt;
+</description>
+</item>
+    
+    <item>
 <title>另一个网站统计工具——Bing Webmaster Tools</title>
 <link>https://thewanderingallison.github.io/posts/toolbox_bing-webmaster-tools/</link>
 <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
