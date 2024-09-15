@@ -7,10 +7,52 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sun, 08 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 13 Sep 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/toolbox/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>另一个网站统计工具——Bing Webmaster Tools</title>
+<link>https://thewanderingallison.github.io/posts/toolbox_bing-webmaster-tools/</link>
+<pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox_bing-webmaster-tools/</guid>
+<description>&lt;p&gt;&lt;img src=&#34;https://www.bing.com/webmaster/help/helpimage/Home_en-us&#34; alt=&#34;Bing Webmaster Tools&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 blog 装修（
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations&#34; &gt;1&lt;/a&gt;
+、
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations_2&#34; &gt;2&lt;/a&gt;
+）里写过我加了 GA 和 UMAMI 来统计访问数据，上一篇
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/dairy20240909&#34; &gt;日记&lt;/a&gt;
+里也提到偶尔会用到 backlink checker。这几天突然想到，Google 既然有这类工具，微软家大业大想必也不会落下？我的博客 organic  search 来源初期 Bing 一直是多于 Google，在 Google 里看 search queries
+几乎全是 Google Play Books 相关，Bing 的数据应该会不大一样吧？&lt;/p&gt;
+&lt;p&gt;说干就干，果然微软是有的，Bing Webmaster Tools，使用起来也非常简单，具体可参考 
+
+
+&lt;a href=&#34;https://www.bing.com/webmasters/help/help-center-661b2d18&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Help Centre&lt;/a&gt;
+。注册账号——提交网站——验证网站。&lt;/p&gt;
+&lt;p&gt;如果已经用上了 Google Search Console，更快捷的方式是用 Google 账号登陆，再授权导入 Google Search Console 已验证信息，全程不超过一分钟。之后会提示：Your data and reports are being processed and it may take upto 48 hours to reflect. Meanwhile, to speed up the indexing process, please submit your sitemap by using the Sitemaps feature. 静待数据处理就好，可以提交 sitemap 或者 RSS 文件帮助提高速度。&lt;/p&gt;
+&lt;p&gt;有哪些功能我就不详细介绍了，请看官方文档 
+
+
+&lt;a href=&#34;https://www.bing.com/webmasters/help/refreshed-webmaster-tools-7c7d2533&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;features&lt;/a&gt;
+。今天我的数据刚处理完成，看了眼 Search Keywords 和 Google 那边很不同，几乎所有工具类文章涉及到的关键词都被搜过——体会到中文世界的不容易，我这种就几个人看的博客都会被检索到。尤其是在 Bing 或者 Duckduckgo 里搜播客 RSS 的话，大概率头几个结果就是我。Backlink 和 Google Search Console 里的也不太一样，不过，一样不全。&lt;/p&gt;
+&lt;p&gt;Bing Webmaster Tools 可以当作 Google Search Console 的补充。尤其是中文内容，用 Bing 搜索的人搞不好会比 Google 还多，虽然其实这俩数据我都不怎么看，但既不增加自己博客负担又不要钱，那干嘛不用！&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>那些我喜欢的女性音乐人们</title>
