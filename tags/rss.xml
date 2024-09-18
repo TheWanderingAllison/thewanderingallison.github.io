@@ -7,10 +7,46 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Tue, 17 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>不定期更新的 podcast 收听总结</title>
+<link>https://thewanderingallison.github.io/posts/podcast_20240918/</link>
+<pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/podcast_20240918/</guid>
+<description>&lt;p&gt;自从 Google Podcasts 宣称要关闭之后我一度想要不放弃播客算了，搜 Google Podcasts alternative，看了许多篇测评，还找到一个可以列出表格横向对比各 app 的网站，可这么多软件怎么就没有一个能符合我需求？甚至只一条同时拥有 web 端和手机端就可以淘汰掉许多热门产品了。直到 Google Podcasts 彻底关停，我也没挑到满意的替代。最后决定如果需求注定不能被全部满足，那起码挑个开源的，就这么选中了 AntennaPod。不过试用下来，除了没有网页版，其他功能堪称完美。&lt;/p&gt;
+&lt;p&gt;由于 AntennaPod 还支持导入本地文件，导致我有很大一部分时间在听 audiobook，分配给播客的时间就更少。中文播客经过挑挑拣拣之后，还订阅着且密集收听的只有以下几个。随手一记我就不加链接了，可以去 NeoDB 搜索获取 RSS（好几个当初都还是我添加的条目呢）。&lt;/p&gt;
+&lt;h2 id=&#34;密集收听&#34;&gt;密集收听&lt;/h2&gt;
+&lt;h3 id=&#34;自然选择-naturalselection&#34;&gt;自然选择 NaturalSelection&lt;/h3&gt;
+&lt;p&gt;我很喜欢的科学写作专栏 ImagineNature 的作者 Ent 新开的播客，已成为近期我最喜欢的节目。看名字也知道还是在聊科学，不过如果听众已经对某个主题了解稍多，听播客会觉得收获不大（比如艾滋那期因为我刚读完一本讲艾滋的书，就觉得基本没有新鲜内容）。但普通听众再厉害也不可能对所有科学话题都了如指掌，所以还是非常推荐。&lt;/p&gt;
+&lt;p&gt;PS，节目简介说主播是谢默超和范岗，我还奇怪了一下哪个是 Ent（他这个 ID 因为之前的 731 问题估计已经不能在大陆互联网上露脸了），不过点进小宇宙链接看到主播 ID 是食人魔萨满、Fangorn 就立刻知道了，Fangorn，aka 范贡，aka Treebeard，aka Ent（没人关心的 lotr 知识）。就是没想到中文他用的是范岗。&lt;/p&gt;
+&lt;h3 id=&#34;熊家客厅&#34;&gt;熊家客厅&lt;/h3&gt;
+&lt;p&gt;资深记者熊阿姨的播客节目，不会每期都听，但节目嘉宾确实都挺有意思。&lt;/p&gt;
+&lt;h3 id=&#34;绕城外&#34;&gt;绕城外&lt;/h3&gt;
+&lt;p&gt;译者何雨珈（和她的一位译者朋友）的播客。主题当然是围绕着书、翻译，还有我最近也颇为感兴趣的观鸟。前阵子还请了扶霞去聊新书《君幸食》。但是！她那位男性译者朋友真的真的真的很烦人！我不确定他要是继续这么烦人下去我还能不能坚持。&lt;/p&gt;
+&lt;h3 id=&#34;商业就是这样&#34;&gt;商业就是这样&lt;/h3&gt;
+&lt;p&gt;之前写过，现在评价还是没变，信息量大言简意赅但又毫不枯燥并且主播口条非常利索的商业主题播客，每期都听。&lt;/p&gt;
+&lt;h3 id=&#34;声东击西&#34;&gt;声东击西&lt;/h3&gt;
+&lt;p&gt;很有名不需要我点评了吧，不一定每期都听完，但起码都会点开看看。&lt;/p&gt;
+&lt;h3 id=&#34;鹰眼时间&#34;&gt;鹰眼时间&lt;/h3&gt;
+&lt;p&gt;关注体育和体育竞技的播客。其实我完全不看任何比赛，日常也几乎是个死宅，但这个播客倒是大部分都会听。甚至吃下了主播的安利今年第一次点开了剧集看了十来集 Wrexham。&lt;/p&gt;
+&lt;h3 id=&#34;这集我看过&#34;&gt;这集我看过&lt;/h3&gt;
+&lt;p&gt;之前也写过，但是她们好久没更新了，哀怨！&lt;/p&gt;
+&lt;p&gt;历史学者的观影记录。&lt;/p&gt;
+&lt;p&gt;非常有趣，证据就是所有内容我一集也没看过却津津有味听完所有节目。作为历史学者让主播们针对每个主题可以挖掘到许多不同面向以及谈得远比影视作品深入的多。目前的关注度完全配不上内容质量。&lt;/p&gt;
+&lt;h3 id=&#34;日知录&#34;&gt;日知录&lt;/h3&gt;
+&lt;p&gt;也是一档冷门知识播客，同样最近没什么更新。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;世界莫名其妙物语在犹豫是否取消订阅，感觉她们选题有些枯竭，而且聊天内容和我临时对某个话题感兴趣 Google 出来的结果似乎也没两样。&lt;/p&gt;
+&lt;p&gt;出版方明室的播客有关紧要，过去也会挑着主题听听，可最近一期她们请了我很不喜欢的、动辄营销过头的果麦，听着还打算和人家好好取经，扶额，不要了吧！果麦是什么好的学习对象吗！&lt;/p&gt;
+&lt;p&gt;另外，怎么到现在都没有一档以聊非虚构为主（尤其是科学和科普相关）的读书播客！现有的一些读书或者泛文化类的播客多少我也听过，没一个令人满意。别说什么八分、文化有限、忽左忽右，这种差不多属于要被我拉黑级别。蜜獾读书、昨日之海也不喜欢，跳岛自从接连请了一堆质量很不行的飞行嘉宾后也被我踢出了收听名单。&lt;/p&gt;
+&lt;p&gt;仰天长叹，我只是想要一个可以稳定收获（非社科向）非虚构作品书单的播客，又不是要天上的星星！还是说我发现了一个&lt;del&gt;致富&lt;/del&gt;赛道，谁快来做一个节目。&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>讨人厌的词</title>
