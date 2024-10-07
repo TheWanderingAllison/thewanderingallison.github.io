@@ -308,21 +308,11 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 </code></pre></div><p>将 <code>张三</code> 替换成自己的名字，命名该 script 后保存。</p>
 <p>这个脚本会执行以下动作：</p>
 <ul>
-<li>
-<p>检查邮箱 <code>RailwaySchedules</code> 标签下是否有未读邮件</p>
-</li>
-<li>
-<p>遍历未读邮件，若含有指定姓名，则截取邮件中 <code>张三，</code> 到 <code>，电子客票。</code> 部分内容为 <code>infoSection</code></p>
-</li>
-<li>
-<p>用 <code>，</code> 来 split <code>infoSection</code>，将得到的 <code>array[0]</code> 转换为日期和时间，<code>array[1]</code> 为车站。</p>
-</li>
-<li>
-<p>将车站信息作为标题、其余内容为描述添加到 Google Calendar Event，设置时间日期并提前两小时提醒</p>
-</li>
-<li>
-<p>将对应邮件标为已读</p>
-</li>
+<li>检查邮箱 <code>RailwaySchedules</code> 标签下是否有未读邮件</li>
+<li>遍历未读邮件，若含有指定姓名，则截取邮件中 <code>张三，</code> 到 <code>，电子客票。</code> 部分内容为 <code>infoSection</code></li>
+<li>用 <code>，</code> 来 split <code>infoSection</code>，将得到的 <code>array[0]</code> 转换为日期和时间，<code>array[1]</code> 为车站。</li>
+<li>将车站信息作为标题、其余内容为描述添加到 Google Calendar Event，设置时间日期并提前两小时提醒</li>
+<li>将对应邮件标为已读</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202410071634765.webp" alt="image.png"></p>
 <p>12306 的邮件模板通常如上图，所以用 <code>张三，</code> 和 <code>，电子客票。</code> 作为 split 的分隔字符能保证恰好截取到自己的购票信息。</p>
@@ -337,11 +327,11 @@ p:has(> img:nth-child(6)) img{margin-bottom:8px;}
 <p>Click the <strong>+ Add Trigger</strong> button at the bottom right.</p>
 <p>Set up the trigger as follows:  </p>
 <ul>
-<li><strong>Choose which function to run</strong>: Select the function that processes the Gmail label (in this case, <code>checkLabelAndProcessEmails</code>).</li>
+<li><strong>Choose which function to run</strong>: Select the function that processes the Gmail label (in this case, <code>checkLabelAndProcessEmails</code>)</li>
 <li><strong>Choose which deployment should run</strong>: Select &ldquo;Head&rdquo; (the default).</li>
 <li><strong>Select event source</strong>: Choose &ldquo;Time-driven.&rdquo;</li>
 <li><strong>Select type of time-based trigger</strong>: Choose an interval, such as &ldquo;Minute timer,&rdquo; &ldquo;Hour timer,&rdquo; or &ldquo;Day timer.&rdquo;</li>
-<li><strong>Select time interval</strong>: Choose how frequently you want the script to run (e.g., every 10 minutes, once an hour, or once a day).</li>
+<li><strong>Select time interval</strong>: Choose how frequently you want the script to run (e.g., every 10 minutes, once an hour, or once a day)</li>
 </ul>
 <p>运行试试看，Google Calendar 里已经有相应 event 了呢！</p>
 <p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202410071715129.webp" alt="image.png"></p>
