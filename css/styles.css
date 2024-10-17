@@ -919,7 +919,6 @@ html {
 }
 
 .article a {
-  text-decoration: underline;
   --text-opacity: 1;
   color: #374151;
   color: rgba(55, 65, 81, var(--text-opacity));
@@ -928,7 +927,7 @@ html {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.article a:not(.no-underline) {
+a:not(.article_title) {
   text-decoration: underline;
 }
 
