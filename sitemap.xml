@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://thewanderingallison.github.io/</loc>
-    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/categories/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/blog_setting_css/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/hugo/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/posts/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
+    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/20240831_1/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thewanderingallison.github.io/categories/</loc>
-    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://thewanderingallison.github.io/tags/monthly/</loc>
-    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/posts/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/reading/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/categories/reading/</loc>
-    <lastmod>2024-10-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/20240630_3/</loc>
@@ -33,12 +48,6 @@
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/googlecalendar/</loc>
-    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
-    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/</loc>
@@ -76,9 +85,6 @@
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/toolbox_mp4-cannot-read-sd-card-data/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/search/</loc>
     <lastmod>2024-09-13T00:00:00+00:00</lastmod>
@@ -133,9 +139,6 @@
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/declutter_1/</loc>
     <lastmod>2024-08-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/hugo/</loc>
-    <lastmod>2024-08-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/blog_setting_decorations_2/</loc>
     <lastmod>2024-08-10T00:00:00+00:00</lastmod>

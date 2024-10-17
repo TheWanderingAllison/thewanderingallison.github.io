@@ -7,10 +7,48 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Mon, 14 Oct 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Thu, 17 Oct 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>CSS 踩坑记</title>
+<link>https://thewanderingallison.github.io/posts/blog_setting_css/</link>
+<pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_css/</guid>
+<description>&lt;p&gt;速打一下存个档，否则我肯定会在同样的坑里摔第二次……&lt;/p&gt;
+&lt;p&gt;前几天做了个博客问卷还说我不折腾外观，打脸真是来得如此猝不及防。&lt;/p&gt;
+&lt;p&gt;之前我这个主题是 plain CSS，改动起来很方便，中途主题升级过一次，我眼馋 archive 页的新设计就更新了，当时就发现虽然样式生效但如果我想微调，不管是动 &lt;code&gt;assets/css&lt;/code&gt; 还是 &lt;code&gt;theme/css&lt;/code&gt; 文件夹都没用，无法改全局 CSS 最后只好改 &lt;code&gt;layouts&lt;/code&gt; 或者在单一页面里加 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;。总之就是凑合了好久，最近我非常想把正文的引用 &lt;code&gt;italic&lt;/code&gt; 格式取消，但找遍文件夹里的 CSS 文件怎么改都不行，非常抓狂。&lt;/p&gt;
+&lt;p&gt;中间血泪的踩坑过程就不说了，一圈儿试下来才发现不管动了什么，Hugo 最后实际使用的都是 &lt;code&gt;themes/bento/resources/_gen/&lt;/code&gt; 这个文件夹里某个带 hash 值后缀的 CSS。然后我才意识到，作者新写的 &lt;code&gt;styles.css&lt;/code&gt; 是用了 &lt;code&gt;Tailwind CSS&lt;/code&gt; 和 &lt;code&gt;PostCSS&lt;/code&gt;，当初看到 &lt;code&gt;styles.css&lt;/code&gt; 和 &lt;code&gt;head.html&lt;/code&gt; 这俩文件的内容我就应该先查查 &lt;code&gt;PostCSS&lt;/code&gt; 和 &lt;code&gt;Tailwind CSS&lt;/code&gt; 是个什么玩意儿的……真是纯属没苦硬吃（扶额）。&lt;/p&gt;
+&lt;p&gt;简而言之就是要有两个程序（？）把这些内容加工一遍才能生成一个最终被 &lt;code&gt;public&lt;/code&gt; 采用的 &lt;code&gt;styles.css&lt;/code&gt; 文件，而我的 Hugo 项目下并没安装相关的 npm packages，不管如何动 CSS，Hugo 根本不处理那当然改动就不会生效！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind base - put variables under: tailwind.config.js */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/base&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind component classes registered by plugins*/&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/components&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Site Specific */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;assets/css/site&amp;#34;&lt;/span&gt;;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;assets/css/syntax&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind&amp;#39;s utility classes - generated based on config file */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/utilities&amp;#34;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;
+{{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;style &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; resources.Get &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;css/styles.css&amp;#34;&lt;/span&gt; | &lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;postCSS&lt;/span&gt; (dict &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;./assets/css/dev/postcss.config.js&amp;#34;&lt;/span&gt;) }}
+&amp;lt;link rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $style.RelPermalink }}&amp;#34;&lt;/span&gt;&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;那后续就好办了，先在 &lt;code&gt;blog&lt;/code&gt; 这个文件夹执行一下命令安装相关 package。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
+npm install postcss postcss-import autoprefixer tailwindcss
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但我这个文件夹同时又是 GitHub 仓库，安装后多出来 6000 多文件，git 提醒要爆炸，赶紧把 &lt;code&gt;node_modules&lt;/code&gt; 都加到 &lt;code&gt;.gitignore&lt;/code&gt; 里。&lt;/p&gt;
+&lt;p&gt;再 &lt;code&gt;Hugo&lt;/code&gt; 试一下，这下真的生成新的 CSS 文件了！但好多遗留问题……说老实话这个主题写得一般，还被我发现了 bug ，最后删除了某个莫名其妙的点阵背景，修改了单篇文章的标题格式，调整 archive 页链接呈现样式，删除正文引用的斜体格式，以及林林总总一大堆，希望这是我最后一次动 CSS……&lt;/p&gt;
+&lt;p&gt;不过，大概知道 &lt;code&gt;Tailwind CSS&lt;/code&gt; 怎么用之后不得不感叹确实简洁多了呀！但我是不会主动学的，以后，以后吧……&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>2024七八月读书记录（一）</title>
@@ -128390,14 +128428,14 @@ And is not again to be met with.&lt;/p&gt;
 &lt;p&gt;把  &lt;code&gt;index.html&lt;/code&gt; 中原先的模块删掉，利用 Hugo 的 &lt;code&gt;range&lt;/code&gt; 语句生成最近 5 篇文章的列表，首页就清爽多啦。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;      {{ range first 5 (sort site.RegularPages &amp;#34;Date&amp;#34; &amp;#34;desc&amp;#34;) }}
       &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;position: relative;&amp;#34;&lt;/span&gt;&amp;gt;
-        &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;ol&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 15; margin-bottom: 15;&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 15; margin-bottom: 15;&amp;#34;&lt;/span&gt;&amp;gt;
           &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; no-underline rounded-md hover:bg-white transition duration-300 ease-in-out&amp;#34;&lt;/span&gt;
             &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 5; margin-bottom: 5;&amp;#34;&lt;/span&gt;&amp;gt;
             &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ .RelPermalink }}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;tracking-tight no-underline text-blue-600  mb-0&amp;#34;&lt;/span&gt;&amp;gt;
               {{ .Title }}
             &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
           &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt;&amp;gt;
-        &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;ol&lt;/span&gt;&amp;gt;
+        &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;ul&lt;/span&gt;&amp;gt;
       &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt;&amp;gt;
       {{ end }}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;render-hook-for-links&#34;&gt;Render Hook for Links&lt;/h2&gt;
@@ -128421,7 +128459,7 @@ And is not again to be met with.&lt;/p&gt;
     });
   &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/script&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2024.08.27 更新：&lt;/p&gt;
-&lt;p&gt;发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以更改了一下逻辑，删除了 &lt;code&gt;script&lt;/code&gt;，把上一步的 &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt; 改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。&lt;/p&gt;
+&lt;p&gt;发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以改了下逻辑，删除了 &lt;code&gt;script&lt;/code&gt;，把上一步的 &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt; 修改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
 {{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
   {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}

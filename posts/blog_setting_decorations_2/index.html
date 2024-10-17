@@ -240,14 +240,14 @@
 <p>把  <code>index.html</code> 中原先的模块删掉，利用 Hugo 的 <code>range</code> 语句生成最近 5 篇文章的列表，首页就清爽多啦。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">      {{ range first 5 (sort site.RegularPages &#34;Date&#34; &#34;desc&#34;) }}
       &lt;<span style="color:#000080">div</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;position: relative;&#34;</span>&gt;
-        &lt;<span style="color:#000080">ol</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;margin-top: 15; margin-bottom: 15;&#34;</span>&gt;
+        &lt;<span style="color:#000080">ul</span> <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;margin-top: 15; margin-bottom: 15;&#34;</span>&gt;
           &lt;<span style="color:#000080">li</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34; no-underline rounded-md hover:bg-white transition duration-300 ease-in-out&#34;</span>
             <span style="color:#008080">style</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;margin-top: 5; margin-bottom: 5;&#34;</span>&gt;
             &lt;<span style="color:#000080">a</span> <span style="color:#008080">href</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;{{ .RelPermalink }}&#34;</span> <span style="color:#008080">class</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;tracking-tight no-underline text-blue-600  mb-0&#34;</span>&gt;
               {{ .Title }}
             &lt;/<span style="color:#000080">a</span>&gt;
           &lt;/<span style="color:#000080">li</span>&gt;
-        &lt;/<span style="color:#000080">ol</span>&gt;
+        &lt;/<span style="color:#000080">ul</span>&gt;
       &lt;/<span style="color:#000080">div</span>&gt;
       {{ end }}
 </code></pre></div><h2 id="render-hook-for-links">Render Hook for Links</h2>
@@ -271,7 +271,7 @@
     });
   <span style="color:#000;font-weight:bold">&lt;</span><span style="color:#a61717;background-color:#e3d2d2">/script&gt;</span>
 </code></pre></div><p>2024.08.27 更新：</p>
-<p>发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以更改了一下逻辑，删除了 <code>script</code>，把上一步的 <code>layouts/_default/_markup/render-link.html</code> 改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。</p>
+<p>发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以改了下逻辑，删除了 <code>script</code>，把上一步的 <code>layouts/_default/_markup/render-link.html</code> 修改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">{{ $destination := .Destination }}
 {{ if not (or (strings.HasPrefix $destination &#34;http&#34;) (strings.HasPrefix $destination &#34;https&#34;) (strings.HasPrefix $destination &#34;//&#34;)) }}
   {{ $destination = (print &#34;/posts/&#34; $destination | urlize) }}
@@ -620,6 +620,8 @@
   
       
   
+      
+  
 
    
    
@@ -634,7 +636,7 @@
     Copyright © 2020-2024 The Wandering Allison
   </div>  
   <div class="totalcount">
-    <span> 这个人已经废话了 226.1k 字！ </span>
+    <span> 这个人已经废话了 226.8k 字！ </span>
   </div>
 </footer>
 
