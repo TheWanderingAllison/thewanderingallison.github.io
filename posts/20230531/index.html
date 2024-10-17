@@ -119,7 +119,8 @@
 
   <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
     <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
-      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
         The Wandering Allison
       </a>
 
@@ -140,50 +141,20 @@
       </div>
 
       <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
-        <nav id="nav-social-links" class="p-4 lg:p-0 text-gray-600 hidden lg:block lg:order-last w-full lg:w-auto lg:ml-3">
-          <ul class="flex justify-end">
-  
-  
-  
-  
-  
-  
-  
-    <li>
-      <a class="block p-2 opacity-75 hover:opacity-100 transition duration-300 ease-in-out" title="Email" href="mailto:thewanderingallison@gmail.com">
-        <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path>
-        </svg>
-      </a>
-    </li>
-  
-  
-    <li>
-      <a class="block p-2 opacity-75 hover:opacity-100 transition duration-300 ease-in-out" title="Feed" href="https://thewanderingallison.github.io/rss.xml">
-        <svg class="fill-current w-5 h-5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <title>RSS</title>
-          <path d="M19.199 24C19.199 13.467 10.533 4.8 0 4.8V0c13.165 0 24 10.835 24 24h-4.801zM3.291 17.415c1.814 0 3.293 1.479 3.293 3.295 0 1.813-1.485 3.29-3.301 3.29C1.47 24 0 22.526 0 20.71s1.475-3.294 3.291-3.295zM15.909 24h-4.665c0-6.169-5.075-11.245-11.244-11.245V8.09c8.727 0 15.909 7.184 15.909 15.91z"/>
-        </svg>
-      </a>
-    </li>
-  
-</ul>
-
-        </nav>
 
         <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
           <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
   
     <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
-      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out" href="/about">About</a>
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
     </li>
   
     <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
-      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out" href="/archives">Archives</a>
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
     </li>
   
     <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
-      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out" href="/friends">Friends</a>
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
     </li>
   
 </ul>
@@ -265,13 +236,13 @@
 
   <aside class="flex">
   
-    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out" href="/posts/20230630/">
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/20230630/">
       <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
       <span class="text-center">2023六月读书记录</span>
     </a>
   
   
-    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out" href="/posts/diary20230821/">
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/diary20230821/">
       <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
       <span class="text-center">一些最近的快乐碎片</span>
     </a>
