@@ -7,10 +7,99 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Thu, 17 Oct 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>Writing Style Analysis Using AI</title>
+<link>https://thewanderingallison.github.io/posts/writing_style_analysis_using_ai/</link>
+<pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/writing_style_analysis_using_ai/</guid>
+<description>&lt;p&gt;&lt;em&gt;大半个月前写完了这篇的大部分，却一直犹豫要不要发。直到最近几天现实生活中，或者说，地理距离相当近的地方发生了非常糟糕的事件，我没办法平复，打开文档发现随便写上一点无关的东西都可以帮助我平静一些，因此还是发出吧。可能更好的方式是寻找真实的人类倾诉，可我——不行。我没办法和现实中认识的人开口，也无法在社交媒体上打开自己。也犹豫是否该找网友交谈，但这话题太过沉重，我想我始终做不到给别人增加情绪负担——尤其是，大家的精神状态不稳定程度可能更甚于我。或许我该感谢至少还有一块这么小小的、可以躲藏进的精神角落。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;前几天读完了一本文化观察随笔，去豆瓣标记时在三到四星间犹豫，有点趣味，但似乎还达不到推荐的程度，甚至这样的观察和主题，和我日常记录的（包括很多没发在博客的）也没有太大区别。它是只要下些力气就能写出来的那种东西，而非依靠灵感、天赋。&lt;/p&gt;
+&lt;p&gt;我不以创作者自居，也没有成为作家的野望，但显然我对写出的内容有要求。我时常觉得自己的文字不够精准，哪怕极力精简后成品还是会有冗余。之前意外得到过行文简洁的评价，不过我没有收到过更多来自他人的反馈，因此还是相当不确定。那没有真实人类的意见，或许可以试试 AI？&lt;/p&gt;
+&lt;p&gt;这个博客写的最多是阅读报告，而需要贴着每本书的主题写，不够有代表性，思索后挑了最近的几篇日记（
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/oh_english&#34; &gt;Oh, English&lt;/a&gt;
+、
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/diary20230923&#34; &gt;漫游&lt;/a&gt;
+ 和 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/diary20240422&#34; &gt;It&amp;rsquo;s Good to See Your Face&lt;/a&gt;
+）塞给 ChatGPT 让它分析写作风格。&lt;/p&gt;
+&lt;p&gt;哪怕已经对 AI 会倾向于说好话有所准备，它的回复还是令人羞耻。&lt;/p&gt;
+&lt;p&gt;像
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/diary20230923&#34; &gt;漫游&lt;/a&gt;
+这篇：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is a very good piece of writing. It’s not designed for precision or conciseness but rather for expressing an authentic, flowing inner monologue. The gentle repetition and loose structure work well for the tone, reinforcing the feeling of a personal journey through books, memories, and connections. It reads almost like a literary diary entry, capturing the beauty of small, meaningful moments.&lt;/p&gt;
+&lt;p&gt;With minimal editing for flow, it would resonate well with readers who appreciate introspective and nostalgic writing.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以至于我要追问它，你是对所有文本都给出鼓励性的回应，还是这确实“at least not bad”？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Yes, I genuinely do. This writing has a lot of qualities that make it compelling, especially for readers who appreciate reflective, exploratory prose. It&amp;rsquo;s not aiming to be sharp or plot-driven but rather leans into the beauty of small details and the meandering nature of memory and discovery.&lt;/p&gt;
+&lt;p&gt;What makes it good is its authenticity and its ability to draw the reader into a very specific, contemplative mindset. The author’s genuine fascination with books and life’s little connections resonates, creating an intimate atmosphere that’s hard to manufacture artificially.&lt;/p&gt;
+&lt;p&gt;It may not fit everyone’s taste—some might prefer a more structured approach or find the nostalgia overly detailed—but within its genre, it’s well-crafted and memorable. Its strength lies in conveying a quiet depth and personal insight that stays with the reader.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;难怪有人说 ChatGPT 胜过心理咨询师，面对直白的夸赞就算知道有夸大也不可能不开心吧。&lt;/p&gt;
+&lt;p&gt;当然我知道我不算糟糕，但同时也认为还远远达不到我心中好的标准。这不是在妄自菲薄，我清楚自己比很多互联网生活博客写得好。甚至某些小有名气的作者的随笔，他们也时常不能让我满意。可也有个声音在质疑，我能准确评价自己吗？观看自己的文字必然会失真吧？这样的比较是否又是一种自满？&lt;/p&gt;
+&lt;p&gt;前阵子读傅真的博客，在
+
+
+&lt;a href=&#34;https://fz0512.net/archives/2671&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;出走的夏天（下） | 最好金龟换酒&lt;/a&gt;
+里她写道：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;谈论自己的作品也令我痛苦，写完的东西像是消化过的产物，你深知它的缺陷而不愿回望，又因为心已被掏空而感到幻灭和虚无。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;甚至，写作者的一大痛苦就是自我贬低，因为你比任何人都更了解自己的短板，你的审美永远大于你的能力。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;“自我贬低”，我没有发表和读者的压力，却还是会持续地对写出来的东西不满意，也少有不假思索、不打磨润色就发出的时刻。总得有个主题吧？总要有点结构吧？我不能接受把所有东西黏黏糊糊像淤泥一样混在一起。即使只书写日常，这样的反复审视和挑剔在写作过程中也一以贯之。所以，不管 AI 的回复有多少水分，得到肯定就是会让我欣喜。我还有一秒钟的犹疑要不要把很不喜欢（但在毛象人气很高）的某个博客塞给 ChatGPT 看看结果，不过想到它可能说好话，还是别了！&lt;/p&gt;
+&lt;p&gt;另一个测试是让 ChatGPT 列出文风相近的作家。头两篇结果是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The writing style here has a resemblance to authors known for reflective, nostalgic, and introspective prose that explores everyday observations and memory with a quiet yet evocative voice. Here are a few writers whose styles seem similar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Haruki Murakami&lt;/strong&gt;: Although Murakami’s works are often surreal, his quieter, reflective essays (like those in &lt;em&gt;What I Talk About When I Talk About Running&lt;/em&gt;) share a similar introspective quality. Both writers take pleasure in the details of everyday life, including serendipitous connections and small moments that inspire reflection.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Annie Dillard&lt;/strong&gt;: Known for her ability to observe life in minute detail, Dillard brings a meditative approach to subjects that might seem ordinary at first glance. Her prose, like in &lt;em&gt;Pilgrim at Tinker Creek&lt;/em&gt;, often feels like a slow contemplation of the world. The observational and almost philosophical tone in this piece is in that vein.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Eileen Chang (Zhang Ailing)&lt;/strong&gt;: In her essays and prose, Chang often captures everyday life with rich, layered descriptions, sometimes with a touch of melancholy or nostalgia. The reflective, deeply personal tone of your text—especially the vivid imagery and memories evoked by books and experiences—recalls Chang’s way of exploring the intersections of past and present.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Orhan Pamuk&lt;/strong&gt;: Particularly in his non-fiction, like &lt;em&gt;Istanbul: Memories and the City&lt;/em&gt;, Pamuk writes with a sense of nostalgia and personal memory that blends individual experience with a broader cultural sense. His work often explores how moments from the past connect unexpectedly to the present, just as this piece does.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This piece is quite original, but it sits nicely alongside writers who can capture the meaningfulness of everyday observations, where personal nostalgia and cultural elements are woven together in a contemplative voice.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;都是声名斐然的作者，可惜村上和 Annie Dillard 精准踩到我雷区，多少能理解 AI 的判定标准，但，还是想扶额。第三篇给的名字就完全在意料之中了，Helen Macdonald、Rachel Carson、Sy Montgomery，全是自然文学女性作者。&lt;/p&gt;
+&lt;p&gt;想起之前还玩过一个
+
+
+&lt;a href=&#34;https://testurtext.us/index.html&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;文风测试&lt;/a&gt;
+，发的是 COVID 期间的日记，几篇比例最高都是史蒂芬金，其后是奥威尔，以及村上、帕穆克。后两个还真的和上面的名单重合了。不过对于史蒂芬金这个结果我相当意外，此前完全没读过他的作品，印象中他是专攻惊悚/恐怖的类型作家，而我自青春期后就再没读过这类作品。但不久前听译者何雨珈的播客（ 
+
+
+&lt;a href=&#34;https://feed.xyzfm.space/fvxqjcew7vt6&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;RSS&lt;/a&gt;
+），最新一期（ 
+
+
+&lt;a href=&#34;https://www.xiaoyuzhoufm.com/episode/671790d30d2f24f289041f66&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Vol.013图书编辑看史蒂芬·金：类型文学是发糖还是发刀子？&lt;/a&gt;
+）相当精彩，顿时让我生出了读他的念头，尤其是他这本坦陈写作历程的《写作这回事》。而脱离他的小说文本仅看创作谈必然无法意会，因此打算先读几本他的原版小说再对照着看。这期嘉宾聊金作品中的人物，那种热情也实在是感染人。&lt;/p&gt;
+&lt;p&gt;可能这种永恒的对文字的兴趣，是我能在大部分时刻还保持情绪较为镇定的原因，它们是我内心的安全港，让我知道——我总是有处可去的，即使它不存在于现实中，可谁又能说那是假的？&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>CSS 踩坑记</title>
