@@ -7,10 +7,56 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/reading/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>我使用的阅读软件</title>
+<link>https://thewanderingallison.github.io/posts/my_reading_app/</link>
+<pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/my_reading_app/</guid>
+<description>&lt;p&gt;我的阅读流程其实平平无奇，但是近来看到一些所谓阅读工具的分享，属于是很难理解有些人到底是要读书还是只为了折腾阅读软件，偏偏市面上好像都是这类的文章。而且我看很多人折腾来折腾去似乎也没读几本的样子嘛。数字代表不了什么，但问题就在于，如果目的是为了读书，最终却只花了大量时间在不停试错各类软件，有必要吗？有这功夫几本书都读完了吧？&lt;/p&gt;
+&lt;p&gt;只算正式出版物去年我读了 155 本，今年截止目前刚好 100。加上网络小说可能结果会直接翻倍。列举数字只是为了说明我的确是一个有大量阅读经验的人。最近几年读非虚构居多，比起小说它们的阅读难度和需要的时间还会更高一些。而这些阅读我并不觉得需要多么复杂的流程、多么完美的软件才能达成。&lt;/p&gt;
+&lt;p&gt;我相信像我一样的读者还有很多，而我写这篇的原因就是想说，开始阅读真的很简单，我不希望一搜索全是少数派那种玩花活的文章。&lt;/p&gt;
+&lt;p&gt;好了废话说完了，也不去回顾过去漫长的阅读史，目前除了纸质书外，我用来阅读的软件/平台是这些：Google Play Books，微信读书，Audible，Libby，AntennaPod，以及极偶尔会用我的古早 Kindle（K4）回顾存在里面的网文。&lt;/p&gt;
+&lt;h2 id=&#34;阅读软件&#34;&gt;阅读软件&lt;/h2&gt;
+&lt;h3 id=&#34;google-play-books&#34;&gt;Google Play Books&lt;/h3&gt;
+&lt;p&gt;以下简称 GPB，之前写过详细使用报告（见 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox8&#34; &gt;Google Play Books使用再体验&lt;/a&gt;
+），是我的主力阅读软件。分别在电脑，Google Pixel Slate 以及手机上使用。如果是自己的笔电，有时在浏览器用网页端，也有时在 Obsidian 里读（使用方法见 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian&#34; &gt;How-to-Use-GPB-in-Obsidian&lt;/a&gt;
+ ）。Google Pixel Slate 是 ChromeOS 系统，也可以用 GPB 的 Android App，但我大部分时间懒得多点开一个软件，都是直接在 Chrome 浏览器看。&lt;/p&gt;
+&lt;p&gt;我用它的最根本理由就是，还能去哪儿找一个这么完美的多端同步阅读软件？真正实现多平台、多设备无缝管理阅读进度。&lt;/p&gt;
+&lt;p&gt;以及 Google Play Books 里也可以购买电子书和有声书，很多台版书比台湾那几个平台还便宜些，省下我多注册一个平台的功夫，付款也很方便。&lt;/p&gt;
+&lt;h3 id=&#34;微信读书&#34;&gt;微信读书&lt;/h3&gt;
+&lt;p&gt;我用它来看我暂时拿不到纸质书并且又只有它有独家电子版权的书，以及阅读少量几个公众号。但让我给它付费那是绝无可能，所以我通常是随缘地读一些过去免费获得的书，以及靠阅读时长攒书币买付费图书。过去我还导入了几本巨长无比又没耐心认真看的大部头——比如追忆似水年华，摩诃婆罗多等等，有一搭没一搭点开看几眼，或者用微信读书的 AI 听书功能随便听听，也当是攒时长了。&lt;/p&gt;
+&lt;p&gt;而腾讯旗下的产品总是会变着花样恶心人，想要领取书币必须分享给他人点击或是观看恶俗视频广告。不过，我发现似乎通过 Google Play Store 安装，以及 IP 在海外的话，就可以直接领取无需观看广告（不确定是否两个条件要同时满足）。&lt;/p&gt;
+&lt;p&gt;Obsidian 里有插件可以同步笔记，也可以直接在 Obsidian 里阅读。要是没有这个同步插件可能我用微信读书的动力又会减弱些。&lt;/p&gt;
+&lt;h3 id=&#34;audiblelibbyantennapod&#34;&gt;Audible/Libby/AntennaPod&lt;/h3&gt;
+&lt;p&gt;最近开了 Audible 会员，因为有部分书找不到免费的英文电子书但却在 Audible 有 audiobook，算了下与其买单本电子书，还是开 Audible 会员划算。会员除了每月有一个 credit 用来换购收费图书，还可以免费收听 Plus Catalog 里的书，真人朗读比 AI 语音有感染力多了，我随便听听磨磨耳朵。&lt;/p&gt;
+&lt;p&gt;Libby 可以借阅电子书和有声书，我只用它听有声书。我们本地图书馆只买了儿童资源，不过里面也混入了少量成人书籍，比如 Wolf Hall，Bring Up the Bodies 这种都有。我用来做 Audible 的补充。&lt;/p&gt;
+&lt;p&gt;AnteenaPod 是手机端的 podcast App，但它可以导入本地文件，有些下载下来的 audiobook 我会放到这里听。&lt;/p&gt;
+&lt;h2 id=&#34;阅读场景&#34;&gt;阅读场景&lt;/h2&gt;
+&lt;p&gt;在家我基本是电脑/Pixel Slate，用 GPB 或者微信读书网页版看，或者看纸质书。我习惯用浏览器看书的原因是很多东西我会立刻去搜索验证作者说的是否正确，或者查询资料加到笔记里以作后续阅读。比起在软件间跳转，还是觉得开多个标签页再 split screen 比较舒服。&lt;/p&gt;
+&lt;p&gt;出门如果需要长时间交通（地铁/火车），我会带本轻便的纸质书在路上看。也有极少数非常吸引我的电子书会在手机 GPB 或者微信读书里继续读。&lt;/p&gt;
+&lt;p&gt;走路或者做家务，会放着有声书当消遣，但大部分时间其实我还是在听音乐。&lt;/p&gt;
+&lt;p&gt;当然还有大量的娱乐阅读，比如网文、同人，这些我几乎都是在手机浏览器里读，也偶尔在 Pixel Slate 上看网页。因为这些完全不需要我动脑，只是即时的刺激反馈而已，也不需要考虑舒适与否，文字内容本身就够我消遣，毕竟我可是能容忍晋江/海棠那奇葩页面的人，还有什么能让我觉得难以阅读？至今我也没下晋江/长佩 App，依然坚持用它们的手机网页版。也是因为我几乎不下载文档，大部分是临时起意去网上现搜的，再加上我看网文速度极快，有那工夫下载折腾不如直接读。&lt;/p&gt;
+&lt;h2 id=&#34;最后&#34;&gt;最后&lt;/h2&gt;
+&lt;p&gt;我的软件和流程说下来真是平平无奇，我对外观/字体/附加功能也全无要求，只要能正常显示文字，再加一个多端同步、笔记导出就够了。内容本身比其他所有东西更重要。如果说还有什么偏好，那就是除非别无选择否则我不会看 PDF，标记、复制文字都很麻烦，我也不想特地再找一个软件只为了解决这种格式问题。&lt;/p&gt;
+&lt;p&gt;可能我和那些无限折腾软件的人就是无法互相理解。尊重喜好，但是我始终也不能同意这种花费在软件上的时间可以称作阅读分享。是的，我实在是对少数派无数篇打着读书旗号结果内容空洞无物的文章有相当大意见！&lt;/p&gt;
+</description>
+</item>
     
     <item>
 <title>专业退堂鼓表演艺术家的弃文list(之三)</title>
