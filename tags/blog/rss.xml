@@ -7,7 +7,7 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Wed, 04 Dec 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 07 Dec 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/blog/rss.xml" rel="self" type="application/rss+xml" />
     
@@ -112,6 +112,32 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 
+
+</description>
+
+</item>
+    
+    <item>
+<title>如何从 Hugo 的 RSS 输出中排除短代码</title>
+<link>https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/</link>
+<pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/</guid>
+<description>
+    <p>The specific style in some posts may have been removed in RSS feed. <a href="https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/">Click here</a> to view the original post.</p>
+    &lt;p&gt;我和很多人一样，在博文中使用了豆瓣/NeoDB 卡片短代码，效果如下：&lt;/p&gt;
+
+
+&lt;p&gt;在 RSS 阅读器中这个卡片会失去样式变成混乱的内容堆叠，因此想在 RSS 输出中排除掉短代码。不过这也是因为我是全文输出，RSS 只输出摘要的不会有此烦恼。&lt;/p&gt;
+&lt;p&gt;本来我想改 Hugo 的 &lt;code&gt;rss.xml&lt;/code&gt; 文件，在 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 部分添加筛选条件去除包含短代码的内容，但不知为何总是不成功，让 ChatGPT 改了好多遍还是失败。&lt;/p&gt;
+&lt;p&gt;没想到最后直接 Google 关键词在 Hugo 的讨论区找到答案了，&lt;a href=&#34;https://discourse.gohugo.io/t/exclude-shortcode-output-from-rss/51008&#34;&gt;Exclude shortcode output from RSS?&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;简单来说就是在 &lt;code&gt;layouts/shortcodes&lt;/code&gt; 下直接创建一个同名文件，比如我的豆瓣卡片是 &lt;code&gt;douban.html&lt;/code&gt;，那就新建一个 &lt;code&gt;douban.xml&lt;/code&gt;，内容为空就是在 RSS 中彻底移除短代码，也可以在这个文件里加上特定内容取代原本短代码的输出（我图省事只创建了空白文件）。&lt;/p&gt;
+&lt;p&gt;原本我想在 &lt;code&gt;rss.xml&lt;/code&gt; 中的 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 部分加上一个 if 语句通过判断是否有内容被移除，以此来确定是否在 RSS 文章内容顶端添加提醒，比如“某些样式在 RSS 中无法显示，请点击原文查看”。但是现在的 shortcode 替换并不发生在 &lt;code&gt;rss.xml&lt;/code&gt; 中，就无法如此操作。考虑了下我把 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 改成了下面这样，不进行判断，只要在 RSS 阅读器阅读都会看到提醒。（但我之前在 Inoreader 试了下怎么好像也看不到这行字？不知哪里出了问题，下次再解决吧……）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;The specific style in some posts may have been removed in RSS feed. &lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ .Permalink }}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;&amp;gt;&lt;/span&gt;Click here&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; to view the original post.&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    {{ .Content | html }}
+&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
 

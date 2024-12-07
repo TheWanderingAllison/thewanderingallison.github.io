@@ -5,6 +5,9 @@
     <loc>https://thewanderingallison.github.io/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thewanderingallison.github.io/categories/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -17,17 +20,29 @@
     <loc>https://thewanderingallison.github.io/tags/food/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://thewanderingallison.github.io/tags/hugo/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/tags/rss/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://thewanderingallison.github.io/posts/cooking_collection-of-everyday-food-recipes/</loc>
     <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://thewanderingallison.github.io/tags/blog/</loc>
-    <lastmod>2024-12-04T00:00:00+00:00</lastmod>
+    <loc>https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/</loc>
+    <lastmod>2024-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/diary/</loc>
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
@@ -39,12 +54,6 @@
     <lastmod>2024-12-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/tags/reading/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/toolbox/</loc>
-    <lastmod>2024-12-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/categories/toolbox/</loc>
     <lastmod>2024-12-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/my_reading_app/</loc>
@@ -69,9 +78,6 @@
     <lastmod>2024-11-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/blog_setting_css/</loc>
-    <lastmod>2024-10-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://thewanderingallison.github.io/tags/hugo/</loc>
     <lastmod>2024-10-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://thewanderingallison.github.io/posts/20240831_1/</loc>
