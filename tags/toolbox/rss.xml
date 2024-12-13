@@ -7,10 +7,87 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sat, 07 Dec 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 13 Dec 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/toolbox/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>解决其他账号无法在 Vercel 创建部署问题</title>
+<link>https://thewanderingallison.github.io/posts/vercel-error_no-access-to-create-deployments/</link>
+<pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/vercel-error_no-access-to-create-deployments/</guid>
+<description>
+    &lt;p&gt;今天收到 Vercel 邮件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We’re writing to notify you that &lt;strong&gt;Github_Account_A&lt;/strong&gt; is attempting to deploy a commit to &lt;strong&gt;Github_Account_B&lt;/strong&gt;&amp;rsquo;s projects on Vercel through GitHub, but they are not a member of the team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To resolve this issue, you can:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgrade to Pro and add them as a collaborator on your Vercel team&lt;/li&gt;
+&lt;li&gt;If the user is already a member of your Vercel team, ensure their GitHub account is connected to their Vercel account on their Authentication Settings page&lt;/li&gt;
+&lt;li&gt;If applicable, make your repository public&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而在 GitHub 中 commit 错误是：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140112470.webp&#34; alt=&#34;commit failed&#34;&gt;&lt;/p&gt;
+&lt;p&gt;从头描述一下问题，我有 A、B 两个博客，A 是目前这个，用的 Hugo + Github Pages 。B 是把 GitHub B 账号中的 Hugo 项目部署到 Vercel 并由 Vercel 自动编译。我的文档都在 Obsidian 里写，靠 Obsidian 里的 Git 插件一键 commit（用的 A 账号）。而为了让不同 Github 账号下的两个特定文件夹同步，之前写过
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories&#34; &gt;步骤&lt;/a&gt;
+ 。也就是说，B 博客的每次更新其实是由 A 账号 commit 再触发 Vercel 自动编译。而 Vercel 提醒，需要加钱升级成 pro 账户才能使用协作模式，否则不会认可由另一个账号提交的部署请求。（之前成功据说是 Vercel 的 bug，hobby 账户不能多人提交，而最近修复了这个问题。）&lt;/p&gt;
+&lt;p&gt;Stackoverflow 上有类似
+
+
+&lt;a href=&#34;https://stackoverflow.com/questions/79011901/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;提问&lt;/a&gt;
+，最高赞是在 terminal 中切换邮箱，而我正是不想打开 terminal。采取了这个
+
+
+&lt;a href=&#34;https://stackoverflow.com/a/79030203&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;答案&lt;/a&gt;
+的方案，在这里简述下中文流程存个档。&lt;/p&gt;
+&lt;p&gt;一句话简述，停用原始 Vercel 自动编译，换用 GitHub Actions。&lt;/p&gt;
+&lt;h3 id=&#34;停用-vercel-自动编译&#34;&gt;停用 Vercel 自动编译&lt;/h3&gt;
+&lt;p&gt;在 Github 对应仓库中，Repository Settings -&amp;gt; GitHub Apps -&amp;gt; Vercel Config，选择 suspend 或者 uninstall。&lt;/p&gt;
+&lt;h3 id=&#34;获取-vercel-token-和-id&#34;&gt;获取 Vercel token 和 ID&lt;/h3&gt;
+&lt;p&gt;参见 GitHub 
+
+
+&lt;a href=&#34;https://github.com/orgs/vercel/discussions/3307&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;讨论&lt;/a&gt;
+ 。&lt;/p&gt;
+&lt;p&gt;VERCEL_TOKEN:&lt;br&gt;
+登陆 Vercel 账号，在 Account Settings -&amp;gt; Tokens 创建新 Token，复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140042330.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VERCEL_ORG_ID:&lt;br&gt;
+在 
+
+
+&lt;a href=&#34;https://vercel.com/account/settings&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Account Settings&lt;/a&gt;
+里一直拉到最下，找到 Vercel ID，复制。
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140043676.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VERCEL_PROJECT_ID:&lt;br&gt;
+在对应的 Project &lt;code&gt;Settings&lt;/code&gt; 找到 Project ID，复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140046263.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建-github-repository-secrets&#34;&gt;创建 GitHub Repository Secrets&lt;/h3&gt;
+&lt;p&gt;进入 Hugo 项目仓库，Settings -&amp;gt; Secrets and variables -&amp;gt; Actions。&lt;/p&gt;
+&lt;p&gt;新建三个 Secrets，名字如下所示，填入上一步保存的各项值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140053674.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新建-github-actions&#34;&gt;新建 Github Actions&lt;/h3&gt;
+&lt;p&gt;访问 Vercel 的 
+
+
+&lt;a href=&#34;https://vercel.com/guides/how-can-i-use-github-actions-with-vercel&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;document&lt;/a&gt;
+，复制里面的 workflow template，在仓库中新建两个 workflow 文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140056189.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成。&lt;/p&gt;
+&lt;p&gt;在 Obsidian 提交试试看，成功！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202412140101239.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;题外话，抛开 N 多半成品草稿来解决临时问题，难怪博客圈子里技术文章多呢。一是只要想折腾，就会面对层出不穷的新麻烦；二是只要问题被解决，这种内容写起来就飞快！&lt;/p&gt;
+
+</description>
+
+</item>
     
     <item>
 <title>一份非科学的 About Me 报告</title>
