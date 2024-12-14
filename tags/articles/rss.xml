@@ -7,10 +7,79 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sun, 15 Sep 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/articles/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>关于互联网个人博客的一些统计数据</title>
+<link>https://thewanderingallison.github.io/posts/blogging_stats/</link>
+<pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blogging_stats/</guid>
+<description>
+    &lt;p&gt;在
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/anniversary_should-i-continue&#34; &gt;四周年&lt;/a&gt;
+里提到了一些我的 blog 数据，由此产生好奇互联网博客的平均数据是怎样。&lt;/p&gt;
+&lt;p&gt;有很多文章探讨这个问题，专做网站数据分析以及 SEO 优化的 Semrush 这篇 
+
+
+&lt;a href=&#34;https://www.semrush.com/blog/blogging-stats/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;46 Blogging Statistics to Know in 2024&lt;/a&gt;
+ 列出了一些 2024 年的平均数据，原文给出了各项数据来源，不过也塞入了不少 Semrush 广告，这里仅摘几个我感兴趣维度的部分数据。&lt;/p&gt;
+&lt;h2 id=&#34;数据总览&#34;&gt;数据总览&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;每年有超过 25 亿篇博客文章发布。&lt;/li&gt;
+&lt;li&gt;近 24% 的高效博客每天都会发布一篇新文章。&lt;/li&gt;
+&lt;li&gt;约 44% 的博主年龄在 25 至 34 岁之间，近 35% 在 35 至 44 岁之间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文章创建和管理&#34;&gt;文章创建和管理&lt;/h2&gt;
+&lt;p&gt;过去十年，文章平均长度和文章花费时间都显著增加。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;博客文章的平均长度为 1,427 字，比十年前增加了 77%。&lt;/li&gt;
+&lt;li&gt;表现最佳的博客文章的平均长度为 1,152 字，表现不佳的帖子平均长度为 668 字。&lt;/li&gt;
+&lt;li&gt;平均每篇博客文章需要 3 小时 51 分钟才能写完。&lt;/li&gt;
+&lt;li&gt;过去 10 年，博主撰写文章的时间增加了 60%。&lt;/li&gt;
+&lt;li&gt;65% 的博主在一定程度上使用人工智能，43% 的博主使用它来为自己的内容产生想法。&lt;/li&gt;
+&lt;li&gt;超过 30% 的博主每年审核两次内容。24% 的博主每年审核一次。&lt;/li&gt;
+&lt;li&gt;更新旧帖子的博主比例从 2017 年的 53% 增加到 2023 年的 74%。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;文章质量&#34;&gt;文章质量&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;39% 的消费者认为内容中最令人讨厌的是冗长和/或文笔糟糕。&lt;/li&gt;
+&lt;li&gt;自 2014 年以来，与编辑合作的博主数量增加了两倍。&lt;/li&gt;
+&lt;li&gt;易读或相当易读的帖子占高效博客文章的 62%。相比之下，低效帖子仅占 24%。&lt;/li&gt;
+&lt;li&gt;在表现最好的帖子中，5% 包含数据研究。&lt;/li&gt;
+&lt;li&gt;花费更多时间撰写博文的博主往往会获得更大的成功。花费超过 6 小时的博主中有 35% 报告了出色的成果。&lt;/li&gt;
+&lt;li&gt;超过 30% 的博主会定期检查与其内容相关的分析数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;博客流量&#34;&gt;博客流量&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;不到 30% 的博客每月的访客数量为 1,000 人或更少。大约 20% 的博客的访问量在 1,001 到 5,000 人次之间。只有 3.7% 的博客每月的访客数量超过 500,000 人次。&lt;/li&gt;
+&lt;li&gt;最受欢迎的博客主题是生活方式（11.4%）、个人发展（9.6%）和创业（7.9%）。&lt;/li&gt;
+&lt;li&gt;近 50% 的博主表示，他们的大部分流量来自社交媒体。22% 的博主的大部分流量来自自然搜索。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;博客平台占主导的依然是 WordPress。SEO 在提高博客曝光度上依然十分重要。有 43% 的博主在 Facebook 上进行推广，还有 21% 用 Instagram。24% 的博主会分享一次博文链接，两次和三次的比例则在 24% 和 22%。内容方面，视频含量大幅上升，75% 的博主在过去一年都至少发表过一篇“How to”类文章，而最受欢迎的博文也是“How to” 以及“Mistakes to Avoid”类。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;数据摘抄结束开始闲聊。&lt;/p&gt;
+&lt;p&gt;不知道这份数据代表性有多强，但我个人感觉是，互联网用户始终对非碎片化内容是有需求的，与此同时许多人也有用长文表达自己的需求，所以不断有人加入写博客/看博客的群体中来。&lt;/p&gt;
+&lt;p&gt;现在我的月访客在 400-500 之间，应该是尾部的尾部，但我也没做出任何努力想要拓展“影响力”就是了。不太清楚我的博客有没有被墙（其实私心希望墙内访问不畅），之前看统计数据 organic search 出现过百度、抖音、头条，非常想尖叫“不要！”。虽说建博客是和互联网世界互联，但有些路封死我也觉得没什么不好。&lt;/p&gt;
+&lt;p&gt;写作时长和文章篇幅，确实看上去很简单的教程类写起来也起码一小时打底。有些特别耗时的我做过统计，基本内容确定、大纲打好的前提下还花费了八九小时，不过写的过程可以把自己的思绪理清，这种快乐也是加倍的，所以依然乐在其中。&lt;/p&gt;
+&lt;p&gt;至于推广博客扩大阅读量，目前我不想做，哪怕最简单的多平台发布都做不到。这无关对错或好坏，纯粹的个人选择。但看到写得特别差还到处分发并且还获得了一些追捧的博客我也不能控制地要翻白眼。&lt;/p&gt;
+&lt;p&gt;最后，搜索过程中还发现了这个 Reddit 帖子（
+
+
+&lt;a href=&#34;https://www.reddit.com/r/Blogging/comments/w1zj0a/how_old_is_your_blog_and_how_much_traffic_is_it/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;How old is your blog, and how much traffic is it getting&lt;/a&gt;
+），看到真实用户分享自己的数据也蛮有趣的。&lt;/p&gt;
+
+</description>
+
+</item>
     
     <item>
 <title>解决其他账号无法在 Vercel 创建部署问题</title>
