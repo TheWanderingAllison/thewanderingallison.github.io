@@ -7,10 +7,48 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>我和社交媒体的战争</title>
+<link>https://thewanderingallison.github.io/posts/the_fight_between_social_media_and_me/</link>
+<pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/the_fight_between_social_media_and_me/</guid>
+<description>
+    &lt;p&gt;我在用/用过的社交网站，以及为了控制网上冲浪时长做了哪些（无谓）努力。&lt;/p&gt;
+&lt;h3 id=&#34;国内平台&#34;&gt;国内平台&lt;/h3&gt;
+&lt;p&gt;微博，Lofter，豆瓣——在
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox20240612&#34; &gt;这篇&lt;/a&gt;
+写到了一些针对它们的工具。&lt;/p&gt;
+&lt;p&gt;微博。只在电脑一个特定浏览器登录，其他设备未登录什么都看不到即使误入也会很快放弃浏览。&lt;/p&gt;
+&lt;p&gt;豆瓣。在电脑和平板上登录网页版，但我设置的快捷入口是 &lt;a href=&#34;https://book.douban.com/updates&#34;&gt;https://book.douban.com/updates&lt;/a&gt;，每次进入看到的是友邻们的读书动态。因为哪怕我关注的人已经精挑细选，首页生活动态还是会有一些非常糟心的事情出现（有些是事件本身，有些是评论区莫名其妙的吵架），索性直接眼不见为净。&lt;/p&gt;
+&lt;p&gt;小红书。年初上头几个音乐剧演员，发现有些音乐剧资讯只在小红书流通，于是忍辱负重注册了账号登录网页版。它默认性别为男并且网页端改不了个人资料，每次点进首页都看到一堆软色情图片，这真是太有用啦！根本不需要控制就完全不想看这个网站！我也并没发现生活中有其他任何信息需要在小红书查找，体会不到别人说这是中国本地搜索引擎的那一面。没注销只是因为网页版销不了账号，我又不愿为这个再下载 app，暂时搁置吧。&lt;/p&gt;
+&lt;h3 id=&#34;非大陆平台&#34;&gt;非大陆平台&lt;/h3&gt;
+&lt;p&gt;过去我有过 Facebook、Twitter（不愿管它叫 X）但现都已注销，没有发现过乐趣，因此在数年前清理账号时就删除了它们。&lt;/p&gt;
+&lt;p&gt;Instagram，保留账号的唯一原因是偶尔会有他人分享的链接，然而不登陆就无法查看，只偶尔在网页版浏览下。&lt;/p&gt;
+&lt;p&gt;Telegram，它更多算是消息软件？但毕竟也是个社交平台。倒是围观过一些频道，可它注册必须用手机号，这是我不能接受的，至今没有账号。&lt;/p&gt;
+&lt;p&gt;Discord，加过几个 server，因为老是想查看群组消息，最后我选择了退出。我就是那种凡是有新消息就想点击的人。另外为了控制使用时长，我只在网页版登录。手机 Chrome 里也保留了登录状态，但我在 Digital Wellbeing 设置了十分钟的浏览时限，一到时间就无法查看。&lt;/p&gt;
+&lt;p&gt;Mastodon/长毛象，2020 年底那波豆瓣难民潮让我认识了这个平台。它最大的优点当然是，自由。不仅是说话的自由，还有对自己关注、屏蔽等等的自由。&lt;/p&gt;
+&lt;p&gt;我的首页一直设置的不看转发/回复，关注人又极少，因此相当清静。而看到一些讨厌的账号或者不关心的流行词，也非常容易使用 mute/block 功能。但我还是不能够习惯在社交媒体上过度暴露自己，常常发完就后悔。而刷到一些发言时我经常会去追溯别人很久的时间线，就又变成了杀时间利器。另外，发现极度不认同的一个账号和我的互关是互关，我倒不至于迁怒到我的互关账号，但偶尔看到嘟文下显示有回复点开却为空时，我就知道又有我拉黑的人在回应，偏偏我的好奇心让我忍不住复制链接到 incognito 页查看，最后又变成顺带浏览了下对方的首页，然后生闷气。我对这样的自己简直无可奈何。为了避免这种情况反复发生，我只在 Pixel Slate 上记住登录状态，只能在用平板时刷毛象，其他设备上用的是不同 Google 账号没有密码没办法一键登录。使用电脑有极其想说话的瞬间时，就用之前写的 Python 脚本通过 API 发嘟。&lt;/p&gt;
+&lt;p&gt;就是这些了。可以看到我一直极少进行网络社交，虽然网龄已有 20 年，从我会上网开始，我的时间似乎都是争分夺秒地在看小说。现在可读的小说罕见，但我上网也还是全在浏览文字。也一直是绝对的网页支持者，手机上安装的只有 work profile 里的微信这一个社交 app——如果哪一天能彻底摆脱它我会非常乐意。&lt;/p&gt;
+&lt;p&gt;最初因为某个事件（具体是什么已经忘了）而对社交媒体非常厌烦，对着 Google Recorder 说了长达 20 分钟的抱怨，用它在网页版上转出了一份一万多字的文稿，但说完我的气倒是也消了，顿觉没必要把那堆废话再总结提炼。那为什么还是会有这样一篇内容呢？只为在最后宣布，为了更好地戒断充满各式碎片发言的平台，我搭了个日记站来承担我的表达欲，就是这个：
+
+
+&lt;a href=&#34;https://fragmentchronicle.vercel.app/&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Fragment&lt;/a&gt;
+。不打算开评论，有朋友想互动请发邮件（邮箱在本站首页可以找到）。&lt;/p&gt;
+&lt;p&gt;PS，没想到这点内容我又写了 40 分钟！下次再也不写了！&lt;/p&gt;
+
+</description>
+
+</item>
     
     <item>
 <title>关于互联网博客的一些统计数据</title>
