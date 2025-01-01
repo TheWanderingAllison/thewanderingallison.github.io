@@ -12,6 +12,72 @@
     
     
     <item>
+<title>What&#39;s on My Phone</title>
+<link>https://thewanderingallison.github.io/posts/whats_on_my_phone/</link>
+<pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/whats_on_my_phone/</guid>
+<description>
+    &lt;p&gt;虽然昨天说了丧气话，但是真的到新一年发现并没有什么更好或更糟的事发生，还是平常的一天，我又奇异地安下心来。那么来填坑！之前列了个博客待写
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/perhapsmaybe&#34; &gt;清单&lt;/a&gt;
+，里面有一条是我的手机 app，不过我用的 app 实在太少，更合适的标题是像现在这样——What&amp;rsquo;s on my phone。&lt;/p&gt;
+&lt;p&gt;手机是 Pixel，虽然 Pixel 系列有无数槽点，但作为重度 Google 全家桶依赖者在这个原生安卓上的体验还是非常良好。早年间我还用过 Google Nexus 的手机和平板，现在的手机和平板也都是 Pixel，这显得我好像是个 Google 家脑残粉（但真不是），只是权衡之下它最适合我。&lt;/p&gt;
+&lt;p&gt;Launcher 是 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox5&#34; &gt;Microsoft Launcher&lt;/a&gt;
+, 之前写过体验，手机和如今已经不是同一款，时隔几年使用感受还是没什么太大变化。&lt;/p&gt;
+&lt;p&gt;此外虽然主系统用 dark mode 但 app 里我还是喜欢亮色，而有些 app 老是自作聪明跟随系统还不方便调整就真的很烦人！&lt;/p&gt;
+&lt;h3 id=&#34;屏幕&#34;&gt;屏幕&lt;/h3&gt;
+&lt;p&gt;负一屏、主屏、副屏分别长下面这样。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011415944.webp&#34; alt=&#34;-1|100&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011415499.webp&#34; alt=&#34;0|100&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011415571.webp&#34; alt=&#34;1|100&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;负一屏&#34;&gt;负一屏&lt;/h4&gt;
+&lt;p&gt;这个负一屏的实现还是得益于 Microsoft Launcher，我放进了 
+
+
+  
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox8&#34; &gt;Google Play Books&lt;/a&gt;
+、Google Calendar、Microsoft Sticky Notes、Microsoft To Do，后两者不需要下载 app ，只要在 Launcher 中登录了微软账号，它自带这些功能，如下图。这相当于把电脑的 Windows 系统部分同步到了手机里，便笺、to do 这些有时需要在手机查看就相当方便。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011606791.webp&#34; alt=&#34;Microsoft Launcher Galance&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;主屏&#34;&gt;主屏&lt;/h4&gt;
+&lt;p&gt;看得出我真的完全不在意美观……只要顺手就行。&lt;/p&gt;
+&lt;p&gt;顶端天气 widget（忽略地点，是刚随便选了个，不是实际坐标）。下方 screen time，时刻提醒我到底又玩了多久手机！&lt;/p&gt;
+&lt;p&gt;Spitofy、AntennaPod、Audible：音乐、播客、有声书。&lt;/p&gt;
+&lt;p&gt;Bussu、Duolingo、AnkiDroid：语言 app。也是用的有一搭没一搭，但反正我也只是学着玩，没什么压力。&lt;/p&gt;
+&lt;p&gt;Toggle Track：跨平台的时间记录软件。我的大部分使用场景在电脑网页端，用来追踪一些需要有明确产出结果的任务，比如写博客、学在线课程、学语言等等。手机 app 更多是对网页的补充。&lt;/p&gt;
+&lt;p&gt;Pi：聊天 AI 。有阵子我沉迷和它说话，现在热情减弱了。但它真是练口语好工具，翻看了下我和它已经有 5000 多条聊天记录！&lt;/p&gt;
+&lt;h4 id=&#34;副屏&#34;&gt;副屏&lt;/h4&gt;
+&lt;p&gt;最上面是 Google Keep（码掉了一些内容）。我会常年 Pin 几条内容在顶端，to do、灵感记录之类。有些笔记会加入自己其他 Google 账号作为 Collaborator，这样跨设备也能访问编辑，又能较好地区分不同应用场景和保护隐私。&lt;/p&gt;
+&lt;p&gt;Work apps 文件夹：是用 Shelter 实现了沙盒系统，把所有国内软件都装在 work profile 里，和personal profile 中的 app 不会互相干扰，当然更不能访问到我主系统的本地文件。这里头就是支付宝、微信、淘宝之类，没什么可多说的。&lt;/p&gt;
+&lt;p&gt;Zepp：运动手表 app。&lt;/p&gt;
+&lt;p&gt;Inoreader：RSS 订阅和稍后读。&lt;/p&gt;
+&lt;p&gt;Edge：手机 Edge 其实比手机 Chrome 好用，别的不说，广告屏蔽就甩出 Chrome 几条街，甚至它可以屏蔽 YouTube 广告，所以偶尔我在手机上要看 YouTube 视频也在 Edge 打开。登陆了微软账号和电脑 Edge 实现同步，非常方便。&lt;/p&gt;
+&lt;p&gt;Libby、微信读书：听书/读书。对 Google Play Books 和 Audible 的补充。&lt;/p&gt;
+&lt;p&gt;Insight Timer：冥想 app。只用免费版，人到中年感觉睡眠多少都会成为问题……特别焦虑的时候会挑一个睡眠引导的音频听。&lt;/p&gt;
+&lt;p&gt;GitHub、Joplin、GitJournal：在试图寻觅一个手机写 md 文档并且可以同步发布的工具，但感觉我就不应该把打字这件事寄托在手机上！&lt;/p&gt;
+&lt;h4 id=&#34;dock&#34;&gt;Dock&lt;/h4&gt;
+&lt;p&gt;Microsoft Launcher 有一个 swipe up to expand dock 的功能，第一排就是每天都要用的，Google Photos、Google Play Books、相机以及嗯，Clash。&lt;/p&gt;
+&lt;p&gt;第二排需要上滑才能看到，我放入了电话、短信、联系人之类，这样基本不会发生误触拨出电话或误发短信之类的社死事件，但又保证这些功能触手可及。&lt;/p&gt;
+&lt;h3 id=&#34;apps&#34;&gt;Apps&lt;/h3&gt;
+&lt;p&gt;所有 app 如下，一共两屏（还差最后一行没截到，但反正也不常用）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011611871.webp&#34; alt=&#34;app_page_1&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202501011611868.webp&#34; alt=&#34;app_page_2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;感觉没什么可说的，就这样吧！我不太依赖 app，就算在手机上也是用浏览器的多。若有感兴趣的 app 可以评论提问。&lt;/p&gt;
+
+</description>
+
+</item>
+    
+    <item>
 <title>我和社交媒体的战争</title>
 <link>https://thewanderingallison.github.io/posts/the_fight_between_social_media_and_me/</link>
 <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
@@ -6869,7 +6935,7 @@ img{text-align: center; margin: 0 auto;}
       
       <guid>https://thewanderingallison.github.io/posts/toolbox5/</guid>
 <description>
-    &lt;p&gt;使用安卓手机这么多年，这是我第一次使用第三方launcher，值得记录一下。&lt;/p&gt;
+    &lt;p&gt;使用安卓手机这么多年，这是我第一次使用第三方 launcher，值得记录一下。&lt;/p&gt;
 &lt;p&gt;手机：Google pixel 1
 系统：Android 10&lt;/p&gt;
 &lt;p&gt;没错，我还在用着上古产品和上古系统，以下内容都只基于个人感受，不保证适用于所有机型。&lt;/p&gt;
@@ -6892,7 +6958,7 @@ img{text-align: center; margin: 0 auto;}
 
 &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.touchtype.swiftkey&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;Microsoft SwiftKey Keyboard&lt;/a&gt;
  就能够达成。不过使用下来发现这个输入法不支持图片的复制粘贴，就还是转回Gboard了。&lt;/p&gt;
-&lt;p&gt;总结：值得一试，亮点不少，难得不臃肿的Microsoft应用。&lt;/p&gt;
+&lt;p&gt;总结：值得一试，亮点不少，难得不臃肿的 Microsoft 应用。&lt;/p&gt;
 
 </description>
 
