@@ -7,10 +7,50 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
-        <lastBuildDate>Mon, 30 Dec 2024 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://thewanderingallison.github.io/tags/diary/rss.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+<title>“我没说过”</title>
+<link>https://thewanderingallison.github.io/posts/i_never_said_that/</link>
+<pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/i_never_said_that/</guid>
+<description>
+    &lt;p&gt;一篇不在计划内的更新，关于一件颇为令人尴尬的事实。&lt;/p&gt;
+&lt;p&gt;博客主题的 &lt;code&gt;config.toml&lt;/code&gt; 文件里有个  &lt;code&gt;params&lt;/code&gt; 是 &lt;code&gt;intro&lt;/code&gt;，建站那会儿恰好在某篇文章里读到这句话，据说引自波伏瓦：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;虽然会让人误解，但这种想要逃离乏味庸常生活的渴望恰好合了我的心意，就一直放在了首页上。&lt;/p&gt;
+&lt;p&gt;最近突然又想起来这件事，发现我从来没有确认过来源。试图在网上查找出处，全是二手引用，宣称“波伏瓦曾说过”，却无一给出具体的书名或文章名。&lt;/p&gt;
+&lt;p&gt;虽然我日常惯例是辱骂微信读书也不得不说这时它的搜索功能非常有用，可以在全站图书里查询特定内容。搜出三本和波伏瓦完全无关的书，全以“波伏瓦说过”开头，接着一字不差地引用了这句话。&lt;/p&gt;
+&lt;p&gt;换个思路，逐本排查波伏娃的书，说不定是译文不同所导致的语句差别？关键词“贞洁”、“厌倦”或者“堕落”总该不会有错把。而微信读书上架的所有波伏瓦的书，甚至包括她的访谈录和传记，用这三个词分别全文查找，都找不到类似的表述。&lt;/p&gt;
+&lt;p&gt;我又把这句话翻成英文和法语发给 ChatGPT，问它能否找到波伏瓦的任何原文有相似表达，很遗憾，AI 说可能是波伏瓦的话——这种关于性、苦闷之类的话题，但它找不到任何直接证据。&lt;/p&gt;
+&lt;p&gt;好吧，再来从中文入手。撇除一堆乱七八糟的网站文章，豆瓣上有篇读书笔记原文引用了这句话，2001 年出版的柴静的《用我一辈子去忘记》，第 80 页：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们在宿舍齐声念西蒙波娃的句子“我厌倦了贞洁又郁闷的日子，又没有勇气过堕落的生活。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2001 年？我再试着限定 Google 的搜索结果时间，2001 年之前中文互联网一条关于这个句子的内容都没有。再放宽到十年后，2011 年，只有两条结果，2011 年 4 月的
+
+
+&lt;a href=&#34;https://www.cctv.com/anchor/compere/0148/20070402/15.shtml&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;央视网&lt;/a&gt;
+，再就是 2011 年 2 月的这个短文学。央视网上的柴静文章内容和豆瓣读书里的原文摘抄也对上了，始作俑者难道就是柴静？之后这句所谓名言就大量出现。不过，央视网这个网站是多少年没维护过了？还停留在十几年前的画风。甚至——柴静在中国算是被封杀的状态了吧，央视网的主持人专栏也没把她撤下来。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/8845dcf9e23087648bfc0ebbd76235ed.webp&#34; alt=&#34;image.png|300&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所以，这个“波伏瓦名言”，大概率是他人捏造，真是尴尬，迅速把首页 intro 改掉，庆幸至少最初我没在下面注明人名，否则就更尴尬了……&lt;/p&gt;
+&lt;p&gt;不是给自己找补，但大部分时候我会更严谨地对待这种“某某名人说”。比如刘慈欣在三体里引用的那句“给岁月以文明，而不是给文明以岁月”，顺便又被无数其他小说再次引用，并冠之“帕斯卡说”，但搜遍全网也找不到帕斯卡说的这句话！之前我还很认真地给小说作者评论，问她具体出处是哪里（嗯是的，其实是在某篇 BL 小说里读到的），可惜作者完全没理我。稍后我也读了三体，于是顿悟，是这种二手引用来着呀。&lt;/p&gt;
+&lt;p&gt;顺带搜索了下还有哪些“我没说过”，发现了这篇文章， 
+
+
+&lt;a href=&#34;https://www.ripleys.com/stories/greatest-misquotes-in-history&#34; target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;The Greatest Misquotes in History&lt;/a&gt;
+，那个可比“何不食肉糜”的法国玛丽王后的 &amp;ldquo;Let Them Eat Cake!&amp;rdquo; 也是杜撰呢。&lt;/p&gt;
+&lt;p&gt;以及，最开始很想插鲁迅表情包——就是那个“我没说过这句话”，但发现我还是不喜欢用任何真人表情包，试着让 AI 给我生成了个类似的 I NEVER SAID THAT meme，可惜 AI 图片质感就是很差啊！没办法忍受插这种图到文章里，请自行脑补吧！&lt;/p&gt;
+
+</description>
+
+</item>
     
     <item>
 <title>博客印象收集！</title>
