@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">Syncing Specific Folders Between Different Repositories Using GitHub Actions &middot; The Wandering Allison</title>
+  <meta property="og:title" content="Syncing Specific Folders Between Different Repositories Using GitHub Actions &middot; The Wandering Allison" />
+  <meta itemprop="name" content="Syncing Specific Folders Between Different Repositories Using GitHub Actions &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="人为了逃避做正事究竟可以多荒谬——嗯说的是我自己。来简单记录一下最近两天的折腾。 之前写过博客发布 流程 ，我的 Hugo 和 Obsidian Vault 并不在相同根目录下，日常写" />
+  <meta property="og:description" content="人为了逃避做正事究竟可以多荒谬——嗯说的是我自己。来简单记录一下最近两天的折腾。 之前写过博客发布 流程 ，我的 Hugo 和 Obsidian Vault 并不在相同根目录下，日常写" />
+  <meta name="description" content="人为了逃避做正事究竟可以多荒谬——嗯说的是我自己。来简单记录一下最近两天的折腾。 之前写过博客发布 流程 ，我的 Hugo 和 Obsidian Vault 并不在相同根目录下，日常写" />
+  <meta property="article:published_time" content=" 2024-07-09T00:00:00Z" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Syncing" />
+  
+  <meta property="article:tag" content="Github" />
+  
+  <meta property="article:tag" content="Blog" />
+  
+  
+
+  <meta property="og:updated_time" content=2024-07-09T00:00:00Z />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories/" class="article_title">Syncing Specific Folders Between Different Repositories Using GitHub Actions</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2024-07-09T00:00:00&#43;00:00">
+            9 Jul, 2024
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>人为了逃避做正事究竟可以多荒谬——嗯说的是我自己。来简单记录一下最近两天的折腾。</p>
+<p>之前写过博客发布 
+
+
+  
+
+<a href="/posts/blog_setting" >流程</a>
+，我的 Hugo 和 Obsidian Vault 并不在相同根目录下，日常写 MD 文档又都是在 Obsidian 中完成，为了避免每次手动挪文件到 Hugo 的 <code>content/posts</code>，当时采用了 FreeFileSync 来做本地不同文件夹下的同步，略为臃肿但有效。</p>
+<p>为什么又动了折腾的念头？我的笔电已服役快六年，性能愈发捉襟见肘，不常用软件都被卸载了，FreeFileSync 只用来同步一个小小的文件夹也太浪费。而且除了在 Google Drive 上同步 Obsidian 笔记，我也希望用 GitHub 定期备份加个双保险。</p>
+<p>我的想法：</p>
+<ul>
+<li>Obsidian Vault 关联一个 GitHub 私人 repo（以下简称 Ob）</li>
+<li>若push 内容有 <code>blog-post</code> 文件夹的变动则触发 GitHub Action</li>
+<li>根据 commit 信息生成 Ob 仓库 <code>blog-post</code> 文件夹的 <code>changed_files.txt</code> 文件，包含所有变动的文件名称</li>
+<li>按照 <code>changed_files.txt</code> 将 Ob <code>blog-post</code> 中的对应文件同步至 Hugo 仓库的 <code>content/posts</code> 文件夹，并在 Hugo 仓库提交 commit 和 push 请求</li>
+</ul>
+<p>而 Hugo 仓库收到 push 后会触发另一个 Github Action，会 deploy Hugo 再发布到我的 Github Pages。如果 Obsidian 里安装了 Git 插件，那 Obsidian 文件夹备份、博客发布，都只在 Obsidian 里就可一键完成。</p>
+<p>说起来很啰嗦，其实就是 A 仓库 <code>A1</code> 文件夹同步到 B 仓库 <code>B1</code> 文件夹而已。等我费劲弄完发现网上也是有现成轮子的，
+
+
+<a href="https://github.com/BetaHuhn/repo-file-sync-action" target="_blank" rel="noreferrer noopener">repo-file-sync-action</a>
+，只是自己折腾总是格外有劲儿。全程都让 ChatGPT 帮我写，最后我问它，用 XX 题目来描述这个过程你觉得合适吗？结果 ChatGPT 唰唰给我生成了一整篇文章！行吧，那就却之不恭了。复制粘贴一下备个份。另外因为我多问了一嘴双向同步怎么搞，它又加了个反向的同步过程。</p>
+<hr>
+<p>In this article, we&rsquo;ll explore how to synchronize specific folders between different GitHub repositories using GitHub Actions. This is particularly useful for scenarios where you need to keep a subset of your files in sync across multiple projects.</p>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>We have two repositories:</p>
+<ol>
+<li><strong>Repository A</strong>: <code>github.com/username/repo-a</code>
+<ul>
+<li>Contains a folder <code>Folder-A1</code></li>
+</ul>
+</li>
+<li><strong>Repository B</strong>: <code>github.com/username/repo-b</code>
+<ul>
+<li>Contains a folder <code>Folder-B1</code></li>
+</ul>
+</li>
+</ol>
+<p>The goal is to ensure that changes in <code>Folder-A1</code> in Repository A are automatically synced to <code>Folder-B1</code> in Repository B, and vice versa.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><strong>Personal Access Token (PAT)</strong>: You&rsquo;ll need a PAT with repository permissions to enable GitHub Actions to push changes to the repositories.</li>
+<li><strong>GitHub Actions</strong>: GitHub&rsquo;s CI/CD service that allows you to automate tasks directly in your repositories.</li>
+</ol>
+<h2 id="steps-to-set-up-syncing">Steps to Set Up Syncing</h2>
+<h3 id="1-create-a-personal-access-token">1. Create a Personal Access Token</h3>
+<ol>
+<li>Go to 
+
+
+<a href="https://github.com/settings/tokens" target="_blank" rel="noreferrer noopener">GitHub&rsquo;s Personal Access Token settings</a>
+.</li>
+<li>Generate a new token with the <code>repo</code> scope.</li>
+</ol>
+<h3 id="2-add-the-pat-to-repository-secrets">2. Add the PAT to Repository Secrets</h3>
+<ol>
+<li>Navigate to your repository on GitHub.</li>
+<li>Go to <code>Settings</code> &gt; <code>Secrets</code> &gt; <code>Actions</code>.</li>
+<li>Add a new secret named <code>PAT</code> with the value of your generated token.</li>
+</ol>
+<h3 id="3-configure-github-actions-workflows">3. Configure GitHub Actions Workflows</h3>
+<p>We will create two workflows, one for each repository, to handle the synchronization.</p>
+<h4 id="workflow-for-repository-a-sync-folder-a1-to-folder-b1">Workflow for Repository A (Sync <code>Folder-A1</code> to <code>Folder-B1</code>)</h4>
+<p>Create the workflow file in the <code>repo-a</code> repository:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#998;font-style:italic"># .github/workflows/sync_folder_a1_to_b1.yml</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Sync Folder-A1 to Folder-B1<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">on</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">push</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">paths</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;Folder-A1/**&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">branches</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- main <span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Change this to the default branch of your repository if it&#39;s different</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">jobs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">sync</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">runs-on</span>:<span style="color:#bbb"> </span>ubuntu-latest<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">steps</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Checkout Repo A (repo-a)<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">uses</span>:<span style="color:#bbb"> </span>actions/checkout@v3<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">with</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">token</span>:<span style="color:#bbb"> </span>${{ secrets.PAT }}<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">fetch-depth</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">  </span><span style="color:#998;font-style:italic"># Ensure full history is fetched</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Install rsync<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>sudo apt-get install -y rsync<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Checkout Repo B (repo-b)<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">        git clone --branch master https://github.com/username/repo-b.git
+</span><span style="color:#d14">        cd repo-b
+</span><span style="color:#d14">        git config user.name &#34;github-actions[bot]&#34;
+</span><span style="color:#d14">        git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;</span><span style="color:#bbb">        
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Compare and Sync Folder-A1 to Folder-B1<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">        cd $GITHUB_WORKSPACE
+</span><span style="color:#d14">        if git rev-parse HEAD~1 &gt;/dev/null 2&gt;&amp;1; then
+</span><span style="color:#d14">          git diff --name-only HEAD~1 -- Folder-A1/ &gt; changed_files.txt
+</span><span style="color:#d14">        else
+</span><span style="color:#d14">          find Folder-A1 -type f &gt; changed_files.txt
+</span><span style="color:#d14">        fi
+</span><span style="color:#d14">        cd repo-b
+</span><span style="color:#d14">        while IFS= read -r file; do
+</span><span style="color:#d14">          if [ -f &#34;../$file&#34; ]; then
+</span><span style="color:#d14">            rsync -av --delete &#34;../$file&#34; &#34;Folder-B1/${file#Folder-A1/}&#34;
+</span><span style="color:#d14">          else
+</span><span style="color:#d14">            rm -f &#34;Folder-B1/${file#Folder-A1/}&#34;
+</span><span style="color:#d14">          fi
+</span><span style="color:#d14">        done &lt; ../changed_files.txt
+</span><span style="color:#d14">        git add Folder-B1
+</span><span style="color:#d14">        git commit -m &#34;Sync changes from Folder-A1 to Folder-B1&#34;
+</span><span style="color:#d14">        git push origin master</span><span style="color:#bbb">        
+</span><span style="color:#bbb">      </span><span style="color:#000080">env</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">PAT</span>:<span style="color:#bbb"> </span>${{ secrets.PAT }}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></div><h4 id="workflow-for-repository-b-sync-folder-b1-to-folder-a1">Workflow for Repository B (Sync <code>Folder-B1</code> to <code>Folder-A1</code>)</h4>
+<p>Create the workflow file in the <code>repo-b</code> repository:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#998;font-style:italic"># .github/workflows/sync_folder_b1_to_a1.yml</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Sync Folder-B1 to Folder-A1<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">on</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">push</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">paths</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- <span style="color:#d14">&#39;Folder-B1/**&#39;</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">branches</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">      </span>- master <span style="color:#bbb"> </span><span style="color:#998;font-style:italic"># Change this to the default branch of your repository if it&#39;s different</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb"></span><span style="color:#000080">jobs</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">  </span><span style="color:#000080">sync</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">runs-on</span>:<span style="color:#bbb"> </span>ubuntu-latest<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span><span style="color:#000080">steps</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Checkout Repo B (repo-b)<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">uses</span>:<span style="color:#bbb"> </span>actions/checkout@v3<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">with</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">token</span>:<span style="color:#bbb"> </span>${{ secrets.PAT }}<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">fetch-depth</span>:<span style="color:#bbb"> </span><span style="color:#099">0</span><span style="color:#bbb">  </span><span style="color:#998;font-style:italic"># Ensure full history is fetched</span><span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Install rsync<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>sudo apt-get install -y rsync<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Checkout Repo A (repo-a)<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">        git clone --branch main https://github.com/username/repo-a.git
+</span><span style="color:#d14">        cd repo-a
+</span><span style="color:#d14">        git config user.name &#34;github-actions[bot]&#34;
+</span><span style="color:#d14">        git config user.email &#34;github-actions[bot]@users.noreply.github.com&#34;</span><span style="color:#bbb">        
+</span><span style="color:#bbb">
+</span><span style="color:#bbb">    </span>- <span style="color:#000080">name</span>:<span style="color:#bbb"> </span>Compare and Sync Folder-B1 to Folder-A1<span style="color:#bbb">
+</span><span style="color:#bbb">      </span><span style="color:#000080">run</span>:<span style="color:#bbb"> </span>|<span style="color:#d14">
+</span><span style="color:#d14">        cd $GITHUB_WORKSPACE
+</span><span style="color:#d14">        if git rev-parse HEAD~1 &gt;/dev/null 2&gt;&amp;1; then
+</span><span style="color:#d14">          git diff --name-only HEAD~1 -- Folder-B1/ &gt; changed_files.txt
+</span><span style="color:#d14">        else
+</span><span style="color:#d14">          find Folder-B1 -type f &gt; changed_files.txt
+</span><span style="color:#d14">        fi
+</span><span style="color:#d14">        cd repo-a
+</span><span style="color:#d14">        while IFS= read -r file; do
+</span><span style="color:#d14">          if [ -f &#34;../$file&#34; ]; then
+</span><span style="color:#d14">            rsync -av --delete &#34;../$file&#34; &#34;Folder-A1/${file#Folder-B1/}&#34;
+</span><span style="color:#d14">          else
+</span><span style="color:#d14">            rm -f &#34;Folder-A1/${file#Folder-B1/}&#34;
+</span><span style="color:#d14">          fi
+</span><span style="color:#d14">        done &lt; ../changed_files.txt
+</span><span style="color:#d14">        git add Folder-A1
+</span><span style="color:#d14">        git commit -m &#34;Sync changes from Folder-B1 to Folder-A1&#34;
+</span><span style="color:#d14">        git push origin main</span><span style="color:#bbb">        
+</span><span style="color:#bbb">      </span><span style="color:#000080">env</span>:<span style="color:#bbb">
+</span><span style="color:#bbb">        </span><span style="color:#000080">PAT</span>:<span style="color:#bbb"> </span>${{ secrets.PAT }}<span style="color:#bbb">
+</span><span style="color:#bbb">
+</span></code></pre></div><h2 id="explanation-of-the-workflows">Explanation of the Workflows</h2>
+<ol>
+<li><strong>Trigger</strong>: The workflows are triggered by a push event to specific paths and branches.</li>
+<li><strong>Checkout Repositories</strong>: The <code>actions/checkout@v3</code> action is used to checkout the repository&rsquo;s code.</li>
+<li><strong>Install rsync</strong>: rsync is used for efficient file synchronization.</li>
+<li><strong>Clone the Target Repository</strong>: The target repository is cloned and configured for Git operations.</li>
+<li><strong>File Comparison and Sync</strong>: Using <code>git diff</code> to find changes and <code>rsync</code> to sync the files.</li>
+<li><strong>Commit and Push</strong>: The changes are committed and pushed back to the target repository.</li>
+</ol>
+<p>This setup ensures that the specified folders in both repositories remain in sync whenever changes are made. This solution leverages GitHub Actions to automate the synchronization process, making it seamless and efficient.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Synchronizing specific folders between different repositories can be a crucial requirement for many projects. By using GitHub Actions, you can automate this process effectively, ensuring that changes are propagated across repositories without manual intervention. The steps outlined in this article provide a robust solution for maintaining consistency across multiple codebases.</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/syncing">Syncing</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/github">Github</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/blog">Blog</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/swallow/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">燕子</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/fix_ac_leaking_water/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">修理空调内机漏水问题</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

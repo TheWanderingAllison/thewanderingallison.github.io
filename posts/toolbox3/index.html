@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">Aria2 配置过程 &middot; The Wandering Allison</title>
+  <meta property="og:title" content="Aria2 配置过程 &middot; The Wandering Allison" />
+  <meta itemprop="name" content="Aria2 配置过程 &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/toolbox3/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/toolbox3/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/toolbox3/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/toolbox3/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发" />
+  <meta property="og:description" content="用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发" />
+  <meta name="description" content="用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发" />
+  <meta property="article:published_time" content=" 2021-08-20T17:48:44-01:00" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Download" />
+  
+  
+
+  <meta property="og:updated_time" content=2021-08-20T17:48:44-0100 />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/toolbox3/" class="article_title">Aria2 配置过程</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2021-08-20T17:48:44-01:00">
+            20 Aug, 2021
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。</p>
+<h2 id="下载-aria2">下载 Aria2</h2>
+<p>从
+
+
+<a href="http://aria2.github.io/" target="_blank" rel="noreferrer noopener">官网</a>
+ 下载 Aria2。<br>
+解压之后得到一个Aria2文件夹，在该文件夹内新建 <code>aria2.conf</code>、<code>aria2.session</code>、<code>aria2.log</code> 三个空文件。<br>
+将 <code>aria2.session</code> 文件移动到下载文件夹中（举例 <code>D:\download</code>）。</p>
+<h2 id="配置-aria2conf-文件">配置 <code>aria2.conf</code> 文件</h2>
+<p>打开 <code>aria2.conf</code> 文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。</p>
+<p>重点注意：<code>dir=D:\download</code>、<code>input-file=D:\aria2\aria2.session</code>、<code>save-session=D:\aria2\aria2.session</code>、<code>log=D:\aria2\aria2.log</code> 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是 <code>aria2.log</code> 文件所在的位置。</p>
+<p>最末尾的<code>bt-tracker=</code>，在
+
+
+<a href="https://github.com/ngosang/trackerslist" target="_blank" rel="noreferrer noopener">GitHub - ngosang/trackerslist</a>
+ 获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。</p>
+<pre><code class="language-conf" data-lang="conf">## '#'开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=D:\Movies
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &lt; falloc ? trunc &lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+file-allocation=falloc
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=1
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+#max-overall-upload-limit=0
+# 单个任务上传速度限制, 默认:0
+max-upload-limit=0
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=D:\Movies\aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=D:\Movies\aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+log=D:\SOFTWARE\aria2\aria2.log
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+event-poll=select
+
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+rpc-listen-port=6800
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+bt-max-peers=55
+
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=false
+
+# 打开IPv6 DHT功能, PT需要禁用
+enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+bt-enable-lpd=false
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=false
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0
+# 强制保存会话, 话即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+force-save=false
+# BT校验相关, 默认:true
+bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+bt-save-metadata=true
+
+bt-tracker=udp://tracker.opentrackr.org:1337/announce,udp://9.rarbg.com:2810/announce,udp://tracker.openbittorrent.com:6969/announce,http://openbittorrent.com:80/announce,udp://exodus.desync.com:6969/announce,udp://tracker1.bt.moack.co.kr:80/announce,udp://tracker.zerobytes.xyz:1337/announce,udp://tracker.torrent.eu.org:451/announce,udp://tracker.tiny-vps.com:6969/announce,udp://tracker.moeking.me:6969/announce,udp://retracker.sevstar.net:2710/announce,udp://retracker.netbynet.ru:2710/announce,udp://retracker.lanta-net.ru:2710/announce,udp://opentracker.i2p.rocks:6969/announce,udp://opentor.org:2710/announce,udp://open.stealth.si:80/announce,udp://bt2.archive.org:6969/announce
+
+</code></pre><h2 id="新建startexit脚本">新建Start、Exit脚本</h2>
+<p>每次要用命令启动和退出Aria2未免太折磨人，用记事本新建一个Start.vbs文件，复制以下内容：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">CreateObject<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;WScript.Shell&#34;</span><span style="color:#000;font-weight:bold">)</span>.Run <span style="color:#d14">&#34;aria2c.exe --conf-path=aria2.conf&#34;</span>,0
+</code></pre></div><p>再建一个Exit.bat文件，复制以下内容：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">@echo off &amp; title Aria2 Stop
+Taskkill /F /IM aria2c.exe
+pause &gt; nul   
+</code></pre></div><p>这样就可以通过双击这两个文件启动或退出 Aria2 了。把 Start.vbs 文件放到系统启动文件夹（开始-所有程序-启动文件夹-打开  <code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup</code>），就可以实现开机启动。</p>
+<h2 id="可视化网页aria2-ng">可视化网页Aria2 Ng</h2>
+<p>Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在
+
+
+<a href="https://github.com/mayswind/AriaNg/releases" target="_blank" rel="noreferrer noopener">Aria2 NG</a>
+下载最新版本，解压之后把<code>index.html</code>文件复制粘贴到第一步里的 aria2 文件夹。</p>
+<p>运行上一步创建的 <code>Start.vbs</code> 文件，再打开 <code>index.html</code> 文件，就能够在浏览器里看到 Aria2 Ng 操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/download">Download</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/20210831/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">2021七八月读书记录</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/diary4/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">NoBuy 计划 2.0</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

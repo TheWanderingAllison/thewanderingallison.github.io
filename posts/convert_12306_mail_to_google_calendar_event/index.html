@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">自动添加 12306 火车行程到 Google Calendar &middot; The Wandering Allison</title>
+  <meta property="og:title" content="自动添加 12306 火车行程到 Google Calendar &middot; The Wandering Allison" />
+  <meta itemprop="name" content="自动添加 12306 火车行程到 Google Calendar &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="月初短短几天乘了 8 趟火车，反复调出 App 页面看登车信息很麻烦，由此起了念头，可否在下单后就自动添加行程到 Google Calendar 呢？ 我的想法是，收到 12306 购票或改签成功" />
+  <meta property="og:description" content="月初短短几天乘了 8 趟火车，反复调出 App 页面看登车信息很麻烦，由此起了念头，可否在下单后就自动添加行程到 Google Calendar 呢？ 我的想法是，收到 12306 购票或改签成功" />
+  <meta name="description" content="月初短短几天乘了 8 趟火车，反复调出 App 页面看登车信息很麻烦，由此起了念头，可否在下单后就自动添加行程到 Google Calendar 呢？ 我的想法是，收到 12306 购票或改签成功" />
+  <meta property="article:published_time" content=" 2024-10-07T00:00:00Z" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Gmail" />
+  
+  <meta property="article:tag" content="GoogleCalendar" />
+  
+  
+
+  <meta property="og:updated_time" content=2024-10-07T00:00:00Z />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/" class="article_title">自动添加 12306 火车行程到 Google Calendar</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2024-10-07T00:00:00&#43;00:00">
+            7 Oct, 2024
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>月初短短几天乘了 8 趟火车，反复调出 App 页面看登车信息很麻烦，由此起了念头，可否在下单后就自动添加行程到 Google Calendar 呢？</p>
+<p>我的想法是，收到 12306 购票或改签成功的邮件后自动读取邮件内容，若乘车人是我的名字就把时间、车站、班次等信息加到 Google Calendar 的 Event 里，并且设置一个提前两小时的提醒。</p>
+<h2 id="在-gmail-中设置-filter">在 Gmail 中设置 filter</h2>
+<p>首先在 Gmail 中创建一个 filter，筛选出发件人是 12306 并且内容是购票或改签成功的邮件，自动将它们移到 <code>RailwaySchedules</code> 的 label 下。</p>
+<h2 id="创建-google-apps-script">创建 Google Apps Script</h2>
+<p>在 
+
+
+<a href="https://script.google.com/" target="_blank" rel="noreferrer noopener">Google Apps Script</a>
+ 中创建新的 script，复制以下代码。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#000;font-weight:bold">function</span> autoAddRailwayEvent() {
+  <span style="color:#000;font-weight:bold">try</span> {
+    <span style="color:#998;font-style:italic">// Define the Gmail label that stores the filtered emails
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">var</span> label <span style="color:#000;font-weight:bold">=</span> GmailApp.getUserLabelByName(<span style="color:#d14">&#34;RailwaySchedules&#34;</span>);
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>label) {
+      Logger.log(<span style="color:#d14">&#34;Label not found: &#39;RailwaySchedules&#39;&#34;</span>);
+      <span style="color:#000;font-weight:bold">return</span>;
+    }
+
+    <span style="color:#998;font-style:italic">// Get only unread threads (emails)
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">var</span> threads <span style="color:#000;font-weight:bold">=</span> label.getThreads();
+    <span style="color:#000;font-weight:bold">var</span> calendar <span style="color:#000;font-weight:bold">=</span> CalendarApp.getDefaultCalendar();
+
+    <span style="color:#998;font-style:italic">// Iterate through all unread threads (emails)
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">for</span> (<span style="color:#000;font-weight:bold">var</span> i <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">0</span>; i <span style="color:#000;font-weight:bold">&lt;</span> threads.length; i<span style="color:#000;font-weight:bold">++</span>) {
+      <span style="color:#000;font-weight:bold">var</span> message <span style="color:#000;font-weight:bold">=</span> threads[i].getMessages()[<span style="color:#099">0</span>];
+      <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>message.isUnread()) {
+        <span style="color:#000;font-weight:bold">continue</span>; <span style="color:#998;font-style:italic">// Skip already read messages
+</span><span style="color:#998;font-style:italic"></span>      }
+
+      <span style="color:#000;font-weight:bold">var</span> body <span style="color:#000;font-weight:bold">=</span> message.getBody()
+      Logger.log(<span style="color:#d14">&#34;Processing email body: &#34;</span> <span style="color:#000;font-weight:bold">+</span> body);  <span style="color:#998;font-style:italic">// Log email body for debugging
+</span><span style="color:#998;font-style:italic"></span>
+      <span style="color:#998;font-style:italic">// Check if the body contains the expected information
+</span><span style="color:#998;font-style:italic"></span>      <span style="color:#000;font-weight:bold">if</span> (body.includes(<span style="color:#d14">&#34;张三，&#34;</span>)) {
+        <span style="color:#998;font-style:italic">// Extract the paragraph after &#34;name&#34; and before &#34;ticket&#34;
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">var</span> infoSection <span style="color:#000;font-weight:bold">=</span> body.split(<span style="color:#d14">&#39;张三，&#39;</span>)[<span style="color:#099">1</span>].split(<span style="color:#d14">&#39;，电子客票。&#39;</span>)[<span style="color:#099">0</span>].trim();
+
+        <span style="color:#998;font-style:italic">// Extract details by splitting the paragraph based on commas
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">var</span> details <span style="color:#000;font-weight:bold">=</span> infoSection.split(<span style="color:#d14">&#39;，&#39;</span>);
+        <span style="color:#000;font-weight:bold">if</span> (details.length <span style="color:#000;font-weight:bold">&lt;</span> <span style="color:#099">2</span>) {
+          Logger.log(<span style="color:#d14">&#34;Unexpected format in infoSection: &#34;</span> <span style="color:#000;font-weight:bold">+</span> infoSection);
+          <span style="color:#000;font-weight:bold">continue</span>;
+        }
+  
+        <span style="color:#000;font-weight:bold">var</span> dateTime <span style="color:#000;font-weight:bold">=</span> details[<span style="color:#099">0</span>];  
+        <span style="color:#000;font-weight:bold">var</span> station <span style="color:#000;font-weight:bold">=</span> details[<span style="color:#099">1</span>];  
+        <span style="color:#000;font-weight:bold">var</span> description <span style="color:#000;font-weight:bold">=</span> details.slice(<span style="color:#099">2</span>).join(<span style="color:#d14">&#39;，&#39;</span>); <span style="color:#998;font-style:italic">// Join the rest as description
+</span><span style="color:#998;font-style:italic"></span>
+        <span style="color:#998;font-style:italic">// Parse the date and time
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">var</span> year <span style="color:#000;font-weight:bold">=</span> dateTime.substring(<span style="color:#099">0</span>, <span style="color:#099">4</span>);
+        <span style="color:#000;font-weight:bold">var</span> month <span style="color:#000;font-weight:bold">=</span> dateTime.substring(<span style="color:#099">5</span>, <span style="color:#099">7</span>) <span style="color:#000;font-weight:bold">-</span> <span style="color:#099">1</span>;  <span style="color:#998;font-style:italic">// Months are zero-indexed
+</span><span style="color:#998;font-style:italic"></span>        <span style="color:#000;font-weight:bold">var</span> day <span style="color:#000;font-weight:bold">=</span> dateTime.substring(<span style="color:#099">8</span>, <span style="color:#099">10</span>);
+        <span style="color:#000;font-weight:bold">var</span> hour <span style="color:#000;font-weight:bold">=</span> dateTime.substring(<span style="color:#099">11</span>, <span style="color:#099">13</span>);
+        <span style="color:#000;font-weight:bold">var</span> minute <span style="color:#000;font-weight:bold">=</span> dateTime.substring(<span style="color:#099">14</span>, <span style="color:#099">16</span>);
+
+        <span style="color:#000;font-weight:bold">var</span> eventDate <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Date</span>(year, month, day, hour, minute);
+
+        <span style="color:#998;font-style:italic">// Add the event to Google Calendar with a 2-hour reminder
+</span><span style="color:#998;font-style:italic"></span>        calendar.createEvent(station, eventDate, <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Date</span>(eventDate.getTime() <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">60</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">60</span> <span style="color:#000;font-weight:bold">*</span> <span style="color:#099">1000</span>))
+          .setDescription(description)
+          .addPopupReminder(<span style="color:#099">120</span>);  <span style="color:#998;font-style:italic">// Reminder 2 hours before
+</span><span style="color:#998;font-style:italic"></span>        Logger.log(<span style="color:#d14">&#34;Event created for: &#34;</span> <span style="color:#000;font-weight:bold">+</span> station <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34; at &#34;</span> <span style="color:#000;font-weight:bold">+</span> eventDate);
+
+        <span style="color:#998;font-style:italic">// Mark the email as read after processing
+</span><span style="color:#998;font-style:italic"></span>        threads[i].markRead();
+      } <span style="color:#000;font-weight:bold">else</span> {
+        Logger.log(<span style="color:#d14">&#34;Email does not contain expected ticket info: &#34;</span> <span style="color:#000;font-weight:bold">+</span> body);
+      }
+    }
+  } <span style="color:#000;font-weight:bold">catch</span> (e) {
+    Logger.log(<span style="color:#d14">&#34;Error: &#34;</span> <span style="color:#000;font-weight:bold">+</span> e.message);
+  }
+}
+</code></pre></div><p>将 <code>张三</code> 替换成自己的名字，命名该 script 后保存。</p>
+<p>这个脚本会执行以下动作：</p>
+<ul>
+<li>检查邮箱 <code>RailwaySchedules</code> 标签下是否有未读邮件</li>
+<li>遍历未读邮件，若含有指定姓名，则截取邮件中 <code>张三，</code> 到 <code>，电子客票。</code> 部分内容为 <code>infoSection</code></li>
+<li>用 <code>，</code> 来 split <code>infoSection</code>，将得到的 <code>array[0]</code> 转换为日期和时间，<code>array[1]</code> 为车站。</li>
+<li>将车站信息作为标题、其余内容为描述添加到 Google Calendar Event，设置时间日期并提前两小时提醒</li>
+<li>将对应邮件标为已读</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202410071634765.webp" alt="image.png"></p>
+<p>12306 的邮件模板通常如上图，所以用 <code>张三，</code> 和 <code>，电子客票。</code> 作为 split 的分隔字符能保证恰好截取到自己的购票信息。</p>
+<h2 id="创建定时-trigger">创建定时 Trigger</h2>
+<p>偷懒用 ChatGPT 原话。我设置的是每小时运行一次。</p>
+<p>Go to 
+
+
+<a href="https://script.google.com/" target="_blank" rel="noreferrer noopener">Google Apps Script</a>
+ or from your Gmail/Google Calendar, click the gear icon in the top-right corner and select <strong>See all settings</strong> &gt; <strong>Advanced</strong> &gt; <strong>Google Apps Script</strong>.</p>
+<p>In the Apps Script editor, click on the clock icon on the left-side panel (called <strong>Triggers</strong>).</p>
+<p>Click the <strong>+ Add Trigger</strong> button at the bottom right.</p>
+<p>Set up the trigger as follows:  </p>
+<ul>
+<li><strong>Choose which function to run</strong>: Select the function that processes the Gmail label (in this case, <code>checkLabelAndProcessEmails</code>)</li>
+<li><strong>Choose which deployment should run</strong>: Select &ldquo;Head&rdquo; (the default).</li>
+<li><strong>Select event source</strong>: Choose &ldquo;Time-driven.&rdquo;</li>
+<li><strong>Select type of time-based trigger</strong>: Choose an interval, such as &ldquo;Minute timer,&rdquo; &ldquo;Hour timer,&rdquo; or &ldquo;Day timer.&rdquo;</li>
+<li><strong>Select time interval</strong>: Choose how frequently you want the script to run (e.g., every 10 minutes, once an hour, or once a day)</li>
+</ul>
+<p>运行试试看，Google Calendar 里已经有相应 event 了呢！</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202410071715129.webp" alt="image.png"></p>
+<h2 id="总结">总结</h2>
+<p>感觉代码可能有疏漏，但之后发现再说吧。这个法子也适用于其他购票提醒，对 script 做针对性修改就可以，暂时我没有更多需要大量处理的行程，姑且就先这样。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/gmail">Gmail</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/googlecalendar">GoogleCalendar</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/20240630_3/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">2024二季度读书记录（三）</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/book_medical-genius-series/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">存档|读库·医学大神</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

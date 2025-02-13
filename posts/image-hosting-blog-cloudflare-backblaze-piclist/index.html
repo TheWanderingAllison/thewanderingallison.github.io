@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">Cloudflare &#43; Backblaze &#43; PicList 搭建博客图床（无需自有域名） &middot; The Wandering Allison</title>
+  <meta property="og:title" content="Cloudflare &#43; Backblaze &#43; PicList 搭建博客图床（无需自有域名） &middot; The Wandering Allison" />
+  <meta itemprop="name" content="Cloudflare &#43; Backblaze &#43; PicList 搭建博客图床（无需自有域名） &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="(在火车上无聊于是开始写博客，我这精神真是感天动地…) 过去我用 GitHub 的仓库当图床，配合 PicGo 自动上传，但一来 GitHub 的仓库和单个文件都有大小限制，二来我觉" />
+  <meta property="og:description" content="(在火车上无聊于是开始写博客，我这精神真是感天动地…) 过去我用 GitHub 的仓库当图床，配合 PicGo 自动上传，但一来 GitHub 的仓库和单个文件都有大小限制，二来我觉" />
+  <meta name="description" content="(在火车上无聊于是开始写博客，我这精神真是感天动地…) 过去我用 GitHub 的仓库当图床，配合 PicGo 自动上传，但一来 GitHub 的仓库和单个文件都有大小限制，二来我觉" />
+  <meta property="article:published_time" content=" 2025-01-27T00:00:00Z" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Backblaze" />
+  
+  <meta property="article:tag" content="Cloudflare" />
+  
+  <meta property="article:tag" content="PicList" />
+  
+  <meta property="article:tag" content="Blog" />
+  
+  
+
+  <meta property="og:updated_time" content=2025-01-27T00:00:00Z />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/" class="article_title">Cloudflare &#43; Backblaze &#43; PicList 搭建博客图床（无需自有域名）</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2025-01-27T00:00:00&#43;00:00">
+            27 Jan, 2025
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>(在火车上无聊于是开始写博客，我这精神真是感天动地…)</p>
+<p>过去我用 GitHub 的仓库当图床，配合 PicGo 自动上传，但一来 GitHub 的仓库和单个文件都有大小限制，二来我觉得这多少是对 Github 的滥用，最近终于完成了新的图床配置并且运行良好，在这里记录下（写到后面太烦了开始中英夹杂，只求自己看懂就行，请见谅）。</p>
+<p>在一众 object storage 服务商中（Cloudflare、Wasabi、AWS、Scaleway、IBM Cloud Object Storage、Azure、Oracle），Backblaze 是唯一不添加付款信息就可使用的服务，只是有限制条件，只能创建 private bucket。也可以付费 $1 进行验证后创建 public bucket。一美金不是问题，但我不想在还不够了解运作流程的情况下贸然添加支付信息，而且这个网络账号所关联的信息我会希望尽可能和现实身份隔离。</p>
+<p>其他几个可参考的教程：</p>
+<ul>
+<li>
+
+
+<a href="https://www.backblaze.com/docs/cloud-storage-deliver-private-backblaze-b2-content-through-cloudflare-cdn" target="_blank" rel="noreferrer noopener">Deliver Private Backblaze B2 Content Through Cloudflare CDN</a>
+</li>
+<li>
+
+
+<a href="https://leonis.cc/sui-sui-nian/2023-11-17-deploy-backblaze-image-hosting.html" target="_blank" rel="noreferrer noopener">Cloudflare + Backblaze 实现免费的博客图床方案 - Leo’s blog</a>
+</li>
+<li>
+
+
+<a href="https://blog.standat42.com/posts/image-hosting-backblaze-b2-private-cloudflare-workers-picgo/" target="_blank" rel="noreferrer noopener">Blog 图床方案：Backblaze B2 (私密桶) + Cloudflare Workers + PicGo | Standat&rsquo;s Blog</a>
+</li>
+</ul>
+<p>我没有自己的域名，以上步骤对我不太适用，worker 部分全是根据自己需求写的，这篇只是过程，不是教程，请酌情参考。</p>
+<h3 id="backblaze">Backblaze</h3>
+<p>Backblaze free account plan:</p>
+<blockquote>
+<p>Backblaze B2 has a free account with 10GB of storage. The free account includes 1GB of daily download bandwidth, 2,500 class B transactions connected to downloads and 2,500 class C transactions.</p>
+</blockquote>
+<p>对于博客图床来说是够用了。</p>
+<h4 id="创建-bucket">创建 bucket</h4>
+<p>在
+
+
+<a href="https://www.backblaze.com/" target="_blank" rel="noreferrer noopener">官网</a>
+注册账号，新建 private bucket，命名（尽可能复杂）。</p>
+<p><img src="https://misty-limit-424f.allison-00c.workers.dev/2025/01/0a06394665391aa470f1613ec14a3fa2.webp" alt="create b2 bucket|600"></p>
+<p>在Bucket Settings 中的 Bucket Info 内添加：<code>{&quot;cache-control&quot;: &quot;public, max-age=86400&quot;}</code>，也可将数字调得更大，86400 是缓存一天。</p>
+<p>记下 bucket 的 <code>endpoint</code>，在下面的 PicList 设置里要用。</p>
+<h4 id="创建-application-key">创建 application key</h4>
+<p>新建两个 application key。我是为了将 PicList 上传和 Cloudflare 访问区分开，前者的权限是 <code>Read and Write</code>，后者则只是 <code>Read Only</code>。不介意的话也可以只建一个，但权限就需要设置成 <code>Read and Write</code>。</p>
+<p><img src="https://misty-limit-424f.allison-00c.workers.dev/2025/01/eec350dc4e1e5948c60991b33d4956a6.webp" alt="create application key |600"></p>
+<p>接下来这个页面只会出现一次，复制下 <code>keyID</code> 、<code>keyName</code>、<code>applicationKey</code> 的值。</p>
+<p><img src="https://misty-limit-424f.allison-00c.workers.dev/2025/01/32bb309c1b638631a8966be569a2b359.webp" alt="application key info|600"></p>
+<h3 id="cloudflare">Cloudflare</h3>
+<h4 id="创建-worker">创建 worker</h4>
+<p>复制以下代码。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#000;font-weight:bold">export</span> <span style="color:#000;font-weight:bold">default</span> {
+
+  <span style="color:#000;font-weight:bold">async</span> fetch(request, env) {
+
+    <span style="color:#000;font-weight:bold">const</span> API_KEY_ID <span style="color:#000;font-weight:bold">=</span> env.API_KEY_ID; <span style="color:#998;font-style:italic">// Application Key ID
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> API_KEY <span style="color:#000;font-weight:bold">=</span> env.API_KEY; <span style="color:#998;font-style:italic">// Application Key
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> BUCKET_NAME <span style="color:#000;font-weight:bold">=</span> env.BUCKET_NAME; <span style="color:#998;font-style:italic">// Bucket Name
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> KV_NAMESPACE <span style="color:#000;font-weight:bold">=</span> env.KV_NAMESPACE; <span style="color:#998;font-style:italic">// KV namespace for rate limiting
+</span><span style="color:#998;font-style:italic"></span>    
+    <span style="color:#000;font-weight:bold">const</span> ALLOWED_REFERERS <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#34;https://site1/&#34;</span>,
+                              <span style="color:#d14">&#34;https://site2/&#34;</span>,
+                              <span style="color:#d14">&#34;https://site3/&#34;</span>,
+                              <span style="color:#d14">&#34;https://localhost:1313/&#34;</span>
+                            ]; <span style="color:#998;font-style:italic">// List of allowed referers
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> MAX_REQUESTS_PER_DAY <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1000</span>; <span style="color:#998;font-style:italic">// Limit to 1000 requests per day
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> url <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> URL(request.url);
+    <span style="color:#000;font-weight:bold">const</span> filePath <span style="color:#000;font-weight:bold">=</span> url.pathname.slice(<span style="color:#099">1</span>); <span style="color:#998;font-style:italic">// Extract file path from URL
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>filePath) {
+      <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> Response(<span style="color:#d14">&#34;File path not provided&#34;</span>, { status<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">400</span> });
+    }
+
+    <span style="color:#998;font-style:italic">// Step 1: Validate Referer Header
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> referer <span style="color:#000;font-weight:bold">=</span> request.headers.get(<span style="color:#d14">&#34;Referer&#34;</span>);
+    <span style="color:#000;font-weight:bold">const</span> isAllowedReferer <span style="color:#000;font-weight:bold">=</span>
+      <span style="color:#000;font-weight:bold">!</span>referer <span style="color:#000;font-weight:bold">||</span> ALLOWED_REFERERS.some((allowed) =&gt; referer.includes(allowed));
+
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>isAllowedReferer) {
+      <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> Response(<span style="color:#d14">&#34;Invalid referer&#34;</span>, { status<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">403</span> });
+    }
+
+    <span style="color:#998;font-style:italic">// Access Cloudflare Cache API
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> cache <span style="color:#000;font-weight:bold">=</span> caches.<span style="color:#000;font-weight:bold">default</span>;
+
+    <span style="color:#998;font-style:italic">// Check if the response is already in cache
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> cachedResponse <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">await</span> cache.match(request);
+    <span style="color:#000;font-weight:bold">if</span> (cachedResponse) {
+      console.log(<span style="color:#d14">`Cache hit for: </span><span style="color:#d14">${</span>filePath<span style="color:#d14">}</span><span style="color:#d14">`</span>);
+      <span style="color:#000;font-weight:bold">return</span> cachedResponse; <span style="color:#998;font-style:italic">// Serve from cache
+</span><span style="color:#998;font-style:italic"></span>    }
+
+    <span style="color:#998;font-style:italic">// Step 2: Rate Limiting using KV
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> currentDate <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Date</span>().toISOString().split(<span style="color:#d14">&#34;T&#34;</span>)[<span style="color:#099">0</span>]; <span style="color:#998;font-style:italic">// YYYY-MM-DD
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> requestCountKey <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">`</span><span style="color:#d14">${</span>currentDate<span style="color:#d14">}</span><span style="color:#d14">:</span><span style="color:#d14">${</span>filePath<span style="color:#d14">}</span><span style="color:#d14">`</span>;
+    <span style="color:#000;font-weight:bold">let</span> requestCount <span style="color:#000;font-weight:bold">=</span> (<span style="color:#000;font-weight:bold">await</span> KV_NAMESPACE.get(requestCountKey)) <span style="color:#000;font-weight:bold">||</span> <span style="color:#099">0</span>;
+
+    <span style="color:#000;font-weight:bold">if</span> (requestCount <span style="color:#000;font-weight:bold">&gt;=</span> MAX_REQUESTS_PER_DAY) {
+      <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> Response(<span style="color:#d14">&#34;Daily limit reached for this file&#34;</span>, { status<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">429</span> });
+    }
+
+    requestCount <span style="color:#000;font-weight:bold">=</span> <span style="color:#0086b3">parseInt</span>(requestCount) <span style="color:#000;font-weight:bold">+</span> <span style="color:#099">1</span>;
+    <span style="color:#000;font-weight:bold">await</span> KV_NAMESPACE.put(requestCountKey, requestCount, { expirationTtl<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">86400</span> }); <span style="color:#998;font-style:italic">// Reset every 24 hours
+</span><span style="color:#998;font-style:italic"></span>
+    console.log(<span style="color:#d14">`Request count for </span><span style="color:#d14">${</span>filePath<span style="color:#d14">}</span><span style="color:#d14">: </span><span style="color:#d14">${</span>requestCount<span style="color:#d14">}</span><span style="color:#d14">`</span>);
+
+    console.log(<span style="color:#d14">`Cache miss for: </span><span style="color:#d14">${</span>filePath<span style="color:#d14">}</span><span style="color:#d14">. Fetching from Backblaze.`</span>);
+
+    <span style="color:#998;font-style:italic">// Step 3: Authenticate with Backblaze
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> authResponse <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">await</span> fetch(<span style="color:#d14">&#34;https://api.backblazeb2.com/b2api/v2/b2_authorize_account&#34;</span>, {
+      headers<span style="color:#000;font-weight:bold">:</span> {
+        Authorization<span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">`Basic </span><span style="color:#d14">${</span>btoa(<span style="color:#d14">`</span><span style="color:#d14">${</span>API_KEY_ID<span style="color:#d14">}</span><span style="color:#d14">:</span><span style="color:#d14">${</span>API_KEY<span style="color:#d14">}</span><span style="color:#d14">`</span>)<span style="color:#d14">}</span><span style="color:#d14">`</span>,
+      },
+    });
+
+    <span style="color:#000;font-weight:bold">const</span> authResponseText <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">await</span> authResponse.text();
+
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>authResponse.ok) {
+      <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> Response(<span style="color:#d14">`Authorization failed: </span><span style="color:#d14">${</span>authResponseText<span style="color:#d14">}</span><span style="color:#d14">`</span>, { status<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">500</span> });
+    }
+
+    <span style="color:#000;font-weight:bold">const</span> authData <span style="color:#000;font-weight:bold">=</span> JSON.parse(authResponseText);
+    <span style="color:#000;font-weight:bold">const</span> authToken <span style="color:#000;font-weight:bold">=</span> authData.authorizationToken;
+    <span style="color:#000;font-weight:bold">const</span> downloadUrl <span style="color:#000;font-weight:bold">=</span> authData.downloadUrl; <span style="color:#998;font-style:italic">// Base URL for the bucket
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#998;font-style:italic">// Step 4: Construct the file URL
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> b2FileUrl <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">`</span><span style="color:#d14">${</span>downloadUrl<span style="color:#d14">}</span><span style="color:#d14">/file/</span><span style="color:#d14">${</span>BUCKET_NAME<span style="color:#d14">}</span><span style="color:#d14">/</span><span style="color:#d14">${</span>filePath<span style="color:#d14">}</span><span style="color:#d14">`</span>;
+
+    <span style="color:#998;font-style:italic">// Step 5: Fetch the file from Backblaze
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">const</span> fileResponse <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">await</span> fetch(b2FileUrl, {
+      headers<span style="color:#000;font-weight:bold">:</span> {
+        Authorization<span style="color:#000;font-weight:bold">:</span> authToken,
+      },
+    });
+
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>fileResponse.ok) {
+      <span style="color:#000;font-weight:bold">const</span> errorText <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">await</span> fileResponse.text();
+      <span style="color:#000;font-weight:bold">return</span> <span style="color:#000;font-weight:bold">new</span> Response(<span style="color:#d14">`Failed to fetch file from Backblaze: </span><span style="color:#d14">${</span>errorText<span style="color:#d14">}</span><span style="color:#d14">`</span>, { status<span style="color:#000;font-weight:bold">:</span> <span style="color:#099">404</span> });
+    }
+
+    <span style="color:#998;font-style:italic">// Clone the response to store in cache
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">const</span> responseToCache <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> Response(fileResponse.body, {
+      headers<span style="color:#000;font-weight:bold">:</span> {
+        <span style="color:#d14">&#34;Content-Type&#34;</span><span style="color:#000;font-weight:bold">:</span> fileResponse.headers.get(<span style="color:#d14">&#34;Content-Type&#34;</span>),
+        <span style="color:#d14">&#34;Cache-Control&#34;</span><span style="color:#000;font-weight:bold">:</span> <span style="color:#d14">&#34;public, max-age=31536000&#34;</span>, <span style="color:#998;font-style:italic">// Cache for 1 year
+</span><span style="color:#998;font-style:italic"></span>      },
+    });
+
+    <span style="color:#998;font-style:italic">// Store the response in cache
+</span><span style="color:#998;font-style:italic"></span>
+    <span style="color:#000;font-weight:bold">await</span> cache.put(request, responseToCache.clone());
+    <span style="color:#998;font-style:italic">// Return the fetched response to the client
+</span><span style="color:#998;font-style:italic"></span>    <span style="color:#000;font-weight:bold">return</span> responseToCache;
+  },
+};
+</code></pre></div><p>几个自定义的值：</p>
+<ul>
+<li><code>ALLOWED_REFERERS</code>: 允许引用该图片地址的网站</li>
+<li><code>MAX_REQUESTS_PER_DAY</code>：cloudflare 每日最多授权访问 backblaze 的次数</li>
+<li><code>max-age</code>：cloudflare 缓存时间，我直接设置成了一年。</li>
+</ul>
+<p>这个 worker 的作用是使用 application key 访问 private bucket 获取图片地址缓存到 cloudflare 并生成一个公开可见的 cloudflare worker 地址。加上 ALLOWED_REFERERS 是避免外站引用，毕竟我的免费账户流量有限，同时在没有 header 的情况下在我的 Obsidian 里可以预览。</p>
+<p>另外绑定 KV Namespace 设置 Cloudflare 每日可对 Backblaze 发出 request 次数，这是为了防止 class c transition 超标，之前有一天很莫名地 cloudflare 对 backblaze 请求 authorize 2000 多次，所以我加上这个以防万一。</p>
+<h4 id="创建-kv-namespace">创建 KV Namespace</h4>
+<p>写不动了看 ChatGPT 写的吧。</p>
+<h5 id="create-a-kv-namespace">Create a KV Namespace</h5>
+<ul>
+<li>Go to your Cloudflare dashboard.</li>
+<li>Navigate to <strong>Workers</strong> &gt; <strong>KV</strong> &gt; <strong>Create a Namespace</strong>.</li>
+<li>Give your namespace a name (e.g., <code>daily-usage-tracker</code>).</li>
+</ul>
+<h5 id="bind-the-namespace-to-your-worker">Bind the Namespace to Your Worker</h5>
+<ul>
+<li>After creating the namespace, you&rsquo;ll need to bind it to your Worker.</li>
+<li>Go to your Worker script in the Cloudflare dashboard.</li>
+<li>Under the <strong>Settings</strong> tab, find the <strong>KV Namespace Bindings</strong> section.</li>
+<li>Add a binding by giving it a name (e.g., <code>KV_NAMESPACE</code>) and selecting the namespace you created earlier.</li>
+</ul>
+<h5 id="use-the-namespace-in-your-script">Use the Namespace in Your Script</h5>
+<ul>
+<li>The binding (<code>KV_NAMESPACE</code>) will be available in the <code>env</code> object passed to your Worker script.</li>
+</ul>
+<h4 id="创建-secrets">创建 secrets</h4>
+<p>在 worker 设置里新建以下 secrets：</p>
+<ul>
+<li><code>API_KEY_ID</code></li>
+<li><code>API_KEY</code></li>
+<li><code>BUCKET_NAME</code></li>
+</ul>
+<p>值是上面用于 cloudflare 的 read only 的 application key 对应内容。</p>
+<p><img src="https://misty-limit-424f.allison-00c.workers.dev/2025/01/6a533b3f68f6af917986059c91c99a8f.webp" alt="worker secrets|600"></p>
+<h3 id="piclist">PicList</h3>
+<p>
+
+
+<a href="https://piclist.cn/" target="_blank" rel="noreferrer noopener">Official Document</a>
+.</p>
+<p>PicGo 也支持 S3 图床但需要另外安装插件，而不知是不是这个项目久不维护了，安装插件频繁报错，之前我装 exif remover 时就费了很大功夫，重装 npm packages，设置 npm proxy 等等等等，而 PicList 内置了这些功能，索性直接迁移了。</p>
+<p>下载了 PicList Windows exe 程序又安装不上，微软什么毛病，头大，只能用命令行安装，那又先得安装 scope。</p>
+<h4 id="install-scope">Install scope</h4>
+<p>Open a PowerShell terminal (version 5.1 or later) and from the PS C:&gt; prompt, run:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+</code></pre></div><p>How to open PowerShell from PS C:&gt; prompt:</p>
+<p>Press <code>Windows + R</code>, type <code>powershell</code>, and hit Enter.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">
+<span style="color:#0086b3">cd</span> C:<span style="color:#d14">\
+</span></code></pre></div><h4 id="install-piclist">Install Piclist</h4>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scoop bucket add lemon https://github.com/hoilc/scoop-lemon
+scoop install lemon/piclist
+</code></pre></div><p>题外话，安装时发现语言选英文的话，设置里图床他们用的词居然真的是 pic bed，乐。我搜英文教程时因为不知道图床叫什么就用的 image hosting，后来发现好像确实也就是这么用，而图床是中文里的用法，似乎并没有字面上完全对应的英文。</p>
+<h4 id="import-picgo-config">Import PicGo config</h4>
+<p>PicGo 设置可以一键导入，如果已经在那边用上了 S3 或其他图床就无需再配置。</p>
+<h4 id="config-s3-account">Config S3 account</h4>
+<p>来设置 PicList 里的 S3 图床，要填的是以下几栏。</p>
+<ul>
+<li>AccessKeyID：</li>
+<li>SecretAccessKey：</li>
+<li>Bucket： bucket name</li>
+<li>Self Endpoint： <code>https://{endpoint}</code></li>
+<li>Set ACL：private</li>
+<li>Self Custom URL：cloudflare worker 地址</li>
+</ul>
+<p><img src="https://misty-limit-424f.allison-00c.workers.dev/2025/01/bca9f0143a7535845c09f625413089e1.webp" alt="PicList Config|600"></p>
+<h3 id="obsidian">Obsidian</h3>
+<p>Obsidian 里的 Image auto upload 插件对 PicGo 和 PicList 都适用，以前安装过就不用再变动了。</p>
+<p>具体我的图片上传流程可见 
+
+
+  
+
+<a href="/posts/my_blogging_workflow" >我的博客写作流程</a>
+。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/backblaze">Backblaze</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/cloudflare">Cloudflare</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/piclist">PicList</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/blog">Blog</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/toolbox20250130/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">瞎折腾之博客流程优化</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/20241031/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">2024九十月读书记录</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

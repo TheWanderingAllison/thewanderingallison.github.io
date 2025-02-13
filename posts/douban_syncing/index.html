@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">一些偷懒的豆瓣书影音同步流程 &middot; The Wandering Allison</title>
+  <meta property="og:title" content="一些偷懒的豆瓣书影音同步流程 &middot; The Wandering Allison" />
+  <meta itemprop="name" content="一些偷懒的豆瓣书影音同步流程 &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/douban_syncing/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/douban_syncing/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/douban_syncing/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/douban_syncing/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其" />
+  <meta property="og:description" content="喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其" />
+  <meta name="description" content="喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其" />
+  <meta property="article:published_time" content=" 2023-06-21T22:16:43-08:00" />
+  
+  <meta property="article:tag" content="Douban" />
+  
+  <meta property="article:tag" content="Syncing" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  
+
+  <meta property="og:updated_time" content=2023-06-21T22:16:43-0800 />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/douban_syncing/" class="article_title">一些偷懒的豆瓣书影音同步流程</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2023-06-21T22:16:43-08:00">
+            21 Jun, 2023
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其他数据无所谓，这长达十几年的档案还是割舍不下。最早豆瓣有封禁苗头时我陆续用 
+
+
+<a href="https://blog.doufen.org/posts/tofu-user-guide/" target="_blank" rel="noreferrer noopener">豆坟</a>
+ 导出过几次数据，但这只是一堆 excel 表格，静止的数据并没有价值。期间用了几天 Goodreads，也试图用 neodb 取代豆瓣，但豆瓣最重要的一点：关注友邻的精神食粮动态，目前仍没有对手。因此我在挣扎之下处于半弃瓣状态，仅用它做标记，不再发言。</p>
+<p>现在我的书影音档案在四个地方：豆瓣、notion、blog 以及 neodb。</p>
+<h2 id="豆瓣">豆瓣</h2>
+<p>纯手动，读完/看完后挨个标记。</p>
+<h2 id="notion">Notion</h2>
+<p>Notion 同步用的是在长毛象看到的 
+
+
+<a href="https://zhuzi.dev/posts/2021-06-05-douban-backup-sync-notion/" target="_blank" rel="noreferrer noopener">教程</a>
+ 。</p>
+<p>原理是通过 GitHub Action 定期抓取用户的豆瓣 rss feed 来获取更新，缺点是每次只能抓取最近 10 条记录，此前数据只能手动导入（用豆坟或油猴插件一次性获取）。而豆坟导出的数据不含海报信息，这样一来从前的记录无法显示图片，总觉得略微遗憾。notion 本身的显示页面也不是很灵活，加载还很慢，得不停点击 load more 才会继续显示，我单纯是因为不需要手动就姑且当多个备份仓库了。</p>
+<p>实现成果如下图。
+<img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230620114650.png" alt="notion-page"></p>
+<h2 id="blog">Blog</h2>
+<p>同样是全自动，只需初始设定完毕后续就无需手动操作。</p>
+<p>教程 
+
+
+<a href="https://imnerd.org/doumark.html" target="_blank" rel="noreferrer noopener">豆瓣书影音同步 GitHub Action</a>
+ 。</p>
+<p>原理是使用 GitHub Action 定期抓取用户豆瓣书影音记录，在个人 GitHub 仓库里生成对应 csv 文件。优点是第一次启用就能获取全部历史数据，后续的自动更新也没有上面的十条数量限制，还能自行编辑 csv 文件增加新条目，比如被豆瓣和谐的那些。缺点是导出的数据居然缺了 ISBN！等我好好学习完 GitHub Action 就自己重写一个（遥遥无期的 flag ）。</p>
+<p>但获取数据只是第一步，将数据可视化还需要更多折腾。作者提供了两个途径，一是同步到 blog，二是同步到 notion 。</p>
+<p>同步到 blog 具体就是往自己的静态博客里加几个网页，再写对应的 CSS ，让 csv 文件能够以图片墙形式显示，我抄的这个 
+
+
+<a href="https://immmmm.com/doumark-action/" target="_blank" rel="noreferrer noopener">「电影 / 阅读」页面，顶！</a>
+ ， 略微做了点改动。</p>
+<p>实现成果可点击 
+
+
+<a href="https://thewanderingallison.github.io/books/" target="_blank" rel="noreferrer noopener">书</a>
+ 、
+
+
+<a href="https://thewanderingallison.github.io/movies/" target="_blank" rel="noreferrer noopener">影</a>
+ 、
+
+
+<a href="https://thewanderingallison.github.io/music/" target="_blank" rel="noreferrer noopener">音</a>
+ 页面查看。</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622185307.png" alt="book"></p>
+<p>（其实还有点问题，我的 blog header 太宽挡住了一部分页面，网页版的我改掉了，但没对手机页面进行适配，就这么先凑合着吧！）</p>
+<p>同步到 notion 原作者也给了教程，我试了下他给的 notion template 导入数据有点问题，而我实在是对 notion 的编辑逻辑感到苦手，不想自己一个个设置 block 属性，遂放弃。如果不在意缺少 ISBN 和愿意自己设置 notion template，可以略过上面的 rss 同步方式直接选用这个。</p>
+<h2 id="neodb">Neodb</h2>
+<p><del>懒得每次把豆瓣标记内容复制一遍到 neodb ，幸好它也支持数据导入（豆坟格式的 excel 表格），我因为很久之前就卸载了豆坟插件，所以用 python + pandas 把上一步 blog 里的 csv 文件筛选关键字段转换成 excel ，每隔一两个月导入一次。</del></p>
+<p><del>以读过为例，大概如下图，呃相当粗糙的代码。总之有这几项就能成功导入。</del></p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622180322.png" alt="neodb"></p>
+<p><del>其实 neodb 既然有开放 api，那理论上应该也能用 GitHub Action 自动获取更新，那样就可以彻底放弃豆瓣，把 neodb 作为首次标记渠道，再同步到 notion 或是 blog 。可我还没打定主意彻底转向它，也怕 neodb 作为网友自发维护的项目哪天就停止运行了，豆瓣虽然一直半死不活的但应该还能再苟一阵子……吧？当然更重要的是我只读了遍 GitHub Action 官方文档，大概了解流程和运作原理，根本没写过，等哪天实在需要再说。</del></p>
+<p><strong>2023.07.17 update:</strong></p>
+<p>上面提到的 notion 同步工具现在增加了 neodb 同步，所以也实现了自动化，再也不用手动导入啦。</p>
+<h2 id="goodreads">Goodreads</h2>
+<p>顺便一提 Goodreads，它也接受导入，既然手头有这么多渠道的数据，就折腾下试试看。</p>
+<p>首先根据这个链接 
+
+
+<a href="https://www.goodreads.com/review/import" target="_blank" rel="noreferrer noopener">Import/Export Books to My Account | Goodreads</a>
+ 查看 sample 文件，最不可或缺的是 ISBN，其他其实只要评分、评论、标记时间以及读过状态就够了。我只选择了以下几栏。</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230622181321.png" alt="goodreads"></p>
+<p>试验了下，上半年的 60 本书，成功导入 51 本，剩余无法识别，应该是因为有些中文书暂时没有条目。失败比例还是颇高，我大概率会放弃这个平台了。</p>
+<p>最后，对自己的灵魂质问，我是闲出问题来了吗？写这个干嘛？算了，就当给自己存个档吧！</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/douban">Douban</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/syncing">Syncing</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/convenience_foods_review/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">言简意赅的几款方便食品点评</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/diary20230620/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">随便写写</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

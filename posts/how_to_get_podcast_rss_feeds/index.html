@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">如何获取podcast的RSS &middot; The Wandering Allison</title>
+  <meta property="og:title" content="如何获取podcast的RSS &middot; The Wandering Allison" />
+  <meta itemprop="name" content="如何获取podcast的RSS &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！ 2023.12.15的更新： 后文内容可以不用再看，现在两个渠" />
+  <meta property="og:description" content="本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！ 2023.12.15的更新： 后文内容可以不用再看，现在两个渠" />
+  <meta name="description" content="本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！ 2023.12.15的更新： 后文内容可以不用再看，现在两个渠" />
+  <meta property="article:published_time" content=" 2023-06-23T22:07:41-08:00" />
+  
+  <meta property="article:tag" content="Podcast" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  
+
+  <meta property="og:updated_time" content=2023-06-23T22:07:41-0800 />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/" class="article_title">如何获取podcast的RSS</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2023-06-23T22:07:41-08:00">
+            23 Jun, 2023
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p><strong>本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！</strong></p>
+<p>2023.12.15的更新：</p>
+<p>后文内容可以不用再看，现在两个渠道就可以方便获取 RSS。</p>
+<p>一 
+
+
+<a href="https://neodb.social/" target="_blank" rel="noreferrer noopener">Neodb</a>
+ 收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。</p>
+<p>二安装 
+
+
+<a href="https://github.com/DIYgod/RSSHub-Radar" target="_blank" rel="noreferrer noopener">RSSHub Radar</a>
+ 插件，它也支持小宇宙播客的 RSS 抓取。</p>
+<hr>
+<p>虽然最近听播客的时间大大减少，但之前为了获取播客 RSS 的努力可是丝毫不少，来简单存个档吧。我日常使用的收听渠道是 Google Podcasts，英文世界的播客节目想要获取 RSS 都非常容易，大部分有官方网站，提供多渠道订阅方式和 RSS 链接，而中文播客届好多都无视 Google，不光在 Google Podcasts 页面搜不到，很多还根本不提供 RSS，找起来极其费劲。</p>
+<h2 id="1-通过播客名获取">1. 通过播客名获取</h2>
+<p>我最常用的是 
+
+
+<a href="https://www.podbean.com/" target="_blank" rel="noreferrer noopener">Podbean</a>
+ ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 <a href="https://podcastrepublic.net">https://podcastrepublic.net</a> 和  <a href="https://pod.link">https://pod.link</a> ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626125524.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626125557.png" alt=""></p>
+<h2 id="2-通过播客的-apple-podcasts-链接获取">2. 通过播客的 Apple Podcasts 链接获取</h2>
+<p>
+
+
+<a href="https://getRSSfeed.com/" target="_blank" rel="noreferrer noopener">getRSSfeed</a>
+ 这个网站支持从 Apple Podcasts 、Google Podcasts 等多渠道解析 RSS。</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/20230626203430.png" alt=""></p>
+<p>有些播客通过第一种渠道无法检索到但已经提交到了 Apple Podcasts ，在已知链接的情况下可以用上文的网站获取。那么问题来了，Apple Podcasts 网页版是个摆设，也不支持站内搜索，没有他人分享无法直接获取节目链接，可以试着用 <code>inurl:https://podcasts.apple.com/</code> 或者 <code>site:https://podcasts.apple.com/</code> 这种方式找，但太冷门的播客此前根本没人访问过搜索引擎是不会收录的，于是变成了一个死循环。可能只能拜托身边用苹果的朋友分享一下了……</p>
+<h3 id="3-通过喜马拉雅-fm-专辑页面获取">3. 通过喜马拉雅 FM 专辑页面获取</h3>
+<p>还有些播客只在喜马拉雅更新，如果它是 host 在喜马拉雅上的话，那么在网站内搜索找到对应的专辑列表，网址通常是 <code>https://www.ximalaya.com/album/XXXXXXXX</code> ，在这串网址后加上 <code>.xml</code> 就是对应的 RSS 链接。</p>
+<h3 id="4-小宇宙">4. 小宇宙</h3>
+<p>这个流氓无解，除非主播在其他平台提交过，不然光凭小宇宙链接是搞不出 RSS 的，或者用 
+
+
+<a href="https://docs.rsshub.app/" target="_blank" rel="noreferrer noopener">RSSHub</a>
+  自建服务，可为了这狗屁平台我至于吗！</p>
+<h3 id="5其他">5.其他</h3>
+<p>还有人做了一个
+
+
+<a href="https://getpodcast.xyz/" target="_blank" rel="noreferrer noopener">集合页面</a>
+，可以索引到一些中文节目，不过他这里提供的节目上面都能搜到，但也算是多个途径吧。</p>
+<p>总之，国内的播客创作者能不能有点意识，除非是平台独占或是付费节目，不然请养成多平台分发和自觉提供 RSS 的习惯好吗？这一点都不麻烦！这个世界上不是只有小宇宙和 Apple Podcasts 的！这两垃圾都只能在 app 里使用究竟有哪里好了！也请至少提供一个这些 app 外的联系渠道，有的播客只在小宇宙上传一份，再给一个微博账号，好像这样就能容易找到一样。问题在于，我上次好不容易摸到了一个超冷门播客的微博，为了留言还不得不安全验证我那 N 年没登的账户，结果对方回复给我的评论被新浪秒吞！我收到了评论提示，点进去一片空白，又试一次，对方回复，再被吞，气到想骂人。</p>
+<p>而日常分享节目的人，请养成提供链接的习惯，不要一张截图或一个二维码就了事。就算用的是 Apple Podcasts 甚至是小宇宙这种完全无法获取 RSS 的流氓软件，用链接的形式分享出来那么至少没有安装 app 的人也能够在网页中打开收听完当期节目。</p>
+<p>PS，本来只想随便写写，没想到查证一些内容那么麻烦，有些放进来有些累赘也就省略了，我都不怎么听播客了干这吃力不讨好的事是何苦？</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/podcast">Podcast</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/articles_20230629/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">网络阅读 004</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/convenience_foods_review/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">言简意赅的几款方便食品点评</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

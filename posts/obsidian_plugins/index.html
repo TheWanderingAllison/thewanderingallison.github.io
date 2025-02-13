@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">我的 Obsidian 常用插件 &middot; The Wandering Allison</title>
+  <meta property="og:title" content="我的 Obsidian 常用插件 &middot; The Wandering Allison" />
+  <meta itemprop="name" content="我的 Obsidian 常用插件 &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/obsidian_plugins/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/obsidian_plugins/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/obsidian_plugins/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/obsidian_plugins/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思" />
+  <meta property="og:description" content="好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思" />
+  <meta name="description" content="好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思" />
+  <meta property="article:published_time" content=" 2024-09-08T00:00:00Z" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="Obsidian" />
+  
+  
+
+  <meta property="og:updated_time" content=2024-09-08T00:00:00Z />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/obsidian_plugins/" class="article_title">我的 Obsidian 常用插件</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2024-09-08T00:00:00&#43;00:00">
+            8 Sep, 2024
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p><img src="https://thebusinessblocks.com/wp-content/uploads/2020/08/Untitled-design-3.png" alt="Obsidian"></p>
+<p>好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思）。</p>
+<p>而我这么喜欢 Obsidian 的原因就是，它既可以是开箱即用的 Markdown 文本编辑器，也可以根据用户的需求无限度复杂。最早我只是需要一个有预览功能的 Markdown 软件，打开就可以打字的那种，它完成得很好。后续的功能挖掘、插件安装，都是在使用过程中自然生长出的，Obsidian 强大的社区支持也让这些需求（几乎）都得以满足。</p>
+<h2 id="core-plugins">Core Plugins</h2>
+<p>除了 Sync（要收费）其他我基本都选择了开启。</p>
+<p>不过说是插件，理解成软件自带的增强功能更合适，大部分也无需更进一步的设置，自然地就融入日常使用。</p>
+<h3 id="template">Template</h3>
+<p>唯一想要介绍的是 <code>Template</code> 功能，通过它可以解放许多重复工作，比如博文的 <code>metadata</code>，比如读书笔记的固定模板。可以创建多个 <code>Template</code> 文件，配合 hotkey（我的自定义是 <kbd>ALT</kbd> + <kbd>I</kbd>）快速插入。</p>
+<p>下面是我的博文 <code>Template</code> 文件， <code>{{date}}</code> 会自动插入当前日期。</p>
+<pre><code class="language-metadata" data-lang="metadata">---
+title: &quot;&quot;
+date: {{date}}
+draft: true
+tags: 
+categories: 
+rss_ignore: false
+---
+
+</code></pre><h2 id="community-plugins">Community Plugins</h2>
+<p>顾名思义，是官方之外广大用户创造的插件。</p>
+<h3 id="custom-frame">Custom Frame</h3>
+<p>
+
+
+  
+
+<a href="/posts/how-to-use-gpb-in-obsidian" >在 Obsidian 中使用Google Play Books</a>
+ 这篇里详细写过用途。</p>
+<h3 id="dataview">Dataview</h3>
+<p>强大的索引、查询工具。</p>
+<p>我的用法其实很笨拙，只是为了在首页显示近期需要处理的文档。</p>
+<p>创建一个名叫 <code>Homepage</code> 的 canvas 页面，右击选中 <code>Pin</code> 固定标签页，保证每次打开 Obsidian 都能看到。在 canvas 中新建多个 card，输入 <code>dataview</code> 语句实现特定条件的表格或列表筛选显示。</p>
+<p><img src="https://raw.githubusercontent.com/TheWanderingAllison/blog/mater/202409082323831.webp" alt="Homepage"></p>
+<p>左侧的 Drafts 是以表格形式列出文件 metadata 中的 <code>title</code>、<code>tag</code>，按照最后修改时间降序显示来自 <code>Blog-drafts</code> 文件夹的最新十条内容。</p>
+<pre><code class="language-Obsidian-dataview" data-lang="Obsidian-dataview">\`\`\`dataview
+table title, tags
+from &quot;Blog-drafts&quot;
+sort file.mtime desc
+limit 10
+\`\`\`
+</code></pre><p>右边的 Book 是以列表显示满足以下条件的文档（要求较多我懒得解释了）。</p>
+<pre><code class="language-Obsidian-dataview" data-lang="Obsidian-dataview">\`\`\`dataview
+list from #Book or &quot;Reading/Notes&quot; and -&quot;Templates&quot;
+where isFinished = false or lastReadDate &gt;= date(today) - dur(15 day)
+sort file.mtime desc
+\`\`\`
+</code></pre><p>而这只是非常初级的功能，只要阅读官方文档，尤其是大概懂一点 SQL 或者其他编程语言很快就能上手，更高级的用法我暂时也用不上，需要时再学吧！</p>
+<h3 id="easy-typing">Easy Typing</h3>
+<p>格式助手，排版救星。</p>
+<p>开发者上传了视频 
+
+
+<a href="https://www.bilibili.com/video/BV1jg411n7A4/" target="_blank" rel="noreferrer noopener">Obsidian 插件 Easy Typing：极大地提升中文用户在OB中的编辑体验</a>
+详细讲解了用法，有些太 geeky 超过了我的能力范围，不过像连续全角转半角这种功能真是大大提升中文输入体验。</p>
+<h3 id="fleeting-note-sync">Fleeting Note Sync</h3>
+<p>配合 Fleeting Note 的浏览器插件同步网页剪藏内容到 Obsidian。</p>
+<h3 id="git">Git</h3>
+<p>我的用途主要是为了配合 
+
+
+  
+
+<a href="/posts/syncing_specific_folders_between_different_repositories" >Syncing Specific Folders Between Different Repositories Using GitHub Actions</a>
+ 。</p>
+<p>以此实现了：</p>
+<ol>
+<li>备份 Obsidian 笔记到 Github 私人仓库</li>
+<li>触发 Github Action，将 Obsidian 的两个文件夹分别同步到 GitHub A 账号的 A 博客仓库和 GitHub B 账号的 B 博客仓库，再分别触发仓库的 Hugo deploy action 实现最终的博客发布</li>
+</ol>
+<p>这样两个博客的内容都只需在 Obsidian 里写完 Markdown 文档一键推送，不需要切换 GitHub 账号，不需要本地部署，更不需要打任何命令。啊！赞美造轮子的人，赞美 GitHub Action！</p>
+<h3 id="image-auto-upload-plugin">Image Auto Upload Plugin</h3>
+<p>配合 PicGo 实现图片上传至图床。</p>
+<p>我只有写 blog 才偶尔需要插图，日常笔记是纯文字，所以不需要其他的图片管理插件。</p>
+<h3 id="open-link-with">Open Link With</h3>
+<p>目的是让外部链接默认在 Obsidian 新标签页打开无需跳转至系统浏览器。</p>
+<h3 id="tag-wrangler">Tag Wrangler</h3>
+<p>批量修改 tag 。</p>
+<h3 id="weread">Weread</h3>
+<p>在 Obsidian 中使用微信读书以及同步笔记。</p>
+<h2 id="hotkeys">Hotkeys</h2>
+<p>此外必须一提的是 Obsidian 堪称无穷无尽的 hotkeys。你几乎可以给每一个动作（以及插件功能）配置 hotkey。</p>
+<p>最棒的地方在于大部分不需要强记，可以无缝衔接之前的使用经验。</p>
+<p>首先文本，复制、粘贴、无格式粘贴、剪切、撤销、取消撤销又或者加粗、斜体之类，这些在各类文本编辑器中都是通用的；其次标签，打开、新建、关闭、恢复标签页，又或者用 <kbd>CTRL</kbd> 加数字跳转至对应标签页，和 Chrome 或者 Edge 也都完全相同；再到文件管理，打开、新建，和 Windows 系统层面操作也别无二致。</p>
+<p>那特有的那些呢？可以先打开设置面板看一眼究竟有哪些支持自定义，日后总会有某些操作频繁到不耐烦用鼠标多次点选，那时自然而然会生出用键盘的念头的。比如我常用的，插入新模板、打开 Google Play Books 、打开微信读书、插入日期、移动当前文件到其他位置等等等等。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/obsidian">Obsidian</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/dairy20240909/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">RSS，友链以及博客</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/eyes/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">Eyes</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+

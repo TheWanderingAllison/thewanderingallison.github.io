@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-zh"><head itemscope itemtype="https://thewanderingallison.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noarchive"> 
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+
+  
+  
+
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EDY88XRQS6');
+  </script>
+
+
+  
+  <meta property="og:locale" content="en">
+  <meta name="language" content="en">
+  
+  <title itemprop="name">试图同步 Play Books 笔记的失败尝试 &middot; The Wandering Allison</title>
+  <meta property="og:title" content="试图同步 Play Books 笔记的失败尝试 &middot; The Wandering Allison" />
+  <meta itemprop="name" content="试图同步 Play Books 笔记的失败尝试 &middot; The Wandering Allison" />
+  <meta name="application-name" content="The Wandering Allison" />
+  <meta property="og:site_name" content="The Wandering Allison" />
+  
+  <base href="https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/">
+  <link rel="canonical" href="https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/" itemprop="url" />
+  <meta name="url" content="https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/" />
+  <meta property="og:url" content="https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/" />
+  
+  
+  
+  <meta itemprop="image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  <meta property="og:image" content="https://thewanderingallison.github.io/images/og_image.jpg" />
+  
+  
+  
+  
+  <meta property="og:type" content="article" />
+  <meta itemprop="description" content="一次无果的尝试，但这个过程还是记录下，失败也是积攒经验的一种方式，没准之后我就能解决了呢。 不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔" />
+  <meta property="og:description" content="一次无果的尝试，但这个过程还是记录下，失败也是积攒经验的一种方式，没准之后我就能解决了呢。 不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔" />
+  <meta name="description" content="一次无果的尝试，但这个过程还是记录下，失败也是积攒经验的一种方式，没准之后我就能解决了呢。 不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔" />
+  <meta property="article:published_time" content=" 2024-07-05T00:00:00Z" />
+  
+  <meta property="article:tag" content="Toolbox" />
+  
+  <meta property="article:tag" content="GooglePlayBooks" />
+  
+  <meta property="article:tag" content="Google" />
+  
+  
+
+  <meta property="og:updated_time" content=2024-07-05T00:00:00Z />
+
+  
+
+  
+
+  <meta name="generator" content="Hugo 0.81.0" />
+
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="/css/styles.css">
+
+  
+  
+  <link href="/%20index.xml" rel="alternate" type="application/rss+xml" title="The Wandering Allison" />
+  
+  
+  
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turbolinks/5.2.0/turbolinks.js"></script>
+  
+</head><body class="bg-gradient flex flex-col min-h-screen"><head>
+  
+  
+</head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EDY88XRQS6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EDY88XRQS6');
+</script>
+
+
+<script defer src="https://cloud.umami.is/script.js" data-website-id="70a90f30-1085-438a-ae97-8e16ca69ed1b"></script>
+
+
+<script defer src="https://umamitest-allisons-projects-ff0e6fda.vercel.app/script.js" data-website-id="bddb577f-d261-443f-904a-cce83793830c"></script>
+
+
+  <header id="header" class="w-full m-0 fixed z-10 transition-all duration-300 ease-in-out border-t-4 border-gray-300 py-4 backdrop-filter-blur">
+    <div id="header-container" class="max-w-7xl mx-auto p-6 flex items-center flex-wrap lg:flex-no-wrap relative justify-between">
+      <a href="https://thewanderingallison.github.io/" class="leading-10 text-3xl font-normal text-gray-600 flex flex-shrink-0 article_title
+      ">
+        The Wandering Allison
+      </a>
+
+      <div class="block lg:hidden mx-2">
+        <button class="nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Menu</title>
+    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+  </svg>
+</button>
+<button class="hidden nav-button w-10 h-10 justify-center flex items-center opacity-75 hover:opacity-100 transition duration-300 ease-in-out">
+  <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <title>Close menu</title>
+    <polygon points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2" transform="rotate(45 10 10)" />
+  </svg>
+</button>
+
+      </div>
+
+      <div class="absolute right-8 top-16 lg:relative lg:right-0 lg:top-0 flex flex-col lg:flex-row items-center rounded-md bg-white shadow lg:bg-transparent lg:shadow-none">
+
+        <nav id="nav-menu" class="p-4 lg:p-0 hidden lg:block w-full lg:w-auto text-gray-600">
+          <ul class="w-full flex flex-col lg:flex-row justify-end items-end lg:items-center">
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="About" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/about">About</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Archives" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/archives">Archives</a>
+    </li>
+  
+    <li class="flex my-2 lg:my-2 mx-1 lg:mx-2">
+      <a title="Friends" class="uppercase font-bold lg:py-2 lg:px-3 rounded text-sm opacity-75 hover:opacity-100 transition duration-300 ease-in-out article_title" href="/friends">Friends</a>
+    </li>
+  
+</ul>
+
+        </nav>
+      </div>
+    </div>
+  </header>
+
+<main class="flex-1 mt-12 max-w-3xl mt-32 mx-auto text-gray-700 w-full">
+<div id="reading-progress-bar" role="presentation" class="fixed z-10 top-0 left-0 h-1 bg-gray-700"></div>
+
+<article class="article">
+    <h1 class="article_title"><a href="https://thewanderingallison.github.io/posts/failed_attempts_at_syncing_play_books_annotations/" class="article_title">试图同步 Play Books 笔记的失败尝试</a></h1>
+
+    
+<ul id="categories">
+  
+    <li><a href="https://thewanderingallison.github.io/categories/toolbox">Toolbox</a> </li>
+  
+</ul>
+
+
+    
+      <header class="article__header">
+          <time datetime="2024-07-05T00:00:00&#43;00:00">
+            5 Jul, 2024
+          </time>
+        </span>
+      </header>
+    
+
+    <div class="py-5">
+      <p>一次无果的尝试，但这个过程还是记录下，失败也是积攒经验的一种方式，没准之后我就能解决了呢。</p>
+<p>不管 Kindle 还是微信读书都有专属 Obsidian 插件可以无缝同步读书笔记，于是我不甘心地还是想寻觅一个方法能够把 Google Play Books 自动保存的 Google Docs 笔记文件转成 Markdown 也同步到 Obsidian 里。</p>
+<h2 id="day-1">Day 1</h2>
+<p>初步想法：</p>
+<p>（一）获取 Google Docs API 和 Google Drive API</p>
+<p>（二）指定 Google Drive 文件夹 ID 和本地 md 文件夹地址</p>
+<p>（三）遍历 Drive 文件夹，获取 Doc 文件的标题和最后修改时间</p>
+<ul>
+<li>若本地文件夹不存在同名 md 文档，则创建 md，将从 Docs API 中获得的 JSON 转成 Markdown。</li>
+<li>若存在同名文档，比较最后修改时间，若 Doc 晚于 md，更新 md；反之则不操作。</li>
+</ul>
+<p>将以上 python 脚本保存后，在 Windows Task Scheduler 中创建新任务，设置定时运行，就可以实现自动更新 Google Play Books 笔记。</p>
+<p>让 ChatGPT 老师帮我写完这个 python script 之后我信心满满开始尝试，中途安装了多少 library 也暂且不提，总之无数次操作之后还是频繁报错网络问题，不是 SSL 无法连接就是什么超时，但我单单用 <code>request</code> 试 <a href="http://www.google.com">http://www.google.com</a> 得到的 <code>response.status</code> 明明也是 200，无语问苍天，到底问题出在哪里！很快我的当日免费提问额度用完，我也头晕脑胀，偃旗息鼓，来日再战。</p>
+<p>另外通过 API 获取 Docs 的 JSON 数据一点都不简单！存一下 ChatGPT 给的步骤。</p>
+<blockquote>
+<h3 id="enable-google-docs-api">Enable Google Docs API</h3>
+<ul>
+<li>Go to the Google Cloud Console.</li>
+<li>Create a new project or select an existing one.</li>
+<li>Enable the Google Docs API for your project.</li>
+</ul>
+<h3 id="set-up-credentials">Set Up Credentials</h3>
+<ul>
+<li>In the Google Cloud Console, go to the &ldquo;Credentials&rdquo; section.</li>
+<li>Create OAuth 2.0 credentials.</li>
+<li>Download the credentials JSON file.</li>
+</ul>
+<h3 id="authorize-api-and-download-document">Authorize API and Download Document</h3>
+</blockquote>
+<h2 id="day-2">Day 2</h2>
+<p>不死心，我又来了。</p>
+<p>既然在本地跑这个脚本有问题，那先试试看 API 能不能获取成功呢？Google 有个 
+
+
+<a href="https://developers.google.com/oauthplayground/" target="_blank" rel="noreferrer noopener">OAuth 2.0 Playground</a>
+ 可以在线测试。ChatGPT 给的教程如下。</p>
+<blockquote>
+<h3 id="step-1-open-the-oauth-20-playground">Step 1: Open the OAuth 2.0 Playground</h3>
+<ol>
+<li>Go to the OAuth 2.0 Playground.</li>
+</ol>
+<h3 id="step-2-configure-the-playground">Step 2: Configure the Playground</h3>
+<ol>
+<li>Click on the settings icon (gear) in the upper-right corner.</li>
+<li>Check the box for <code>Use your own OAuth credentials</code>.</li>
+<li>Input your Client ID and Client Secret obtained from the Google Cloud Console.</li>
+<li>Click on <code>Close</code>.</li>
+</ol>
+<h3 id="step-3-authorize-the-api-scopes">Step 3: Authorize the API Scopes</h3>
+<ol>
+<li>In the left sidebar, under &ldquo;Step 1&rdquo;, find the Google Docs API scopes. You can search for <code>https://www.googleapis.com/auth/&gt; documents.readonly</code> for read-only access.</li>
+<li>Click on the scope checkbox to select it.</li>
+<li>Click on <code>Authorize APIs</code>.</li>
+</ol>
+<h3 id="step-4-authenticate">Step 4: Authenticate</h3>
+<ol>
+<li>You will be redirected to the Google sign-in page. Sign in with the Google account that has access to the Google Docs you want to &gt; test.</li>
+<li>You will be redirected back to the OAuth Playground with an authorization code filled in.</li>
+</ol>
+<h3 id="step-5-exchange-authorization-code-for-tokens">Step 5: Exchange Authorization Code for Tokens</h3>
+<ol>
+<li>Click on <code>Exchange authorization code for tokens</code>.</li>
+<li>The access token and refresh token will be displayed.</li>
+</ol>
+<h3 id="step-6-make-api-requests">Step 6: Make API Requests</h3>
+<ol>
+<li>Under &ldquo;Step 3&rdquo;, set up the request. You will be making a <code>GET</code> request to <code>https://docs.googleapis.com/v1/documents/{documentId}</code>.</li>
+<li>Replace <code>{documentId}</code> with the actual ID of the Google Docs document you want to test.</li>
+<li>Click on <code>Send the request</code>.</li>
+</ol>
+<h3 id="example-api-request-and-response">Example API Request and Response</h3>
+<ul>
+<li><strong>Request URL</strong>: <code>https://docs.googleapis.com/v1/documents/YOUR_DOCUMENT_ID</code></li>
+<li><strong>Response</strong>: You will get a JSON response with the document content.</li>
+</ul>
+</blockquote>
+<p>用测试 API 可以正常获得 JSON 数据，不过 Docs 的数据居然有那——么——长，一个很短的文档导出成 JSON 时就已经有快 100 KB ，我真是想得太简单了！格式复杂得让人头晕，而且每个段落对应的 <code>content</code> 内容，中文部分居然全是用 Unicode 显示的！难怪一眼望过去我说怎么一个熟悉的字都没有！</p>
+<p>又找了下 GitHub，发现有人写了类似的处理 Google Docs 的工具，
+
+
+<a href="https://github.com/AnandChowdhary/docs-markdown" target="_blank" rel="noreferrer noopener">Convert a Google Docs file (API response) to Markdown</a>
+ ，等我下次试试看。本次尝试以完美失败告终（苦笑）。</p>
+
+    </div>
+    
+    <ul id="tags">
+        <li> <a href="https://thewanderingallison.github.io/tags/toolbox">Toolbox</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/googleplaybooks">GooglePlayBooks</a> </li>
+        <li> <a href="https://thewanderingallison.github.io/tags/google">Google</a> </li>
+      
+    </ul>
+    
+
+
+  <aside class="flex">
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/fix_ac_leaking_water/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">Read this next</span>
+      <span class="text-center">修理空调内机漏水问题</span>
+    </a>
+  
+  
+    <a class="w-full md:w-1/2 flex flex-col items-center py-7 px-3 no-underline rounded-md hover:bg-white transition duration-300 ease-in-out article_title" href="/posts/how_to_host_umami_on_vercel/">
+      <span class="border border-gray-6 text-xs rounded-md mb-2 uppercase font-bold py-2 px-3">You might enjoy</span>
+      <span class="text-center">使用 Vercel 自建 Umami 服务</span>
+    </a>
+  
+</aside>
+
+
+
+
+  <section class="comments ">
+    <h2>Comments</h2>
+    <div id="disqus_thread"></div>
+<script>
+    
+
+    
+
+    (function() { 
+    var d = document, s = d.createElement('script');
+    s.src = 'https://the-wandering-allison.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </section>
+
+</article>
+
+
+  </main>
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+      
+  
+
+   
+   
+   
+   
+
+
+<footer class="w-full max-w-7xl mx-auto text-center border-t border-gray-200 py-9 px-3 mt-9 pin-b text-sm text-gray-500">
+
+  Made with <a href="https://gohugo.io" class="underline transition duration-300 ease-in-out hover:text-blue-600">Hugo</a> and <a href="https://github.com/leonardofaria/bento" class="underline transition duration-300 ease-in-out hover:text-blue-600">Bento theme</a>.
+  <div>
+   <p>Copyright © 2020-2025 Allison</p>
+  </div>  
+  <div>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="totalcount">
+    <span> 这个人已经废话了 289.1k 字！ </span>
+  </div>
+</footer>
+
+<script>
+  var initMenu = () => {
+    var navButtons = document.querySelectorAll('.nav-button');
+    var navMenu = document.querySelector('#nav-menu');
+    var navSocialLinks = document.querySelector('#nav-social-links');
+
+    for (var button of navButtons) {
+      button.addEventListener('click', () => {
+        console.log('click')
+        navMenu.classList.toggle("hidden");
+
+        if (navSocialLinks) {
+          navSocialLinks.classList.toggle("hidden");
+        }
+
+        for (var navButton of navButtons) {
+          navButton.classList.toggle("hidden");
+        };
+      });
+    }
+  }
+  document.addEventListener('turbolinks:load', initMenu());
+</script>
+
+
+<script>
+  var initHeader = () => {
+    let scrollPos = window.scrollY;
+    var header = document.querySelector('#header');
+    var headerContainer = document.querySelector("#header-container");
+    var readingProgressBar = document.querySelector("#reading-progress-bar");
+    let scrollTop = 0;
+    let scrollBottom = 0;
+    let scrollPercent = 0;
+
+    var addClassOnScroll = () => {
+      header.classList.add("shadow");
+      header.classList.add("bg-white-90");
+      header.classList.remove("py-4");
+    }
+    var removeClassOnScroll = () => {
+      header.classList.remove("shadow");
+      header.classList.remove("bg-white-90");
+      header.classList.add("py-4");
+    }
+
+    window.onscroll = function () {
+      scrollPos = window.scrollY;
+      scrollTop = document.documentElement["scrollTop"] || document.body["scrollTop"];
+      scrollBottom = (document.documentElement["scrollHeight"] || document.body["scrollHeight"]) - document.documentElement.clientHeight;
+      scrollPercent = scrollTop / scrollBottom * 100;
+      readingProgressBar.style.width = (scrollTop / scrollBottom * 100) + '%';
+
+      if (scrollPos > 0) { addClassOnScroll() }
+      else { removeClassOnScroll() }
+    }
+  }
+  document.addEventListener('turbolinks:load', initHeader());
+</script>
+
+
+</body>
+
+</html>
+
+
+
