@@ -1,9 +1,9 @@
 <rss version="2.0"
     xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Github on The Wandering Allison</title>
+        <title>GitHub on The Wandering Allison</title>
         <link>https://thewanderingallison.github.io/tags/github/</link>
-        <description>Recent content in Github on The Wandering Allison</description>
+        <description>Recent content in GitHub on The Wandering Allison</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-zh</language>
         <copyright>MIT</copyright>
