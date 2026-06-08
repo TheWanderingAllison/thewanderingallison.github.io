@@ -1,0 +1,2990 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on The Wandering Allison</title>
+    <link>https://thewanderingallison.github.io/posts/</link>
+    <description>Recent content in Posts on The Wandering Allison</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-zh</language>
+    <copyright>MIT</copyright>
+    <lastBuildDate>Sun, 23 Mar 2025 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://thewanderingallison.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>网址及 RSS 变动通知</title>
+      <link>https://thewanderingallison.github.io/posts/notice_changes-to-site-url-and-rss-feed/</link>
+      <pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/notice_changes-to-site-url-and-rss-feed/</guid>
+      <description>&lt;p&gt;网站地址更新为 &lt;a href=&#34;https://thewanderingallison.vercel.app&#34;&gt;https://thewanderingallison.vercel.app&lt;/a&gt;，RSS 为 &lt;a href=&#34;https://thewanderingallison.vercel.app/rss.xml&#34;&gt;https://thewanderingallison.vercel.app/rss.xml&lt;/a&gt;。旧地址目前仍可访问但不会再同步更新。计划半年后永久下线。&lt;/p&gt;
+&lt;p&gt;多聊几句变更原因。旧地址墙内可访问，因此时不时有百度、头条、Deepseek 之类来的流量，这实在让我如鲠在喉。并不希望自己的内容被这些平台抓取。而且自从博客图床
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist&#34; 
+   
+   &gt;
+   变更
+&lt;/a&gt;
+
+ 后图片实际已经不能在未翻墙的情况下浏览了，索性让文字和图片统一吧。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>简单装修 3.0</title>
+      <link>https://thewanderingallison.github.io/posts/blog_setting_decorations_3/</link>
+      <pubDate>Tue, 04 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_decorations_3/</guid>
+      <description>&lt;p&gt;每一个喊着不再给博客搞装修的人食言起来都飞快……&lt;/p&gt;
+&lt;h2 id=&#34;一些变动&#34;&gt;一些变动&lt;/h2&gt;
+&lt;h3 id=&#34;rss&#34;&gt;RSS&lt;/h3&gt;
+&lt;p&gt;看统计数据发现有一些来自 
+
+
+
+
+
+&lt;a href=&#34;https://morerss.com&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   MoreRSS
+&lt;/a&gt;
+
+  的访问，好奇看了下，不知谁把我的博客投上去了，我倒没有不高兴，但真心觉得没必要……我这种小小小小小博客有什么好投的？这网站也是挺神奇的，&lt;code&gt;.com&lt;/code&gt; 域名应该也不是很便宜吧，谁搞的这网站居然完全没有联系方式，网上也搜不到相关信息。&lt;/p&gt;
+&lt;p&gt;再一看它们也是会展示 RSS 内容的，我不仅是全文输出，而且还是默认输出所有文章，这就有点尴尬了，一两百篇内容在那页面上都拉不到头！太旧的文章也失去时效性了，所以调整了下 RSS 变成只显示最新十篇文章。&lt;/p&gt;
+&lt;p&gt;我也犹豫过要不要取消全文输出，Hugo 有个原生的 &lt;code&gt;&amp;lt;!--_more_--&amp;gt;&lt;/code&gt; 语句可以自动截断内容生成摘要，用起来很方便。只是想想我自己都喜欢直接在 Inoreader 里看全文，那己所不欲还是勿施于人吧。&lt;/p&gt;
+&lt;h3 id=&#34;自动更新页脚年份&#34;&gt;自动更新页脚年份&lt;/h3&gt;
+&lt;p&gt;Footer 上的 &lt;code&gt;Copyright © 2020-2025 Allison&lt;/code&gt; 年份过去我一直是手动改的，因为我这个主题是把 footer 的 copyright 作为 params 写在了 &lt;code&gt;config.toml&lt;/code&gt; 里，而 &lt;code&gt;toml&lt;/code&gt; 文件是没办法直接用 Go 的 &lt;code&gt;{{ now.Year }}&lt;/code&gt; 的，我就死心眼地每年年初手动调整。今年突然醒悟，我何必非要拘泥于 &lt;code&gt;config.toml&lt;/code&gt; 文件，我完全可以去 &lt;code&gt;footer.html&lt;/code&gt; 里改写嘛！又自动化了一项工作，开心！&lt;/p&gt;
+&lt;h3 id=&#34;友链&#34;&gt;友链&lt;/h3&gt;
+&lt;p&gt;很久之前加过一个 &lt;code&gt;details.html&lt;/code&gt; 的 shortcode，是为了把友链的失效链接放进 archive。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;details&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;or&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;(.&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;Get&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;)&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;in&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;Params&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;)&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;open&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}&lt;/span&gt;&amp;gt;
+
+    {{- $summary := cond .IsNamedParams (.Get &amp;#34;title&amp;#34;) (.Get 0) -}}
+
+    &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;summary&lt;/span&gt;&amp;gt;{{ $summary | .Page.RenderString }}&amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;summary&lt;/span&gt;&amp;gt;
+
+    &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;markdown-inner&amp;#34;&lt;/span&gt;&amp;gt;
+
+      {{ .Inner | .Page.RenderString }}
+
+    &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt;&amp;gt;
+
+  &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;details&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;用起来就是下面这样：&lt;/p&gt;
+&lt;details &gt;&lt;summary&gt;点这里&lt;/summary&gt;
+    &lt;div class=&#34;markdown-inner&#34;&gt;
+      这里是隐藏内容。
+    &lt;/div&gt;
+  &lt;/details&gt;
+&lt;p&gt;现在链接倒是都能访问（但是新链接是靠我自己发现的，也是有点无奈），不过有几个超过一年都没有更新，这次就也暂时隐藏了。希望大家都多多更新啊！&lt;/p&gt;
+&lt;h3 id=&#34;托管博客到-vercel&#34;&gt;托管博客到 Vercel&lt;/h3&gt;
+&lt;p&gt;登陆 Vercel 账号连接 GitHub 上的 Hugo 仓库（不是 public 而是整个站）新建 project，在 project 设置里重命名 domain，我还是沿用了 &lt;code&gt;thewanderingallison&lt;/code&gt; 这个名字。&lt;/p&gt;
+&lt;p&gt;这时 Hugo  &lt;code&gt;config.toml&lt;/code&gt; 文件里的 &lt;code&gt;baseURL&lt;/code&gt; 还是原来的，想同时在 GitHub Pages 和 Vercel 上托管网站的话，有两种方案。&lt;/p&gt;
+&lt;p&gt;简单方案是直接在 Vercel project 的 &lt;code&gt;Environment Variables&lt;/code&gt; 里加一个 &lt;code&gt;HUGO_BASEURL&lt;/code&gt;，值写 Vercel 地址，我这个就是 &lt;code&gt;https://thewanderingallison.vercel.app&lt;/code&gt;，可以访问
+
+
+
+
+
+&lt;a href=&#34;https://thewanderingallison.vercel.app&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   这里
+&lt;/a&gt;
+
+   试试看。弊端是如果站内引用是完整地址而非相对地址的话，跳转的还是旧站地址。&lt;/p&gt;
+&lt;p&gt;另一个方法是在根目录下新建一个 &lt;code&gt;config.vercel.toml&lt;/code&gt; 和 &lt;code&gt;vecel.json&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;vecel.json&lt;/code&gt; 的内容如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#000080&#34;&gt;&amp;#34;buildCommand&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;hugo --config config.vercel.toml&amp;#34;&lt;/span&gt;,
+  &lt;span style=&#34;color:#000080&#34;&gt;&amp;#34;outputDirectory&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;public&amp;#34;&lt;/span&gt;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;而 &lt;code&gt;config.vercel.toml&lt;/code&gt; 则是可以复制原始的 &lt;code&gt;config.toml&lt;/code&gt; ，再更精细地调整站点设置，不仅仅是 &lt;code&gt;baseURL&lt;/code&gt; 了，站名、intro、navbar 等等都可以重定义。&lt;/p&gt;
+&lt;p&gt;还可以用类似思路把网站托管到 Netlify，我在另一个博客上试了下，步骤稍有不同但一样简单，就不详细写了。&lt;/p&gt;
+&lt;h2 id=&#34;一点犹豫&#34;&gt;一点犹豫&lt;/h2&gt;
+&lt;h3 id=&#34;要不要彻底转移到-vercel&#34;&gt;要不要彻底转移到 Vercel&lt;/h3&gt;
+&lt;p&gt;想变动是因为现在我的博客还可以在墙内访问，墙内访问也就罢了我没有那么在乎。更不能忍的是看到流量来源有百度、抖音、头条之类，以及零星几个来自飞书和 flomo，这让我非常不爽，我不喜欢这些产品，一点也不希望自己的网站和它们扯上关系。还有用 GitHub Pages 意味着这个 repo 是公开的，放到 Vercel 源码就可以隐藏。&lt;/p&gt;
+&lt;p&gt;不想变动的理由则是——我不喜欢变化，对目前这个 url 居然也生出了点感情。此外早期博文里的站内引用链接得改，这个可以靠写脚本完成，工作量不算大（可还是得我操作啊！）。还有 Disqus、GA、Umami、Bing Webmaster Tools 等一系列东西也得跟着变动，想到就头疼。&lt;/p&gt;
+&lt;h3 id=&#34;要不要停用-reaction&#34;&gt;要不要停用 reaction&lt;/h3&gt;
+&lt;p&gt;先后看到好几个博客加上了爱心 reaction，我还在犹豫时发现一个我不太喜欢的博客也用上了它并且一篇我更不喜欢的博文居然有 100 多赞！好了，彻底打消加上这个功能的念头。&lt;/p&gt;
+&lt;p&gt;而 Disqus 自带的这个 reaction 我一直嫌弃它有点累赘。我自己其实在互联网上极少点赞，过去在微博或者豆瓣是从来不点。等到了长毛象，尤其是在已注销的上一个账号上，有人几乎每条都点赞，却从来不跟我说话，导致我都有点压力。而其他互关的象友也会时不时点星，于是我渐渐也会礼尚往来一下。但我还是更倾向于留言，总觉得表达共鸣或者喜爱还是用语言比较好吧？我不是质疑其他人的习惯，我也当然理解点赞同样是表达友好，只是从我的角度来说，我不太看重这个。不过我的访客好像确实也会用到，就还是很纠结。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cloudflare &#43; Backblaze &#43; PicList 搭建博客图床（无需自有域名）</title>
+      <link>https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/image-hosting-blog-cloudflare-backblaze-piclist/</guid>
+      <description>&lt;p&gt;(在火车上无聊于是开始写博客，我这精神真是感天动地…)&lt;/p&gt;
+&lt;p&gt;过去我用 GitHub 的仓库当图床，配合 PicGo 自动上传，但一来 GitHub 的仓库和单个文件都有大小限制，二来我觉得这多少是对 Github 的滥用，最近终于完成了新的图床配置并且运行良好，在这里记录下（写到后面太烦了开始中英夹杂，只求自己看懂就行，请见谅）。&lt;/p&gt;
+&lt;p&gt;在一众 object storage 服务商中（Cloudflare、Wasabi、AWS、Scaleway、IBM Cloud Object Storage、Azure、Oracle），Backblaze 是唯一不添加付款信息就可使用的服务，只是有限制条件，只能创建 private bucket。也可以付费 $1 进行验证后创建 public bucket。一美金不是问题，但我不想在还不够了解运作流程的情况下贸然添加支付信息，而且这个网络账号所关联的信息我会希望尽可能和现实身份隔离。&lt;/p&gt;
+&lt;p&gt;其他几个可参考的教程：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://www.backblaze.com/docs/cloud-storage-deliver-private-backblaze-b2-content-through-cloudflare-cdn&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Deliver Private Backblaze B2 Content Through Cloudflare CDN
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://leonis.cc/sui-sui-nian/2023-11-17-deploy-backblaze-image-hosting.html&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Cloudflare + Backblaze 实现免费的博客图床方案 - Leo’s blog
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://blog.standat42.com/posts/image-hosting-backblaze-b2-private-cloudflare-workers-picgo/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Blog 图床方案：Backblaze B2 (私密桶) + Cloudflare Workers + PicGo | Standat&amp;rsquo;s Blog
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我没有自己的域名，以上步骤对我不太适用，worker 部分全是根据自己需求写的，这篇只是过程，不是教程，请酌情参考。&lt;/p&gt;
+&lt;h3 id=&#34;backblaze&#34;&gt;Backblaze&lt;/h3&gt;
+&lt;p&gt;Backblaze free account plan:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Backblaze B2 has a free account with 10GB of storage. The free account includes 1GB of daily download bandwidth, 2,500 class B transactions connected to downloads and 2,500 class C transactions.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于博客图床来说是够用了。&lt;/p&gt;
+&lt;h4 id=&#34;创建-bucket&#34;&gt;创建 bucket&lt;/h4&gt;
+&lt;p&gt;在
+
+
+
+
+
+&lt;a href=&#34;https://www.backblaze.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   官网
+&lt;/a&gt;
+
+ 注册账号，新建 private bucket，命名（尽可能复杂）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/0a06394665391aa470f1613ec14a3fa2.webp&#34; alt=&#34;create b2 bucket|600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在Bucket Settings 中的 Bucket Info 内添加：&lt;code&gt;{&amp;quot;cache-control&amp;quot;: &amp;quot;public, max-age=86400&amp;quot;}&lt;/code&gt;，也可将数字调得更大，86400 是缓存一天。&lt;/p&gt;
+&lt;p&gt;记下 bucket 的 &lt;code&gt;endpoint&lt;/code&gt;，在下面的 PicList 设置里要用。&lt;/p&gt;
+&lt;h4 id=&#34;创建-application-key&#34;&gt;创建 application key&lt;/h4&gt;
+&lt;p&gt;新建两个 application key。我是为了将 PicList 上传和 Cloudflare 访问区分开，前者的权限是 &lt;code&gt;Read and Write&lt;/code&gt;，后者则只是 &lt;code&gt;Read Only&lt;/code&gt;。不介意的话也可以只建一个，但权限就需要设置成 &lt;code&gt;Read and Write&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/eec350dc4e1e5948c60991b33d4956a6.webp&#34; alt=&#34;create application key |600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来这个页面只会出现一次，复制下 &lt;code&gt;keyID&lt;/code&gt; 、&lt;code&gt;keyName&lt;/code&gt;、&lt;code&gt;applicationKey&lt;/code&gt; 的值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/32bb309c1b638631a8966be569a2b359.webp&#34; alt=&#34;application key info|600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;cloudflare&#34;&gt;Cloudflare&lt;/h3&gt;
+&lt;h4 id=&#34;创建-worker&#34;&gt;创建 worker&lt;/h4&gt;
+&lt;p&gt;复制以下代码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-JavaScript&#34; data-lang=&#34;JavaScript&#34;&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;default&lt;/span&gt; {
+
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;async&lt;/span&gt; fetch(request, env) {
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; API_KEY_ID &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; env.API_KEY_ID; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Application Key ID
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; API_KEY &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; env.API_KEY; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Application Key
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; BUCKET_NAME &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; env.BUCKET_NAME; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Bucket Name
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; KV_NAMESPACE &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; env.KV_NAMESPACE; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// KV namespace for rate limiting
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; ALLOWED_REFERERS &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://site1/&amp;#34;&lt;/span&gt;,
+                              &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://site2/&amp;#34;&lt;/span&gt;,
+                              &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://site3/&amp;#34;&lt;/span&gt;,
+                              &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://localhost:1313/&amp;#34;&lt;/span&gt;
+                            ]; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// List of allowed referers
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; MAX_REQUESTS_PER_DAY &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;1000&lt;/span&gt;; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Limit to 1000 requests per day
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; url &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; URL(request.url);
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; filePath &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; url.pathname.slice(&lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt;); &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Extract file path from URL
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;filePath) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;File path not provided&amp;#34;&lt;/span&gt;, { status&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;400&lt;/span&gt; });
+    }
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Step 1: Validate Referer Header
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; referer &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; request.headers.get(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Referer&amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; isAllowedReferer &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;referer &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;||&lt;/span&gt; ALLOWED_REFERERS.some((allowed) =&amp;gt; referer.includes(allowed));
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;isAllowedReferer) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Invalid referer&amp;#34;&lt;/span&gt;, { status&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;403&lt;/span&gt; });
+    }
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Access Cloudflare Cache API
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; cache &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; caches.&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;default&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Check if the response is already in cache
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; cachedResponse &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; cache.match(request);
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (cachedResponse) {
+      console.log(&lt;span style=&#34;color:#d14&#34;&gt;`Cache hit for: &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;filePath&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;);
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; cachedResponse; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Serve from cache
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    }
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Step 2: Rate Limiting using KV
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; currentDate &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#0086b3&#34;&gt;Date&lt;/span&gt;().toISOString().split(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;T&amp;#34;&lt;/span&gt;)[&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;]; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// YYYY-MM-DD
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; requestCountKey &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;currentDate&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;filePath&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;let&lt;/span&gt; requestCount &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; KV_NAMESPACE.get(requestCountKey)) &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;||&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (requestCount &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;=&lt;/span&gt; MAX_REQUESTS_PER_DAY) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Daily limit reached for this file&amp;#34;&lt;/span&gt;, { status&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;429&lt;/span&gt; });
+    }
+
+    requestCount &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0086b3&#34;&gt;parseInt&lt;/span&gt;(requestCount) &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt;;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; KV_NAMESPACE.put(requestCountKey, requestCount, { expirationTtl&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;86400&lt;/span&gt; }); &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Reset every 24 hours
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    console.log(&lt;span style=&#34;color:#d14&#34;&gt;`Request count for &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;filePath&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;: &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;requestCount&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;);
+
+    console.log(&lt;span style=&#34;color:#d14&#34;&gt;`Cache miss for: &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;filePath&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;. Fetching from Backblaze.`&lt;/span&gt;);
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Step 3: Authenticate with Backblaze
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; authResponse &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; fetch(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;https://api.backblazeb2.com/b2api/v2/b2_authorize_account&amp;#34;&lt;/span&gt;, {
+      headers&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; {
+        Authorization&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;`Basic &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;btoa(&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;API_KEY_ID&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;API_KEY&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;)&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;,
+      },
+    });
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; authResponseText &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; authResponse.text();
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;authResponse.ok) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(&lt;span style=&#34;color:#d14&#34;&gt;`Authorization failed: &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;authResponseText&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;, { status&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;500&lt;/span&gt; });
+    }
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; authData &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; JSON.parse(authResponseText);
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; authToken &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; authData.authorizationToken;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; downloadUrl &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; authData.downloadUrl; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Base URL for the bucket
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Step 4: Construct the file URL
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; b2FileUrl &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;downloadUrl&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;/file/&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;BUCKET_NAME&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;filePath&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;;
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Step 5: Fetch the file from Backblaze
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; fileResponse &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; fetch(b2FileUrl, {
+      headers&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; {
+        Authorization&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; authToken,
+      },
+    });
+
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;fileResponse.ok) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; errorText &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; fileResponse.text();
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(&lt;span style=&#34;color:#d14&#34;&gt;`Failed to fetch file from Backblaze: &lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;${&lt;/span&gt;errorText&lt;span style=&#34;color:#d14&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;`&lt;/span&gt;, { status&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;404&lt;/span&gt; });
+    }
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Clone the response to store in cache
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;const&lt;/span&gt; responseToCache &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; Response(fileResponse.body, {
+      headers&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; {
+        &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Content-Type&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; fileResponse.headers.get(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Content-Type&amp;#34;&lt;/span&gt;),
+        &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Cache-Control&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;public, max-age=31536000&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Cache for 1 year
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;      },
+    });
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Store the response in cache
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;await&lt;/span&gt; cache.put(request, responseToCache.clone());
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Return the fetched response to the client
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt; responseToCache;
+  },
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;几个自定义的值：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ALLOWED_REFERERS&lt;/code&gt;: 允许引用该图片地址的网站&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MAX_REQUESTS_PER_DAY&lt;/code&gt;：cloudflare 每日最多授权访问 backblaze 的次数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;max-age&lt;/code&gt;：cloudflare 缓存时间，我直接设置成了一年。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这个 worker 的作用是使用 application key 访问 private bucket 获取图片地址缓存到 cloudflare 并生成一个公开可见的 cloudflare worker 地址。加上 ALLOWED_REFERERS 是避免外站引用，毕竟我的免费账户流量有限，同时在没有 header 的情况下在我的 Obsidian 里可以预览。&lt;/p&gt;
+&lt;p&gt;另外绑定 KV Namespace 设置 Cloudflare 每日可对 Backblaze 发出 request 次数，这是为了防止 class c transition 超标，之前有一天很莫名地 cloudflare 对 backblaze 请求 authorize 2000 多次，所以我加上这个以防万一。&lt;/p&gt;
+&lt;h4 id=&#34;创建-kv-namespace&#34;&gt;创建 KV Namespace&lt;/h4&gt;
+&lt;p&gt;写不动了看 ChatGPT 写的吧。&lt;/p&gt;
+&lt;h5 id=&#34;create-a-kv-namespace&#34;&gt;Create a KV Namespace&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Go to your Cloudflare dashboard.&lt;/li&gt;
+&lt;li&gt;Navigate to &lt;strong&gt;Workers&lt;/strong&gt; &amp;gt; &lt;strong&gt;KV&lt;/strong&gt; &amp;gt; &lt;strong&gt;Create a Namespace&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Give your namespace a name (e.g., &lt;code&gt;daily-usage-tracker&lt;/code&gt;).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;bind-the-namespace-to-your-worker&#34;&gt;Bind the Namespace to Your Worker&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;After creating the namespace, you&amp;rsquo;ll need to bind it to your Worker.&lt;/li&gt;
+&lt;li&gt;Go to your Worker script in the Cloudflare dashboard.&lt;/li&gt;
+&lt;li&gt;Under the &lt;strong&gt;Settings&lt;/strong&gt; tab, find the &lt;strong&gt;KV Namespace Bindings&lt;/strong&gt; section.&lt;/li&gt;
+&lt;li&gt;Add a binding by giving it a name (e.g., &lt;code&gt;KV_NAMESPACE&lt;/code&gt;) and selecting the namespace you created earlier.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;use-the-namespace-in-your-script&#34;&gt;Use the Namespace in Your Script&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;The binding (&lt;code&gt;KV_NAMESPACE&lt;/code&gt;) will be available in the &lt;code&gt;env&lt;/code&gt; object passed to your Worker script.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;创建-secrets&#34;&gt;创建 secrets&lt;/h4&gt;
+&lt;p&gt;在 worker 设置里新建以下 secrets：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;API_KEY_ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;API_KEY&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BUCKET_NAME&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;值是上面用于 cloudflare 的 read only 的 application key 对应内容。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/6a533b3f68f6af917986059c91c99a8f.webp&#34; alt=&#34;worker secrets|600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;piclist&#34;&gt;PicList&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;https://piclist.cn/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Official Document
+&lt;/a&gt;
+
+ .&lt;/p&gt;
+&lt;p&gt;PicGo 也支持 S3 图床但需要另外安装插件，而不知是不是这个项目久不维护了，安装插件频繁报错，之前我装 exif remover 时就费了很大功夫，重装 npm packages，设置 npm proxy 等等等等，而 PicList 内置了这些功能，索性直接迁移了。&lt;/p&gt;
+&lt;p&gt;下载了 PicList Windows exe 程序又安装不上，微软什么毛病，头大，只能用命令行安装，那又先得安装 scope。&lt;/p&gt;
+&lt;h4 id=&#34;install-scope&#34;&gt;Install scope&lt;/h4&gt;
+&lt;p&gt;Open a PowerShell terminal (version 5.1 or later) and from the PS C:&amp;gt; prompt, run:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;How to open PowerShell from PS C:&amp;gt; prompt:&lt;/p&gt;
+&lt;p&gt;Press &lt;code&gt;Windows + R&lt;/code&gt;, type &lt;code&gt;powershell&lt;/code&gt;, and hit Enter.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;
+&lt;span style=&#34;color:#0086b3&#34;&gt;cd&lt;/span&gt; C:&lt;span style=&#34;color:#d14&#34;&gt;\
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;install-piclist&#34;&gt;Install Piclist&lt;/h4&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;scoop bucket add lemon https://github.com/hoilc/scoop-lemon
+scoop install lemon/piclist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;题外话，安装时发现语言选英文的话，设置里图床他们用的词居然真的是 pic bed，乐。我搜英文教程时因为不知道图床叫什么就用的 image hosting，后来发现好像确实也就是这么用，而图床是中文里的用法，似乎并没有字面上完全对应的英文。&lt;/p&gt;
+&lt;h4 id=&#34;import-picgo-config&#34;&gt;Import PicGo config&lt;/h4&gt;
+&lt;p&gt;PicGo 设置可以一键导入，如果已经在那边用上了 S3 或其他图床就无需再配置。&lt;/p&gt;
+&lt;h4 id=&#34;config-s3-account&#34;&gt;Config S3 account&lt;/h4&gt;
+&lt;p&gt;来设置 PicList 里的 S3 图床，要填的是以下几栏。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AccessKeyID：&lt;/li&gt;
+&lt;li&gt;SecretAccessKey：&lt;/li&gt;
+&lt;li&gt;Bucket： bucket name&lt;/li&gt;
+&lt;li&gt;Self Endpoint： &lt;code&gt;https://{endpoint}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set ACL：private&lt;/li&gt;
+&lt;li&gt;Self Custom URL：cloudflare worker 地址&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/bca9f0143a7535845c09f625413089e1.webp&#34; alt=&#34;PicList Config|600&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;obsidian&#34;&gt;Obsidian&lt;/h3&gt;
+&lt;p&gt;Obsidian 里的 Image auto upload 插件对 PicGo 和 PicList 都适用，以前安装过就不用再变动了。&lt;/p&gt;
+&lt;p&gt;具体我的图片上传流程可见 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/my_blogging_workflow&#34; 
+   
+   &gt;
+   我的博客写作流程
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>我的博客写作流程</title>
+      <link>https://thewanderingallison.github.io/posts/my_blogging_workflow/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/my_blogging_workflow/</guid>
+      <description>&lt;h2 id=&#34;动机&#34;&gt;动机&lt;/h2&gt;
+&lt;p&gt;过去在互联网上我一向话不算多，正因如此，极少数有强烈表达欲的时刻被豆瓣或者微博删帖、禁言才更让我生气。恰好那时转移到了长毛象，发现同时兴起了一股博客复兴潮。很久之前我在新浪有个博客，也始终是 RSS 的忠实使用者，读博客的习惯从未落下，真的写起来也就毫无困难。搭博客也比我以为的简单许多，2020 年底我在一行代码也不懂的情况下也顺利地用不到两天的时间借助 Hugo 和 GitHub Pages 让博客成功运行至今。&lt;/p&gt;
+&lt;p&gt;但是为了保证打字的流畅，陆续地我加上了不少工具以避免额外劳动，这篇就是我常规的博客运作流程。&lt;/p&gt;
+&lt;h2 id=&#34;灵感收集&#34;&gt;灵感收集&lt;/h2&gt;
+&lt;p&gt;怎么写，写什么，每个人有不同的兴趣和表达方式，重要的是有想法就尽量及时保存。&lt;/p&gt;
+&lt;p&gt;书桌上纸质笔记本，在不开电子设备（尤其看纸质书）时写。电脑，Obsidian。手机平板，Google Keep。出门行程较长时（长时间地铁或跨城高铁）会带随身手账本在路上记录。&lt;/p&gt;
+&lt;h2 id=&#34;写作&#34;&gt;写作&lt;/h2&gt;
+&lt;p&gt;录入都在电脑 Obsidian 里完成。&lt;/p&gt;
+&lt;p&gt;大部分内容会打大纲，写得顺全程键盘，写得不顺就换纸笔，重新理提纲，闷头把能想到的全一股脑记下来，草稿写完再整理思路，删减、调整结构。偶尔在笔记本上会一口气倾倒十页八页的废话，最后电脑输入只用一半甚至三分之一。&lt;/p&gt;
+&lt;p&gt;输入法是微软拼音（小鹤双拼），效率比全拼高多了！&lt;/p&gt;
+&lt;h2 id=&#34;排版&#34;&gt;排版&lt;/h2&gt;
+&lt;h3 id=&#34;文字&#34;&gt;文字&lt;/h3&gt;
+&lt;p&gt;Metadata，用 Obsidian 的 template + 自定义快捷键自动插入。&lt;/p&gt;
+&lt;p&gt;数字、中英文混排自动插入空格，标点符号自动补全，连续输入全角转半角等功能依靠 Obsidian 的 Easy Typing 插件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/59670324faffa947ee9f4c3934b0f3ad.webp&#34; alt=&#34;image.png|600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;讨厌一切打字之外的劳动，所以总是在找更无痛的编辑方式。非常依赖 obsidian 的各种 hotkey 以避免敲键盘时还得调格式或是分心挪鼠标。比如 Ctrl + K 插入 markdown 链接格式 &lt;code&gt;[]()&lt;/code&gt; ，Ctrl、shift、fn 和方向键的组合以选中不同文字等等。&lt;/p&gt;
+&lt;h3 id=&#34;图片&#34;&gt;图片&lt;/h3&gt;
+&lt;p&gt;用到的工具如下。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;手机截图和照片：Google Photos&lt;/li&gt;
+&lt;li&gt;电脑截图：Snipaste&lt;/li&gt;
+&lt;li&gt;图床管理：PicList&lt;/li&gt;
+&lt;li&gt;Obsidian 图片上传插件：Image auto upload&lt;/li&gt;
+&lt;li&gt;Object storage：Backblaze&lt;/li&gt;
+&lt;li&gt;Backblaze private bucket 转为公开及添加图片缓存： Cloudflare Worker&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;刚建博客时我用 GitHub 仓库当图床，靠的是 Picgo + Image auto upload 插件自动上传。因为觉得这不是一个长久之道且不太正当，最近把图片全都传到了 Backblaze 的 object storage，前置设置变得复杂了些，但逻辑还是一致的。&lt;/p&gt;
+&lt;p&gt;这个流程是：&lt;/p&gt;
+&lt;p&gt;打开 Google Photos（使用 Chrome 的 Install App 功能添加到桌面），Ctrl C。电脑上的截图则是 fn + f1 （snipaste 截图快捷键），Ctrl C。&lt;/p&gt;
+&lt;p&gt;打开 Obsidian 文档， Ctrl V。如果有多张照片/截图，还可以先多次 Ctrl C，再使用 Win + V 打开系统 clipboard （如下图）多次粘贴。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/5adbfbfc24ca73891c46b47f27e34da4.webp&#34; alt=&#34;image.png|600&#34;&gt;&lt;/p&gt;
+&lt;p&gt;执行粘贴动作后 Image atuo upload 插件自动调用 PicList，PicList 将图片重命名、去除 exif data、转格式为 webp 后上传至 Backblaze，返回 markdown 图片链接，像上图 Ctrl V 后最终呈现在 Obsidian 里的是 &lt;code&gt;![image.png|600](https://misty-limit-424f.allison-00c.workers.dev/2025/01/c73894ff0eebabc1c0eccfa07ebe5f4a.webp)&lt;/code&gt; 。&lt;/p&gt;
+&lt;p&gt;Cloudflare Worker 起的作用是通过 application key 访问 Backblaze 的 private bucket 将图片缓存并生成一个 Worker 链接使之公开可见。在 PicList 中设定自定义域名，也就是 Worker 地址，返回的是转义后的链接，避免个人 bucket 地址暴露，同时还利用 Cloudflare 的缓存减少对 Object Storage 的访问。唯一的问题是，国内 IP 看不到 Cloudflare 的图片，但这不是我能控制的了。&lt;/p&gt;
+&lt;p&gt;实现过程颇为复杂，等我试验一段时间确认完全没问题会再写详细操作，但后续的维护很轻松，插入图片所有我进行的只是两个键盘动作，Ctrl C、Ctrl V 而已。&lt;/p&gt;
+&lt;h2 id=&#34;审校&#34;&gt;审校&lt;/h2&gt;
+&lt;p&gt;全部写完会在 Obsidian 里右击文档 tab 选择在默认 app 中打开，也就是 VS Code，利用 VS Code 的 markdown 插件修正格式，多余空格、空行等等，并且通读一遍检查错字、标点符号、病句之类。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://misty-limit-424f.allison-00c.workers.dev/2025/01/c73894ff0eebabc1c0eccfa07ebe5f4a.webp&#34; alt=&#34;image.png|600&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;发布&#34;&gt;发布&lt;/h2&gt;
+&lt;p&gt;最后返回 Obsidian，快捷键移动文档到 post 文件夹，修改 draft 值为 false，再使用 git 插件一键 commit 和 sync。(隐藏的流程还有两个连环触发的 GitHub Action 但这实在是太长了此处略过。) 除非动了博客架构，比如改 CSS，添加 shortcode 之类，否则我不会在本地使用 &lt;code&gt;Hugo&lt;/code&gt; 以及 &lt;code&gt;Hugo server&lt;/code&gt;，嗯就是这么怕麻烦。&lt;/p&gt;
+&lt;p&gt;关联阅读：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/obsidian_plugins&#34; 
+   
+   &gt;
+   我的 Obsidian 常用插件
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories&#34; 
+   
+   &gt;
+   Syncing Specific Folders Between Different Repositories Using GitHub Actions
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting&#34; 
+   
+   &gt;
+   一个非技术流的blog建站流程
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>博客印象收集！</title>
+      <link>https://thewanderingallison.github.io/posts/blog_impression_survey/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_impression_survey/</guid>
+      <description>&lt;p&gt;在长毛象看到大家玩嘟主印象我也好想参加！可我毛象发的不多，互动更少，实在是玩不起来，那要不在博客试试。快速用 Google Forms 做了个问卷出来，如果在下文中看不到可以点击
+
+
+
+
+
+&lt;a href=&#34;https://docs.google.com/forms/d/e/1FAIpQLSfXDFpw-TLozyYQe4dp_yMCJL4wpKo72OALRcNsUgmA_fxCkw/viewform?usp=dialog&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   链接
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+&lt;p&gt;把“技术分享”也作为博客主题的一项真是非常心虚，但确实点击率最高的几篇都是这类文章，就还是大言不惭地放上去了。&lt;/p&gt;
+&lt;p&gt;意见/建议那一栏，因为我有时真的非常、非常、非常想对一些博客说，起码使用标准标点符号和减少 emoji 吧！（以及一些更刻薄的观点。）但我还是有一些基本的互联网礼貌不会这样不请自来地给别人意见。不过也会想，会不会在别人眼中，我的一些语言习惯也是很有问题的呢？很好奇别人的印象（但我未必会改）。&lt;/p&gt;
+&lt;iframe src=&#34;https://docs.google.com/forms/d/e/1FAIpQLSfXDFpw-TLozyYQe4dp_yMCJL4wpKo72OALRcNsUgmA_fxCkw/viewform?embedded=true&#34; width=&#34;640&#34; height=&#34;1505&#34; frameborder=&#34;0&#34; marginheight=&#34;0&#34; marginwidth=&#34;0&#34;&gt;Loading…&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决其他账号无法在 Vercel 创建部署问题</title>
+      <link>https://thewanderingallison.github.io/posts/vercel-error_no-access-to-create-deployments/</link>
+      <pubDate>Fri, 13 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/vercel-error_no-access-to-create-deployments/</guid>
+      <description>&lt;p&gt;今天收到 Vercel 邮件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We’re writing to notify you that &lt;strong&gt;Github_Account_A&lt;/strong&gt; is attempting to deploy a commit to &lt;strong&gt;Github_Account_B&lt;/strong&gt;&amp;rsquo;s projects on Vercel through GitHub, but they are not a member of the team.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;To resolve this issue, you can:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Upgrade to Pro and add them as a collaborator on your Vercel team&lt;/li&gt;
+&lt;li&gt;If the user is already a member of your Vercel team, ensure their GitHub account is connected to their Vercel account on their Authentication Settings page&lt;/li&gt;
+&lt;li&gt;If applicable, make your repository public&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而在 GitHub 中 commit 错误是：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140112470.webp&#34; alt=&#34;commit failed&#34;&gt;&lt;/p&gt;
+&lt;p&gt;从头描述一下问题，我有 A、B 两个博客，A 是目前这个，用的 Hugo + Github Pages 。B 是把 GitHub B 账号中的 Hugo 项目部署到 Vercel 并由 Vercel 自动编译。我的文档都在 Obsidian 里写，靠 Obsidian 里的 Git 插件一键 commit（用的 A 账号）。而为了让不同 Github 账号下的两个特定文件夹同步，之前写过
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories&#34; 
+   
+   &gt;
+   步骤
+&lt;/a&gt;
+
+  。也就是说，B 博客的每次更新其实是由 A 账号 commit 再触发 Vercel 自动编译。而 Vercel 提醒，需要加钱升级成 pro 账户才能使用协作模式，否则不会认可由另一个账号提交的部署请求。（之前成功据说是 Vercel 的 bug，hobby 账户不能多人提交，而最近修复了这个问题。）&lt;/p&gt;
+&lt;p&gt;Stackoverflow 上有类似
+
+
+
+
+
+&lt;a href=&#34;https://stackoverflow.com/questions/79011901/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   提问
+&lt;/a&gt;
+
+ ，最高赞是在 terminal 中切换邮箱，而我正是不想打开 terminal。采取了这个
+
+
+
+
+
+&lt;a href=&#34;https://stackoverflow.com/a/79030203&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   答案
+&lt;/a&gt;
+
+ 的方案，在这里简述下中文流程存个档。&lt;/p&gt;
+&lt;p&gt;一句话简述，停用原始 Vercel 自动编译，换用 GitHub Actions。&lt;/p&gt;
+&lt;h3 id=&#34;停用-vercel-自动编译&#34;&gt;停用 Vercel 自动编译&lt;/h3&gt;
+&lt;p&gt;在 Github 对应仓库中，Repository Settings -&amp;gt; GitHub Apps -&amp;gt; Vercel Config，选择 suspend 或者 uninstall。&lt;/p&gt;
+&lt;h3 id=&#34;获取-vercel-token-和-id&#34;&gt;获取 Vercel token 和 ID&lt;/h3&gt;
+&lt;p&gt;参见 GitHub 
+
+
+
+
+
+&lt;a href=&#34;https://github.com/orgs/vercel/discussions/3307&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   讨论
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;p&gt;VERCEL_TOKEN:&lt;br&gt;
+登陆 Vercel 账号，在 Account Settings -&amp;gt; Tokens 创建新 Token，复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140042330.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VERCEL_ORG_ID:&lt;br&gt;
+在 
+
+
+
+
+
+&lt;a href=&#34;https://vercel.com/account/settings&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Account Settings
+&lt;/a&gt;
+
+ 里一直拉到最下，找到 Vercel ID，复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140043676.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;VERCEL_PROJECT_ID:&lt;br&gt;
+在对应的 Project &lt;code&gt;Settings&lt;/code&gt; 找到 Project ID，复制。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140046263.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建-github-repository-secrets&#34;&gt;创建 GitHub Repository Secrets&lt;/h3&gt;
+&lt;p&gt;进入 Hugo 项目仓库，Settings -&amp;gt; Secrets and variables -&amp;gt; Actions。&lt;/p&gt;
+&lt;p&gt;新建三个 Secrets，名字如下所示，填入上一步保存的各项值。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140053674.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新建-github-actions&#34;&gt;新建 Github Actions&lt;/h3&gt;
+&lt;p&gt;访问 Vercel 的 
+
+
+
+
+
+&lt;a href=&#34;https://vercel.com/guides/how-can-i-use-github-actions-with-vercel&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   document
+&lt;/a&gt;
+
+ ，复制里面的 workflow template，在仓库中新建两个 workflow 文件。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140056189.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成。&lt;/p&gt;
+&lt;p&gt;在 Obsidian 提交试试看，成功！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412140101239.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;题外话，抛开 N 多半成品草稿来解决临时问题，难怪博客圈子里技术文章多呢。一是只要想折腾，就会面对层出不穷的新麻烦；二是只要问题被解决，这种内容写起来就飞快！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一份非科学的 About Me 报告</title>
+      <link>https://thewanderingallison.github.io/posts/unscientific_reports_about_me/</link>
+      <pubDate>Sun, 08 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/unscientific_reports_about_me/</guid>
+      <description>&lt;p&gt;我对网上的各种测试是属于虽然不信但看到就做……有时看别人自我介绍必报 MBTI 而且还言之凿凿 XX 人格必如何如何，很难不觉得这简直是新时代玄学一种。不过用这些起码比自报籍贯、学历、收入等等要好。那就用这些不科学的测试来描述一下我自己吧！&lt;/p&gt;
+&lt;h2 id=&#34;mbti&#34;&gt;MBTI&lt;/h2&gt;
+&lt;p&gt;十几年前就做过，当时是INTJ，这几年 MBTI 大火就又做了一次，结果不变但稍微记住了比例，I 和 T 是压倒性的 90%多，J 则只有 50%多一点点，N 是干嘛的我忘了……&lt;/p&gt;
+&lt;h2 id=&#34;九型人格httpsenneataocomtest&#34;&gt;
+
+
+
+
+
+&lt;a href=&#34;https://enneatao.com/test&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   九型人格
+&lt;/a&gt;
+
+ &lt;/h2&gt;
+&lt;p&gt;我也不知道这是什么理论，但是结果非常满意，是猫头鹰呢！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412082208430.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;至于 Tritype， 这个测试要付费看，我在网上随便搜了个解释，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412082211233.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;依恋类型测试httpswwwidrlabscomcnattachment-styletestphp&#34;&gt;
+
+
+
+
+
+&lt;a href=&#34;https://www.idrlabs.com/cn/attachment-style/test.php&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   依恋类型测试
+&lt;/a&gt;
+
+ &lt;/h2&gt;
+&lt;p&gt;这我简直太清楚了，不用做都知道绝对回避型，果然。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412082216501.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;测试里对该类型的解释：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;放松—回避型（轻蔑型）：这一象限的人往往对他人持悲观态度，他们更喜欢保持距离，防止自己的自主权和隐私受到侵犯。放松—回避型人格往往会坚定地相信他们非常与众不同，以至于真正的亲密关系并不重要。 他们可能有配偶和家庭，甚至在一个由朋友和相识的人组成的稳定网络中也有牢固的锚点，但最终，在需要情感依赖和亲密关系时，他们往往会避免建立关系。与紧张—回避型的人不同，轻蔑型人格往往会将自己内心最深处的感受和观点保留在心里，他们往往有一种根深蒂固的信念，认为别人的意见稍显无关紧要，甚至平庸。 因此，许多轻蔑型的人通常很善于伪装，也就是说，他们会分享自己内心深处的想法，而实际上，他们只是在安抚别人，从不让他们接近。&lt;/p&gt;
+&lt;p&gt;这些人独立自主，并以此为傲，通常能在社交操控和自我约束方面取得非凡的成就，但缺点是，他们可能很难戒掉在独处时享受的、可以在没有他人陪伴的情况下用来自我安慰的坏习惯（如喝酒或吸烟）。对于别人期望他们履行的职责，他们往往不感兴趣或非常懈怠，但另一方面，他们往往很有创意（因为他们不会因为必须满足群体的期望而受到牵制）。最后，由于他们在受到攻击和批评时非常放松和冷静，他们往往也是聪明的风险承担者。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;the-four-tendencies-quizhttpsgretchenrubincomquizthe-four-tendencies-quiz&#34;&gt;
+
+
+
+
+
+&lt;a href=&#34;https://gretchenrubin.com/quiz/the-four-tendencies-quiz/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   The Four Tendencies Quiz
+&lt;/a&gt;
+
+ &lt;/h2&gt;
+&lt;p&gt;可以说结果也是毫不意外，该说我对自己的认知还挺清晰吗，
+
+
+
+
+
+&lt;a href=&#34;https://gretchenrubin.com/wp-content/uploads/2022/10/Rebel-Report.pdf&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Rebel
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I do what I want, in my own way. If you try to make me do something-even if I try to make myself do something-I&amp;rsquo;m less likely to do it.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;真是膝盖中箭，很多时候我正是如此的拧巴又叛逆。&lt;/p&gt;
+&lt;p&gt;报告里四个类型的比例大概是：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;According to Rubin&amp;rsquo;s research, 41 percent of all people are Obligers. Almost a quarter of the population, 24 percent, are Questioners. The other two Tendencies are less common. Nineteen percent of people are Upholders, and 17 percent are Rebels.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而各类型的具体描述如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202412082244497.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何从 Hugo 的 RSS 输出中排除短代码</title>
+      <link>https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/</link>
+      <pubDate>Sat, 07 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/exclude_shortcode_output_from_rss/</guid>
+      <description>&lt;p&gt;我和很多人一样，在博文中使用了豆瓣/NeoDB 卡片短代码，效果如下：&lt;/p&gt;
+
+
+&lt;p&gt;在 RSS 阅读器中这个卡片会失去样式变成混乱的内容堆叠，因此想在 RSS 输出中排除掉短代码。不过这也是因为我是全文输出，RSS 只输出摘要的不会有此烦恼。&lt;/p&gt;
+&lt;p&gt;本来我想改 Hugo 的 &lt;code&gt;rss.xml&lt;/code&gt; 文件，在 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 部分添加筛选条件去除包含短代码的内容，但不知为何总是不成功，让 ChatGPT 改了好多遍还是失败。&lt;/p&gt;
+&lt;p&gt;没想到最后直接 Google 关键词在 Hugo 的讨论区找到答案了，
+
+
+
+
+
+&lt;a href=&#34;https://discourse.gohugo.io/t/exclude-shortcode-output-from-rss/51008&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Exclude shortcode output from RSS?
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+&lt;p&gt;简单来说就是在 &lt;code&gt;layouts/shortcodes&lt;/code&gt; 下直接创建一个同名文件，比如我的豆瓣卡片是 &lt;code&gt;douban.html&lt;/code&gt;，那就新建一个 &lt;code&gt;douban.xml&lt;/code&gt;，内容为空就是在 RSS 中彻底移除短代码，也可以在这个文件里加上特定内容取代原本短代码的输出（我图省事只创建了空白文件）。&lt;/p&gt;
+&lt;p&gt;原本我想在 &lt;code&gt;rss.xml&lt;/code&gt; 中的 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 部分加上一个 if 语句通过判断是否有内容被移除，以此来确定是否在 RSS 文章内容顶端添加提醒，比如“某些样式在 RSS 中无法显示，请点击原文查看”。但是现在的 shortcode 替换并不发生在 &lt;code&gt;rss.xml&lt;/code&gt; 中，就无法如此操作。考虑了下我把 &lt;code&gt;&amp;lt;description&amp;gt;&lt;/code&gt; 改成了下面这样，不进行判断，只要在 RSS 阅读器阅读都会看到提醒。（但我之前在 Inoreader 试了下怎么好像也看不到这行字？不知哪里出了问题，下次再解决吧……）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;description&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;The specific style in some posts may have been removed in RSS feed. &lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ .Permalink }}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;&amp;gt;&lt;/span&gt;Click here&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; to view the original post.&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+    {{ .Content | html }}
+&lt;span style=&#34;color:#000080&#34;&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>CSS 踩坑记</title>
+      <link>https://thewanderingallison.github.io/posts/blog_setting_css/</link>
+      <pubDate>Thu, 17 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_css/</guid>
+      <description>&lt;p&gt;速打一下存个档，否则我肯定会在同样的坑里摔第二次……&lt;/p&gt;
+&lt;p&gt;前几天做了个博客问卷还说我不折腾外观，打脸真是来得如此猝不及防。&lt;/p&gt;
+&lt;p&gt;之前我这个主题是 plain CSS，改动起来很方便，中途主题升级过一次，我眼馋 archive 页的新设计就更新了，当时就发现虽然样式生效但如果我想微调，不管是动 &lt;code&gt;assets/css&lt;/code&gt; 还是 &lt;code&gt;theme/css&lt;/code&gt; 文件夹都没用，无法改全局 CSS 最后只好改 &lt;code&gt;layouts&lt;/code&gt; 或者在单一页面里加 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;。总之就是凑合了好久，最近我非常想把正文的引用 &lt;code&gt;italic&lt;/code&gt; 格式取消，但找遍文件夹里的 CSS 文件怎么改都不行，非常抓狂。&lt;/p&gt;
+&lt;p&gt;中间血泪的踩坑过程就不说了，一圈儿试下来才发现不管动了什么，Hugo 最后实际使用的都是 &lt;code&gt;themes/bento/resources/_gen/&lt;/code&gt; 这个文件夹里某个带 hash 值后缀的 CSS。然后我才意识到，作者新写的 &lt;code&gt;styles.css&lt;/code&gt; 是用了 &lt;code&gt;Tailwind CSS&lt;/code&gt; 和 &lt;code&gt;PostCSS&lt;/code&gt;，当初看到 &lt;code&gt;styles.css&lt;/code&gt; 和 &lt;code&gt;head.html&lt;/code&gt; 这俩文件的内容我就应该先查查 &lt;code&gt;PostCSS&lt;/code&gt; 和 &lt;code&gt;Tailwind CSS&lt;/code&gt; 是个什么玩意儿的……真是纯属没苦硬吃（扶额）。&lt;/p&gt;
+&lt;p&gt;简而言之就是要有两个程序（？）把这些内容加工一遍才能生成一个最终被 &lt;code&gt;public&lt;/code&gt; 采用的 &lt;code&gt;styles.css&lt;/code&gt; 文件，而我的 Hugo 项目下并没安装相关的 npm packages，不管如何动 CSS，Hugo 根本不处理那当然改动就不会生效！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind base - put variables under: tailwind.config.js */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/base&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind component classes registered by plugins*/&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/components&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Site Specific */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;assets/css/site&amp;#34;&lt;/span&gt;;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;assets/css/syntax&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;/* Tailwind&amp;#39;s utility classes - generated based on config file */&lt;/span&gt;
+@&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;node_modules/tailwindcss/utilities&amp;#34;&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Go&#34; data-lang=&#34;Go&#34;&gt;
+{{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;style &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; resources.Get &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;css/styles.css&amp;#34;&lt;/span&gt; | &lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;postCSS&lt;/span&gt; (dict &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;./assets/css/dev/postcss.config.js&amp;#34;&lt;/span&gt;) }}
+&amp;lt;link rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $style.RelPermalink }}&amp;#34;&lt;/span&gt;&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;那后续就好办了，先在 &lt;code&gt;blog&lt;/code&gt; 这个文件夹执行一下命令安装相关 package。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;
+npm install postcss postcss-import autoprefixer tailwindcss
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但我这个文件夹同时又是 GitHub 仓库，安装后多出来 6000 多文件，git 提醒要爆炸，赶紧把 &lt;code&gt;node_modules&lt;/code&gt; 都加到 &lt;code&gt;.gitignore&lt;/code&gt; 里。&lt;/p&gt;
+&lt;p&gt;再 &lt;code&gt;Hugo&lt;/code&gt; 试一下，这下真的生成新的 CSS 文件了！但好多遗留问题……说老实话这个主题写得一般，还被我发现了 bug ，最后删除了某个莫名其妙的点阵背景，修改了单篇文章的标题格式，调整 archive 页链接呈现样式，删除正文引用的斜体格式，以及林林总总一大堆，希望这是我最后一次动 CSS……&lt;/p&gt;
+&lt;p&gt;不过，大概知道 &lt;code&gt;Tailwind CSS&lt;/code&gt; 怎么用之后不得不感叹确实简洁多了呀！但我是不会主动学的，以后，以后吧……&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>自动添加 12306 火车行程到 Google Calendar</title>
+      <link>https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/convert_12306_mail_to_google_calendar_event/</guid>
+      <description>&lt;p&gt;月初短短几天乘了 8 趟火车，反复调出 App 页面看登车信息很麻烦，由此起了念头，可否在下单后就自动添加行程到 Google Calendar 呢？&lt;/p&gt;
+&lt;p&gt;我的想法是，收到 12306 购票或改签成功的邮件后自动读取邮件内容，若乘车人是我的名字就把时间、车站、班次等信息加到 Google Calendar 的 Event 里，并且设置一个提前两小时的提醒。&lt;/p&gt;
+&lt;h2 id=&#34;在-gmail-中设置-filter&#34;&gt;在 Gmail 中设置 filter&lt;/h2&gt;
+&lt;p&gt;首先在 Gmail 中创建一个 filter，筛选出发件人是 12306 并且内容是购票或改签成功的邮件，自动将它们移到 &lt;code&gt;RailwaySchedules&lt;/code&gt; 的 label 下。&lt;/p&gt;
+&lt;h2 id=&#34;创建-google-apps-script&#34;&gt;创建 Google Apps Script&lt;/h2&gt;
+&lt;p&gt;在 
+
+
+
+
+
+&lt;a href=&#34;https://script.google.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Google Apps Script
+&lt;/a&gt;
+
+  中创建新的 script，复制以下代码。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;function&lt;/span&gt; autoAddRailwayEvent() {
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;try&lt;/span&gt; {
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Define the Gmail label that stores the filtered emails
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; label &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; GmailApp.getUserLabelByName(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;RailwaySchedules&amp;#34;&lt;/span&gt;);
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;label) {
+      Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Label not found: &amp;#39;RailwaySchedules&amp;#39;&amp;#34;&lt;/span&gt;);
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+    }
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Get only unread threads (emails)
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; threads &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; label.getThreads();
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; calendar &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; CalendarApp.getDefaultCalendar();
+
+    &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Iterate through all unread threads (emails)
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;for&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; i &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;; i &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt; threads.length; i&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;++&lt;/span&gt;) {
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; message &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; threads[i].getMessages()[&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;];
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;!&lt;/span&gt;message.isUnread()) {
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;continue&lt;/span&gt;; &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Skip already read messages
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;      }
+
+      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; body &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; message.getBody()
+      Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Processing email body: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; body);  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Log email body for debugging
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+      &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Check if the body contains the expected information
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (body.includes(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;张三，&amp;#34;&lt;/span&gt;)) {
+        &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Extract the paragraph after &amp;#34;name&amp;#34; and before &amp;#34;ticket&amp;#34;
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; infoSection &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; body.split(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;张三，&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt;].split(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;，电子客票。&amp;#39;&lt;/span&gt;)[&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;].trim();
+
+        &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Extract details by splitting the paragraph based on commas
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; details &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; infoSection.split(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;，&amp;#39;&lt;/span&gt;);
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; (details.length &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt;) {
+          Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Unexpected format in infoSection: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; infoSection);
+          &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;continue&lt;/span&gt;;
+        }
+  
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; dateTime &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; details[&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;];  
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; station &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; details[&lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt;];  
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; description &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; details.slice(&lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt;).join(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;，&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Join the rest as description
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;
+        &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Parse the date and time
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; year &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; dateTime.substring(&lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;, &lt;span style=&#34;color:#099&#34;&gt;4&lt;/span&gt;);
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; month &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; dateTime.substring(&lt;span style=&#34;color:#099&#34;&gt;5&lt;/span&gt;, &lt;span style=&#34;color:#099&#34;&gt;7&lt;/span&gt;) &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt;;  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Months are zero-indexed
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; day &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; dateTime.substring(&lt;span style=&#34;color:#099&#34;&gt;8&lt;/span&gt;, &lt;span style=&#34;color:#099&#34;&gt;10&lt;/span&gt;);
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; hour &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; dateTime.substring(&lt;span style=&#34;color:#099&#34;&gt;11&lt;/span&gt;, &lt;span style=&#34;color:#099&#34;&gt;13&lt;/span&gt;);
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; minute &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; dateTime.substring(&lt;span style=&#34;color:#099&#34;&gt;14&lt;/span&gt;, &lt;span style=&#34;color:#099&#34;&gt;16&lt;/span&gt;);
+
+        &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;var&lt;/span&gt; eventDate &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#0086b3&#34;&gt;Date&lt;/span&gt;(year, month, day, hour, minute);
+
+        &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Add the event to Google Calendar with a 2-hour reminder
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        calendar.createEvent(station, eventDate, &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#0086b3&#34;&gt;Date&lt;/span&gt;(eventDate.getTime() &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;1000&lt;/span&gt;))
+          .setDescription(description)
+          .addPopupReminder(&lt;span style=&#34;color:#099&#34;&gt;120&lt;/span&gt;);  &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Reminder 2 hours before
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Event created for: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; station &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; at &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; eventDate);
+
+        &lt;span style=&#34;color:#998;font-style:italic&#34;&gt;// Mark the email as read after processing
+&lt;/span&gt;&lt;span style=&#34;color:#998;font-style:italic&#34;&gt;&lt;/span&gt;        threads[i].markRead();
+      } &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;else&lt;/span&gt; {
+        Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Email does not contain expected ticket info: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; body);
+      }
+    }
+  } &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;catch&lt;/span&gt; (e) {
+    Logger.log(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;Error: &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;+&lt;/span&gt; e.message);
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将 &lt;code&gt;张三&lt;/code&gt; 替换成自己的名字，命名该 script 后保存。&lt;/p&gt;
+&lt;p&gt;这个脚本会执行以下动作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;检查邮箱 &lt;code&gt;RailwaySchedules&lt;/code&gt; 标签下是否有未读邮件&lt;/li&gt;
+&lt;li&gt;遍历未读邮件，若含有指定姓名，则截取邮件中 &lt;code&gt;张三，&lt;/code&gt; 到 &lt;code&gt;，电子客票。&lt;/code&gt; 部分内容为 &lt;code&gt;infoSection&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;用 &lt;code&gt;，&lt;/code&gt; 来 split &lt;code&gt;infoSection&lt;/code&gt;，将得到的 &lt;code&gt;array[0]&lt;/code&gt; 转换为日期和时间，&lt;code&gt;array[1]&lt;/code&gt; 为车站。&lt;/li&gt;
+&lt;li&gt;将车站信息作为标题、其余内容为描述添加到 Google Calendar Event，设置时间日期并提前两小时提醒&lt;/li&gt;
+&lt;li&gt;将对应邮件标为已读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202410071634765.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;12306 的邮件模板通常如上图，所以用 &lt;code&gt;张三，&lt;/code&gt; 和 &lt;code&gt;，电子客票。&lt;/code&gt; 作为 split 的分隔字符能保证恰好截取到自己的购票信息。&lt;/p&gt;
+&lt;h2 id=&#34;创建定时-trigger&#34;&gt;创建定时 Trigger&lt;/h2&gt;
+&lt;p&gt;偷懒用 ChatGPT 原话。我设置的是每小时运行一次。&lt;/p&gt;
+&lt;p&gt;Go to 
+
+
+
+
+
+&lt;a href=&#34;https://script.google.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Google Apps Script
+&lt;/a&gt;
+
+  or from your Gmail/Google Calendar, click the gear icon in the top-right corner and select &lt;strong&gt;See all settings&lt;/strong&gt; &amp;gt; &lt;strong&gt;Advanced&lt;/strong&gt; &amp;gt; &lt;strong&gt;Google Apps Script&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;In the Apps Script editor, click on the clock icon on the left-side panel (called &lt;strong&gt;Triggers&lt;/strong&gt;).&lt;/p&gt;
+&lt;p&gt;Click the &lt;strong&gt;+ Add Trigger&lt;/strong&gt; button at the bottom right.&lt;/p&gt;
+&lt;p&gt;Set up the trigger as follows:  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Choose which function to run&lt;/strong&gt;: Select the function that processes the Gmail label (in this case, &lt;code&gt;checkLabelAndProcessEmails&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Choose which deployment should run&lt;/strong&gt;: Select &amp;ldquo;Head&amp;rdquo; (the default).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Select event source&lt;/strong&gt;: Choose &amp;ldquo;Time-driven.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Select type of time-based trigger&lt;/strong&gt;: Choose an interval, such as &amp;ldquo;Minute timer,&amp;rdquo; &amp;ldquo;Hour timer,&amp;rdquo; or &amp;ldquo;Day timer.&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Select time interval&lt;/strong&gt;: Choose how frequently you want the script to run (e.g., every 10 minutes, once an hour, or once a day)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;运行试试看，Google Calendar 里已经有相应 event 了呢！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202410071715129.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;总结&#34;&gt;总结&lt;/h2&gt;
+&lt;p&gt;感觉代码可能有疏漏，但之后发现再说吧。这个法子也适用于其他购票提醒，对 script 做针对性修改就可以，暂时我没有更多需要大量处理的行程，姑且就先这样。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决 MP4 无法读取 SD 卡问题</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox_mp4-cannot-read-sd-card-data/</link>
+      <pubDate>Sun, 15 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox_mp4-cannot-read-sd-card-data/</guid>
+      <description>&lt;p&gt;前阵子翻出了古早 MP4 和更古早的 MP3， MP3 已经无法开机，倒是里头插着的 SD 卡还能用，我就塞进了 MP4 里。MP4 连上电脑时提示 SD 卡需要格式化，格式化后复制了不少新文件到 MP4 和 SD 卡里，打开 MP4 却发现虽然能够识别到 SD 卡的存在，试图读取时却提示 &lt;code&gt;NO DATA FILE&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;网上搜了半天也没结果，最后我终于想起来换了个关键词，得到的信息是：&lt;br&gt;
+&lt;strong&gt;FAT32&lt;/strong&gt; is the most common file system for SD cards used in MP4 devices. It&amp;rsquo;s widely supported by various MP4 players and offers a good balance between compatibility and storage capacity.&lt;/p&gt;
+&lt;p&gt;而我最开始在电脑上进行的那轮格式化，Windows 默认的格式是 &lt;code&gt;FAT&lt;/code&gt; 而非 &lt;code&gt;FAT32&lt;/code&gt;，再次连接电脑，下拉选择格式，格式化完成。重新复制文件到 SD 卡。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202409151448529.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;打开 MP4，可以正常播放啦！感觉大概率不会再有人写同样的问题了，在博客存个档吧。&lt;/p&gt;
+&lt;p&gt;以及，时隔多年再次用播放器，感觉很不错啊，可以走路、临睡前听，续航持久，功能专一，比手机好。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>另一个网站统计工具——Bing Webmaster Tools</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox_bing-webmaster-tools/</link>
+      <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox_bing-webmaster-tools/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://www.bing.com/webmaster/help/helpimage/Home_en-us&#34; alt=&#34;Bing Webmaster Tools&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 blog 装修（
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations&#34; 
+   
+   &gt;
+   1
+&lt;/a&gt;
+
+ 、
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations_2&#34; 
+   
+   &gt;
+   2
+&lt;/a&gt;
+
+ ）里写过我加了 GA 和 UMAMI 来统计访问数据，上一篇
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/dairy20240909&#34; 
+   
+   &gt;
+   日记
+&lt;/a&gt;
+
+ 里也提到偶尔会用到 backlink checker。这几天突然想到，Google 既然有这类工具，微软家大业大想必也不会落下？我的博客 organic  search 来源初期 Bing 一直是多于 Google，在 Google 里看 search queries
+几乎全是 Google Play Books 相关，Bing 的数据应该会不大一样吧？&lt;/p&gt;
+&lt;p&gt;说干就干，果然微软是有的，Bing Webmaster Tools，使用起来也非常简单，具体可参考 
+
+
+
+
+
+&lt;a href=&#34;https://www.bing.com/webmasters/help/help-center-661b2d18&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Help Centre
+&lt;/a&gt;
+
+ 。注册账号——提交网站——验证网站。&lt;/p&gt;
+&lt;p&gt;如果已经用上了 Google Search Console，更快捷的方式是用 Google 账号登陆，再授权导入 Google Search Console 已验证信息，全程不超过一分钟。之后会提示：Your data and reports are being processed and it may take upto 48 hours to reflect. Meanwhile, to speed up the indexing process, please submit your sitemap by using the Sitemaps feature. 静待数据处理就好，可以提交 sitemap 或者 RSS 文件帮助提高速度。&lt;/p&gt;
+&lt;p&gt;有哪些功能我就不详细介绍了，请看官方文档 
+
+
+
+
+
+&lt;a href=&#34;https://www.bing.com/webmasters/help/refreshed-webmaster-tools-7c7d2533&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   features
+&lt;/a&gt;
+
+ 。今天我的数据刚处理完成，看了眼 Search Keywords 和 Google 那边很不同，几乎所有工具类文章涉及到的关键词都被搜过——体会到中文世界的不容易，我这种就几个人看的博客都会被检索到。尤其是在 Bing 或者 Duckduckgo 里搜播客 RSS 的话，大概率头几个结果就是我。Backlink 和 Google Search Console 里的也不太一样，不过，一样不全。&lt;/p&gt;
+&lt;p&gt;Bing Webmaster Tools 可以当作 Google Search Console 的补充。尤其是中文内容，用 Bing 搜索的人搞不好会比 Google 还多，虽然其实这俩数据我都不怎么看，但既不增加自己博客负担又不要钱，那干嘛不用！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>我的 Obsidian 常用插件</title>
+      <link>https://thewanderingallison.github.io/posts/obsidian_plugins/</link>
+      <pubDate>Sun, 08 Sep 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/obsidian_plugins/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://thebusinessblocks.com/wp-content/uploads/2020/08/Untitled-design-3.png&#34; alt=&#34;Obsidian&#34;&gt;&lt;/p&gt;
+&lt;p&gt;好久之前放话说要写我的 Obsidian 常用插件，现在终于来填坑。我不是重度折腾爱好者，一切从实用出发，更绝不会搞外观装修、调整 CSS 之类（没有说那些不好的意思）。&lt;/p&gt;
+&lt;p&gt;而我这么喜欢 Obsidian 的原因就是，它既可以是开箱即用的 Markdown 文本编辑器，也可以根据用户的需求无限度复杂。最早我只是需要一个有预览功能的 Markdown 软件，打开就可以打字的那种，它完成得很好。后续的功能挖掘、插件安装，都是在使用过程中自然生长出的，Obsidian 强大的社区支持也让这些需求（几乎）都得以满足。&lt;/p&gt;
+&lt;h2 id=&#34;core-plugins&#34;&gt;Core Plugins&lt;/h2&gt;
+&lt;p&gt;除了 Sync（要收费）其他我基本都选择了开启。&lt;/p&gt;
+&lt;p&gt;不过说是插件，理解成软件自带的增强功能更合适，大部分也无需更进一步的设置，自然地就融入日常使用。&lt;/p&gt;
+&lt;h3 id=&#34;template&#34;&gt;Template&lt;/h3&gt;
+&lt;p&gt;唯一想要介绍的是 &lt;code&gt;Template&lt;/code&gt; 功能，通过它可以解放许多重复工作，比如博文的 &lt;code&gt;metadata&lt;/code&gt;，比如读书笔记的固定模板。可以创建多个 &lt;code&gt;Template&lt;/code&gt; 文件，配合 hotkey（我的自定义是 &lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;I&lt;/kbd&gt;）快速插入。&lt;/p&gt;
+&lt;p&gt;下面是我的博文 &lt;code&gt;Template&lt;/code&gt; 文件， &lt;code&gt;{{date}}&lt;/code&gt; 会自动插入当前日期。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-metadata&#34; data-lang=&#34;metadata&#34;&gt;---
+title: &amp;quot;&amp;quot;
+date: {{date}}
+draft: true
+tags: 
+categories: 
+rss_ignore: false
+---
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;community-plugins&#34;&gt;Community Plugins&lt;/h2&gt;
+&lt;p&gt;顾名思义，是官方之外广大用户创造的插件。&lt;/p&gt;
+&lt;h3 id=&#34;custom-frame&#34;&gt;Custom Frame&lt;/h3&gt;
+&lt;p&gt;
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian&#34; 
+   
+   &gt;
+   在 Obsidian 中使用Google Play Books
+&lt;/a&gt;
+
+  这篇里详细写过用途。&lt;/p&gt;
+&lt;h3 id=&#34;dataview&#34;&gt;Dataview&lt;/h3&gt;
+&lt;p&gt;强大的索引、查询工具。&lt;/p&gt;
+&lt;p&gt;我的用法其实很笨拙，只是为了在首页显示近期需要处理的文档。&lt;/p&gt;
+&lt;p&gt;创建一个名叫 &lt;code&gt;Homepage&lt;/code&gt; 的 canvas 页面，右击选中 &lt;code&gt;Pin&lt;/code&gt; 固定标签页，保证每次打开 Obsidian 都能看到。在 canvas 中新建多个 card，输入 &lt;code&gt;dataview&lt;/code&gt; 语句实现特定条件的表格或列表筛选显示。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202409082323831.webp&#34; alt=&#34;Homepage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;左侧的 Drafts 是以表格形式列出文件 metadata 中的 &lt;code&gt;title&lt;/code&gt;、&lt;code&gt;tag&lt;/code&gt;，按照最后修改时间降序显示来自 &lt;code&gt;Blog-drafts&lt;/code&gt; 文件夹的最新十条内容。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Obsidian-dataview&#34; data-lang=&#34;Obsidian-dataview&#34;&gt;\`\`\`dataview
+table title, tags
+from &amp;quot;Blog-drafts&amp;quot;
+sort file.mtime desc
+limit 10
+\`\`\`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;右边的 Book 是以列表显示满足以下条件的文档（要求较多我懒得解释了）。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Obsidian-dataview&#34; data-lang=&#34;Obsidian-dataview&#34;&gt;\`\`\`dataview
+list from #Book or &amp;quot;Reading/Notes&amp;quot; and -&amp;quot;Templates&amp;quot;
+where isFinished = false or lastReadDate &amp;gt;= date(today) - dur(15 day)
+sort file.mtime desc
+\`\`\`
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;而这只是非常初级的功能，只要阅读官方文档，尤其是大概懂一点 SQL 或者其他编程语言很快就能上手，更高级的用法我暂时也用不上，需要时再学吧！&lt;/p&gt;
+&lt;h3 id=&#34;easy-typing&#34;&gt;Easy Typing&lt;/h3&gt;
+&lt;p&gt;格式助手，排版救星。&lt;/p&gt;
+&lt;p&gt;开发者上传了视频 
+
+
+
+
+
+&lt;a href=&#34;https://www.bilibili.com/video/BV1jg411n7A4/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Obsidian 插件 Easy Typing：极大地提升中文用户在OB中的编辑体验
+&lt;/a&gt;
+
+ 详细讲解了用法，有些太 geeky 超过了我的能力范围，不过像连续全角转半角这种功能真是大大提升中文输入体验。&lt;/p&gt;
+&lt;h3 id=&#34;fleeting-note-sync&#34;&gt;Fleeting Note Sync&lt;/h3&gt;
+&lt;p&gt;配合 Fleeting Note 的浏览器插件同步网页剪藏内容到 Obsidian。&lt;/p&gt;
+&lt;h3 id=&#34;git&#34;&gt;Git&lt;/h3&gt;
+&lt;p&gt;我的用途主要是为了配合 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/syncing_specific_folders_between_different_repositories&#34; 
+   
+   &gt;
+   Syncing Specific Folders Between Different Repositories Using GitHub Actions
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;p&gt;以此实现了：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;备份 Obsidian 笔记到 Github 私人仓库&lt;/li&gt;
+&lt;li&gt;触发 Github Action，将 Obsidian 的两个文件夹分别同步到 GitHub A 账号的 A 博客仓库和 GitHub B 账号的 B 博客仓库，再分别触发仓库的 Hugo deploy action 实现最终的博客发布&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这样两个博客的内容都只需在 Obsidian 里写完 Markdown 文档一键推送，不需要切换 GitHub 账号，不需要本地部署，更不需要打任何命令。啊！赞美造轮子的人，赞美 GitHub Action！&lt;/p&gt;
+&lt;h3 id=&#34;image-auto-upload-plugin&#34;&gt;Image Auto Upload Plugin&lt;/h3&gt;
+&lt;p&gt;配合 PicGo 实现图片上传至图床。&lt;/p&gt;
+&lt;p&gt;我只有写 blog 才偶尔需要插图，日常笔记是纯文字，所以不需要其他的图片管理插件。&lt;/p&gt;
+&lt;h3 id=&#34;open-link-with&#34;&gt;Open Link With&lt;/h3&gt;
+&lt;p&gt;目的是让外部链接默认在 Obsidian 新标签页打开无需跳转至系统浏览器。&lt;/p&gt;
+&lt;h3 id=&#34;tag-wrangler&#34;&gt;Tag Wrangler&lt;/h3&gt;
+&lt;p&gt;批量修改 tag 。&lt;/p&gt;
+&lt;h3 id=&#34;weread&#34;&gt;Weread&lt;/h3&gt;
+&lt;p&gt;在 Obsidian 中使用微信读书以及同步笔记。&lt;/p&gt;
+&lt;h2 id=&#34;hotkeys&#34;&gt;Hotkeys&lt;/h2&gt;
+&lt;p&gt;此外必须一提的是 Obsidian 堪称无穷无尽的 hotkeys。你几乎可以给每一个动作（以及插件功能）配置 hotkey。&lt;/p&gt;
+&lt;p&gt;最棒的地方在于大部分不需要强记，可以无缝衔接之前的使用经验。&lt;/p&gt;
+&lt;p&gt;首先文本，复制、粘贴、无格式粘贴、剪切、撤销、取消撤销又或者加粗、斜体之类，这些在各类文本编辑器中都是通用的；其次标签，打开、新建、关闭、恢复标签页，又或者用 &lt;kbd&gt;CTRL&lt;/kbd&gt; 加数字跳转至对应标签页，和 Chrome 或者 Edge 也都完全相同；再到文件管理，打开、新建，和 Windows 系统层面操作也别无二致。&lt;/p&gt;
+&lt;p&gt;那特有的那些呢？可以先打开设置面板看一眼究竟有哪些支持自定义，日后总会有某些操作频繁到不耐烦用鼠标多次点选，那时自然而然会生出用键盘的念头的。比如我常用的，插入新模板、打开 Google Play Books 、打开微信读书、插入日期、移动当前文件到其他位置等等等等。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>简单装修 2.0</title>
+      <link>https://thewanderingallison.github.io/posts/blog_setting_decorations_2/</link>
+      <pubDate>Sat, 10 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_decorations_2/</guid>
+      <description>&lt;p&gt;
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/blog_setting_decorations&#34; 
+   
+   &gt;
+   上次
+&lt;/a&gt;
+
+ 还说不会有装修 2.0 了吧，结果啪啪打脸。近期的一些变动。&lt;/p&gt;
+&lt;h2 id=&#34;umami&#34;&gt;Umami&lt;/h2&gt;
+&lt;p&gt;写了简单的
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel&#34; 
+   
+   &gt;
+   设置流程
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;p&gt;Umami 很简洁但有两个问题，一是似乎 Umami 不会显示来自中国的访问流量，GA 里排名第一的地区是中国，可 Umami 里完全没出现过。二是 Umami 没办法有效排除我自己的访问数据，但这是我的原因，因为走代理并且用了 WebRTC Leak Prevent 插件浏览器无法获取真实 IP，Umami 的设置中自然也无法过滤。但算了就这样吧。&lt;/p&gt;
+&lt;h2 id=&#34;homepage&#34;&gt;Homepage&lt;/h2&gt;
+&lt;p&gt;我的博客主题首页默认显示所有博文，数量不多时还好，但现在累积了数百篇首页就变得相当累赘。&lt;/p&gt;
+&lt;p&gt;把  &lt;code&gt;index.html&lt;/code&gt; 中原先的模块删掉，利用 Hugo 的 &lt;code&gt;range&lt;/code&gt; 语句生成最近 5 篇文章的列表，首页就清爽多啦。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;      {{ range first 5 (sort site.RegularPages &amp;#34;Date&amp;#34; &amp;#34;desc&amp;#34;) }}
+      &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;position: relative;&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;ul&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 15; margin-bottom: 15;&amp;#34;&lt;/span&gt;&amp;gt;
+          &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34; no-underline rounded-md hover:bg-white transition duration-300 ease-in-out&amp;#34;&lt;/span&gt;
+            &lt;span style=&#34;color:#008080&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;margin-top: 5; margin-bottom: 5;&amp;#34;&lt;/span&gt;&amp;gt;
+            &amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ .RelPermalink }}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;class&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;tracking-tight no-underline text-blue-600  mb-0&amp;#34;&lt;/span&gt;&amp;gt;
+              {{ .Title }}
+            &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
+          &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;li&lt;/span&gt;&amp;gt;
+        &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;ul&lt;/span&gt;&amp;gt;
+      &amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;div&lt;/span&gt;&amp;gt;
+      {{ end }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;render-hook-for-links&#34;&gt;Render Hook for Links&lt;/h2&gt;
+&lt;p&gt;不想写中文了直接复制和 ChatGPT 的对话……&lt;/p&gt;
+&lt;p&gt;Use custom render hook to convert plain text links (e.g., &lt;code&gt;[title](plaintext)&lt;/code&gt;) and excludes real URLs (e.g., &lt;code&gt;[link](https://xxxxx)&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Create a file at &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
+{{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
+  {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}
+{{ end }}
+&amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $destination }}&amp;#34;&lt;/span&gt;&amp;gt;{{ .Text }}&amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we can use the simple &lt;code&gt;[title](plaintext)&lt;/code&gt; syntax for plain text links and normal syntax for real URLs in markdown files.&lt;/p&gt;
+&lt;p&gt;在 Obsidian 中用 markdown 的 &lt;code&gt;[title](filename)&lt;/code&gt; 替代原本双链 &lt;code&gt;[[filename]]&lt;/code&gt; 格式，这样既能保证我在 Obsidian 里跳转的是本地文件，用 Hugo 渲染完成后博客又能正常访问对应博文链接。&lt;/p&gt;
+&lt;h2 id=&#34;open-link-in-new-tab&#34;&gt;Open link in new tab&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;更改链接打开方式，将默认的当前页面跳转改为新标签页打开。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;在 &lt;code&gt;baseof.html&lt;/code&gt; 中加入以下内容。&lt;/del&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Js&#34; data-lang=&#34;Js&#34;&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;script&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span style=&#34;color:#0086b3&#34;&gt;document&lt;/span&gt;.querySelectorAll(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt;).forEach(&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;function&lt;/span&gt; (link) {
+      link.setAttribute(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;target&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;_blank&amp;#39;&lt;/span&gt;);
+      link.setAttribute(&lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;rel&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#d14&#34;&gt;&amp;#39;noopener noreferrer&amp;#39;&lt;/span&gt;);
+    });
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2024.08.27 更新：&lt;/p&gt;
+&lt;p&gt;发现上面的方式会把本站链接也默认在新标签页打开，这样会显得有些烦人，所以改了下逻辑，删除了 &lt;code&gt;script&lt;/code&gt;，把上一步的 &lt;code&gt;layouts/_default/_markup/render-link.html&lt;/code&gt; 修改为如下内容。这样仅在新标签页打开外站链接，本站还是基于当前页面跳转。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;{{ $destination := .Destination }}
+{{ if not (or (strings.HasPrefix $destination &amp;#34;http&amp;#34;) (strings.HasPrefix $destination &amp;#34;https&amp;#34;) (strings.HasPrefix $destination &amp;#34;//&amp;#34;)) }}
+  {{ $destination = (print &amp;#34;/posts/&amp;#34; $destination | urlize) }}
+{{ end }}
+&amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;href&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $destination }}&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;with&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;Title&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;title&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ . }}&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;strings&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;HasPrefix&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;destination&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;http&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}&lt;/span&gt;&lt;span style=&#34;color:#008080&#34;&gt;target&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;rel&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;noreferrer noopener&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;{{&lt;/span&gt; &lt;span style=&#34;color:#008080&#34;&gt;end&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;}}&lt;/span&gt;&amp;gt;{{ .Text | safeHTML }}&amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;a&lt;/span&gt;&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>燕子</title>
+      <link>https://thewanderingallison.github.io/posts/swallow/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/swallow/</guid>
+      <description>&lt;p&gt;今年五月初我第一次注意到这个城市原来有燕子。对着 Merlin 的图片看了半天确定是 Barn Swallow 家燕。说起 swallow 这个词，我能够在不同语境下明白指代的究竟是“吞”还是“燕子”，在拼写上却一直没有把它们划等号，直到某天我要写出它时才感觉到一点迟疑。意识到之后，也忍不住好奇在同词异意之间是否有什么联系，雏燕乞食时那大张的喉咙着实有股气吞山海的气势，很是生动地演绎了“吞”这个意象。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i0.wp.com/www.roeselienraimond.com/wp-content/uploads/2015/01/barn_swallow_nestlings.jpg&#34; alt=&#34;barn swallow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可惜兴致勃勃问了 ChatGPT 和 Pi 得到的答案都是，这只是一个巧合。这两个意思分别是从不同的词源演化而来。&lt;/p&gt;
+&lt;p&gt;拉丁语里的燕子是 &amp;ldquo;hirundo&amp;rdquo;（家燕的学名也正是 &lt;em&gt;Hirundo rustica&lt;/em&gt;），接着在 Old High German 演化成 &amp;ldquo;swalawa&amp;rdquo;，再到 Old Enlgish 的&amp;quot;swalewe&amp;quot;，然后是 Middle English 的&amp;quot;swalwe&amp;quot;，最后成为现代英语 &amp;ldquo;swallow&amp;rdquo;。而拉丁词 &amp;ldquo;hirundo&amp;rdquo; 可能的前身一说是 &amp;ldquo;hirro&amp;rdquo;，是燕子叫声的拟声词。另一则是来自 &amp;ldquo;harundo&amp;rdquo; （which means  &amp;ldquo;reed&amp;rdquo; or &amp;ldquo;shaft&amp;rdquo; in Latin），取自燕子分叉的尾巴形状与芦苇的相似之处。也查了中文的“燕”，原来甲骨文里的燕字就是直观地模拟燕子张开双翅、尾部分叉的状态。&lt;/p&gt;
+&lt;p&gt;前阵子读了本《语言塑造人类思维》，里面提到人们在使用语言时，大脑的神经元会激活相似信息，这其中既包括词意，也包含发音。而多语者由一个词汇激活的信息网络会更广，因为他们需要并行处理几种不同的语言，联想到的意象自然也更多。以后看到燕子，我不仅会想起中文“燕”和英文的 &amp;ldquo;swallow&amp;rdquo;，也会自然地想到“吞咽”，还会想到中英文的芦苇 (reed)。同时还意识到从很久前开始，一说“燕子”，我脑中总是会浮现出剪刀。现在想来，在我没察觉时，“剪尾”和“声声燕语明如翦”就深深地把剪刀和燕子绑定在了一起。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://st3.depositphotos.com/3669029/37141/i/450/depositphotos_371418138-stock-photo-barn-swallow-flight-vegetation-background.jpg&#34; alt=&#34;flying swallow&#34;&gt;&lt;/p&gt;
+&lt;p&gt;说回最近看到的燕子们，五月初在一个闲置商铺的屋檐下注意到有窝小燕子，当时已十分惊喜。未曾想一个月后又在小区门口的面店招牌下瞧见了新筑的燕子巢。小小的半圆形开口碗状，旁边还有不少泥点。非常意外，这个取址不仅毫无遮挡，往来人流也不小。但考察了下周边店铺我也大概明白了燕子的不得已之处，其他临街的店面要么有卷帘门，要么是用了大片玻璃，似乎也只有这一家可以使用。&lt;/p&gt;
+&lt;p&gt;自那之后我时不时就去瞧瞧燕子们。这对亲鸟的进度比五月看到的那窝慢了不少，6 月 27 日才孵出雏鸟来。小小一个巢，探出了足足六只小燕子的脑袋，挤挤攘攘紧挨在一起。亲鸟不时回来喂食，同时也会把巢里的排泄物叼出来。只是卫生意识虽有，却不多，星星点点的白色粪便都直接落在巢下方。进出面店的人要是一个不小心，说不定还会被砸个正着。之前我很担心店铺的人会不会嫌弃燕子而捣掉燕子巢，还特意去问了店里的阿姨们，阿姨回复我，“当然不会！我们眼见着它们筑起来的呢，辛辛苦苦一点点衔泥巴建的巢！” 后面发现阿姨们每天会铺快递盒或者泡沫箱在巢下，哪怕亲鸟准头不那么好，她们也会时不时出来拖地把门口打扫干净。&lt;/p&gt;
+&lt;p&gt;雏鸟出壳这阵子，我非常勤快地几乎每天都绕道正门去看它们。头几天时，它们头上还顶着两团绒羽（
+
+
+
+
+
+&lt;a href=&#34;https://www.flickr.com/photos/22791105@N06/7541271770/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   可参考这张图片
+&lt;/a&gt;
+
+ ），可爱非常。一周不到，周五晚上去看时，小燕子们已经学会站立，悬悬地抓住巢的边缘试探着展开翅膀，因为空间很小还不时互相碰到，于是会惊险地一个踉跄，我非常担心会有燕子失足落下来，盯着看了许久，幸好一直没有发生。&lt;/p&gt;
+&lt;p&gt;周六中午又出门，巢里只停着一只燕子，一夜之间小燕子们都会飞了！按照经验雏鸟初飞都会不时磕绊，也不会飞得太远，四下张望试图寻找它们的身影，无果。&lt;/p&gt;
+&lt;p&gt;等办完事穿过人行道往小区门口走，却看到几十米开外平行的斑马线上有一滩不详的痕迹。很小，像片黏在路上的塑料袋，剩下一点边缘在晃动。我想，不会是鸟儿吧，一定不是。可那个小小的、竖起来的形状和颜色，实在是像极了燕子的羽翼。进了小区我还是心下不安，折返回路中央检查。车来车往无法停留只能匆匆一瞥，但只一眼，就让我心沉到了谷底。&lt;/p&gt;
+&lt;p&gt;是燕子。血迹。羽毛。甚至还能看到那细细的腿和爪子。就这么完全地被辗平。原来鸟儿这么小，痕迹都这么这么少。只剩下半只翅膀的羽毛，还随着风摇摆。&lt;/p&gt;
+&lt;p&gt;这是这只燕子飞出巢的第一天，也是最后一天。它的双亲知道它再也回不去了吗？它同巢的兄弟姐妹会困惑少了一只同伴吗？我不知道用人类视角臆测鸟儿是否是一厢情愿，可是，仅仅只是注视了它们一个月，它们在我心中已经有了不一样的意义。那，产卵、孵卵、又把它们喂养长大的亲鸟，难道它们不会有感觉吗？即使鸟类的家庭和情感模式当然不同于人类，可它们是生命，它们必然有意识。我难以抑止地想着这些问题，却也找不到答案。&lt;/p&gt;
+&lt;p&gt;刚写完上面这些文字就看到 ImagineNature 推送的文章，
+
+
+
+
+
+&lt;a href=&#34;https://mp.weixin.qq.com/s?__biz=MzAwNjcyNDUzMQ==&amp;amp;mid=2650030504&amp;amp;idx=1&amp;amp;sn=befc1d4391f33bbbf7bb4d70caddb5e6&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   纽约中央公园的 Eurasian Eagle-Owl  Flaco 之死
+&lt;/a&gt;
+
+ 。之前就大概知晓它的死亡原因（即使没有撞击，从鸽子处染上的病毒、被动摄入的鼠药，迟早也会要了它的命），看到完整的梳理则更让我难过。也让我思考，除了大量的人类建筑物侵占了这些动物们的空间之外，动物园以及许多个人的养宠行为，究竟是否有存在的必要？我们又到底应该如何对待动物的伦理？实在是有太多的疑惑（和遗憾），陆续也读了好几本相关的书，我还没能得出结论。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;一些关于家燕的知识点&#34;&gt;一些关于家燕的知识点&lt;/h3&gt;
+&lt;p&gt;家燕是雌雄同型的鸟类，不仅体型相近，羽毛颜色区别也很小（雌性的尾巴略短，胸腹部的颜色更黯淡些，但对于这么小且擅于疾飞的鸟儿来说是极难分辨了）。不知是否是这个原因，古诗词里才会有大量的“燕双飞”意象，毕竟若是体型和羽色相差太大，或许就不会被那么轻易认作是一对了。&lt;del&gt;国内还有个地域性的安全套品牌叫“双飞燕”。（为什么我会知道这种东西啊喂！好吧其实是从某部 BL 小说里学到的……）&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;家燕通常会花上两周的时间筑巢。在巢完成的 1 到 3 天内产下 4 - 6 颗蛋，雏鸟会在第 14 -16 天左右破壳，在孵化后的第18 - 23 天离巢。另外，筑巢、孵化、育雏，这些行为都是雌雄共同参与的。&lt;/p&gt;
+&lt;p&gt;补充阅读：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://www.audubon.org/field-guide/bird/barn-swallow&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   奥杜邦协会 barn swallow
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://www.onthewingphotography.com/wings/2022/05/29/female-and-male-barn-swallow-photos/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   雌雄对比
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://sites.tufts.edu/babybirds/bird/barn-swallow/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   完整孵化过程
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用 Vercel 自建 Umami 服务</title>
+      <link>https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/how_to_host_umami_on_vercel/</guid>
+      <description>&lt;p&gt;怎么回事，我最近净是在发 how to 类的水文，这里才不是个技术博客！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://umami.is/images/app.jpg&#34; alt=&#34;umami&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Umami 是一个开源的网站数据统计工具，之前在友邻那里看到了
+
+
+
+
+
+&lt;a href=&#34;https://thirdshire.com/running-umami-on-planetscale-vercel&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   设置教程
+&lt;/a&gt;
+
+ ，虽然有些许心动但是不想折腾的心占了上风。最近点开 Google Analytics 着实是有些厌烦 GA 的臃肿页面，于是又翻开这篇研究了下。如果不打算自建，可以参考上方教程只使用 Umami 官方的 Umami Cloud 服务，本篇不再赘述。&lt;/p&gt;
+&lt;p&gt;由于并没有自己的服务器，也不想再多寻找和注册免费的数据库提供商，因此折腾着用 Vercel 完成了数据库 + Umami 的部署。&lt;/p&gt;
+&lt;p&gt;下面进入极简流程。&lt;/p&gt;
+&lt;h2 id=&#34;前期准备&#34;&gt;前期准备&lt;/h2&gt;
+&lt;p&gt;GitHub 账号，Vercel 账号，Umami 账号。&lt;/p&gt;
+&lt;h2 id=&#34;操作步骤&#34;&gt;操作步骤&lt;/h2&gt;
+&lt;p&gt;登录 
+
+
+
+
+
+&lt;a href=&#34;https://vercel.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Vercel
+&lt;/a&gt;
+
+  ，点击 &lt;code&gt;Storage&lt;/code&gt; 创建 Postgres 数据库。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406281955778.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406281955938.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;创建成功后查看数据库的 &lt;code&gt;.env.local&lt;/code&gt;，点击 &lt;code&gt;Show secret&lt;/code&gt; 复制 &lt;code&gt;POSTGRES_PRISMA_URL&lt;/code&gt; 的值（引号里面的部分）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406281958572.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;根据 Umami  
+
+
+
+
+
+&lt;a href=&#34;https://Umami.is/docs/guides/running-on-vercel&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   官方文档
+&lt;/a&gt;
+
+ ，可以直接一键 
+
+
+
+
+
+&lt;a href=&#34;https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FUmami-software%2FUmami&amp;amp;env=DATABASE_URL&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Deploy
+&lt;/a&gt;
+
+  到 Vercel。点击后页面如下。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406282008572.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在红色框内填入对应内容，然后分别点击 &lt;code&gt;Create&lt;/code&gt; 和 &lt;code&gt;Deploy&lt;/code&gt;，等待部署完成。&lt;/p&gt;
+&lt;p&gt;部署结束后进入项目的 Deployment 页面点击 &lt;code&gt;Visit&lt;/code&gt; 访问 Umami。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406282026132.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;首次进入需输入账号密码，初始账号为 &lt;code&gt;admin&lt;/code&gt;，密码为 &lt;code&gt;umami&lt;/code&gt;，可自行在设置中更改。记住网址和账号密码，后续可通过该地址访问查看网站统计数据。&lt;/p&gt;
+&lt;p&gt;在页面中点击 &lt;code&gt;Add Website&lt;/code&gt; 添加自己的网站，格式为 &lt;code&gt;mydomin.com&lt;/code&gt;。完成后复制 &lt;code&gt;Tracking Code&lt;/code&gt; 加到自己网站的 &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; 里，静态博客的话通常是 &lt;code&gt;layouts/partials/header.html&lt;/code&gt; 文件，具体可查看自己的博客结构。这部分没截图，可以参考
+
+
+
+
+
+&lt;a href=&#34;https://umami.is/docs/collect-data&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   官方文档
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+&lt;p&gt;完成！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决 Disqus 邮件被 Gmail 标记为 spam 问题</title>
+      <link>https://thewanderingallison.github.io/posts/disqus_labelled_as_spam_in_gmail/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/disqus_labelled_as_spam_in_gmail/</guid>
+      <description>&lt;p&gt;最近几个月我的 Disqus 通知一直被 Gmail 锲而不舍地识别为 spam 邮件，不管我是把 Disqus 发信地址添加为联系人也好，还是每次勤勤恳恳把邮件从 spam 移出再点击“ Not Spam” 也好，都毫无效果。&lt;/p&gt;
+&lt;p&gt;今天又经历了一次我简直怒发冲冠，已经在考虑是否应该更换评论系统了，但不想折腾的心终究是占了上风，研究了一下 Gmail 的设置终于解决了这个问题。&lt;/p&gt;
+&lt;p&gt;首先查看 Disqus 发消息的邮箱，不知每个人是否都相同，总之我的是 &lt;a href=&#34;mailto:notifications@maas.disqus.com&#34;&gt;notifications@maas.disqus.com&lt;/a&gt; ，复制该地址。&lt;/p&gt;
+&lt;p&gt;打开 Gmail 网页版，点击右上角齿轮图标，点击 &lt;code&gt;See All Settings&lt;/code&gt; 进入设置页面。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406251835328.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 &lt;code&gt;Filters and Blocked Addresses&lt;/code&gt;，接着点击 &lt;code&gt;Create a new filter&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406251837014.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在 &lt;code&gt;From&lt;/code&gt; 一栏粘贴 Disqus 邮箱地址，再点击 &lt;code&gt;Create filter&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406251838354.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 &lt;code&gt;Never send it to Spam&lt;/code&gt;，点击 &lt;code&gt;Create filter&lt;/code&gt; 确认。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406251839877.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成！&lt;/p&gt;
+&lt;p&gt;用另一个 Disqus 账号给自己评论测试，终于可以正常收到邮件了……写完才想起来去网上搜了下，原来受害者大把，没点进去看其他人怎么解决的，顺手写个过程或许可以帮到有同样困扰的人。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tautonym</title>
+      <link>https://thewanderingallison.github.io/posts/tautonym/</link>
+      <pubDate>Mon, 24 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/tautonym/</guid>
+      <description>&lt;p&gt;一篇闲聊，原本想发毛象，可照我以往作风不定时就想清空嘟文，但又觉得这个话题挺有趣，在 blog 水一篇好了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;一直知道生物的学名里有一些 genus 和 species 是完全相同的，有些看起来像是随便起的而莫名滑稽，比如 &lt;em&gt;Dama dama&lt;/em&gt; 、&lt;em&gt;Boops boops&lt;/em&gt; 。最近才知道它有个专属名词 tautonym，&amp;ldquo;a scientific name where the genus name and the species name have exactly the same spelling&amp;rdquo; 。还有些像 &lt;em&gt;Gorilla gorilla gorilla&lt;/em&gt; 也是 tautonym，不过有的地方会把它们单独作为 triple tautonym 列出，这种就是属名、种名、亚种名都完全一致。另外按照国际命名规则，植物的二名是不能重复的，因此只要看到 tautonym 就知道一定是动物啦。&lt;/p&gt;
+&lt;p&gt;也查了下词源，在希腊语里 &lt;em&gt;taut(o)-&lt;/em&gt; 是 &amp;ldquo;the same&amp;rdquo;，而词尾 &lt;em&gt;-onym&lt;/em&gt; 是&amp;quot;a combining form from Greek that means &amp;lsquo;name&amp;rsquo;&amp;quot;，所以这个生造出来的新词字面意思就是重名。&lt;/p&gt;
+&lt;p&gt;一些觉得很有意思的 tautonym。图片均来自 pexels.com 。&lt;/p&gt;
+&lt;h2 id=&#34;bubo-bubo&#34;&gt;&lt;em&gt;Bubo bubo&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406162132740.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;也就是 Eruasian eagle-owl，世界上体型最大的猫头鹰（之一），特意挑了张能看出它惊人翼展的图（可达 1.5-2 m）。&lt;/p&gt;
+&lt;p&gt;虽然 &lt;em&gt;Bubo bubo&lt;/em&gt; 不像个正经名字，其实 bubo 在拉丁语里就是 &amp;lsquo;owl&amp;rsquo; ，至于为什么非要强调两遍，得问给它命名的林奈了。&lt;/p&gt;
+&lt;h2 id=&#34;bufo-bufo&#34;&gt;&lt;em&gt;Bufo bufo&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;一字之差，就从猫头鹰变蟾蜍（此处无图）！&lt;/p&gt;
+&lt;h2 id=&#34;naja-naja&#34;&gt;&lt;em&gt;Naja naja&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406172326613.webp&#34; alt=&#34;https://www.pexels.com/photo/an-indian-cobra-on-the-ground-10509700/&#34;&gt;&lt;/p&gt;
+&lt;p&gt;看名字就想会不会和印度神话有点关系，果然如此，&lt;em&gt;Naja&lt;/em&gt; （眼镜蛇）这个属名就是来自蛇神那伽，而 &lt;em&gt;Naja naja&lt;/em&gt; 是印度眼镜蛇简直太合理了。而看到上面这张图，不得不说这么威风又美丽的生物被视作神灵的化身也完全可以理解。&lt;/p&gt;
+&lt;h2 id=&#34;bison-bison&#34;&gt;&lt;em&gt;Bison bison&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242304338.webp&#34; alt=&#34;https://www.pexels.com/photo/highlander-cows-in-the-dunes-of-wassenaar-the-netherlands-16138949/&#34;&gt;&lt;/p&gt;
+&lt;p&gt;American bison，前阵子读一本关于黄石公园重新引进狼群的绘本，里面提到了它们所以忍不住就多留意了下。好多年前看 
+
+
+
+
+
+&lt;a href=&#34;https://movie.douban.com/subject/3826156/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   黄石公园
+&lt;/a&gt;
+
+  纪录片，也有它们出镜。&lt;/p&gt;
+&lt;p&gt;作为北美洲体型最大的哺乳动物和世界上最大野牛之一，它们是毫无疑问的大块头，雄性体长最多能达到 3.5 m，身高可达 2 m，而有确凿记录的最重体重足足有1270 公斤。一身厚重的皮毛可以帮助它们熬过零下四十度的冬天。&lt;/p&gt;
+&lt;p&gt;巧合的是，在我拖拖拉拉写这篇的同时，手机上给我推送了这篇关于罕见白色美洲野牛的小牛犊出生的
+
+
+
+
+
+&lt;a href=&#34;https://www.Foxweather.Com/lifestyle/white-bison-calf-yellowstone-native-american-prophecy&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   新闻
+&lt;/a&gt;
+
+ ，我的手机和电脑用的是不同 Google 账号，因此并不存在相关搜索记录，大数据有这么灵的吗。&lt;/p&gt;
+&lt;p&gt;原本以为这只小牛犊有白化症，仔细看了下报道的描述，它的鼻子和眼睛都是黑色的，只是因为黑色素缺乏而导致皮毛是白色。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242236594.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pica-pica&#34;&gt;Pica pica&lt;/h2&gt;
+&lt;p&gt;乍一看还以为跟皮卡丘有什么关系，实际就是欧亚喜鹊 Eurasian magpie 啦，在国内常见到的是 Oriental magpie，长相上有点点微妙差别。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406250004647.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上图是截自 
+
+
+
+
+
+&lt;a href=&#34;https://www.allaboutbirds.org/guide/Eurasian_Magpie/species-compare/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   All About Birds
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;h2 id=&#34;caracal-caracal&#34;&gt;&lt;em&gt;Caracal caracal&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242317541.webp&#34; alt=&#34;https://www.pexels.com/photo/caracal-standing-on-a-field-2278164/&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242313213.webp&#34; alt=&#34;image.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242314246.webp&#34; alt=&#34;https://www.pexels.com/photo/close-up-shot-of-a-caracal-13591341/&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406242311718.webp&#34; alt=&#34;https://www.pexels.com/photo/brown-and-black-cat-standing-on-brown-grass-13591163/&#34;&gt;&lt;/p&gt;
+&lt;p&gt;狞猫！&lt;/p&gt;
+&lt;p&gt;虽然会因为长长尖尖的耳朵毛而被一打眼错认为猞猁，而辨认的秘诀就是，猞猁皮毛上有斑点，而狞猫没有。另外猞猁也是 tautonym ，学名是 &lt;em&gt;Lynx lynx&lt;/em&gt;，是因为大（中小）猫们都太萌了所以必须用叠词吗（胡扯 ing）。其实狞猫和猞猁的亲缘关系相当远，反倒和薮猫更近。狞猫和薮猫的栖息地都在非洲（狞猫在亚洲也有部分分布），可由于它们较小的体型和美丽的外表，这两种中型猫科动物也是私人非法豢养的重度受害者。而所谓的经过国际品种猫协会（学名忘了管他叫啥呢）认证的经过起码四代培育的人工品种，比如卡勒拉猫又或者孟加拉猫，来源本身就不清不楚，它们的诞生无非就是人为让狞猫/豹猫和家猫交配。而这过程中有多少野生大猫受害？谁说得清楚？而且有不少还是浑水摸鱼直接捕猎野外豹猫/狞猫/薮猫交易。&lt;/p&gt;
+&lt;p&gt;我也知道在国外有很多私人圈养野生猫科动物的案例，甚至包括豹子狮子，可能因为在他们那里不违法，因此他们还可以堂而皇之把这做成一门流量生意，比如 YouTube 上大量人和野生大猫小猫互动的视频。我讨厌看这些。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;题外话之关于不同人工智能的小小测试。&lt;/p&gt;
+&lt;p&gt;可能由于 tautonym 并不常用，目前没有任何一个 AI 通过语音识别出这个词。&lt;/p&gt;
+&lt;p&gt;表现最好的是 
+
+
+
+
+
+&lt;a href=&#34;https://pi.ai&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Pi
+&lt;/a&gt;
+
+ ，虽然它需要一些前置条件，比如我先说了 tautonym 的定义，并且之后由语音生成的文本还是错的，但通过上下文语境它理解并复述出了这个词，还顺畅进行了后续对话。问题在于当我要求它给我一个 tautonym 的 list 时，它无论如何都只能对两个，甚至每次它都自信播放出这个词的定义，接着继续错。在我反复指出哪几个名字并不是时，它道歉，给新清单，依然只能对两个！最后我忍无可忍说你们应该快点改进一下算法！只是检测一下前后两个单词是否一致对你来说那么难吗！&lt;/p&gt;
+&lt;p&gt;ChatGPT，手机 app 我登不上所以在网页版直接打字，同样是要一些 tautonym 的例子，它回了十个名字，但是把鸳鸯（Mandarin Duck）学名 &lt;em&gt;Aix galericulata galericulata&lt;/em&gt; 也放了进去，而这很显然不是。&lt;/p&gt;
+&lt;p&gt;而在 edge 里对 copilot 说话，不管尝试多少次，它都听不懂我在说 tautonym ，我加上定义并要求给一些例子时依然无用，最后认输选了打字，倒是给出了完美答案。&lt;/p&gt;
+&lt;p&gt;至于 Google Assistant，呵，你说它是人工智能？只能说是智障。每次用它都让我怀疑自己英语到底有多烂（虽然也不好，但它特别能打击我的自信心）。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决 aria2.log 文件过大问题</title>
+      <link>https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/</link>
+      <pubDate>Sat, 15 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/aria2.log_file_is_too_large/</guid>
+      <description>&lt;p&gt;给自己简单存个档。&lt;/p&gt;
+&lt;p&gt;这两天用 
+
+
+
+
+
+&lt;a href=&#34;http://www.uderzo.it/main_products/space_sniffer/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   SpaceSniffer
+&lt;/a&gt;
+
+  检查 &lt;code&gt;D&lt;/code&gt; 盘空间时意外发现 &lt;code&gt;aria2.log&lt;/code&gt; 文件居然占了 20 多 GB。搜了下发现 GitHub 上已经有人提过类似 issue，
+
+
+
+
+
+&lt;a href=&#34;https://github.com/wahyd4/aria2-ariang-docker/issues/2&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   aria2c logging is too large · Issue #2 · wahyd4/aria2-ariang-docker 
+&lt;/a&gt;
+
+ ，解决方法也很简单，打开 &lt;code&gt;aria2.conf&lt;/code&gt; 文件，把 &lt;code&gt;log-level=info&lt;/code&gt; 变更为 &lt;code&gt;log-level=error&lt;/code&gt;，如果原来并没有设置 &lt;code&gt;log-levl&lt;/code&gt; 那直接加上 &lt;code&gt;log-level=error&lt;/code&gt; 就好。这样的目的是只记录 &lt;code&gt;error&lt;/code&gt; 状况下的 log 信息。之前的 &lt;code&gt;aria2.log&lt;/code&gt; 文件可以直接删掉，再重建一个新的 &lt;code&gt;aria2.log&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;p&gt;下次如果需要从头配置 Aria2，记得直接把上面那行加到 &lt;code&gt;aria2.conf&lt;/code&gt; 里，这样从一开始就可以避免 log 文件过大的问题。&lt;/p&gt;
+&lt;p&gt;顺便贴一下之前写的 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox3&#34; 
+   
+   &gt;
+   配置流程
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Shame! Shame! —— 一些针对墙内互联网的工具</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox20240612/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox20240612/</guid>
+      <description>&lt;p&gt;取这个题目脑子里第一反应冒出的是权游里瑟曦游街众人大喊 SHAME SHAME 那幕，但是仔细想想，为什么要通过让一个女人赤身裸体来羞辱她呢？这其实让我不舒服，所以放弃了插入 gif 做头图。&lt;/p&gt;
+&lt;p&gt;而这句 shame，既是想喊给各个墙内互联网公司听，也是对自己说——我真不愿意承认自己为了&lt;del&gt;嗑男人&lt;/del&gt;而忍辱负重地承受了墙内网站如此多的羞辱！&lt;/p&gt;
+&lt;p&gt;好吧，我一边疯狂辱骂国内互联网生态，一边有时还是不得不使用它们。以往我只是需要在必要时忍受一下腾讯和阿里这两家公司，其他泛娱乐平台都几乎不用。结果，去年上头灌篮高手和今年年初时上头某几个音乐剧演员，让我不得不大幅度依赖某些社交平台，而我为此所愿意付出的极限是使用改良后的网页版——这是我的底线。而最近清醒过来之后，决定还是写写当时用的这些小工具们。都是油猴脚本，需要在浏览器先安装油猴插件。&lt;/p&gt;
+&lt;h2 id=&#34;豆瓣&#34;&gt;豆瓣&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://greasyfork.org/en/scripts/470187&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   豆瓣小组功能增强-v2
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://greasyfork.org/scripts/441100&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   豆瓣小组屏蔽用户及屏蔽关键词
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在豆瓣小组高强度冲浪了三个月，发现豆瓣的黑名单功能形同虚设，即使已拉黑账号，在小组帖子里依然可以看到对方发言，用上述两个工具可以有效屏蔽关键词和用户，以及能够实现主贴、评论区、页首、页尾等的跳转，爬楼更加方便。&lt;/p&gt;
+&lt;h2 id=&#34;微博&#34;&gt;微博&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://tiansh.github.io/yawf/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   YAML 药方
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;没有广告、没有推荐关注、没有热搜、时间轴正常，夫复何求！设置里有更多功能，可以细致地根据自己需求调整。&lt;/p&gt;
+&lt;h2 id=&#34;b-站&#34;&gt;B 站&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://greasyfork.org/en/scripts/467511-bilibili&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Bilibili - 在未登录的情况下自动并无限试用最高画质
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://greasyfork.org/en/scripts/467474&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Bilibili - 防止视频被自动暂停及弹出登录窗口
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;li&gt;
+
+
+
+
+
+&lt;a href=&#34;https://greasyfork.org/en/scripts/473498&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Bilibili - 在未登录的情况下照常加载评论
+&lt;/a&gt;
+
+ &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;作者还有其他几个脚本也是针对 B 站，不过以上三个已经足够满足我的需求。平时我几乎不用 B 站，但前阵子为了看音乐剧各种物料和返场只能忍受一下了。&lt;/p&gt;
+&lt;h2 id=&#34;lofter&#34;&gt;Lofter&lt;/h2&gt;
+&lt;p&gt;这个没有网页工具，我始终没绑定手机号，app 也登不上，但有些作者只在 Lofter 更新，所以靠着 RSSHub 生成了作者的订阅源，具体可看 
+
+
+
+
+
+&lt;a href=&#34;https://docs.rsshub.app/routes/social-media#user-1&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   文档
+&lt;/a&gt;
+
+ ，从此就可以在 Inoreader 里追文了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>解决无法在 edge 浏览器设置中使用搜索的问题</title>
+      <link>https://thewanderingallison.github.io/posts/fix_edge_settings_search_error/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/fix_edge_settings_search_error/</guid>
+      <description>&lt;p&gt;翻电脑文档发现之前的故障截图，顺便用中文关键词搜了下，结果时隔半年无论 Bing 还是 Google 都还是得不出靠谱结果，所以简单水一篇，或许能帮助到其他人。&lt;/p&gt;
+&lt;p&gt;去年莫名其妙地 edge 设置搜索功能无法使用，进入浏览器设置页面想搜比如 password 之类，只要在左上角搜索框输入字符，浏览器页面就会直接变空白，如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406112048045.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;网上也有人提出同样问题，像 
+
+
+
+
+
+&lt;a href=&#34;https://answers.microsoft.com/en-us/microsoftedge/forum/all/ms-edge-settings-page-goes-blank-when-searching/9f6e41a6-aff8-4bdd-bd82-288b4646f046&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   MS Edge settings page goes blank when searching - Microsoft Community
+&lt;/a&gt;
+
+  和 
+
+
+
+
+
+&lt;a href=&#34;https://answers.microsoft.com/zh-hans/microsoftedge/forum/all/edge%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BE%E7%BD%AE/ef82eb21-08e8-4956-80bb-d3b1062469c2&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   edge浏览器设置中的搜索无法正常使用 - Microsoft Community
+&lt;/a&gt;
+
+  但里面的解决方案对我的浏览器都无效。最后是通过 &lt;code&gt;Settings&lt;/code&gt; - &lt;code&gt;Reset settings&lt;/code&gt; 重置设置（只会影响首页 pinned tabs 和需要重新启用插件，不会丢失其他信息）解决，之后没有再出现过类似问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202406112151081.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>简单装修 1.0</title>
+      <link>https://thewanderingallison.github.io/posts/blog_setting_decorations/</link>
+      <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/blog_setting_decorations/</guid>
+      <description>&lt;p&gt;简单装修 1.0 版（还会有 2.0 吗，不太可能吧？）。&lt;/p&gt;
+&lt;p&gt;我的博客搭建是基于 Hugo + Github Pages，没买域名，因为觉得 GitHub 活的时间肯定会比我买的域名久。也不爱给博客搞装修，基本原则是——能看就行。不过有些变动还是需要记录一下，以免后续找起来抓瞎。我不是程序员，对代码不熟悉，全是抄+自己瞎琢磨改改，这篇里不会有细节的教程和说明。&lt;/p&gt;
+&lt;h2 id=&#34;已完成&#34;&gt;已完成&lt;/h2&gt;
+&lt;h3 id=&#34;google-analytics--disqus&#34;&gt;Google Analytics &amp;amp; Disqus&lt;/h3&gt;
+&lt;p&gt;这俩算是博客装修入门篇吧，非常简单，按照官方教程一行代码的事。虽然各自都有更清爽的替代品（
+
+
+
+
+
+&lt;a href=&#34;https://umami.is/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   unami
+&lt;/a&gt;
+
+  和 
+
+
+
+
+
+&lt;a href=&#34;https://twikoo.js.org/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   twikoo
+&lt;/a&gt;
+
+ ）但我这连博客基本样式都懒得搞的人怎么可能有动力折腾，不得不换时再说。&lt;/p&gt;
+&lt;h3 id=&#34;豆瓣书影音墙&#34;&gt;豆瓣书影音墙&lt;/h3&gt;
+&lt;p&gt;在
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/douban_syncing&#34; 
+   
+   &gt;
+   一些偷懒的豆瓣书影音同步流程
+&lt;/a&gt;
+
+ 详细写过。&lt;/p&gt;
+&lt;p&gt;简单来说就是用 GitHub Action 每天抓取豆瓣标记同步到 blog 仓库对应的书影音 csv 文件，再根据 csv 文件的数据生成图片墙。&lt;/p&gt;
+&lt;p&gt;书影音墙图片一开始用的是豆瓣 cdn，后来豆瓣加上了防盗外站无法正常显示，
+
+
+
+
+
+&lt;a href=&#34;https://imnerd.org/doumark.html&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   豆瓣书影音同步 GitHub Action
+&lt;/a&gt;
+
+  作者提供了图片托管服务，只是之前的数据需要自己批量替换（感恩 pandas 和 python，换起来不麻烦），没过多久可能用的人太多，服务流量超额被停了，所以我用他提供的另一个工具 
+
+
+
+
+
+&lt;a href=&#34;https://deta.space/discovery/@lizheming/dover&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Dover by lizheming - Discovery (deta.space)
+&lt;/a&gt;
+
+   自己部署了一个服务，把图片地址又换了一遍。问题是 GitHub Action 后续同步豆瓣数据时图片还是作者的托管服务地址，本来想要么我写个 action 也定期跑一下更新 csv 的 pic src ，但这几天作者又修好了，所以我想凑合着吧，出问题再说！&lt;/p&gt;
+&lt;h3 id=&#34;书籍卡片&#34;&gt;书籍卡片&lt;/h3&gt;
+&lt;p&gt;2020 年看到这篇
+
+
+
+
+
+&lt;a href=&#34;https://immmmm.com/post-show-douban-item-localstorage-cache/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   文章内显示豆瓣条目（LocalStorage 缓存版）
+&lt;/a&gt;
+
+ 就想着要不要加上，拖到 2024 年&lt;del&gt;全世界&lt;/del&gt;都似乎用上了改良后的豆瓣和 neodb 卡片我才动手。但是，正因为大家都在用，我反倒不那么想用了。短代码是抄的 
+
+
+
+
+
+&lt;a href=&#34;https://immmmm.com/hugo-shortcodes-douban/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Hugo 豆瓣短代码
+&lt;/a&gt;
+
+ ，我用的是上面豆瓣同步生成的 csv 表格里的数据，而不是像大家用的 neodb 卡片是走 neodb api 获取，也是不想给 neodb 增加不必要的流量压力（毕竟我没有给人家付钱）。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;{{&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;items &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; getCSV &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;data/douban/book.csv&amp;#34;&lt;/span&gt; }}
+
+{{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;range&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;items}}
+
+{{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;eq&lt;/span&gt; (index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;) &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;dbID }}
+
+{{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;douURL &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;5&lt;/span&gt;}}
+
+&amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card&amp;#34;&lt;/span&gt;&amp;gt;
+    &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-subject&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-post&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;img loading=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;lazy&amp;#34;&lt;/span&gt; decoding=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;async&amp;#34;&lt;/span&gt; referrerpolicy=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;no-referrer&amp;#34;&lt;/span&gt; src=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{index $item 3}}&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+        &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-content&amp;#34;&lt;/span&gt;&amp;gt;
+            &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-title&amp;#34;&lt;/span&gt;&amp;gt;&amp;lt;a href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $douURL }}&amp;#34;&lt;/span&gt; class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;cute&amp;#34;&lt;/span&gt; target=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;_blank&amp;#34;&lt;/span&gt; rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;noreferrer&amp;#34;&lt;/span&gt;&amp;gt;{{ index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;1&lt;/span&gt; }}&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;a&amp;gt;&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+            &amp;lt;div class=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;db-card-abstract&amp;#34;&lt;/span&gt;&amp;gt;{{ index &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;item &lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt; }}&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+&amp;lt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;/&lt;/span&gt;div&amp;gt;
+{{end}}
+{{end}}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;为了方便我也没用链接而是用的条目 id 作为参数，用起来效果如下。&lt;/p&gt;
+
+
+&lt;h3 id=&#34;字数统计&#34;&gt;字数统计&lt;/h3&gt;
+&lt;p&gt;抄的 
+
+
+
+
+
+&lt;a href=&#34;https://immmmm.com/hugo-total-count/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Hugo 总文章数和总字数
+&lt;/a&gt;
+
+ 。大概改了改只让它显示总字数。&lt;/p&gt;
+&lt;h3 id=&#34;图片多栏显示&#34;&gt;图片多栏显示&lt;/h3&gt;
+&lt;p&gt;理论上来说，只需要在 css 文件里用上 &lt;code&gt;column-count&lt;/code&gt; 和 &lt;code&gt;p:has(&amp;gt; img:nth-child）&lt;/code&gt; 就能够方便控制图片多栏显示。然而我真的不明白这个主题的 css 怎会搞得如此复杂！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;  {{ &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;if&lt;/span&gt; .Site.IsServer }}
+    {{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;style &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; resources.Get &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;css/styles.css&amp;#34;&lt;/span&gt; | &lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;postCSS&lt;/span&gt; (dict &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;./assets/css/dev/postcss.config.js&amp;#34;&lt;/span&gt;) }}
+    &amp;lt;link rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $style.RelPermalink }}&amp;#34;&lt;/span&gt;&amp;gt;
+  {{ &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;else&lt;/span&gt; }}
+    {{ &lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;$&lt;/span&gt;style &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;:=&lt;/span&gt; resources.Get &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;css/styles.css&amp;#34;&lt;/span&gt; | &lt;span style=&#34;color:#900;font-weight:bold&#34;&gt;postCSS&lt;/span&gt; (dict &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;config&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;./assets/css/postcss.config.js&amp;#34;&lt;/span&gt;) | minify | fingerprint }}
+    &amp;lt;link rel=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;stylesheet&amp;#34;&lt;/span&gt; href=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $style.Permalink }}&amp;#34;&lt;/span&gt; integrity=&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;{{ $style.Data.Integrity }}&amp;#34;&lt;/span&gt;&amp;gt;
+  {{ end }}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;苍天啊为什么要写成这样？总之改来改去直接动 &lt;code&gt;styles.css&lt;/code&gt; 就疯狂报错，甚至把 stylesheet 的 &lt;code&gt;href&lt;/code&gt; 换成 static 里的文件也不行，我气昏了头，放弃。之前是用简单粗暴的方式，每当有博文需要多图排版，我就在对应的 md 文档里加 &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;。后来有一天我突然醒悟，管不了整个站的 css，我可以改 &lt;code&gt;layouts&lt;/code&gt; 文件夹里 &lt;code&gt;single.html&lt;/code&gt; 文件啊！所以最后就是，在 &lt;code&gt;single.html&lt;/code&gt; 里加上了以下内容，姑且就这么糊弄着了！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-html&#34; data-lang=&#34;html&#34;&gt;&amp;lt;&lt;span style=&#34;color:#000080&#34;&gt;style&lt;/span&gt;&amp;gt;
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-count&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;2&lt;/span&gt;;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-gap&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#458;font-weight:bold&#34;&gt;px&lt;/span&gt;;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;margin&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#458;font-weight:bold&#34;&gt;px&lt;/span&gt; &lt;span style=&#34;color:#099&#34;&gt;0&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-count&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;3&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-count&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;4&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-count&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;5&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;column-count&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;4&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;display&lt;/span&gt;:&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;inherit&lt;/span&gt;;}
+
+&lt;span style=&#34;color:#000080&#34;&gt;p&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;has&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;:&lt;span style=&#34;color:#3c5d5d;font-weight:bold&#34;&gt;nth-child&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000080&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color:#000080&#34;&gt;img&lt;/span&gt;{&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;margin-bottom&lt;/span&gt;:&lt;span style=&#34;color:#099&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#458;font-weight:bold&#34;&gt;px&lt;/span&gt;;}
+
+&amp;lt;/&lt;span style=&#34;color:#000080&#34;&gt;style&lt;/span&gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;rss&#34;&gt;RSS&lt;/h3&gt;
+&lt;p&gt;Hugo 自带 RSS ，一般是在 &lt;code&gt;layouts&lt;/code&gt; 文件夹下的 &lt;code&gt;rss.xml&lt;/code&gt; 文件。&lt;/p&gt;
+&lt;p&gt;之前我只是改动了 output 变成全文输出。嗯我知道很多人会特意选择不显示全文，我不太在意，想着真有人愿意在 RSS 阅读器订阅的话，不经过跳转一次性看完全文挺好的，我也喜欢只在 Inoreader 里看，只有觉得有特殊排版和想留言时才访问原链接。&lt;/p&gt;
+&lt;p&gt;最近一次折腾是为了把部分日记和书摘设置成 &lt;code&gt;rss_ignore&lt;/code&gt;，对应的博文 md 文件增加 &lt;code&gt;rss_ignore&lt;/code&gt; property 为 &lt;code&gt;true&lt;/code&gt;，再利用 Hugo 本身就有的 filter 语句设置过滤规则，把 &lt;code&gt;rss.xml&lt;/code&gt; 文件里的 range 改成 &lt;code&gt;{{ range where (where .Site.Pages &amp;quot;Params.rss_ignore&amp;quot; &amp;quot;!=&amp;quot; true) &amp;quot;Kind&amp;quot; &amp;quot;page&amp;quot; }}&lt;/code&gt; ，这样就可以过滤掉不想输出到 RSS 的博文，只是我在折腾的过程中不小心出了点纰漏，结果 Inoreader 居然那么智能飞速把书影音甚至只是试验用的 neodb 电影页面一并抓取了！我眼前一黑，理解了那么三秒钟为什么有人不愿意加 RSS。&lt;/p&gt;
+&lt;h2 id=&#34;待办大概率会鸽&#34;&gt;待办（大概率会鸽）&lt;/h2&gt;
+&lt;h3 id=&#34;搜索框&#34;&gt;搜索框&lt;/h3&gt;
+&lt;p&gt;等到不得不在自己博客搜东西时我会加上的。&lt;/p&gt;
+&lt;h3 id=&#34;ko-fi-链接&#34;&gt;Ko-fi 链接&lt;/h3&gt;
+&lt;p&gt;ko-fi 官方的指引很明确，我对于加赞赏链接并没有心理负担，但问题在于，ko-fi 如果绑定的只是个人 PayPal 账户，那么对方支付时会看到我的实名。可以通过升级 PayPal 账户为 business account 来解决，但是 PayPal 一遍又一遍让我做安全验证，死活通过不了，算了，以后再说。&lt;/p&gt;
+&lt;h3 id=&#34;图片说明&#34;&gt;图片说明&lt;/h3&gt;
+&lt;p&gt;看到两篇参考教程，同样，日后再说……&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;https://cyrusyip.org/zh-cn/post/2021/03/11/automatically-caption-image-with-alt-in-hugo/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   让 Hugo 自动给图片加上说明文字 - 叶寻的博客 (cyrusyip.org)
+&lt;/a&gt;
+
+ &lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;https://sebastiandedeyne.com/captioned-images-with-markdown-render-hooks-in-hugo/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Caption images with markdown render hooks in Hugo | Sebastian De Deyne
+&lt;/a&gt;
+
+ &lt;/p&gt;
+&lt;h3 id=&#34;美化-categories-和-tags-页面&#34;&gt;美化 categories 和 tags 页面&lt;/h3&gt;
+&lt;p&gt;现在真的是太丑了……但，眼不见为净，我没看到就不需要优化（掩耳盗铃）。&lt;/p&gt;
+&lt;h3 id=&#34;热力图&#34;&gt;热力图&lt;/h3&gt;
+&lt;p&gt;2020 年刚搭博客我就雄心壮志想仿照 GitHub 热力图做个 blog 版本的，拖啊拖的我的友邻椒老师行动力爆棚写出来了我却还没动手，也懒得加了。需要的朋友请参考
+
+
+
+
+
+&lt;a href=&#34;https://blog.douchi.space/hugo-blog-heatmap/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   如何给Hugo 博客添加&lt;strong&gt;热力图&lt;/strong&gt;| 椒盐豆豉
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+&lt;h2 id=&#34;结语&#34;&gt;结语&lt;/h2&gt;
+&lt;p&gt;对我的博客其实还挺满意，有些看上去很 fancy 的功能于我是个累赘。这个主题虽然也有很多不足，但是精挑细选之下至少中文博客我还没碰上撞车的，坚决不用大家都用的主题（我的个人怪癖）。&lt;/p&gt;
+&lt;p&gt;还有在自留地小小吐槽下，个人博客的确是想怎么折腾都好，可是我始终不能理解在所有文字博文里添加动态背景一刻不停往下掉东西的，把鼠标光标搞成一点击就放烟花炸仙女棒的，以及弄闪瞎眼的高饱和荧光色的！是有多么不想别人看清楚字吗！以及自定义右键选项菜单、音乐自动播放，这都是我不想再次访问的网站类型。嗯，当然，也不想和这类交换友链（想太多）。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在 Obsidian 中使用Google Play Books</title>
+      <link>https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian/</link>
+      <pubDate>Thu, 25 Apr 2024 00:58:25 +0000</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian/</guid>
+      <description>&lt;p&gt;之前写过 Google Play Books 的
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox8&#34; 
+   
+   &gt;
+   详细体验
+&lt;/a&gt;
+
+ ，随着微信读书免费书籍越来越少，GPB 基本已成为我的唯一阅读软件。由于我很多时间都在电脑网页端使用 GPB，而涉及到读书感想和笔记整理时又依赖 Obsidian，不免希望将它们整合到一起而不必再开一个浏览器。感谢万能的互联网和 Obsidian 丰富的插件支持，非常顺利地完成了设置。&lt;/p&gt;
+&lt;p&gt;安装 
+
+
+
+
+
+&lt;a href=&#34;https://github.com/Ellpeck/ObsidianCustomFrames&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   CustomFrames
+&lt;/a&gt;
+
+  插件。&lt;/p&gt;
+&lt;p&gt;在 Obsidian 设置中打开 Custom Frames，Add Frame。
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202404252027937.webp&#34; alt=&#34;step 1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;给新增的 Frame 添加必要信息，&lt;code&gt;Display Name&lt;/code&gt; 、&lt;code&gt;Icon&lt;/code&gt;、&lt;code&gt;URL&lt;/code&gt; 分别对应名称（自己随便起），图标（在 Lucide icons 选喜欢的），要打开的网页（GPB 就是 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202404252030133.webp&#34; alt=&#34;step 2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选中 Add Ribbon Icon 会自动在 Obsidian 侧边栏生成快捷访问图标，如下图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202404252040639.webp&#34; alt=&#34;step 3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果还想在 Obsidian 中直接访问保存在 Google Drive 的读书笔记 Google Docs 文件，就依照上述步骤再创建一个 Frame ，URL 填写 &lt;a href=&#34;https://docs.google.com/&#34;&gt;https://docs.google.com/&lt;/a&gt; 。&lt;/p&gt;
+&lt;p&gt;同时打开的效果。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202404252051894.webp&#34; alt=&#34;example image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用这个方法可以添加各种网站，比如微信读书（但这个废物现在不用也罢）、Google Keep、Notion 等等。但如果有强烈隐私顾虑请自行斟酌使用，详见插件说明 
+
+
+
+
+
+&lt;a href=&#34;https://github.com/Ellpeck/ObsidianCustomFrames/issues/54#issuecomment-1210879685&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Security Concern · Issue #54 · Ellpeck/ObsidianCustomFrames
+&lt;/a&gt;
+
+ ，我这个 Google 账号只用来看书，所以没有太多安全方面的担忧。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在 Google Play Books 中使用 Microsoft Azure TTS</title>
+      <link>https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/</link>
+      <pubDate>Thu, 14 Dec 2023 23:49:34 -0400</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb/</guid>
+      <description>&lt;p&gt;Google Play Books 虽然有朗读功能但实在不太自然，读中文尤其差劲，也不能倍速。微信读书听书功能还不错，但自有书籍我在微信读书网页版死活都上传不成功，又不想费事把书再下载一遍到手机上再传到微信读书里，更何况有些书我完全不相信微信读书的安全性。&lt;/p&gt;
+&lt;p&gt;所以开始寻摸解决方案，在 
+
+
+
+
+
+&lt;a href=&#34;https://www.reddit.com/r/Android/comments/107h4ax/guide_on_how_to_use_microsoft_azures_texttospeech/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   reddit
+&lt;/a&gt;
+
+ 上找到了。&lt;/p&gt;
+&lt;p&gt;下载 
+
+
+
+
+
+&lt;a href=&#34;https://github.com/ag2s20150909/TTS/releases/tag/0.2_202212201955&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   TTS App
+&lt;/a&gt;
+
+ ，安装。在手机设置里搜索 &lt;code&gt;text-to-speech output&lt;/code&gt; ，更改 &lt;code&gt;Preferred engine&lt;/code&gt; 为 TTS ，选择语音方案，调整语速。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202312160015646.webp&#34; alt=&#34;|200&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202312160015679.webp&#34; alt=&#34;|200&#34;&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202312160016021.webp&#34; alt=&#34;|200&#34;&gt;&lt;/p&gt;
+&lt;p&gt;进入 Play Books，愉快开听！现在就是倍速+自然的微软语音朗读啦！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My App Defaults 2023</title>
+      <link>https://thewanderingallison.github.io/posts/app_defaults_2023/</link>
+      <pubDate>Sun, 03 Dec 2023 19:24:34 +0900</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/app_defaults_2023/</guid>
+      <description>&lt;style&gt;
+strong{background:#F7FB05;}
+&lt;/style&gt;
+&lt;p&gt;嗯为了水博客不择手段……&lt;/p&gt;
+&lt;p&gt;从 
+
+
+
+
+
+&lt;a href=&#34;https://blog.douchi.space/app-defaults&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   椒老师
+&lt;/a&gt;
+
+  那边看到的问卷索性也来填一下了！原项目链接是 &lt;a href=&#34;https://defaults.rknight.me/&#34;&gt;https://defaults.rknight.me/&lt;/a&gt; ，我还没想好要不要提交到这个项目的 GitHub 下……&lt;/p&gt;
+&lt;p&gt;📨&lt;strong&gt;Mail Client&lt;/strong&gt; Gmail&lt;/p&gt;
+&lt;p&gt;📮&lt;strong&gt;Mail Server&lt;/strong&gt; Gmail&lt;/p&gt;
+&lt;p&gt;📝&lt;strong&gt;Notes&lt;/strong&gt; Google Keep, Microsoft Sticky Notes&lt;/p&gt;
+&lt;p&gt;✅&lt;strong&gt;To-Do&lt;/strong&gt; Google Keep, Google Tasks&lt;/p&gt;
+&lt;p&gt;📷&lt;strong&gt;iPhone Photo Shooting&lt;/strong&gt; I&amp;rsquo;m an Apple hater and will never use Apple products (at least for now🤣)&lt;/p&gt;
+&lt;p&gt;🟦&lt;strong&gt;Photo Management&lt;/strong&gt; Google Photos&lt;/p&gt;
+&lt;p&gt;📆&lt;strong&gt;Calendar&lt;/strong&gt; Google Calendar&lt;/p&gt;
+&lt;p&gt;📁&lt;strong&gt;Cloud File Storage&lt;/strong&gt; Google Drive, OneDrive&lt;/p&gt;
+&lt;p&gt;📖&lt;strong&gt;RSS&lt;/strong&gt; Inoreader&lt;/p&gt;
+&lt;p&gt;🙍🏻‍♂️&lt;strong&gt;Contacts&lt;/strong&gt; Google Contacts&lt;/p&gt;
+&lt;p&gt;🌐&lt;strong&gt;Browser&lt;/strong&gt; Chrome, Microsoft Edge, Firefox&lt;/p&gt;
+&lt;p&gt;💬&lt;strong&gt;Chat&lt;/strong&gt; Discord, WeChat&lt;/p&gt;
+&lt;p&gt;🔖&lt;strong&gt;Bookmarks&lt;/strong&gt; Chrome, Microsoft Edge&lt;/p&gt;
+&lt;p&gt;📑&lt;strong&gt;Read It Later&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;📜&lt;strong&gt;Word Processing&lt;/strong&gt; Obsidian&lt;/p&gt;
+&lt;p&gt;📈&lt;strong&gt;Spreadsheets&lt;/strong&gt; Microsoft Excel&lt;/p&gt;
+&lt;p&gt;📊&lt;strong&gt;Presentations&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;🛒&lt;strong&gt;Shopping Lists&lt;/strong&gt; Google Keep&lt;/p&gt;
+&lt;p&gt;🍴&lt;strong&gt;Meal Planning&lt;/strong&gt; N/A&lt;/p&gt;
+&lt;p&gt;💰&lt;strong&gt;Budgeting and Personal Finance&lt;/strong&gt; MoneyWiz&lt;/p&gt;
+&lt;p&gt;📰&lt;strong&gt;News&lt;/strong&gt; RSS feeds, several journalists&#39; columns&lt;/p&gt;
+&lt;p&gt;🎵&lt;strong&gt;Music&lt;/strong&gt; Spotify, YouTube Music&lt;/p&gt;
+&lt;p&gt;🎤&lt;strong&gt;Podcasts&lt;/strong&gt; Google Podcasts (Google kills a product I love AGAIN!  )&lt;/p&gt;
+&lt;p&gt;🔐&lt;strong&gt;Password Management&lt;/strong&gt; Chrome&lt;/p&gt;
+&lt;p&gt;And something more:&lt;/p&gt;
+&lt;p&gt;😘&lt;strong&gt;Blog Platform&lt;/strong&gt; Github Pages + Hugo&lt;/p&gt;
+&lt;p&gt;📚&lt;strong&gt;Reading app&lt;/strong&gt; Google Play Books, WeRead  &lt;/p&gt;
+&lt;p&gt;⌨️&lt;strong&gt;Text Input&lt;/strong&gt; Gboard on phone, Microsoft Pinyin with Flypy Double Pinyin on Windows&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何获取 podcast 的 RSS</title>
+      <link>https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/</link>
+      <pubDate>Fri, 23 Jun 2023 22:07:41 -0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/how_to_get_podcast_rss_feeds/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;本篇所有探讨都基于网页以及搜索引擎，仅在 app 里才能获取的内容不配称之为互联网内容！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2023.12.15的更新：&lt;/p&gt;
+&lt;p&gt;后文内容可以不用再看，现在两个渠道就可以方便获取 RSS。&lt;/p&gt;
+&lt;p&gt;一 
+
+
+
+
+
+&lt;a href=&#34;https://neodb.social/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Neodb
+&lt;/a&gt;
+
+  收录了大部分中文热门播客，直接搜索进入条目在标题旁就有 RSS 链接。&lt;/p&gt;
+&lt;p&gt;二安装 
+
+
+
+
+
+&lt;a href=&#34;https://github.com/DIYgod/RSSHub-Radar&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   RSSHub Radar
+&lt;/a&gt;
+
+  插件，它也支持小宇宙播客的 RSS 抓取。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;虽然最近听播客的时间大大减少，但之前为了获取播客 RSS 的努力可是丝毫不少，来简单存个档吧。我日常使用的收听渠道是 Google Podcasts，英文世界的播客节目想要获取 RSS 都非常容易，大部分有官方网站，提供多渠道订阅方式和 RSS 链接，而中文播客届好多都无视 Google，不光在 Google Podcasts 页面搜不到，很多还根本不提供 RSS，找起来极其费劲。&lt;/p&gt;
+&lt;h2 id=&#34;1-通过播客名获取&#34;&gt;1. 通过播客名获取&lt;/h2&gt;
+&lt;p&gt;我最常用的是 
+
+
+
+
+
+&lt;a href=&#34;https://www.podbean.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Podbean
+&lt;/a&gt;
+
+  ，直接搜索即可得到结果，有时同一播客有好几个 RSS 源，点进去挑个集数最全的就好。提供类似服务的还有 &lt;a href=&#34;https://podcastrepublic.net&#34;&gt;https://podcastrepublic.net&lt;/a&gt; 和  &lt;a href=&#34;https://pod.link&#34;&gt;https://pod.link&lt;/a&gt; ，热门节目都可以搜到，冷门节目就得碰运气看谁家获取更快了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230626125524.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230626125557.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-通过播客的-apple-podcasts-链接获取&#34;&gt;2. 通过播客的 Apple Podcasts 链接获取&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;https://getRSSfeed.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   getRSSfeed
+&lt;/a&gt;
+
+  这个网站支持从 Apple Podcasts 、Google Podcasts 等多渠道解析 RSS。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230626203430.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;有些播客通过第一种渠道无法检索到但已经提交到了 Apple Podcasts ，在已知链接的情况下可以用上文的网站获取。那么问题来了，Apple Podcasts 网页版是个摆设，也不支持站内搜索，没有他人分享无法直接获取节目链接，可以试着用 &lt;code&gt;inurl:https://podcasts.apple.com/&lt;/code&gt; 或者 &lt;code&gt;site:https://podcasts.apple.com/&lt;/code&gt; 这种方式找，但太冷门的播客此前根本没人访问过搜索引擎是不会收录的，于是变成了一个死循环。可能只能拜托身边用苹果的朋友分享一下了……&lt;/p&gt;
+&lt;h3 id=&#34;3-通过喜马拉雅-fm-专辑页面获取&#34;&gt;3. 通过喜马拉雅 FM 专辑页面获取&lt;/h3&gt;
+&lt;p&gt;还有些播客只在喜马拉雅更新，如果它是 host 在喜马拉雅上的话，那么在网站内搜索找到对应的专辑列表，网址通常是 &lt;code&gt;https://www.ximalaya.com/album/XXXXXXXX&lt;/code&gt; ，在这串网址后加上 &lt;code&gt;.xml&lt;/code&gt; 就是对应的 RSS 链接。&lt;/p&gt;
+&lt;h3 id=&#34;4-小宇宙&#34;&gt;4. 小宇宙&lt;/h3&gt;
+&lt;p&gt;这个流氓无解，除非主播在其他平台提交过，不然光凭小宇宙链接是搞不出 RSS 的，或者用 
+
+
+
+
+
+&lt;a href=&#34;https://docs.rsshub.app/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   RSSHub
+&lt;/a&gt;
+
+   自建服务，可为了这狗屁平台我至于吗！&lt;/p&gt;
+&lt;h3 id=&#34;5其他&#34;&gt;5.其他&lt;/h3&gt;
+&lt;p&gt;还有人做了一个
+
+
+
+
+
+&lt;a href=&#34;https://getpodcast.xyz/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   集合页面
+&lt;/a&gt;
+
+ ，可以索引到一些中文节目，不过他这里提供的节目上面都能搜到，但也算是多个途径吧。&lt;/p&gt;
+&lt;p&gt;总之，国内的播客创作者能不能有点意识，除非是平台独占或是付费节目，不然请养成多平台分发和自觉提供 RSS 的习惯好吗？这一点都不麻烦！这个世界上不是只有小宇宙和 Apple Podcasts 的！这两垃圾都只能在 app 里使用究竟有哪里好了！也请至少提供一个这些 app 外的联系渠道，有的播客只在小宇宙上传一份，再给一个微博账号，好像这样就能容易找到一样。问题在于，我上次好不容易摸到了一个超冷门播客的微博，为了留言还不得不安全验证我那 N 年没登的账户，结果对方回复给我的评论被新浪秒吞！我收到了评论提示，点进去一片空白，又试一次，对方回复，再被吞，气到想骂人。&lt;/p&gt;
+&lt;p&gt;而日常分享节目的人，请养成提供链接的习惯，不要一张截图或一个二维码就了事。就算用的是 Apple Podcasts 甚至是小宇宙这种完全无法获取 RSS 的流氓软件，用链接的形式分享出来那么至少没有安装 app 的人也能够在网页中打开收听完当期节目。&lt;/p&gt;
+&lt;p&gt;PS，本来只想随便写写，没想到查证一些内容那么麻烦，有些放进来有些累赘也就省略了，我都不怎么听播客了干这吃力不讨好的事是何苦？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一些偷懒的豆瓣书影音同步流程</title>
+      <link>https://thewanderingallison.github.io/posts/douban_syncing/</link>
+      <pubDate>Wed, 21 Jun 2023 22:16:43 -0800</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/douban_syncing/</guid>
+      <description>&lt;p&gt;喊了一万遍豆瓣已死和逃离豆瓣，可它还是简中世界最重要的书影音数据集中地。从 2008 年用豆瓣，这些年几乎每一本读过的书、看过的电影都在豆瓣标记过，其他数据无所谓，这长达十几年的档案还是割舍不下。最早豆瓣有封禁苗头时我陆续用 
+
+
+
+
+
+&lt;a href=&#34;https://blog.doufen.org/posts/tofu-user-guide/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   豆坟
+&lt;/a&gt;
+
+  导出过几次数据，但这只是一堆 excel 表格，静止的数据并没有价值。期间用了几天 Goodreads，也试图用 neodb 取代豆瓣，但豆瓣最重要的一点：关注友邻的精神食粮动态，目前仍没有对手。因此我在挣扎之下处于半弃瓣状态，仅用它做标记，不再发言。&lt;/p&gt;
+&lt;p&gt;现在我的书影音档案在四个地方：豆瓣、notion、blog 以及 neodb。&lt;/p&gt;
+&lt;h2 id=&#34;豆瓣&#34;&gt;豆瓣&lt;/h2&gt;
+&lt;p&gt;纯手动，读完/看完后挨个标记。&lt;/p&gt;
+&lt;h2 id=&#34;notion&#34;&gt;Notion&lt;/h2&gt;
+&lt;p&gt;Notion 同步用的是在长毛象看到的 
+
+
+
+
+
+&lt;a href=&#34;https://zhuzi.dev/posts/2021-06-05-douban-backup-sync-notion/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   教程
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;p&gt;原理是通过 GitHub Action 定期抓取用户的豆瓣 rss feed 来获取更新，缺点是每次只能抓取最近 10 条记录，此前数据只能手动导入（用豆坟或油猴插件一次性获取）。而豆坟导出的数据不含海报信息，这样一来从前的记录无法显示图片，总觉得略微遗憾。notion 本身的显示页面也不是很灵活，加载还很慢，得不停点击 load more 才会继续显示，我单纯是因为不需要手动就姑且当多个备份仓库了。&lt;/p&gt;
+&lt;p&gt;实现成果如下图。
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230620114650.webp&#34; alt=&#34;notion-page&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;blog&#34;&gt;Blog&lt;/h2&gt;
+&lt;p&gt;同样是全自动，只需初始设定完毕后续就无需手动操作。&lt;/p&gt;
+&lt;p&gt;教程 
+
+
+
+
+
+&lt;a href=&#34;https://imnerd.org/doumark.html&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   豆瓣书影音同步 GitHub Action
+&lt;/a&gt;
+
+  。&lt;/p&gt;
+&lt;p&gt;原理是使用 GitHub Action 定期抓取用户豆瓣书影音记录，在个人 GitHub 仓库里生成对应 csv 文件。优点是第一次启用就能获取全部历史数据，后续的自动更新也没有上面的十条数量限制，还能自行编辑 csv 文件增加新条目，比如被豆瓣和谐的那些。缺点是导出的数据居然缺了 ISBN！等我好好学习完 GitHub Action 就自己重写一个（遥遥无期的 flag ）。&lt;/p&gt;
+&lt;p&gt;但获取数据只是第一步，将数据可视化还需要更多折腾。作者提供了两个途径，一是同步到 blog，二是同步到 notion 。&lt;/p&gt;
+&lt;p&gt;同步到 blog 具体就是往自己的静态博客里加几个网页，再写对应的 CSS ，让 csv 文件能够以图片墙形式显示，我抄的这个 
+
+
+
+
+
+&lt;a href=&#34;https://immmmm.com/doumark-action/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   「电影 / 阅读」页面，顶！
+&lt;/a&gt;
+
+  ， 略微做了点改动。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230622185307.webp&#34; alt=&#34;book&#34;&gt;&lt;/p&gt;
+&lt;p&gt;（其实还有点问题，我的 blog header 太宽挡住了一部分页面，网页版的我改掉了，但没对手机页面进行适配，就这么先凑合着吧！）&lt;/p&gt;
+&lt;p&gt;同步到 notion 原作者也给了教程，我试了下他给的 notion template 导入数据有点问题，而我实在是对 notion 的编辑逻辑感到苦手，不想自己一个个设置 block 属性，遂放弃。如果不在意缺少 ISBN 和愿意自己设置 notion template，可以略过上面的 rss 同步方式直接选用这个。&lt;/p&gt;
+&lt;h2 id=&#34;neodb&#34;&gt;Neodb&lt;/h2&gt;
+&lt;p&gt;&lt;del&gt;懒得每次把豆瓣标记内容复制一遍到 neodb ，幸好它也支持数据导入（豆坟格式的 excel 表格），我因为很久之前就卸载了豆坟插件，所以用 python + pandas 把上一步 blog 里的 csv 文件筛选关键字段转换成 excel ，每隔一两个月导入一次。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;以读过为例，大概如下图，呃相当粗糙的代码。总之有这几项就能成功导入。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230622180322.webp&#34; alt=&#34;neodb&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;其实 neodb 既然有开放 api，那理论上应该也能用 GitHub Action 自动获取更新，那样就可以彻底放弃豆瓣，把 neodb 作为首次标记渠道，再同步到 notion 或是 blog 。可我还没打定主意彻底转向它，也怕 neodb 作为网友自发维护的项目哪天就停止运行了，豆瓣虽然一直半死不活的但应该还能再苟一阵子……吧？当然更重要的是我只读了遍 GitHub Action 官方文档，大概了解流程和运作原理，根本没写过，等哪天实在需要再说。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2023.07.17 update:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;上面提到的 notion 同步工具现在增加了 neodb 同步，所以也实现了自动化，再也不用手动导入啦。&lt;/p&gt;
+&lt;h2 id=&#34;goodreads&#34;&gt;Goodreads&lt;/h2&gt;
+&lt;p&gt;顺便一提 Goodreads，它也接受导入，既然手头有这么多渠道的数据，就折腾下试试看。&lt;/p&gt;
+&lt;p&gt;首先根据这个链接 
+
+
+
+
+
+&lt;a href=&#34;https://www.goodreads.com/review/import&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Import/Export Books to My Account | Goodreads
+&lt;/a&gt;
+
+  查看 sample 文件，最不可或缺的是 ISBN，其他其实只要评分、评论、标记时间以及读过状态就够了。我只选择了以下几栏。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20230622181321.webp&#34; alt=&#34;goodreads&#34;&gt;&lt;/p&gt;
+&lt;p&gt;试验了下，上半年的 60 本书，成功导入 51 本，剩余无法识别，应该是因为有些中文书暂时没有条目。失败比例还是颇高，我大概率会放弃这个平台了。&lt;/p&gt;
+&lt;p&gt;最后，对自己的灵魂质问，我是闲出问题来了吗？写这个干嘛？算了，就当给自己存个档吧！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google Play Books 再体验</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox8/</link>
+      <pubDate>Wed, 01 Feb 2023 20:53:55 +0900</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox8/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/4/40/Google_Play_Books.png&#34; alt=&#34;Google_Play_Books&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Google Play Books 作为我的主力阅读工具已经超过半年，觉得有必要更新一下使用体验。&lt;/p&gt;
+&lt;p&gt;使用方式：仅上传自有书籍（不过在 Play Books 内也是可以购买电子书和 audiobook 的）。&lt;/p&gt;
+&lt;p&gt;使用平台：Android / ChromeOS / Chrome on Windows。&lt;/p&gt;
+&lt;h3 id=&#34;书籍上传存储管理&#34;&gt;书籍上传/存储/管理&lt;/h3&gt;
+&lt;p&gt;支持格式为 EPUB 和 PDF。上传文件大小限制为 100 MB。上传上限为 1000 本。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202405072252496.webp&#34; alt=&#34;image.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;偶尔会有一些 EPUB 文件显示处理失败，用 Calibre 转换一遍再上传就好。据说可能是从 Apple books 里导出的，这种文件传到 kindle 也会有乱码。不知真假但本果黑就当它是真的并且喜闻乐见地表示苹果辣鸡！&lt;/p&gt;
+&lt;p&gt;上传方式：&lt;/p&gt;
+&lt;p&gt;在浏览器中打开 &lt;a href=&#34;https://play.google.com/books&#34;&gt;https://play.google.com/books&lt;/a&gt; ，从本地或 Google Drive 中上传，支持批量上传。App 不提供直接上传入口，但可以通过点击 EPUB 文件用 App 打开，会自动上传至云端。&lt;/p&gt;
+&lt;p&gt;支持书籍导出，仅可在浏览器中进行，不可批量操作。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;但有个迷惑之处是偶尔会碰到原格式是 EPUB 却只能导出为 PDF ，目前还没找到原因。&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2023.04.16 update:&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;偶然看到帖子说这只是 Google 的显示 bug ，导出还是为原格式。之前没试过真正导出，在尝试了数本书后终于碰到有显示问题的，确认了导出格式依然会保持一致。不过帖子是好多天前看到的，提供不了原链接，可能是 reddit 的帖。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;无法编辑书籍信息。它是通过读取 EPUB 文件信息来显示书名，因此仅对文件重命名是没用的，必须用对应软件比如 Calibre 改掉 metadata 才能保证在 Play Books 里显示正确。&lt;/p&gt;
+&lt;p&gt;有书架功能，并且可以把同一本书加入不同书架，相当于有 multi tags 可以使用，方便管理。网页版支持批量选中多本书同时加入多个书架，App 仅支持每次将多本书加入单一书架。&lt;/p&gt;
+&lt;p&gt;本地电脑安装了 Google Drive，因此通常是下载文件 - Google Drive 文件夹 - Google Play Books ，所有内容都在云端，节省了本就不富裕的硬盘空间，不同设备也能随时访问，方便至极。&lt;/p&gt;
+&lt;p&gt;Bonus:&lt;/p&gt;
+&lt;p&gt;目前 Play Books 中的书籍不会占用 Google 账号的免费 15G 空间，也就是说完全可以把它当作电子书存储中心，需要时自行导出。&lt;/p&gt;
+&lt;h3 id=&#34;阅读&#34;&gt;阅读&lt;/h3&gt;
+&lt;p&gt;最重要的就是所有平台阅读进度都能够同步，注意，我说的不仅仅是各移动设备，还包括了 web 浏览器。只要拥有一个 Google 账号就可以！&lt;/p&gt;
+&lt;p&gt;常用功能都有，书签、多颜色标注、内置词典和翻译等等。够用，但不出色。&lt;/p&gt;
+&lt;p&gt;PDF 文件无法标注和做笔记，仅支持加书签。&lt;/p&gt;
+&lt;p&gt;只有寥寥几种英文字体可选。App 和 网页都支持 dark-mode 。&lt;/p&gt;
+&lt;p&gt;不能指定页数或进度精确跳转。只能通过拉进度条或点击目录/书签/笔记来实现，页数过多的书籍最好是勤加书签来实现前后快速翻看。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;不能跨页标记。&lt;/del&gt;&lt;br&gt;
+&lt;em&gt;2024.05.07 更新，根据评论区的提醒 web 端支持跨页但 App 依然不可以。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;笔记&#34;&gt;笔记&lt;/h3&gt;
+&lt;p&gt;可以开启自动笔记功能，所有笔记会以 Google Docs 形式保存在 Google Drive 里。&lt;/p&gt;
+&lt;p&gt;但要注意，不要试图编辑这些文档。所有内容都是和 Play Books 里的书籍标注同步的，仅对文档进行的编辑会在下一次打开图书后自动消失。但删除 Books 里的图书，笔记却依然会被保留。建议只把笔记文件夹作为原始档案参考，后续对笔记的再加工在其他地方进行。&lt;/p&gt;
+&lt;p&gt;而对我来说，还亟待解决的是笔记的自动化处理问题。我本地所有文档都是 markdown 格式，最好是能把 Drive 里的笔记文件夹同步到 Obsidian。&lt;/p&gt;
+&lt;p&gt;想过可能的方案，一种是利用 Google Docs 的 markdown api 接口批量转成 md 格式。另一种是用 python 脚本处理电脑上的 Google Drive Notes 文件夹，再转成 md 格式同步到我的 Obsidian 对应文件夹里。只是我这三脚猫水平目前还力有未逮，留待以后再说吧。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;2024.05.07 更新：&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;放弃批量转换 Google Docs 成 md ，直接在 Obsidian 里访问 Google Play Books 和笔记，详见另一篇 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/how-to-use-gpb-in-obsidian&#34; 
+   
+   &gt;
+   博文
+&lt;/a&gt;
+
+ 。Google Docs 文档只作为原始材料参照使用，感想和对笔记的精加工都另建 md 文件。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;其他功能&#34;&gt;其他功能&lt;/h3&gt;
+&lt;p&gt;在 App 中可以开启朗读功能，英文语音较为自然，会高亮对应朗读段落，也会自动翻页（但中文就一言难尽）。不过用 Apple 手机的朋友反映说这个功能有所残缺，本果黑对此再次表示：苹果辣鸡！还可以更进一步使用微软的 TTS 阅读，中英文都相当自然，详见 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/adjust_reading_speed_of_gpb_and_add_mircosoft_azure_tts_to_gpb&#34; 
+   
+   &gt;
+   这篇
+&lt;/a&gt;
+
+ 。&lt;/p&gt;
+&lt;p&gt;而网页版虽不支持朗读但可以在 edge 里用 read aloud 功能或者在浏览器里安装 TTS 插件曲线救国。&lt;/p&gt;
+&lt;p&gt;另外就是 Google 全系产品的特色：可以无痛切换多个账号，因此如果想区分阅读状态的话也可以非常方便地用不同账号来进行。&lt;/p&gt;
+&lt;h3 id=&#34;结语&#34;&gt;结语&lt;/h3&gt;
+&lt;p&gt;可以看到作为阅读软件， Google Play Books 并不是市面上最优秀的那个，但它的核心竞争力在于，完全实现了所有平台同步，甚至很多功能对于网页更为友好！这让 PC 爱好者如我简直感激涕零。我厌烦透了所有操作都得在手机上进行。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google Play Books 使用初体验</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox7/</link>
+      <pubDate>Mon, 20 Jun 2022 00:04:34 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox7/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;此篇内容已过时，后续更新请见 
+
+
+
+
+  
+  
+  
+  
+  
+
+
+&lt;a href=&#34;https://thewanderingallison.github.io/posts/toolbox8&#34; 
+   
+   &gt;
+   Google Play Books 再体验
+&lt;/a&gt;
+
+  。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;不想继续用亚马逊的生态了，想换个同样能多设备同步阅读记录的阅读平台，搜了一圈发现 Google Play Books 可以满足这个需求，试用下来觉得蛮不错。&lt;/p&gt;
+&lt;h3 id=&#34;优点&#34;&gt;优点&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;多平台同步，手机、平板、电脑都可阅读。&lt;/li&gt;
+&lt;li&gt;笔记自动保存且方便导出。&lt;/li&gt;
+&lt;li&gt;提供朗读功能（仅在 app 中支持），会高亮阅读段落，语音自然。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;不足&#34;&gt;不足&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;仅支持 epub 和 pdf 格式。&lt;/li&gt;
+&lt;li&gt;仅能在浏览器页面上传书籍。&lt;/li&gt;
+&lt;li&gt;个人上传文件上限为2000本，并且会占用 Google 账号的 15G 免费容量。&lt;/li&gt;
+&lt;li&gt;语音朗读仅对英文友好，中文非常不自然（还好我不太需要它读中文）。&lt;/li&gt;
+&lt;li&gt;阅读页面背景和字体选择有限。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Google Play Books 完美适配了我的需求：真正实现了多平台无缝阅读。Kindle 也有 PC 端和网页版，但仅支持阅读在亚马逊购买的书籍，对于我这种有大量本地书籍的用户相当于只能在移动端使用。之前我甚至装了 Windows Subsystem for Android ，再在 WSA 里安装 Kindle Android ，用如此迂回的方式来实现电脑端同步阅读。而现在我只需在浏览器打开 Google Play Books 页面。笔记和标注以 Google Docs 格式实时保存在Google Drive，可随时阅读和导出，比从前还得把 Kindle 连接电脑用第三方软件获取笔记实在是方便太多了！&lt;/p&gt;
+&lt;p&gt;Ps，其实微信读书也能上传书籍（epub格式）并支持在网页端同步阅读，但我当然不会选它啦！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows 11 无法打开图片/视频/文本，错误：没有注册类</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox6/</link>
+      <pubDate>Tue, 18 Jan 2022 01:15:37 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox6/</guid>
+      <description>&lt;p&gt;前几天电脑突然所有图片类文件都无法打开，双击之后错误提示如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20220111.webp&#34; alt=&#34;error&#34;&gt;&lt;/p&gt;
+&lt;p&gt;不管是用 Google 还是 duckduckgo 搜索中文关键词得出的解决方案都不管用。真的蛮无语，中文搜索结果已经差成这样了，很多都是几年前的帖子，或者是垃圾网站骗点击的无效页面。&lt;/p&gt;
+&lt;p&gt;换成英文搜 &lt;em&gt;can&amp;rsquo;t open pictures  Class not registered&lt;/em&gt; ，点开排名靠前的这篇
+
+
+
+
+
+&lt;a href=&#34;https://www.thewindowsclub.com/class-not-registered-error-when-opening-pictures&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   # Fix Class not registered error when opening pictures in Windows 11/10
+&lt;/a&gt;
+
+ 看了下，给了几个可能解决方案：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Run Windows Store Apps troubleshooter&lt;/li&gt;
+&lt;li&gt;Run SFC scan&lt;/li&gt;
+&lt;li&gt;Check your default app to view photos&lt;/li&gt;
+&lt;li&gt;Re-register or reinstall the Photos app via Windows PowerShell&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;前三种对我的电脑都无效。第四种需要在 Microsoft Store 里先把 Microsoft Photos app 更新到最新版，接着去设置-应用- Microsoft Photos -高级选项，重置或者修复都试一遍（我忘了是哪个起作用了），成功！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20220118163459.webp&#34; alt=&#34;setting&#34;&gt;&lt;/p&gt;
+&lt;p&gt;另， txt 和视频类文件出现“没有注册类”错误，依然可遵循以上步骤解决，只是第四种方法里的软件对应地要变成 &lt;code&gt;Notepad&lt;/code&gt; 或 &lt;code&gt;Movies &amp;amp; TV&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;过去都说百度的结果不靠谱，但现在事实是，整个中文生态里的搜索结果都不靠谱。或许也存在一些中文的优质内容，但它们都被困在平台自己的生态里，外人进不去，内容出不来。现在我无论搜什么，都只能用我的三脚猫英语想想英文关键词，通常 Google 出的结果前几页，甚至是前几条就能解决问题。&lt;/p&gt;
+&lt;p&gt;这也是为什么我把这么简单的问题水了篇 blog 的原因。没准就有人搜相关中文，可能、或许，会看到我这条吧。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Launcher使用初体验</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox5/</link>
+      <pubDate>Thu, 09 Dec 2021 00:00:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox5/</guid>
+      <description>&lt;p&gt;使用安卓手机这么多年，这是我第一次使用第三方 launcher，值得记录一下。&lt;/p&gt;
+&lt;p&gt;手机：Google pixel 1
+系统：Android 10&lt;/p&gt;
+&lt;p&gt;没错，我还在用着上古产品和上古系统，以下内容都只基于个人感受，不保证适用于所有机型。&lt;/p&gt;
+&lt;h2 id=&#34;特色功能&#34;&gt;特色功能&lt;/h2&gt;
+&lt;p&gt;自带 Bing 壁纸，每天都可以看不同的图片，也可以直接点击图标快速更换。
+负一屏有两栏，一栏是推送的信息流，一栏是可以自定义的各种 widget 集成。只要是能够添加到桌面的 wiget 都可以添到这里，非常方便。&lt;/p&gt;
+&lt;p&gt;原生的负一屏文章推送和 chrome 首页总是重叠，换了 Microsoft Launcher 之后，因为是基于两个不同生态的账号，就不会再有这个问题。&lt;/p&gt;
+&lt;p&gt;还有一个特有 widget 是 screen time，加到 home page 每次一眼就能看到使用时长。点亮屏幕看到用时过长偶尔我也会自觉放下手机。&lt;/p&gt;
+&lt;h2 id=&#34;高度自定义的各类设定&#34;&gt;高度自定义的各类设定&lt;/h2&gt;
+&lt;p&gt;Microsoft Launcher在各方面都给用户留下了高度自定义的空间。&lt;/p&gt;
+&lt;p&gt;有比原生 launcher 更丰富的手势操作，提供 launcher、app、shortcuts 三种不同维度的快捷跳转。&lt;/p&gt;
+&lt;p&gt;Search bar不像 Google 牛皮癣一样横在首页无法去除，而是下拉才会出现，默认搜索引擎可以自由更换，非常良心了！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202112091241620.webp&#34; alt=&#34;Search bar&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Dock 栏的设定也非常多样，光是图标就可以丧心病狂多到12个， just like 👇。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202112091238774.webp&#34; alt=&#34;Dock&#34;&gt;&lt;/p&gt;
+&lt;p&gt;当然实际上这么多并不实用，我会打开它的swipe up to expand dock功能，这样可以把像电话短信这类常用却又会不小心误碰的应用藏在第二排，保证它们始终在每个页面底部，可以快速打开，同时又能避免误触导致的误打电话社死瞬间。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/202112091243513.webp&#34; alt=&#34;swipe up to expand dock&#34;&gt;&lt;/p&gt;
+&lt;p&gt;之前是听说可以用Microsoft Launcher来实现电脑和手机的剪贴板无缝对接，所以兴致勃勃下载试用。但实际上这项功能通过 
+
+
+
+
+
+&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.touchtype.swiftkey&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Microsoft SwiftKey Keyboard
+&lt;/a&gt;
+
+  就能够达成。不过使用下来发现这个输入法不支持图片的复制粘贴，就还是转回Gboard了。&lt;/p&gt;
+&lt;p&gt;总结：值得一试，亮点不少，难得不臃肿的 Microsoft 应用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>如何知道一本书的总字数</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox4/</link>
+      <pubDate>Fri, 03 Dec 2021 01:15:37 +0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox4/</guid>
+      <description>&lt;p&gt;起因是我在读一本感觉永远也到不了尽头的书，就想查查到底有多少字我怎会读得如此慢，但到处都没有！搜索一番之后找到以下几个渠道，记录权做参考。&lt;/p&gt;
+&lt;h3 id=&#34;中文此处仅指中国大陆出版的书籍&#34;&gt;中文（此处仅指中国大陆出版的书籍）&lt;/h3&gt;
+&lt;p&gt;简体中文书基本都会在版权页标注字数。&lt;/p&gt;
+&lt;h4 id=&#34;纸质书&#34;&gt;纸质书&lt;/h4&gt;
+&lt;p&gt;手边有实体书的很简单，版权页一般在封面之后或是封底之前，会标明页数和字数。&lt;/p&gt;
+&lt;h4 id=&#34;电子书&#34;&gt;电子书&lt;/h4&gt;
+&lt;p&gt;微信读书已上架的书籍同样可以查看到版权页。&lt;br&gt;
+&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20211203152744.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;以上两者皆无&#34;&gt;以上两者皆无&lt;/h4&gt;
+&lt;p&gt;可以去 
+
+
+
+
+
+&lt;a href=&#34;https://www.winxuan.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   文轩网
+&lt;/a&gt;
+
+  搜索相关书籍，详情内会注明。其他几个更大的电商书店（京东、当当、中图网甚至是只做电子书的中亚）反倒都不提供这个信息，差评！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20211203152928.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;英文&#34;&gt;英文&lt;/h3&gt;
+&lt;p&gt;英文书比中文麻烦一些，不管是 Amazon 还是 Goodreads 都只有页数没有字数。&lt;/p&gt;
+&lt;p&gt;好在原来不是只有我有这种需求！&lt;/p&gt;
+&lt;p&gt;有人做了一个叫做 
+
+
+
+
+
+&lt;a href=&#34;https://wordcounters.com&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   wordcounters
+&lt;/a&gt;
+
+  的网站。根据作者的描述，他是通过Amazon上提供的页数、书籍类别以及篇幅来综合计算得出的结果，可能会因为书籍本身的设计和字体有一定偏差。不过我也不需要绝对精准，只要有相对靠谱的结果就可以了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TheWanderingAllison/blog/main/20211203153620.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aria2 配置过程</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox3/</link>
+      <pubDate>Fri, 20 Aug 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox3/</guid>
+      <description>&lt;p&gt;用 Geek 清除软件时手滑清掉了电脑一半的已安装软件，此前又没有及时设置还原点，不得不含泪一一重新安装配置。上次安装 Aria2 我完全没记录，这次重新找教程发现居然没有一个能够彻底解决问题，又是看了N篇才完成。而且大部分教程都极度小白不友好！简单来说就是老用黑话，不说人话······为了以后方便，把流程梳理一下在博客存个档。&lt;/p&gt;
+&lt;h2 id=&#34;下载-aria2&#34;&gt;下载 Aria2&lt;/h2&gt;
+&lt;p&gt;从
+
+
+
+
+
+&lt;a href=&#34;http://aria2.github.io/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   官网
+&lt;/a&gt;
+
+  下载 Aria2。&lt;br&gt;
+解压之后得到一个Aria2文件夹，在该文件夹内新建 &lt;code&gt;aria2.conf&lt;/code&gt;、&lt;code&gt;aria2.session&lt;/code&gt;、&lt;code&gt;aria2.log&lt;/code&gt; 三个空文件。&lt;br&gt;
+将 &lt;code&gt;aria2.session&lt;/code&gt; 文件移动到下载文件夹中（举例 &lt;code&gt;D:\download&lt;/code&gt;）。&lt;/p&gt;
+&lt;h2 id=&#34;配置-aria2conf-文件&#34;&gt;配置 &lt;code&gt;aria2.conf&lt;/code&gt; 文件&lt;/h2&gt;
+&lt;p&gt;打开 &lt;code&gt;aria2.conf&lt;/code&gt; 文件，将以下内容复制粘贴。网上的配置文档有很多，我这也是东拼西凑抄来的。&lt;/p&gt;
+&lt;p&gt;重点注意：&lt;code&gt;dir=D:\download&lt;/code&gt;、&lt;code&gt;input-file=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;save-session=D:\aria2\aria2.session&lt;/code&gt;、&lt;code&gt;log=D:\aria2\aria2.log&lt;/code&gt; 这几条需要根据自己的实际路径更改。上面提过aria2.session文件已经被移至下载文件夹，所以前三条的路径其实都是相同的。最后一个是 &lt;code&gt;aria2.log&lt;/code&gt; 文件所在的位置。&lt;/p&gt;
+&lt;p&gt;最末尾的&lt;code&gt;bt-tracker=&lt;/code&gt;，在
+
+
+
+
+
+&lt;a href=&#34;https://github.com/ngosang/trackerslist&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   GitHub - ngosang/trackerslist
+&lt;/a&gt;
+
+  获得最新的Tracker列表，将地址复制到 “=” 后即可，每个地址需用英文逗号 “,” 隔开。添加Tracker后可以优化BT下载速度。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-conf&#34; data-lang=&#34;conf&#34;&gt;## &#39;#&#39;开头为注释内容, 选项都有相应的注释说明, 根据需要修改 ##
+## 被注释的选项填写的是默认值, 建议在需要修改时再取消注释  ##
+
+## 文件保存相关 ##
+
+# 文件的保存路径(可使用绝对路径或相对路径), 默认: 当前启动位置
+dir=D:\Movies
+# 启用磁盘缓存, 0为禁用缓存, 需1.16以上版本, 默认:16M
+disk-cache=32M
+# 文件预分配方式, 能有效降低磁盘碎片, 默认:prealloc
+# 预分配所需时间: none &amp;lt; falloc ? trunc &amp;lt; prealloc
+# falloc和trunc则需要文件系统和内核支持
+# NTFS建议使用falloc, EXT3/4建议trunc, MAC 下需要注释此项
+file-allocation=falloc
+# 断点续传
+continue=true
+
+## 下载连接相关 ##
+
+# 最大同时下载任务数, 运行时可修改, 默认:5
+max-concurrent-downloads=1
+# 同一服务器连接数, 添加时可指定, 默认:1
+max-connection-per-server=5
+# 最小文件分片大小, 添加时可指定, 取值范围1M -1024M, 默认:20M
+# 假定size=10M, 文件为20MiB 则使用两个来源下载; 文件为15MiB 则使用一个来源下载
+min-split-size=10M
+# 单个任务最大线程数, 添加时可指定, 默认:5
+split=5
+# 整体下载速度限制, 运行时可修改, 默认:0
+max-overall-download-limit=0
+# 单个任务下载速度限制, 默认:0
+max-download-limit=0
+# 整体上传速度限制, 运行时可修改, 默认:0
+#max-overall-upload-limit=0
+# 单个任务上传速度限制, 默认:0
+max-upload-limit=0
+# 禁用IPv6, 默认:false
+disable-ipv6=true
+
+## 进度保存相关 ##
+
+# 从会话文件中读取下载任务
+input-file=D:\Movies\aria2.session
+# 在Aria2退出时保存`错误/未完成`的下载任务到会话文件
+save-session=D:\Movies\aria2.session
+# 定时保存会话, 0为退出时才保存, 需1.16.1以上版本, 默认:0
+save-session-interval=60
+
+log=D:\SOFTWARE\aria2\aria2.log
+
+## RPC相关设置 ##
+
+# 启用RPC, 默认:false
+enable-rpc=true
+
+# 允许所有来源, 默认:false
+rpc-allow-origin-all=true
+
+# 允许非外部访问, 默认:false
+rpc-listen-all=true
+
+# 事件轮询方式, 取值:[epoll, kqueue, port, poll, select], 不同系统默认值不同
+event-poll=select
+
+# RPC监听端口, 端口被占用时可以修改, 默认:6800
+rpc-listen-port=6800
+
+## BT/PT下载相关 ##
+
+# 当下载的是一个种子(以.torrent结尾)时, 自动开始BT任务, 默认:true
+follow-torrent=true
+# BT监听端口, 当端口被屏蔽时使用, 默认:6881-6999
+listen-port=51413
+# 单个种子最大连接数, 默认:55
+bt-max-peers=55
+
+# 打开DHT功能, PT需要禁用, 默认:true
+enable-dht=false
+
+# 打开IPv6 DHT功能, PT需要禁用
+enable-dht6=false
+# DHT网络监听端口, 默认:6881-6999
+dht-listen-port=6881-6999
+# 本地节点查找, PT需要禁用, 默认:false
+bt-enable-lpd=false
+# 种子交换, PT需要禁用, 默认:true
+enable-peer-exchange=false
+# 每个种子限速, 对少种的PT很有用, 默认:50K
+bt-request-peer-speed-limit=50K
+# 客户端伪装, PT需要
+peer-id-prefix=-TR2770-
+user-agent=Transmission/2.77
+# 当种子的分享率达到这个数时, 自动停止做种, 0为一直做种, 默认:1.0
+seed-ratio=0
+# 强制保存会话, 话即使任务已经完成, 默认:false
+# 较新的版本开启后会在任务完成后依然保留.aria2文件
+force-save=false
+# BT校验相关, 默认:true
+bt-hash-check-seed=true
+# 继续之前的BT任务时, 无需再次校验, 默认:false
+bt-seed-unverified=true
+# 保存磁力链接元数据为种子文件(.torrent文件), 默认:false
+bt-save-metadata=true
+
+bt-tracker=udp://tracker.opentrackr.org:1337/announce,udp://9.rarbg.com:2810/announce,udp://tracker.openbittorrent.com:6969/announce,http://openbittorrent.com:80/announce,udp://exodus.desync.com:6969/announce,udp://tracker1.bt.moack.co.kr:80/announce,udp://tracker.zerobytes.xyz:1337/announce,udp://tracker.torrent.eu.org:451/announce,udp://tracker.tiny-vps.com:6969/announce,udp://tracker.moeking.me:6969/announce,udp://retracker.sevstar.net:2710/announce,udp://retracker.netbynet.ru:2710/announce,udp://retracker.lanta-net.ru:2710/announce,udp://opentracker.i2p.rocks:6969/announce,udp://opentor.org:2710/announce,udp://open.stealth.si:80/announce,udp://bt2.archive.org:6969/announce
+
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;新建startexit脚本&#34;&gt;新建Start、Exit脚本&lt;/h2&gt;
+&lt;p&gt;每次要用命令启动和退出Aria2未免太折磨人，用记事本新建一个Start.vbs文件，复制以下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;CreateObject&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;WScript.Shell&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;.Run &lt;span style=&#34;color:#d14&#34;&gt;&amp;#34;aria2c.exe --conf-path=aria2.conf&amp;#34;&lt;/span&gt;,0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;再建一个Exit.bat文件，复制以下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;@echo off &amp;amp; title Aria2 Stop
+Taskkill /F /IM aria2c.exe
+pause &amp;gt; nul   
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就可以通过双击这两个文件启动或退出 Aria2 了。把 Start.vbs 文件放到系统启动文件夹（开始-所有程序-启动文件夹-打开  &lt;code&gt;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;），就可以实现开机启动。&lt;/p&gt;
+&lt;h2 id=&#34;可视化网页aria2-ng&#34;&gt;可视化网页Aria2 Ng&lt;/h2&gt;
+&lt;p&gt;Aria2 是通过命令行操作，对我等凡人来说太难，幸好有可视化工具可用。在
+
+
+
+
+
+&lt;a href=&#34;https://github.com/mayswind/AriaNg/releases&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Aria2 NG
+&lt;/a&gt;
+
+ 下载最新版本，解压之后把&lt;code&gt;index.html&lt;/code&gt;文件复制粘贴到第一步里的 aria2 文件夹。&lt;/p&gt;
+&lt;p&gt;运行上一步创建的 &lt;code&gt;Start.vbs&lt;/code&gt; 文件，再打开 &lt;code&gt;index.html&lt;/code&gt; 文件，就能够在浏览器里看到 Aria2 Ng 操作界面。可以把这个地址收藏，在每一个浏览器中都可以使用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>常用网络资源</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox2/</link>
+      <pubDate>Wed, 14 Jul 2021 19:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox2/</guid>
+      <description>&lt;h2 id=&#34;电子书&#34;&gt;电子书&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;http://libgen.rs/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Library Genesis
+&lt;/a&gt;
+
+ &lt;br&gt;
+
+
+
+
+
+
+&lt;a href=&#34;http://www.gutenberg.org/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Gutenberg
+&lt;/a&gt;
+
+ &lt;br&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://www.jiumodiary.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   鸠摩搜书
+&lt;/a&gt;
+
+ &lt;/p&gt;
+&lt;p&gt;电子书通常我只下英文的，因为挣人民币的我确实买不起原版·····&lt;/p&gt;
+&lt;p&gt;中文书会买电子或实体，或者去图书馆借。以上几个渠道要是都没有，大概率是绝版了。这时就只能去网上碰运气，然而中文的盗版电子书资源一点原则都没有！一本很难找（且买不到）的书，如果能搜出相关链接，一半是骗你点击淘宝/京东/当当，一半是骗你关注公众号（通常关注了也没书）。&lt;/p&gt;
+&lt;p&gt;最后一个可能的途径是去
+
+
+
+
+
+&lt;a href=&#34;http://www.ucdrs.superlib.net/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   图书馆参考联盟
+&lt;/a&gt;
+
+  ，注册之后选择文献传递功能，每次可以传49页，由工作人员发送至登记的邮箱，缺点是每次传递需要间隔时间，网上有说10天，也有说20天的，一本书可能需要花费一个月甚至更多的时间。&lt;/p&gt;
+&lt;h2 id=&#34;影视资源&#34;&gt;影视资源&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://1337x.to/home/&#34;&gt;https://1337x.to/home/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://thepiratebay.org/&#34;&gt;https://thepiratebay.org/&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://rarbgunblocked.org/torrents.php&#34;&gt;https://rarbgunblocked.org/torrents.php&lt;/a&gt;&lt;br&gt;
+&lt;a href=&#34;https://www.demonoid.is/&#34;&gt;https://www.demonoid.is/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;字幕下载：&lt;br&gt;
+&lt;a href=&#34;http://www.tvsubtitles.net/&#34;&gt;http://www.tvsubtitles.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;搭配下载工具 
+
+
+
+
+
+&lt;a href=&#34;https://aria2.github.io/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   Aria2
+&lt;/a&gt;
+
+  一起使用，彻底告别流氓的迅雷和百度云。
+(另一个很出名的多线程下载软件
+
+
+
+
+
+&lt;a href=&#34;https://www.internetdownloadmanager.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   IDM
+&lt;/a&gt;
+
+ 也非常好用，可是要收费。)&lt;/p&gt;
+&lt;h2 id=&#34;youtube&#34;&gt;YouTube&lt;/h2&gt;
+&lt;p&gt;
+
+
+
+
+
+&lt;a href=&#34;https://yt1s.com/en9&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   视频下载
+&lt;/a&gt;
+
+  ，同时还支持将视频转成音频下载。&lt;br&gt;
+
+
+
+
+
+
+&lt;a href=&#34;https://downsub.com/&#34; 
+   
+   target=&#34;_blank&#34; rel=&#34;noreferrer noopener&#34;&gt;
+   字幕下载
+&lt;/a&gt;
+
+  ，支持视频自带字幕和YouTube自动翻译字幕的下载。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;p&gt;Fanfiction文章下载、推送到Kindle：&lt;br&gt;
+&lt;a href=&#34;http://fanfictiondownloader.net/#/download&#34;&gt;http://fanfictiondownloader.net/#/download&lt;/a&gt;
+&lt;a href=&#34;http://ficsave.xyz/&#34;&gt;http://ficsave.xyz/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;查询电影和剧集里的音乐：&lt;br&gt;
+&lt;a href=&#34;https://www.tunefind.com/&#34;&gt;https://www.tunefind.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Podcast节目搜索：&lt;br&gt;
+&lt;a href=&#34;https://www.listennotes.com/&#34;&gt;https://www.listennotes.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在线课程搜索：&lt;br&gt;
+&lt;a href=&#34;https://classpert.com/&#34;&gt;https://classpert.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;关于歌词的一切：&lt;br&gt;
+&lt;a href=&#34;https://genius.com/&#34;&gt;https://genius.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>我的Windows常用工具</title>
+      <link>https://thewanderingallison.github.io/posts/toolbox1/</link>
+      <pubDate>Sat, 26 Jun 2021 17:48:44 -0100</pubDate>
+      
+      <guid>https://thewanderingallison.github.io/posts/toolbox1/</guid>
+      <description>&lt;p&gt;快速记录一下我的Windows装机必备工具，方便日后查找。
+详细使用心得可能会补充，看我的拖延情况······&lt;/p&gt;
+&lt;h2 id=&#34;dism&#34;&gt;Dism++&lt;/h2&gt;
+&lt;p&gt;轻量、好用的系统空间清理软件。&lt;/p&gt;
+&lt;h2 id=&#34;spacesniffer&#34;&gt;SpaceSniffer&lt;/h2&gt;
+&lt;p&gt;以树状图形式直观展示硬盘使用情况。&lt;br&gt;
+可以层层打开，也可以快速跳转至相关路径，需要管理删除硬盘空间时非常方便。&lt;/p&gt;
+&lt;h2 id=&#34;everything&#34;&gt;Everything&lt;/h2&gt;
+&lt;p&gt;强大的文件搜索工具。&lt;/p&gt;
+&lt;p&gt;我的主要用处是搜cache、temp这类临时文件，以及某些国产软件的残余。之前卸完微信再搜Tencent、wechat依然能搜出一堆东西，果断删除。&lt;/p&gt;
+&lt;h2 id=&#34;geek&#34;&gt;Geek&lt;/h2&gt;
+&lt;p&gt;帮助彻底卸载软件。&lt;/p&gt;
+&lt;h2 id=&#34;aria2&#34;&gt;Aria2&lt;/h2&gt;
+&lt;p&gt;网络下载。&lt;/p&gt;
+&lt;p&gt;再也不需要百度网盘这种流氓了！&lt;/p&gt;
+&lt;h2 id=&#34;wgestures&#34;&gt;WGestures&lt;/h2&gt;
+&lt;p&gt;手势软件。真实解放双手~&lt;/p&gt;
+&lt;h2 id=&#34;process-lasso&#34;&gt;Process Lasso&lt;/h2&gt;
+&lt;p&gt;系统性能优化工具。&lt;/p&gt;
+&lt;p&gt;可以设置各个进程的优先级，智能调配，帮助电脑加速。&lt;/p&gt;
+&lt;h2 id=&#34;shadowsocksr&#34;&gt;ShadowsocksR&lt;/h2&gt;
+&lt;p&gt;科学上网。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
